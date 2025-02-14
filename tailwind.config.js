@@ -1,6 +1,5 @@
 import forms from '@tailwindcss/forms';
 import plugin from 'tailwindcss/plugin';
-import tailwindcss from '@tailwindcss/vite'
 
 /** @type {import('tailwindcss').Config} */
 export default {
