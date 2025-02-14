@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "tsx": "react",
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["resources/js/*"],
+            "@images/*": ["public/images/*"],
+            "ziggy-js": ["./vendor/tightenco/ziggy"]
+        },
+        "jsx": "react"
+    },
+    "exclude": ["node_modules", "public"]
+}

@@ -1,0 +1,14 @@
+{
+    "name": "vendor_name/Pages",
+    "description": "description",
+    "minimum-stability": "stable",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Estágio",
+            "email": "email@example.com"
+        }
+    ],
+    "require": {
+    }
+}
