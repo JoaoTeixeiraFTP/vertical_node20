@@ -5,6 +5,14 @@ import { useEffect, useState } from 'react';
 import Loading from '@/Components/Loading.jsx';
 import { DataTable } from '@/Components/data-display/data-table.jsx';
 import { columns } from '@/data/CurrentAccount.ts';
+import {
+    Pagination,
+    PaginationContent,
+    PaginationItem,
+    PaginationLink,
+    PaginationNext,
+    PaginationPrevious
+} from '@/Components/ui/pagination.jsx';
 
 export default function CurrentAccount({currentAccount}) {
 
@@ -21,6 +29,40 @@ export default function CurrentAccount({currentAccount}) {
                                 : <DataTable columns={columns} data={currentAccount.data} />}
                         </div>
                     </div>
+                    <Pagination>
+                        {currentAccount === undefined
+                            ? <div></div>
+                            : <PaginationContent className={'w-full justify-between mt-4'}>
+                                <div className="text-sm text-gray-500 text-center sm:text-left">
+                                    Mostra de <span
+                                    className="font-medium text-gray-600 dark:text-gray-300">{currentAccount.from} </span>
+                                    a
+                                    <span
+                                        className="font-medium text-gray-600 dark:text-gray-300"> {currentAccount.to} </span>
+                                    de
+                                    <span
+                                        className="font-medium text-gray-600 dark:text-gray-300"> {currentAccount.total} </span>
+                                    resultados
+                                </div>
+                                <div className={'flex gap-2'}>
+                                    {currentAccount.links.map((link, index) =>
+                                        index > 0 && index < currentAccount.last_page + 1
+                                            ? <PaginationItem>
+                                                <PaginationLink isActive={(currentAccount.current_page === index)} className={'active:bg-violet-500 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-300 active:text-white  border-gray-200 dark:border-gray-700/60"'} href={link.url}>{link.label}</PaginationLink>
+                                            </PaginationItem>
+                                            : <span></span>
+                                    )}</div>
+                                <div className={'flex gap-1'}>
+                                    <PaginationItem>
+                                        <PaginationPrevious href={currentAccount.prev_page_url} />
+                                    </PaginationItem>
+                                    <PaginationItem>
+                                        <PaginationNext href={currentAccount.next_page_url} />
+                                    </PaginationItem>
+                                </div>
+                            </PaginationContent>
+                        }
+                    </Pagination>
                 </div>
             </div>
         </AuthenticatedLayout>

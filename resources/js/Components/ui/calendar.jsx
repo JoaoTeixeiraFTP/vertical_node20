@@ -1,12 +1,14 @@
 'use client';
 
 import { DayPicker } from 'react-day-picker';
+import { pt } from "react-day-picker/locale";
 
 import { cn } from '../../lib/utils';
 
 function Calendar({ className, classNames, showOutsideDays = true, ...props }) {
     return (
         <DayPicker
+            locale={pt}
             showOutsideDays={showOutsideDays}
             className={cn('p-3 text-gray-600 dark:text-gray-100', className)}
             classNames={{

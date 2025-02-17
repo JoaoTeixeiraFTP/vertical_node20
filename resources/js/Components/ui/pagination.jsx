@@ -57,7 +57,7 @@ const PaginationPrevious = ({
     className={cn("btn bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700/60 gap-1 pl-2.5", className)}
     {...props}>
     <ChevronLeft className="h-4 w-4" />
-    <span className={'text-gray-800 dark:text-gray-300'}>Previous</span>
+    <span className={'text-gray-800 dark:text-gray-300'}>Anterior</span>
   </PaginationLink>
 )
 PaginationPrevious.displayName = "PaginationPrevious"
@@ -71,7 +71,7 @@ const PaginationNext = ({
     size="default"
     className={cn("btn bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700/60 text-gray-300 dark:text-gray-600 gap-1 pr-2.5", className)}
     {...props}>
-    <span className={'text-gray-800 dark:text-gray-300'}>Next</span>
+    <span className={'text-gray-800 dark:text-gray-300'}>Próxima</span>
     <ChevronRight className="h-4 w-4" />
   </PaginationLink>
 )

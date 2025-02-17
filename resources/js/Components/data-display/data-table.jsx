@@ -25,11 +25,11 @@ export function DataTable({ columns, data }) {
     return (
         <div className="rounded-md">
             <Table>
-                <TableHeader>
+                <TableHeader className={'bg-gray-100 dark:bg-gray-700'}>
                     {table.getHeaderGroups().map((headerGroup) => (
                         <TableRow key={headerGroup.id}>
                             {headerGroup.headers.map((header) => (
-                                <TableHead key={header.id}>
+                        <TableHead key={header.id} className={'bg-violet-300/20 dark:bg-gray-700 text-[1.2em]'}>
                                     {header.isPlaceholder
                                         ? null
                                         : flexRender(
@@ -45,6 +45,7 @@ export function DataTable({ columns, data }) {
                     {table.getRowModel().rows?.length ? (
                         table.getRowModel().rows.map((row) => (
                             <TableRow
+                                className={'hover:border-violet-500 hover:border-l-2'}
                                 key={row.id}
                                 data-state={row.getIsSelected() && "selected"}
                             >

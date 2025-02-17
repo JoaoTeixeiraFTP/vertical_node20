@@ -101,14 +101,15 @@ final class FinanceController extends Controller
      */
     public function currentAccountPage(): Response
     {
+        $page = request()->input('page', 1);
+        $per_page = request()->input('per_page', 15);
 
         return Inertia::render('finance/current-account', [
             'currentAccount' => Inertia::defer(fn() =>
             CurrentAccount::fetch()
                 ->token(Auth::user()->get_subscriber->access_token)
                 ->no(Auth::user()->no)
-                ->get()
-                ->wait())
+                ->paginate(perPage: $per_page, page: (int)$page))->merge()
         ]);
     }
 
@@ -119,20 +120,15 @@ final class FinanceController extends Controller
      */
     public function receiptsPage(): Response
     {
-       $receipts =  Receipts::fetch()
-                ->token(Auth::user()->get_subscriber->access_token)
-                ->no(Auth::user()->no)
-                ->get()->wait();
-//       dd($receipts);
+        $page = request()->input('page', 1);
+        $per_page = request()->input('per_page', 15);
+
         return Inertia::render('finance/receipts', [
-            'recibos' => $receipts,
             'receipt' => Inertia::defer(fn() =>
             Receipts::fetch()
                 ->token(Auth::user()->get_subscriber->access_token)
                 ->no(Auth::user()->no)
-                ->get()
-                ->wait()
-            )
+                ->paginate(perPage: $per_page, page: (int)$page))->merge()
         ]);
     }
 

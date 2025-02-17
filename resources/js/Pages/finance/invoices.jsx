@@ -47,7 +47,7 @@ export default function Invoices({ invoices }) {
                                         className="font-medium text-gray-600 dark:text-gray-300"> {invoices.total} </span>
                                     resultados
                                 </div>
-                                <div className={'flex'}>
+                                <div className={'flex gap-2'}>
                                     {invoices.links.map((link, index) =>
                                         index > 0 && index < invoices.last_page + 1
                                             ? <PaginationItem>
@@ -55,7 +55,7 @@ export default function Invoices({ invoices }) {
                                             </PaginationItem>
                                             : <span></span>
                                     )}</div>
-                                <div className={'flex'}>
+                                <div className={'flex gap-1'}>
                                     <PaginationItem>
                                         <PaginationPrevious href={invoices.prev_page_url} />
                                     </PaginationItem>

@@ -1,6 +1,6 @@
 'use client';
 
-import { addDays, format } from 'date-fns';
+import { addDays, format, subDays } from 'date-fns';
 import * as React from 'react';
 
 import { cn } from '../lib/utils';
@@ -9,9 +9,11 @@ import { Popover, PopoverContent, PopoverTrigger } from './ui/popover';
 
 export default function DatePickerWithRange({ className }) {
     const [date, setDate] = React.useState({
-        from: new Date(2022, 0, 20),
-        to: addDays(new Date(2022, 0, 20), 20),
+        from: subDays(new Date(Date.now()), (new Date(Date.now()).getDay() - 1)),
+        to: addDays(new Date(Date.now()), (7 - new Date(Date.now()).getDay())),
     });
+
+    console.log(new Date(Date.now()).getDay())
 
     return (
         <div className={cn('relative', className)}>

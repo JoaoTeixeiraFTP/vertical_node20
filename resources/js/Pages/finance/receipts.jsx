@@ -26,31 +26,41 @@ export default function Receipts({ receipt }) {
                                 ? <Loading />
                                 : <DataTable columns={columns} data={receipt.data} />}
                         </div>
-                        <Pagination>
-                            <PaginationContent>
-                                <PaginationItem>
-                                    <PaginationPrevious href="#" />
-                                </PaginationItem>
-                                <PaginationItem>
-                                    <PaginationLink href="#">1</PaginationLink>
-                                </PaginationItem>
-                                <PaginationItem>
-                                    <PaginationLink href="#" isActive>
-                                        2
-                                    </PaginationLink>
-                                </PaginationItem>
-                                <PaginationItem>
-                                    <PaginationLink href="#">3</PaginationLink>
-                                </PaginationItem>
-                                <PaginationItem>
-                                    <PaginationEllipsis />
-                                </PaginationItem>
-                                <PaginationItem>
-                                    <PaginationNext href="#" />
-                                </PaginationItem>
-                            </PaginationContent>
-                        </Pagination>
                     </div>
+                    <Pagination>
+                        {receipt === undefined
+                            ? <div></div>
+                            : <PaginationContent className={'w-full justify-between mt-4'}>
+                                <div className="text-sm text-gray-500 text-center sm:text-left">
+                                    Mostra de <span
+                                    className="font-medium text-gray-600 dark:text-gray-300">{receipt.from} </span>
+                                    a
+                                    <span
+                                        className="font-medium text-gray-600 dark:text-gray-300"> {receipt.to} </span>
+                                    de
+                                    <span
+                                        className="font-medium text-gray-600 dark:text-gray-300"> {receipt.total} </span>
+                                    resultados
+                                </div>
+                                <div className={'flex gap-2'}>
+                                    {receipt.links.map((link, index) =>
+                                        index > 0 && index < receipt.last_page + 1
+                                            ? <PaginationItem>
+                                                <PaginationLink isActive={(receipt.current_page === index)} className={'active:bg-violet-500 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-300 active:text-white  border-gray-200 dark:border-gray-700/60"'} href={link.url}>{link.label}</PaginationLink>
+                                            </PaginationItem>
+                                            : <span></span>
+                                    )}</div>
+                                <div className={'flex gap-1'}>
+                                    <PaginationItem>
+                                        <PaginationPrevious href={receipt.prev_page_url} />
+                                    </PaginationItem>
+                                    <PaginationItem>
+                                        <PaginationNext href={receipt.next_page_url} />
+                                    </PaginationItem>
+                                </div>
+                            </PaginationContent>
+                        }
+                    </Pagination>
                 </div>
             </div>
         </AuthenticatedLayout>
