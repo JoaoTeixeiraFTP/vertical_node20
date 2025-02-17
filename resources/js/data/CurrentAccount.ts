@@ -21,7 +21,7 @@ export const columns: ColumnDef<Object>[] = [
     },
     {
         accessorKey: "datalc",
-        header: "Dias em Falta",
+        header: "Idade vc",
         cell: ({ getValue }) => {
             const datalc = getValue();
             if (!datalc) return "-";

@@ -12,11 +12,17 @@ export const columns: ColumnDef<Object>[] = [
         header: "Data",
     },
     {
+        id: "reciboCliente",
+        accessorKey: "no",
+        header: "Recibo",
+        cell: ({ row }) => `Recibo de cliente ${row.original.no}`
+    },
+    {
         accessorKey: "etotal",
         header: "Valor Total",
     },
     {
-        accessorKey: "nome",
-        header: "Nome do Cliente",
+        accessorKey: "desc1",
+        header: "Observações",
     },
 ]
