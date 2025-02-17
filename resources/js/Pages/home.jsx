@@ -101,6 +101,8 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
                             <VerticalBarChart
                                 title={'Faturação'}
                                 description={'Showing total visitors for the last 6 months'}
+                                yfield={['first', 'second']}
+                                xfield={'month'}
                                 data={chartData}
                                 config={barConfig}
                                 xlabel={'Meses'}

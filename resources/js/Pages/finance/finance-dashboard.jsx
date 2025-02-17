@@ -13,7 +13,7 @@ export default function FinanceDashboard({ invoices, currentAccount, receipts })
             start: 'var(--chart-1-1)',
             middle: 'var(--chart-1-2)',
             end: 'var(--chart-1-3)'
-        },
+        }
     };
 
     const barConfig = {
@@ -37,25 +37,25 @@ export default function FinanceDashboard({ invoices, currentAccount, receipts })
                         <div className="pb-1 pr-4 pl-0 text-gray-900 dark:text-gray-100">
                             {currentAccount === undefined
                                 ? <Loading />
-                                :<VerticalBarChart
-                                title={'Contas Correntes'}
-                                description={''}
-                                yfield={['ecred', 'edeb']}
-                                xfield={'datalc'}
-                                data={currentAccount.data}
-                                config={barConfig}
-                                xlabel={'Dia'}
-                                ylabel={'Valores (€)'}
-                            >
-                                <div className="flex items-start">
-                                    <div
-                                        className="text-3xl font-bold text-gray-800 dark:text-gray-100 mr-2">9 513
+                                : <VerticalBarChart
+                                    title={'Contas Correntes'}
+                                    description={''}
+                                    yfield={['ecred', 'edeb']}
+                                    xfield={'datalc'}
+                                    data={currentAccount.data}
+                                    config={barConfig}
+                                    xlabel={'Dia'}
+                                    ylabel={'Valores (€)'}
+                                >
+                                    <div className="flex items-start">
+                                        <div
+                                            className="text-3xl font-bold text-gray-800 dark:text-gray-100 mr-2">9 513
+                                        </div>
+                                        <div
+                                            className="text-sm font-medium text-green-700 px-1.5 bg-green-500/20 rounded-full">+49%
+                                        </div>
                                     </div>
-                                    <div
-                                        className="text-sm font-medium text-green-700 px-1.5 bg-green-500/20 rounded-full">+49%
-                                    </div>
-                                </div>
-                            </VerticalBarChart>}
+                                </VerticalBarChart>}
                         </div>
                     </div>
                 </div>

@@ -37,15 +37,6 @@ export function VerticalBarChart({ title, xlabel, ylabel, yfield, xfield , confi
                         >
                             <Label value={xlabel} fontSize={18} offset={-5} position="insideBottom" />
                         </XAxis>
-                        <YAxis
-                            tick={true}
-                            tickSize={0}
-                            tickLine={false}
-                            axisLine={false}
-                            tickMargin={0}
-                        >
-                            <Label angle={-90} fontSize={18} value={ylabel} offset={5} position="insideLeft" />
-                        </YAxis>
                         <ChartTooltip
                             cursor={false}
                             content={<ChartTooltipContent indicator="dashed" />}
