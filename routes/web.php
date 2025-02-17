@@ -16,7 +16,8 @@ Route::get('/', function () {
 
 Route::get('/orders', function () {
     return Inertia::render('orders');
-})->middleware(['auth', 'verified'])->name('orders');
+})->middleware(['auth'])->name('orders');
+
 
 
 Route::middleware('auth')->group(function () {
@@ -32,11 +33,9 @@ Route::middleware('auth')->group(function () {
         
         //FATURAS
         Route::get('/invoices', [FinanceController::class, 'invoicePage'])->name('finance.invoices');
-
         // Conta Corrente
         Route::get('/current-account', [FinanceController::class, 'currentAccountPage'])->name('finance.current-account');
         Route::get('/current-account/all', [FinanceController::class, 'getAllCurrentAccount'])->name('finance.current-account.all');
-
         // Recibos
     Route::get('/receipts', [FinanceController::class, 'receiptsPage'])->name('finance.receipts');
 

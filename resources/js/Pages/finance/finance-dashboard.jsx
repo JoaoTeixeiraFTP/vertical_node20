@@ -18,12 +18,13 @@ export default function FinanceDashboard({ invoices, currentAccount, receipts })
 
     const barConfig = {
         first: {
-            label: 'Conta Corrente',
-            color: 'var(--chart-1-1)',
-            start: 'var(--chart-1-1)',
-            middle: 'var(--chart-1-2)',
-            end: 'var(--chart-1-3)'
+            label: 'Creditos',
+            color: 'var(--chart-2)'
         },
+        second: {
+            label: 'Debitos',
+            color: 'var(--chart-3)'
+        }
     };
 
     return (
@@ -34,14 +35,14 @@ export default function FinanceDashboard({ invoices, currentAccount, receipts })
                 <div className="col-span-2 h-fill">
                     <div className="overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
                         <div className="pb-1 pr-4 pl-0 text-gray-900 dark:text-gray-100">
-                            {invoices === undefined
+                            {currentAccount === undefined
                                 ? <Loading />
                                 :<VerticalBarChart
-                                title={'Faturação'}
-                                description={'Showing total visitors for the last 6 months'}
-                                yfield={'etotal'}
-                                xfield={'fdata'}
-                                data={invoices.data}
+                                title={'Contas Correntes'}
+                                description={''}
+                                yfield={['ecred', 'edeb']}
+                                xfield={'datalc'}
+                                data={currentAccount.data}
                                 config={barConfig}
                                 xlabel={'Dia'}
                                 ylabel={'Valores (€)'}
