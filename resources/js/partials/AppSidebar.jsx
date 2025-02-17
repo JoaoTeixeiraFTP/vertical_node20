@@ -24,7 +24,11 @@ const data = {
                 url: route('finance.invoices'),
             },
             {
-                title: 'Conta Corrente \n Não Regularizados',
+                title: 'Conta Corrente',
+                url: route('finance.current-account'),
+            },
+            {
+                title: 'Não Regularizados',
                 url: route('finance.current-account'),
             },
             {

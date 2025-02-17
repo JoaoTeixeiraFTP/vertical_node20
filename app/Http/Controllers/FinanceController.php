@@ -8,6 +8,7 @@ use App\Actions\Vertical\GetAvailableMonths;
 use App\Actions\Vertical\GetAvailableYears;
 use App\Models\Api\CurrentAccount;
 use App\Models\Api\Invoices;
+use App\Models\Api\Receipts;
 use App\Shared\Controllers\Controller;
 use App\Shared\Result;
 use Illuminate\Contracts\Support\Renderable;
@@ -78,24 +79,18 @@ final class FinanceController extends Controller
      *
      * @return Response
      */
-    public function invoicePage(int $page=1, int $perPage=15): Response
+    public function invoicePage(): Response
     {
-        $headers = [
-            'nome' => 'Nome do Cliente',
-            'morada' => 'Endereço',
-            'local' => 'Localização',
-            'ndoc' => 'Número do Documento',
-            'nmdoc' => 'Tipo de Documento',
-        ];
+        $page = request()->input('page', 1);
+        $per_page = request()->input('per_page', 15);
 
         return Inertia::render('finance/invoices', [
-            'tableHeader' => $headers,
             'invoices' => Inertia::defer(fn () =>
             Invoices::fetch()
                 ->token(Auth::user()->get_subscriber->access_token)
                 ->no(Auth::user()->no)
                 ->filter('onlyheaders')
-                ->paginate(perPage: $perPage, page: $page))
+                ->paginate(perPage: $per_page, page: (int)$page))->merge()
         ]);
     }
 
@@ -106,18 +101,8 @@ final class FinanceController extends Controller
      */
     public function currentAccountPage(): Response
     {
-        $headers = [
-            'cmdesc' => 'Descrição',
-            'nrdoc' => 'Número do Documento',
-            'edeb' => 'Débito',
-            'ecred' => 'Crédito',
-            'usrdata' => 'Data do Utilizador',
-            'usrhora' => 'Hora do Utilizador',
-            'saldo' => 'Saldo',
-        ];
 
         return Inertia::render('finance/current-account', [
-            'tableHeader' => $headers,
             'currentAccount' => Inertia::defer(fn() =>
             CurrentAccount::fetch()
                 ->token(Auth::user()->get_subscriber->access_token)
@@ -130,17 +115,25 @@ final class FinanceController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return Renderable
+     * @return Response
      */
-    public function receiptsPage(): Renderable
+    public function receiptsPage(): Response
     {
-        $headers = [
-            'no' => 'Número do No',
-            'nome' => 'Nome do Cliente',
-            'etotal' => 'Valor Total',
-        ];
-
-        return view('pages.finances.receipts', compact('headers'));
+       $receipts =  Receipts::fetch()
+                ->token(Auth::user()->get_subscriber->access_token)
+                ->no(Auth::user()->no)
+                ->get()->wait();
+//       dd($receipts);
+        return Inertia::render('finance/receipts', [
+            'recibos' => $receipts,
+            'receipt' => Inertia::defer(fn() =>
+            Receipts::fetch()
+                ->token(Auth::user()->get_subscriber->access_token)
+                ->no(Auth::user()->no)
+                ->get()
+                ->wait()
+            )
+        ]);
     }
 
     // METODOS QUE RETORNAM OS DADOS PARA AS PAGINAS

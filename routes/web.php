@@ -48,10 +48,8 @@ Route::middleware('auth')->group(function () {
 
     // FINANCE ROUTES
     Route::prefix('/finance')->group(function () {
-        // FATURAS
-        Route::get('/receipts', function () {
-            return Inertia::render('finance/receipts');
-        })->name('finance.receipts');
+        // Recibos
+        Route::get('/receipts', [FinanceController::class, 'receiptsPage'])->name('finance.receipts');
     });
 });
 

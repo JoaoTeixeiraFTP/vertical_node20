@@ -7,7 +7,6 @@
 
 - Alinhamento icons quando fechado
 - Accordion Icon desaparece quando sidebar fechado
-- Separar Conta Corrente do Não Regularizados
 
 ### Header
 
