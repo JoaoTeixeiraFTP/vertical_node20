@@ -1,23 +1,41 @@
 import { ColumnDef } from '@tanstack/react-table';
 
-export type CurrentAccount = {
-    cmdesc: string
-    nrdoc: number
-    edeb: number
-    ecred: number
-    usrdata: string
-    usrhora: string
-    saldo: number
-}
+// export type CurrentAccount = {
+//     cmdesc: string
+//     nrdoc: number
+//     edeb: number
+//     ecred: number
+//     usrdata: string
+//     usrhora: string
+//     saldo: number
+// }
 
 export const columns: ColumnDef<Object>[] = [
     {
-        accessorKey: "cmdesc",
-        header: "Descrição",
+        accessorKey: "datalc",
+        header: "Data",
     },
     {
-        accessorKey: "nrdoc",
-        header: "Número do Documento",
+        accessorKey: "dataven",
+        header: "Vencimento",
+    },
+    {
+        accessorKey: "datalc",
+        header: "Dias em Falta",
+        cell: ({ getValue }) => {
+            const datalc = getValue();
+            if (!datalc) return "-";
+
+            const hoje = new Date();
+            const dataLancamento = new Date(datalc);
+            const diffDays = Math.floor((hoje - dataLancamento) / (1000 * 60 * 60 * 24));
+
+            return diffDays;
+        }
+    },
+    {
+        accessorKey: "cmdesc",
+        header: "Documento",
     },
     {
         accessorKey: "edeb",
@@ -26,14 +44,6 @@ export const columns: ColumnDef<Object>[] = [
     {
         accessorKey: "ecred",
         header: "Crédito",
-    },
-    {
-        accessorKey: "usrdata",
-        header: "Data do Utilizador",
-    },
-    {
-        accessorKey: "usrhora",
-        header: "Hora do Utilizador",
     },
     {
         accessorKey: "saldo",
