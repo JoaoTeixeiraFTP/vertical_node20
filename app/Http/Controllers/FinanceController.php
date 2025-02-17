@@ -125,46 +125,6 @@ final class FinanceController extends Controller
         ]);
     }
 
-    // METODOS QUE RETORNAM OS DADOS PARA AS PAGINAS
-
-    public function getPaginatedInvoices(int $page, int $perPage): Result|LengthAwarePaginator
-    {
-        $result = $this->financeRepository->getPaginatedInvoices($page, $perPage)->wait();
-
-        if (! isset($result['data'])) {
-            if ($result['message'] === 'Token Expired') {
-                $messages = 'Token Expired';
-            }
-        }
-
-        return $result;
-    }
-
-    public function getPaginatedCurrentAccount(int $page, int $perPage): Result|LengthAwarePaginator
-    {
-        $result = $this->financeRepository->getPaginatedCurrentAccount(page: $page, perPage: $perPage)->wait();
-
-        if (! isset($result['data'])) {
-            if ($result['message'] === 'Token Expired') {
-                $messages = 'Token Expired';
-            }
-        }
-
-        return $result;
-    }
-
-    public function getPaginatedReceipts(int $page, int $perPage): Result|LengthAwarePaginator
-    {
-        $result = $this->financeRepository->getPaginatedReceipts(page: $page, perPage: $perPage)->wait();
-
-        if (! isset($result['data'])) {
-            if ($result['message'] === 'Token Expired') {
-                $messages = 'Token Expired';
-            }
-        }
-
-        return $result;
-    }
 
     /**
      * Show the application dashboard.

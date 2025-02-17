@@ -37,18 +37,7 @@ export function VerticalBarChart({ title, xlabel, ylabel, yfield, xfield , confi
                         >
                             <Label value={xlabel} fontSize={18} offset={-5} position="insideBottom" />
                         </XAxis>
-                        {/*<YAxis*/}
-                        {/*    dataKey={yfield[0]}*/}
-                        {/*    tick={true}*/}
-                        {/*    tickSize={0}*/}
-                        {/*    tickLine={false}*/}
-                        {/*    axisLine={false}*/}
-                        {/*    tickMargin={0}*/}
-                        {/*>*/}
-                        {/*    <Label angle={-90} fontSize={18} value={ylabel} offset={5} position="insideLeft" />*/}
-                        {/*</YAxis>*/}
                         <YAxis
-                            dataKey={yfield[1]}
                             tick={true}
                             tickSize={0}
                             tickLine={false}
