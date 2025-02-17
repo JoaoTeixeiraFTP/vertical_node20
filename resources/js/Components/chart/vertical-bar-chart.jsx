@@ -1,6 +1,6 @@
 "use client"
 
-import { Bar, BarChart, Label, XAxis, YAxis } from 'recharts';
+import { Bar, BarChart, Label, Legend, XAxis, YAxis } from 'recharts';
 
 import {
     Card,
@@ -15,7 +15,7 @@ import {
     ChartTooltipContent,
 } from "@/components/ui/chart"
 
-export function VerticalBarChart({ title, xlabel, ylabel , config, data,  children  }) {
+export function VerticalBarChart({ title, xlabel, ylabel, yfield, xfield , config, data,  children  }) {
     return (
         <Card>
             <CardHeader>
@@ -26,32 +26,34 @@ export function VerticalBarChart({ title, xlabel, ylabel , config, data,  childr
                 </CardDescription>
             </CardHeader>
             <CardContent>
-                <ChartContainer config={config}>
+                <ChartContainer className={'m-0 p-0'} config={config}>
                     <BarChart accessibilityLayer data={data}>
                         <XAxis
-                            dataKey="month"
-                            tick={false}
-                            tickLddine={false}
+                            dataKey={xfield}
+                            tick={true}
+                            tickLine={true}
                             axisLine={false}
                             tickMargin={0}
                         >
-                            <Label value={xlabel} fontSize={18} offset={0} position="insideBottom" />
+                            <Label value={xlabel} fontSize={18} offset={-5} position="insideBottom" />
                         </XAxis>
                         <YAxis
-                            tick={false}
+                            dataKey={yfield}
+                            tick={true}
                             tickSize={0}
                             tickLine={false}
                             axisLine={false}
                             tickMargin={0}
                         >
-                            <Label angle={-90} fontSize={18} value={ylabel} offset={20} position="insideLeft" />
+                            <Label angle={-90} fontSize={18} value={ylabel} offset={5} position="insideLeft" />
                         </YAxis>
                         <ChartTooltip
                             cursor={false}
                             content={<ChartTooltipContent indicator="dashed" />}
                         />
-                        <Bar dataKey="first" fill="var(--color-first)" radius={4} />
+                        <Bar dataKey={yfield} fill="var(--color-first)" radius={4} />
                         <Bar dataKey="second" fill="var(--color-second)" radius={4} />
+                        <Legend verticalAlign="top" align={'right'} height={36}/>
                     </BarChart>
                 </ChartContainer>
             </CardContent>
