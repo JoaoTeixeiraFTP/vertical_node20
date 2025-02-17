@@ -31,38 +31,31 @@ final class FinanceController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @param GetAvailableMonths $getAvailableMonths
-     * @param GetAvailableYears $getAvailableYears
-     * @return Factory|View
-     * @return Renderable
+     * @return Response
      */
-    public function index(GetAvailableMonths $getAvailableMonths, GetAvailableYears $getAvailableYears): Factory|View
+    public function index(): Response
     {
-        $invoices = $this->financeRepository->getAllInvoices()->wait();
-        $currentAccounts = $this->financeRepository->getAllCurrentAccount()->wait();
-        $receipts = $this->financeRepository->getAllReceipts()->wait();
-
-        if ($invoices instanceof Result && $currentAccounts instanceof Result && $receipts instanceof Result) {
-            $monthsInvoices = $getAvailableMonths->execute($invoices['data'], 'fdata');
-            $monthsCurrentAccounts = $getAvailableMonths->execute($currentAccounts['data'], 'usrdata');
-
-            $months = $monthsInvoices->merge($monthsCurrentAccounts)->unique();
-
-            $yearsInvoices = $getAvailableYears->execute($invoices['data'], 'fdata');
-            $yearsCurrentAccounts = $getAvailableYears->execute($currentAccounts['data'], 'usrdata');
-
-            $years = $yearsInvoices->merge($yearsCurrentAccounts)->unique();
-
-            return view('pages.finances.main', [
-                'months' => $months,
-                'years' => $years,
-                'invoices' => $invoices,
-                'currentAccounts' => $currentAccounts,
-                'receipts' => $receipts,
-            ]);
-        }
-        // Caso o resultado não seja esperado, pode tratar o erro aqui
-        abort(500, 'Erro inesperado no processamento.');
+        return Inertia::render('finance/finance-dashboard', [
+            'invoices' => Inertia::defer(fn()
+                => Invoices::fetch()
+                    ->token(Auth::user()->get_subscriber->access_token)
+                    ->no(Auth::user()->no)
+                    ->filter('onlyheaders')
+                    ->get()
+                    ->wait()),
+            'currentAccount' => Inertia::defer(fn()
+                => CurrentAccount::fetch()
+                    ->token(Auth::user()->get_subscriber->access_token)
+                    ->no(Auth::user()->no)
+                    ->get()
+                    ->wait()),
+            'receipts' => Inertia::defer(fn()
+                => Receipts::fetch()
+                    ->token(Auth::user()->get_subscriber->access_token)
+                    ->no(Auth::user()->no)
+                    ->get()
+                    ->wait()),
+        ]);
     }
 
     public function getAllCurrentAccount()
@@ -130,47 +123,6 @@ final class FinanceController extends Controller
                 ->no(Auth::user()->no)
                 ->paginate(perPage: $per_page, page: (int)$page))->merge()
         ]);
-    }
-
-    // METODOS QUE RETORNAM OS DADOS PARA AS PAGINAS
-
-    public function getPaginatedInvoices(int $page, int $perPage): Result|LengthAwarePaginator
-    {
-        $result = $this->financeRepository->getPaginatedInvoices($page, $perPage)->wait();
-
-        if (! isset($result['data'])) {
-            if ($result['message'] === 'Token Expired') {
-                $messages = 'Token Expired';
-            }
-        }
-
-        return $result;
-    }
-
-    public function getPaginatedCurrentAccount(int $page, int $perPage): Result|LengthAwarePaginator
-    {
-        $result = $this->financeRepository->getPaginatedCurrentAccount(page: $page, perPage: $perPage)->wait();
-
-        if (! isset($result['data'])) {
-            if ($result['message'] === 'Token Expired') {
-                $messages = 'Token Expired';
-            }
-        }
-
-        return $result;
-    }
-
-    public function getPaginatedReceipts(int $page, int $perPage): Result|LengthAwarePaginator
-    {
-        $result = $this->financeRepository->getPaginatedReceipts(page: $page, perPage: $perPage)->wait();
-
-        if (! isset($result['data'])) {
-            if ($result['message'] === 'Token Expired') {
-                $messages = 'Token Expired';
-            }
-        }
-
-        return $result;
     }
 
     /**
