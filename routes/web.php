@@ -31,25 +31,19 @@ Route::middleware('auth')->group(function () {
         Route::get('/dashboard', function () {
             return Inertia::render('finance/finance-dashboard');
         })->name('finance.dashboard');
-    });
 
-    // FINANCE ROUTES
-    Route::prefix('/finance')->group(function () {
-        // FATURAS
+        //FATURAS
         Route::get('/invoices', [FinanceController::class, 'invoicePage'])->name('finance.invoices');
-    });
 
-    // FINANCE ROUTES
-    Route::prefix('/finance')->group(function () {
         // Conta Corrente
         Route::get('/current-account', [FinanceController::class, 'currentAccountPage'])->name('finance.current-account');
         Route::get('/current-account/all', [FinanceController::class, 'getAllCurrentAccount'])->name('finance.current-account.all');
-    });
 
-    // FINANCE ROUTES
-    Route::prefix('/finance')->group(function () {
         // Recibos
         Route::get('/receipts', [FinanceController::class, 'receiptsPage'])->name('finance.receipts');
+
+        //Não Regularizado
+        Route::get('/notregularized', [FinanceController::class, 'notRegularizedPage'])->name('finance.notregularized');
     });
 });
 

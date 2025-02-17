@@ -29,7 +29,7 @@ const data = {
             },
             {
                 title: 'Não Regularizados',
-                url: route('finance.current-account'),
+                url: route('finance.notregularized'),
             },
             {
                 title: 'Recibos',
