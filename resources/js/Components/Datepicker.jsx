@@ -13,8 +13,6 @@ export default function DatePickerWithRange({ className }) {
         to: addDays(new Date(Date.now()), (7 - new Date(Date.now()).getDay())),
     });
 
-    console.log(new Date(Date.now()).getDay())
-
     return (
         <div className={cn('relative', className)}>
             <Popover>

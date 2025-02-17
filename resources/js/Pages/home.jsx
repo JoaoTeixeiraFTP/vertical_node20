@@ -10,9 +10,7 @@ import News from '@/Components/custom/news.jsx';
 import { useEffect, useState } from 'react';
 
 
-export default function Home() {
-    const [currentAccount, setCurrentAccount] = useState(null);
-    const [news, setNews] = useState(null);
+export default function Home({ invoices, currentAccount, receipts, news }) {
     const [areaData, setAreaData] = useState(null);
     const [barData, setBarData] = useState(null);
 
@@ -31,7 +29,6 @@ export default function Home() {
         { month: 'Outrubro', first: 73, second: 190 },
         { month: 'Novembro', first: 209, second: 130 },
         { month: 'Dezembro', first: 214, second: 140 },
-
     ];
 
     const areaConfig = {
@@ -68,24 +65,6 @@ export default function Home() {
 
         }
     }
-
-    useEffect(() => {
-        axios.get('/finance/current-account/all')
-            .then(function(response) {
-                setCurrentAccount(response.data.data);
-            })
-            .catch(function(error) {
-                console.log(error);
-            });
-        axios.get('/news')
-            .then(function(response) {
-                setNews(response.data.data);
-            })
-            .catch(function(error) {
-                console.log(error);
-            });
-
-    }, []);
 
     return (
         <AuthenticatedLayout
@@ -143,7 +122,7 @@ export default function Home() {
                     <div
                         className="flex flex-col col-span-full sm:col-span-6 xl:col-span-4 bg-white dark:bg-gray-800 shadow-sm rounded-xl">
                         <div className="p-6 text-gray-900 dark:text-gray-100">
-                            {currentAccount === null
+                            {currentAccount === undefined
                                 ? <Loading />
                                 : <Table>
                                     <TableCaption>A list of your recent invoices.</TableCaption>
@@ -155,7 +134,7 @@ export default function Home() {
                                         </TableRow>
                                     </TableHeader>
                                     <TableBody>
-                                        {currentAccount.map((ca) => (
+                                        {currentAccount.data.map((ca) => (
                                             <TableRow key={ca.nrdoc}>
                                                 <TableCell className="first:font-medium">{ca.nrdoc}</TableCell>
                                                 <TableCell>{ca.cmdesc}</TableCell>
@@ -171,9 +150,9 @@ export default function Home() {
                     <div
                         className="flex flex-col col-span-full sm:col-span-6 xl:col-span-4 bg-white dark:bg-gray-800 shadow-sm rounded-xl">
                         <div className="p-6 text-gray-900 dark:text-gray-100">
-                            {news === null
+                            {news === undefined
                                 ? <Loading />
-                                : <News result={news} />}
+                                : <News result={news.data} />}
                         </div>
                     </div>
                 </div>

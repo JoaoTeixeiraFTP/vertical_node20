@@ -28,9 +28,8 @@ Route::middleware('auth')->group(function () {
     // FINANCE ROUTES
     Route::prefix('/finance')->group(function () {
         // DASHBOARD
-        Route::get('/dashboard', function () {
-            return Inertia::render('finance/finance-dashboard');
-        })->name('finance.dashboard');
+        Route::get('/dashboard', [FinanceController::class, 'index'])->name('finance.dashboard');
+    });
 
         //FATURAS
         Route::get('/invoices', [FinanceController::class, 'invoicePage'])->name('finance.invoices');
