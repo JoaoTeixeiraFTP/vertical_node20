@@ -29,8 +29,7 @@ Route::middleware('auth')->group(function () {
     Route::prefix('/finance')->group(function () {
         // DASHBOARD
         Route::get('/dashboard', [FinanceController::class, 'index'])->name('finance.dashboard');
-    });
-
+        
         //FATURAS
         Route::get('/invoices', [FinanceController::class, 'invoicePage'])->name('finance.invoices');
 
@@ -39,12 +38,12 @@ Route::middleware('auth')->group(function () {
         Route::get('/current-account/all', [FinanceController::class, 'getAllCurrentAccount'])->name('finance.current-account.all');
 
         // Recibos
-        Route::get('/receipts', [FinanceController::class, 'receiptsPage'])->name('finance.receipts');
+    Route::get('/receipts', [FinanceController::class, 'receiptsPage'])->name('finance.receipts');
 
-        //Não Regularizado
-        Route::get('/notregularized', [FinanceController::class, 'notRegularizedPage'])->name('finance.notregularized');
+    //Não Regularizado
+    Route::get('/notregularized', [FinanceController::class, 'notRegularizedPage'])->name('finance.notregularized');
+        });
     });
-});
 
 
 Route::middleware('auth')->group(function () {

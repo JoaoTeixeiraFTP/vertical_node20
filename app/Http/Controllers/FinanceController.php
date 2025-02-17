@@ -105,6 +105,7 @@ final class FinanceController extends Controller
                 ->paginate(perPage: $per_page, page: (int)$page))->merge()
         ]);
     }
+    
 
     /**
      * Show the application dashboard.
@@ -125,45 +126,18 @@ final class FinanceController extends Controller
         ]);
     }
 
-    // METODOS QUE RETORNAM OS DADOS PARA AS PAGINAS
-
-    public function getPaginatedInvoices(int $page, int $perPage): Result|LengthAwarePaginator
+    public function notregularizedPage(): Response
     {
-        $result = $this->financeRepository->getPaginatedInvoices($page, $perPage)->wait();
+        $page = request()->input('page', 1);
+        $per_page = request()->input('per_page', 15);
 
-        if (! isset($result['data'])) {
-            if ($result['message'] === 'Token Expired') {
-                $messages = 'Token Expired';
-            }
-        }
-
-        return $result;
-    }
-
-    public function getPaginatedCurrentAccount(int $page, int $perPage): Result|LengthAwarePaginator
-    {
-        $result = $this->financeRepository->getPaginatedCurrentAccount(page: $page, perPage: $perPage)->wait();
-
-        if (! isset($result['data'])) {
-            if ($result['message'] === 'Token Expired') {
-                $messages = 'Token Expired';
-            }
-        }
-
-        return $result;
-    }
-
-    public function getPaginatedReceipts(int $page, int $perPage): Result|LengthAwarePaginator
-    {
-        $result = $this->financeRepository->getPaginatedReceipts(page: $page, perPage: $perPage)->wait();
-
-        if (! isset($result['data'])) {
-            if ($result['message'] === 'Token Expired') {
-                $messages = 'Token Expired';
-            }
-        }
-
-        return $result;
+        return Inertia::render('finance/notregularized', [
+            'notregularized' => Inertia::defer(fn() =>
+            CurrentAccount::fetch()
+                ->token(Auth::user()->get_subscriber->access_token)
+                ->no(Auth::user()->no)
+                ->paginate(perPage: $per_page, page: (int)$page))->merge()
+        ]);
     }
 
     /**
