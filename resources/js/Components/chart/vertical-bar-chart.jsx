@@ -37,8 +37,18 @@ export function VerticalBarChart({ title, xlabel, ylabel, yfield, xfield , confi
                         >
                             <Label value={xlabel} fontSize={18} offset={-5} position="insideBottom" />
                         </XAxis>
+                        {/*<YAxis*/}
+                        {/*    dataKey={yfield[0]}*/}
+                        {/*    tick={true}*/}
+                        {/*    tickSize={0}*/}
+                        {/*    tickLine={false}*/}
+                        {/*    axisLine={false}*/}
+                        {/*    tickMargin={0}*/}
+                        {/*>*/}
+                        {/*    <Label angle={-90} fontSize={18} value={ylabel} offset={5} position="insideLeft" />*/}
+                        {/*</YAxis>*/}
                         <YAxis
-                            dataKey={yfield}
+                            dataKey={yfield[1]}
                             tick={true}
                             tickSize={0}
                             tickLine={false}
@@ -51,8 +61,8 @@ export function VerticalBarChart({ title, xlabel, ylabel, yfield, xfield , confi
                             cursor={false}
                             content={<ChartTooltipContent indicator="dashed" />}
                         />
-                        <Bar dataKey={yfield} fill="var(--color-first)" radius={4} />
-                        <Bar dataKey="second" fill="var(--color-second)" radius={4} />
+                        <Bar dataKey={yfield[0]} fill="var(--color-first)" radius={4} />
+                        <Bar dataKey={yfield[1]}  fill="var(--color-second)" radius={4} />
                         <Legend verticalAlign="top" align={'right'} height={36}/>
                     </BarChart>
                 </ChartContainer>

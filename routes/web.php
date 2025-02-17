@@ -16,7 +16,8 @@ Route::get('/', function () {
 
 Route::get('/orders', function () {
     return Inertia::render('orders');
-})->middleware(['auth', 'verified'])->name('orders');
+})->middleware(['auth'])->name('orders');
+
 
 
 Route::middleware('auth')->group(function () {
@@ -29,23 +30,11 @@ Route::middleware('auth')->group(function () {
     Route::prefix('/finance')->group(function () {
         // DASHBOARD
         Route::get('/dashboard', [FinanceController::class, 'index'])->name('finance.dashboard');
-    });
-
-    // FINANCE ROUTES
-    Route::prefix('/finance')->group(function () {
-        // FATURAS
+        // Faturas
         Route::get('/invoices', [FinanceController::class, 'invoicePage'])->name('finance.invoices');
-    });
-
-    // FINANCE ROUTES
-    Route::prefix('/finance')->group(function () {
         // Conta Corrente
         Route::get('/current-account', [FinanceController::class, 'currentAccountPage'])->name('finance.current-account');
         Route::get('/current-account/all', [FinanceController::class, 'getAllCurrentAccount'])->name('finance.current-account.all');
-    });
-
-    // FINANCE ROUTES
-    Route::prefix('/finance')->group(function () {
         // Recibos
         Route::get('/receipts', [FinanceController::class, 'receiptsPage'])->name('finance.receipts');
     });
