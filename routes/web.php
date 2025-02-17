@@ -37,6 +37,9 @@ Route::middleware('auth')->group(function () {
         Route::get('/current-account/all', [FinanceController::class, 'getAllCurrentAccount'])->name('finance.current-account.all');
         // Recibos
         Route::get('/receipts', [FinanceController::class, 'receiptsPage'])->name('finance.receipts');
+
+        //Não Regularizado
+        Route::get('/notregularized', [FinanceController::class, 'notRegularizedPage'])->name('finance.notregularized');
     });
 });
 
