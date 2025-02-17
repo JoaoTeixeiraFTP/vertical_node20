@@ -15,7 +15,7 @@ import {
 } from '@/Components/ui/pagination.jsx';
 
 export default function Invoices({ invoices }) {
-    columns[4].cell = (props) => <Badge variant="simple"
+    columns[2].cell = (props) => <Badge variant="simple"
                                         className={getBadgeColors(props.getValue())}>{props.getValue()}</Badge>;
 
     return (
