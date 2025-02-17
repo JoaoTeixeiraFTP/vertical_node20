@@ -1,5 +1,4 @@
 import { ColumnDef } from '@tanstack/react-table';
-
 interface RowData {
     rdata: string;
     no: string;
@@ -12,7 +11,6 @@ interface RowData {
     datalc: string;
     dataven: string;
 }
-
 export const columns: ColumnDef<RowData>[] = [
     {
         accessorKey: "datalc",
@@ -49,11 +47,9 @@ export const columns: ColumnDef<RowData>[] = [
             const ecredf = row.original.ecredf || 0;
             const edef = row.original.edef || 0;
             const edebf = row.original.edebf || 0;
-
             const naoRegularizado = (ecred - ecredf > 0 || edef - edebf > 0);
             return naoRegularizado ? 'Sim' : 'Não';
         }
     }
 ];
-
 console.log(columns);

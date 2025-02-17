@@ -131,7 +131,7 @@ final class FinanceController extends Controller
         $per_page = request()->input('per_page', 15);
 
         return Inertia::render('finance/notregularized', [
-            'currentAccount' => Inertia::defer(fn() =>
+            'notregularized' => Inertia::defer(fn() =>
             CurrentAccount::fetch()
                 ->token(Auth::user()->get_subscriber->access_token)
                 ->no(Auth::user()->no)
