@@ -7,11 +7,13 @@ use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 
-class GetNews {
+class GetNews
+{
     /**
      * @throws ConnectionException
      */
-    public function handler(): Result {
+    public function handler(): Result
+    {
         $cacheKey = 'news_data';
         $cacheDuration = 60; // duração cache
 
@@ -50,5 +52,4 @@ class GetNews {
 
         return $result;
     }
-
 }

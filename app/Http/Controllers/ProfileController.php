@@ -9,10 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 final class ProfileController extends Controller
 {
-
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function show()
     {

@@ -2,6 +2,8 @@
 
 import { ChevronRight } from 'lucide-react';
 
+import NavSpan from '@/Components/navigation/nav-span.jsx';
+import ResponsiveNavLink from '@/Components/ResponsiveNavLink.jsx';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/Components/ui/collapsible.jsx';
 import {
     SidebarGroup,
@@ -13,8 +15,6 @@ import {
     SidebarMenuSubItem,
 } from '@/Components/ui/sidebar.jsx';
 import { usePage } from '@inertiajs/react';
-import NavSpan from '@/Components/navigation/nav-span.jsx';
-import ResponsiveNavLink from '@/Components/ResponsiveNavLink.jsx';
 
 export function NavMain({ items }) {
     const page = usePage();
@@ -30,7 +30,7 @@ export function NavMain({ items }) {
                                 <NavSpan>
                                     {items.icon && <items.icon />}
                                     <span className="m-2">{items.title}</span>
-                                    <ChevronRight className="ml-auto transition-transform duration-200 rotate-45 group-data-[state=open]/collapsible:-rotate-45" />
+                                    <ChevronRight className="ml-auto rotate-45 transition-transform duration-200 group-data-[state=open]/collapsible:-rotate-45" />
                                 </NavSpan>
                             </SidebarMenuButton>
                         </CollapsibleTrigger>

@@ -17,38 +17,29 @@ use Inertia\Response;
 
 final class HomeController extends Controller
 {
-
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     /**
      * Show the application dashboard.
-     *
-     * @return Response
      */
     public function index(GetNews $news): Response
     {
         return Inertia::render('home', [
-            'invoices' => Inertia::defer(fn()
-            => Invoices::fetch()
+            'invoices' => Inertia::defer(fn () => Invoices::fetch()
                 ->token(Auth::user()->get_subscriber->access_token)
                 ->no(Auth::user()->no)
                 ->filter('onlyheaders')
                 ->get()),
-            'currentAccount' => Inertia::defer(fn()
-            => CurrentAccount::fetch()
+            'currentAccount' => Inertia::defer(fn () => CurrentAccount::fetch()
                 ->token(Auth::user()->get_subscriber->access_token)
                 ->no(Auth::user()->no)
                 ->get()
                 ->wait()),
-            'receipts' => Inertia::defer(fn()
-            => Receipts::fetch()
+            'receipts' => Inertia::defer(fn () => Receipts::fetch()
                 ->token(Auth::user()->get_subscriber->access_token)
                 ->no(Auth::user()->no)
                 ->get()),
-            'news' => Inertia::defer(fn()
-                => $news->handler()),
+            'news' => Inertia::defer(fn () => $news->handler()),
         ]);
     }
 

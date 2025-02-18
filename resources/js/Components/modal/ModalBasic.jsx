@@ -52,16 +52,11 @@ function ModalBasic({ children, id, title, modalOpen, setModalOpen }) {
                 leaveStart="opacity-100 translate-y-0"
                 leaveEnd="opacity-0 translate-y-4"
             >
-                <div
-                    ref={modalContent}
-                    className="max-h-full w-full max-w-lg overflow-auto rounded-lg bg-white shadow-lg dark:bg-gray-800"
-                >
+                <div ref={modalContent} className="max-h-full w-full max-w-lg overflow-auto rounded-lg bg-white shadow-lg dark:bg-gray-800">
                     {/* Modal header */}
                     <div className="border-b border-gray-200 px-5 py-3 dark:border-gray-700/60">
                         <div className="flex items-center justify-between">
-                            <div className="font-semibold text-gray-800 dark:text-gray-100">
-                                {title}
-                            </div>
+                            <div className="font-semibold text-gray-800 dark:text-gray-100">{title}</div>
                             <button
                                 className="text-gray-400 hover:text-gray-500 dark:text-gray-500 dark:hover:text-gray-400"
                                 onClick={(e) => {
@@ -70,12 +65,7 @@ function ModalBasic({ children, id, title, modalOpen, setModalOpen }) {
                                 }}
                             >
                                 <div className="sr-only">Close</div>
-                                <svg
-                                    className="fill-current"
-                                    width="16"
-                                    height="16"
-                                    viewBox="0 0 16 16"
-                                >
+                                <svg className="fill-current" width="16" height="16" viewBox="0 0 16 16">
                                     <path d="M7.95 6.536l4.242-4.243a1 1 0 111.415 1.414L9.364 7.95l4.243 4.242a1 1 0 11-1.415 1.415L7.95 9.364l-4.243 4.243a1 1 0 01-1.414-1.415L6.536 7.95 2.293 3.707a1 1 0 011.414-1.414L7.95 6.536z" />
                                 </svg>
                             </button>

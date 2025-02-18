@@ -14,7 +14,7 @@ final class ProductRepository extends Repository
     {
         parent::__construct();
 
-        $this->datalink = new DatalinkRepository();
+        $this->datalink = new DatalinkRepository;
     }
 
     public function getProducts(int $page = 1)

@@ -35,12 +35,7 @@ function DateSelect() {
     useEffect(() => {
         const clickHandler = ({ target }) => {
             if (!dropdown.current) return;
-            if (
-                !dropdownOpen ||
-                dropdown.current.contains(target) ||
-                trigger.current.contains(target)
-            )
-                return;
+            if (!dropdownOpen || dropdown.current.contains(target) || trigger.current.contains(target)) return;
             setDropdownOpen(false);
         };
         document.addEventListener('click', clickHandler);
@@ -68,23 +63,13 @@ function DateSelect() {
                 aria-expanded={dropdownOpen}
             >
                 <span className="flex items-center">
-                    <svg
-                        className="mr-2 shrink-0 fill-current text-gray-400 dark:text-gray-500"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 16 16"
-                    >
+                    <svg className="mr-2 shrink-0 fill-current text-gray-400 dark:text-gray-500" width="16" height="16" viewBox="0 0 16 16">
                         <path d="M5 4a1 1 0 0 0 0 2h6a1 1 0 1 0 0-2H5Z" />
                         <path d="M4 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4H4ZM2 4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4Z" />
                     </svg>
                     <span>{options[selected].period}</span>
                 </span>
-                <svg
-                    className="ml-1 shrink-0 fill-current text-gray-400 dark:text-gray-500"
-                    width="11"
-                    height="7"
-                    viewBox="0 0 11 7"
-                >
+                <svg className="ml-1 shrink-0 fill-current text-gray-400 dark:text-gray-500" width="11" height="7" viewBox="0 0 11 7">
                     <path d="M5.4 6.8L0 1.4 1.4 0l4 4 4-4 1.4 1.4z" />
                 </svg>
             </button>

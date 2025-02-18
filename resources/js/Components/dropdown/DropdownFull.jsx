@@ -31,12 +31,7 @@ function DropdownFull() {
     useEffect(() => {
         const clickHandler = ({ target }) => {
             if (!dropdown.current) return;
-            if (
-                !dropdownOpen ||
-                dropdown.current.contains(target) ||
-                trigger.current.contains(target)
-            )
-                return;
+            if (!dropdownOpen || dropdown.current.contains(target) || trigger.current.contains(target)) return;
             setDropdownOpen(false);
         };
         document.addEventListener('click', clickHandler);
@@ -66,12 +61,7 @@ function DropdownFull() {
                 <span className="flex items-center">
                     <span>{options[selected].period}</span>
                 </span>
-                <svg
-                    className="ml-1 shrink-0 fill-current text-gray-400 dark:text-gray-500"
-                    width="11"
-                    height="7"
-                    viewBox="0 0 11 7"
-                >
+                <svg className="ml-1 shrink-0 fill-current text-gray-400 dark:text-gray-500" width="11" height="7" viewBox="0 0 11 7">
                     <path d="M5.4 6.8L0 1.4 1.4 0l4 4 4-4 1.4 1.4z" />
                 </svg>
             </button>

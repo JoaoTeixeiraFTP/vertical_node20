@@ -4,7 +4,7 @@ import ApplicationLogo from '@/Components/ApplicationLogo.jsx';
 import { NavMain } from '@/Components/navigation/nav-main.jsx';
 import { NavSimple } from '@/Components/navigation/nav-simple.jsx';
 import { NavUserSidebar } from '@/Components/navigation/nav-user-sidebar.jsx';
-import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarRail } from '@/components/ui/sidebar';
+import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarRail } from '@/Components/ui/sidebar.jsx';
 import { usePage } from '@inertiajs/react';
 
 const data = {
@@ -56,7 +56,7 @@ export function AppSidebar({ ...props }) {
 
     return (
         <Sidebar collapsible="icon" {...props}>
-            <SidebarHeader className={'px-4 mb-12 justify-between'}>
+            <SidebarHeader className={'mb-12 justify-between px-4'}>
                 <ApplicationLogo />
                 <SidebarRail />
             </SidebarHeader>

@@ -18,7 +18,7 @@ final class SubscriberRepository extends Repository
     {
         parent::__construct();
 
-        $this->datalink = new DatalinkRepository();
+        $this->datalink = new DatalinkRepository;
     }
 
     public function getSubscriber(string $url): Result

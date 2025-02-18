@@ -2,10 +2,9 @@ import { usePage } from '@inertiajs/react';
 // import * as React from 'react';
 import Datepicker from '@/Components/Datepicker.jsx';
 import FilterButton from '@/Components/Dropdown/DropdownFilter.jsx';
-import PrimaryButton from '@/Components/PrimaryButton.jsx';
 import { SidebarProvider, SidebarTrigger } from '@/Components/ui/sidebar.jsx';
-import AppHeader from '@/partials/AppHeader.jsx';
-import { AppSidebar } from '@/partials/AppSidebar.jsx';
+import AppHeader from '@/Components/layout/AppHeader.jsx';
+import { AppSidebar } from '@/Components/layout/AppSidebar.jsx';
 import { ThemeProvider } from '@/utils/ThemeContext.jsx';
 
 export default function AuthenticatedLayout({ header, children }) {
@@ -21,14 +20,14 @@ export default function AuthenticatedLayout({ header, children }) {
                         {header && (
                             <header className="mb-4 sm:mb-0">
                                 <div className="mx-auto px-4 py-2 sm:px-6 lg:px-12">
-                                    <div className="sm:mb-8 overflow-hidden grid sm:flex sm:items-center sm:justify-between h-full">
+                                    <div className="grid h-full overflow-hidden sm:mb-8 sm:flex sm:items-center sm:justify-between">
                                         {/* Left: Title */}
-                                        <div className="mb-2 mt-2 sm:mt-0 sm:mb-0 order-last sm:order-first">
+                                        <div className="order-last mb-2 mt-2 sm:order-first sm:mb-0 sm:mt-0">
                                             <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">{header}</h1>
                                         </div>
 
                                         {/* Right: Actions */}
-                                        <div className="flex justify-end gap-2 order-first sm:order-last text-sm sm:text-md">
+                                        <div className="sm:text-md order-first flex justify-end gap-2 text-sm sm:order-last">
                                             {/* Filter button */}
                                             <FilterButton align="right" />
                                             {/* Datepicker built with React Day Picker */}

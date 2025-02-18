@@ -11,15 +11,11 @@ use Illuminate\Contracts\View\View;
 
 final class ProductController extends Controller
 {
-
-
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function index()
     {
-        $dataFeed = new DataFeed();
+        $dataFeed = new DataFeed;
 
         return view('pages.products.main', compact('dataFeed'));
     }

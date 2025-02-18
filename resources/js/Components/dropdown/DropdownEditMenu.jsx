@@ -11,12 +11,7 @@ function DropdownEditMenu({ children, align, ...rest }) {
     useEffect(() => {
         const clickHandler = ({ target }) => {
             if (!dropdown.current) return;
-            if (
-                !dropdownOpen ||
-                dropdown.current.contains(target) ||
-                trigger.current.contains(target)
-            )
-                return;
+            if (!dropdownOpen || dropdown.current.contains(target) || trigger.current.contains(target)) return;
             setDropdownOpen(false);
         };
         document.addEventListener('click', clickHandler);
@@ -66,11 +61,7 @@ function DropdownEditMenu({ children, align, ...rest }) {
                 leaveStart="opacity-100"
                 leaveEnd="opacity-0"
             >
-                <ul
-                    ref={dropdown}
-                    onFocus={() => setDropdownOpen(true)}
-                    onBlur={() => setDropdownOpen(false)}
-                >
+                <ul ref={dropdown} onFocus={() => setDropdownOpen(true)} onBlur={() => setDropdownOpen(false)}>
                     {children}
                 </ul>
             </Transition>

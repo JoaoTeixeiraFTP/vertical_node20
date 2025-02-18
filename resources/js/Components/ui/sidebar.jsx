@@ -303,7 +303,7 @@ const SidebarGroupLabel = React.forwardRef(({ className, asChild = false, ...pro
             ref={ref}
             data-sidebar="group-label"
             className={cn(
-                'flex h-8 shrink-0 items-center rounded-md px-2 text-xs font-medium text-sidebar-foreground/70 outline-none ring-sidebar-ring transition-[margin,opa] duration-200 ease-linear focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0',
+                'text-sidebar-foreground/70 flex h-8 shrink-0 items-center rounded-md px-2 text-xs font-medium outline-none ring-sidebar-ring transition-[margin,opa] duration-200 ease-linear focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0',
                 'group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0',
                 className,
             )}
@@ -497,7 +497,7 @@ const SidebarMenuSubButton = React.forwardRef(({ asChild = false, size = 'md', i
             data-size={size}
             data-active={isActive}
             className={cn(
-                'flex h-7 min-w-0 -translate-x-px items-center gap-2 overflow-hidden rounded-md px-2 outline-none ring-sidebar-ring active:text-violet-500 hover:text-gray-900 focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 [&>svg]:text-sidebar-accent-foreground',
+                'flex h-7 min-w-0 -translate-x-px items-center gap-2 overflow-hidden rounded-md px-2 outline-none ring-sidebar-ring hover:text-gray-900 focus-visible:ring-2 active:text-violet-500 disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 [&>svg]:text-sidebar-accent-foreground',
                 'data-[active=true]:bg-sidebar-accent data-[active=true]:text-violet-500',
                 size === 'sm' && 'text-xs',
                 size === 'md' && 'text-sm',

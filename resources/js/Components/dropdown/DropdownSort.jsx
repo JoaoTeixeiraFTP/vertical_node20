@@ -11,12 +11,7 @@ function DropdownSort({ align }) {
     useEffect(() => {
         const clickHandler = ({ target }) => {
             if (!dropdown.current) return;
-            if (
-                !dropdownOpen ||
-                dropdown.current.contains(target) ||
-                trigger.current.contains(target)
-            )
-                return;
+            if (!dropdownOpen || dropdown.current.contains(target) || trigger.current.contains(target)) return;
             setDropdownOpen(false);
         };
         document.addEventListener('click', clickHandler);
@@ -43,13 +38,8 @@ function DropdownSort({ align }) {
                 aria-expanded={dropdownOpen}
             >
                 <div className="flex items-center truncate">
-                    <span className="truncate font-medium text-violet-500 group-hover:text-violet-600 dark:group-hover:text-violet-400">
-                        Newest
-                    </span>
-                    <svg
-                        className="ml-1 h-3 w-3 shrink-0 fill-current text-gray-400 dark:text-gray-500"
-                        viewBox="0 0 12 12"
-                    >
+                    <span className="truncate font-medium text-violet-500 group-hover:text-violet-600 dark:group-hover:text-violet-400">Newest</span>
+                    <svg className="ml-1 h-3 w-3 shrink-0 fill-current text-gray-400 dark:text-gray-500" viewBox="0 0 12 12">
                         <path d="M5.9 11.4L.5 6l1.4-1.4 4 4 4-4L11.3 6z" />
                     </svg>
                 </div>
@@ -67,11 +57,7 @@ function DropdownSort({ align }) {
                 leaveStart="opacity-100"
                 leaveEnd="opacity-0"
             >
-                <div
-                    ref={dropdown}
-                    onFocus={() => setDropdownOpen(true)}
-                    onBlur={() => setDropdownOpen(false)}
-                >
+                <div ref={dropdown} onFocus={() => setDropdownOpen(true)} onBlur={() => setDropdownOpen(false)}>
                     <ul>
                         <li>
                             <a

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Shared\Controllers\Controller;
 
 final class ContractsController extends Controller

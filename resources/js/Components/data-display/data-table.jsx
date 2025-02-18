@@ -9,7 +9,7 @@ export function DataTable({ columns, data, typeDocument, searchField }) {
     const table = useReactTable({
         data,
         columns,
-        getCoreRowModel: getCoreRowModel()
+        getCoreRowModel: getCoreRowModel(),
     });
 
     const handleRowClick = (typeDocument, id) => {
@@ -23,13 +23,8 @@ export function DataTable({ columns, data, typeDocument, searchField }) {
                     {table.getHeaderGroups().map((headerGroup) => (
                         <TableRow key={headerGroup.id}>
                             {headerGroup.headers.map((header, index) => (
-                                <TableHead key={index} className={'bg-violet-300/20 dark:bg-gray-700 text-[1.2em]'}>
-                                    {header.isPlaceholder
-                                        ? null
-                                        : flexRender(
-                                            header.column.columnDef.header,
-                                            header.getContext()
-                                        )}
+                                <TableHead key={index} className={'bg-violet-300/20 text-[1.2em] dark:bg-gray-700'}>
+                                    {header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
                                 </TableHead>
                             ))}
                         </TableRow>
@@ -39,15 +34,13 @@ export function DataTable({ columns, data, typeDocument, searchField }) {
                     {table.getRowModel().rows?.length ? (
                         table.getRowModel().rows.map((row) => (
                             <TableRow
-                                className={'hover:border-violet-500 hover:border-l-2'}
+                                className={'hover:border-l-2 hover:border-violet-500'}
                                 onClick={() => handleRowClick(typeDocument, row.original[searchField])}
                                 key={row.original[searchField]}
                                 data-state={row.getIsSelected() && 'selected'}
                             >
                                 {row.getVisibleCells().map((cell, index) => (
-                                    <TableCell key={index}>
-                                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                                    </TableCell>
+                                    <TableCell key={index}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</TableCell>
                                 ))}
                             </TableRow>
                         ))

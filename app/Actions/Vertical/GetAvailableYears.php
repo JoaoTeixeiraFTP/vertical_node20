@@ -19,7 +19,7 @@ final class GetAvailableYears
 
         return collect($dates)
             ->map(function ($date) use ($ptFactory, $field) {
-                return ucfirst((string)$ptFactory->make(Carbon::create($date[$field]))->year); // Extrai o número do mês
+                return ucfirst((string) $ptFactory->make(Carbon::create($date[$field]))->year); // Extrai o número do mês
             })
             ->unique() // Remove duplicados
             ->sort() // Ordena os meses

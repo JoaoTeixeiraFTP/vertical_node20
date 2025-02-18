@@ -12,9 +12,7 @@ use Throwable;
 
 final class UserController extends Controller
 {
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function login($subscriber, $url, $email, $password, $no): Result
     {

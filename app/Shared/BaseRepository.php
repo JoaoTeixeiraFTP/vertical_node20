@@ -14,7 +14,7 @@ abstract class BaseRepository
 
     public function __construct()
     {
-        $this->api = new DatalinkRoutes();
+        $this->api = new DatalinkRoutes;
         $this->fetch = new Client([
             'base_uri' => $this->api::DATALINK,
         ]);

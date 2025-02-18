@@ -12,12 +12,7 @@ function DropdownNotifications({ align }) {
     useEffect(() => {
         const clickHandler = ({ target }) => {
             if (!dropdown.current) return;
-            if (
-                !dropdownOpen ||
-                dropdown.current.contains(target) ||
-                trigger.current.contains(target)
-            )
-                return;
+            if (!dropdownOpen || dropdown.current.contains(target) || trigger.current.contains(target)) return;
             setDropdownOpen(false);
         };
         document.addEventListener('click', clickHandler);
@@ -67,14 +62,8 @@ function DropdownNotifications({ align }) {
                 leaveStart="opacity-100"
                 leaveEnd="opacity-0"
             >
-                <div
-                    ref={dropdown}
-                    onFocus={() => setDropdownOpen(true)}
-                    onBlur={() => setDropdownOpen(false)}
-                >
-                    <div className="px-4 pb-2 pt-1.5 text-xs font-semibold uppercase text-gray-400 dark:text-gray-500">
-                        Notifications
-                    </div>
+                <div ref={dropdown} onFocus={() => setDropdownOpen(true)} onBlur={() => setDropdownOpen(false)}>
+                    <div className="px-4 pb-2 pt-1.5 text-xs font-semibold uppercase text-gray-400 dark:text-gray-500">Notifications</div>
                     <ul>
                         <li className="border-b border-gray-200 last:border-0 dark:border-gray-700/60">
                             <Link
@@ -83,16 +72,10 @@ function DropdownNotifications({ align }) {
                                 onClick={() => setDropdownOpen(!dropdownOpen)}
                             >
                                 <span className="mb-2 block text-sm">
-                                    📣{' '}
-                                    <span className="font-medium text-gray-800 dark:text-gray-100">
-                                        Edit your information in a swipe
-                                    </span>{' '}
-                                    Sint occaecat cupidatat non proident, sunt
-                                    in culpa qui officia deserunt mollit anim.
+                                    📣 <span className="font-medium text-gray-800 dark:text-gray-100">Edit your information in a swipe</span> Sint
+                                    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.
                                 </span>
-                                <span className="block text-xs font-medium text-gray-400 dark:text-gray-500">
-                                    Feb 12, 2024
-                                </span>
+                                <span className="block text-xs font-medium text-gray-400 dark:text-gray-500">Feb 12, 2024</span>
                             </Link>
                         </li>
                         <li className="border-b border-gray-200 last:border-0 dark:border-gray-700/60">
@@ -102,16 +85,10 @@ function DropdownNotifications({ align }) {
                                 onClick={() => setDropdownOpen(!dropdownOpen)}
                             >
                                 <span className="mb-2 block text-sm">
-                                    📣{' '}
-                                    <span className="font-medium text-gray-800 dark:text-gray-100">
-                                        Edit your information in a swipe
-                                    </span>{' '}
-                                    Sint occaecat cupidatat non proident, sunt
-                                    in culpa qui officia deserunt mollit anim.
+                                    📣 <span className="font-medium text-gray-800 dark:text-gray-100">Edit your information in a swipe</span> Sint
+                                    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.
                                 </span>
-                                <span className="block text-xs font-medium text-gray-400 dark:text-gray-500">
-                                    Feb 9, 2024
-                                </span>
+                                <span className="block text-xs font-medium text-gray-400 dark:text-gray-500">Feb 9, 2024</span>
                             </Link>
                         </li>
                         <li className="border-b border-gray-200 last:border-0 dark:border-gray-700/60">
@@ -122,15 +99,10 @@ function DropdownNotifications({ align }) {
                             >
                                 <span className="mb-2 block text-sm">
                                     🚀
-                                    <span className="font-medium text-gray-800 dark:text-gray-100">
-                                        Say goodbye to paper receipts!
-                                    </span>{' '}
-                                    Sint occaecat cupidatat non proident, sunt
-                                    in culpa qui officia deserunt mollit anim.
+                                    <span className="font-medium text-gray-800 dark:text-gray-100">Say goodbye to paper receipts!</span> Sint occaecat
+                                    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.
                                 </span>
-                                <span className="block text-xs font-medium text-gray-400 dark:text-gray-500">
-                                    Jan 24, 2024
-                                </span>
+                                <span className="block text-xs font-medium text-gray-400 dark:text-gray-500">Jan 24, 2024</span>
                             </Link>
                         </li>
                     </ul>

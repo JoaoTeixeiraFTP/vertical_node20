@@ -1,11 +1,7 @@
 function PaginationNumeric2() {
     return (
         <div>
-            <nav
-                className="flex justify-between"
-                role="navigation"
-                aria-label="Navigation"
-            >
+            <nav className="flex justify-between" role="navigation" aria-label="Navigation">
                 <div className="mr-2 flex-1">
                     <span className="btn border-gray-200 bg-white text-gray-300 dark:border-gray-700/60 dark:bg-gray-800 dark:text-gray-600">
                         &lt;-
@@ -36,9 +32,7 @@ function PaginationNumeric2() {
                             </a>
                         </li>
                         <li>
-                            <span className="inline-flex items-center justify-center px-2 py-2 leading-5 text-gray-400 dark:text-gray-500">
-                                …
-                            </span>
+                            <span className="inline-flex items-center justify-center px-2 py-2 leading-5 text-gray-400 dark:text-gray-500">…</span>
                         </li>
                         <li>
                             <a

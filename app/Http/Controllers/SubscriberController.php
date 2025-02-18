@@ -17,10 +17,7 @@ use Illuminate\Support\Str;
 
 final class SubscriberController extends Controller
 {
-
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function checkVertical(Request $request): Result
     {
@@ -62,6 +59,7 @@ final class SubscriberController extends Controller
             $messages[] = $e;
             $code = 406;
         }
+
         return new Result([
             'data' => $result['data'] ?? null,
             'errorMessages' => $result['errorMessages'] ?? $messages,
@@ -110,7 +108,7 @@ final class SubscriberController extends Controller
         ]);
     }
 
-    public function getSubscriber( string $url): Result
+    public function getSubscriber(string $url): Result
     {
         $result = null;
         $messages = [];

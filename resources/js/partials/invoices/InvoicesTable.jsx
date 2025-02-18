@@ -140,10 +140,7 @@ function InvoicesTable({ selectedItems }) {
         <div className="relative rounded-xl bg-white shadow-sm dark:bg-gray-800">
             <header className="px-5 py-4">
                 <h2 className="font-semibold text-gray-800 dark:text-gray-100">
-                    Invoices{' '}
-                    <span className="font-medium text-gray-400 dark:text-gray-500">
-                        67
-                    </span>
+                    Invoices <span className="font-medium text-gray-400 dark:text-gray-500">67</span>
                 </h2>
             </header>
             <div>
@@ -156,57 +153,34 @@ function InvoicesTable({ selectedItems }) {
                                 <th className="w-px whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
                                     <div className="flex items-center">
                                         <label className="inline-flex">
-                                            <span className="sr-only">
-                                                Select all
-                                            </span>
-                                            <input
-                                                className="form-checkbox"
-                                                type="checkbox"
-                                                checked={selectAll}
-                                                onChange={handleSelectAll}
-                                            />
+                                            <span className="sr-only">Select all</span>
+                                            <input className="form-checkbox" type="checkbox" checked={selectAll} onChange={handleSelectAll} />
                                         </label>
                                     </div>
                                 </th>
                                 <th className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
-                                    <div className="text-left font-semibold">
-                                        Invoice
-                                    </div>
+                                    <div className="text-left font-semibold">Invoice</div>
                                 </th>
                                 <th className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
-                                    <div className="text-left font-semibold">
-                                        Total
-                                    </div>
+                                    <div className="text-left font-semibold">Total</div>
                                 </th>
                                 <th className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
-                                    <div className="text-left font-semibold">
-                                        Status
-                                    </div>
+                                    <div className="text-left font-semibold">Status</div>
                                 </th>
                                 <th className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
-                                    <div className="text-left font-semibold">
-                                        Customer
-                                    </div>
+                                    <div className="text-left font-semibold">Customer</div>
                                 </th>
                                 <th className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
-                                    <div className="text-left font-semibold">
-                                        Issued on
-                                    </div>
+                                    <div className="text-left font-semibold">Issued on</div>
                                 </th>
                                 <th className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
-                                    <div className="text-left font-semibold">
-                                        Paid on
-                                    </div>
+                                    <div className="text-left font-semibold">Paid on</div>
                                 </th>
                                 <th className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
-                                    <div className="text-left font-semibold">
-                                        Type
-                                    </div>
+                                    <div className="text-left font-semibold">Type</div>
                                 </th>
                                 <th className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
-                                    <div className="text-left font-semibold">
-                                        Actions
-                                    </div>
+                                    <div className="text-left font-semibold">Actions</div>
                                 </th>
                             </tr>
                         </thead>

@@ -16,12 +16,7 @@ function DropdownSwitch({ align }) {
     useEffect(() => {
         const clickHandler = ({ target }) => {
             if (!dropdown.current) return;
-            if (
-                !dropdownOpen ||
-                dropdown.current.contains(target) ||
-                trigger.current.contains(target)
-            )
-                return;
+            if (!dropdownOpen || dropdown.current.contains(target) || trigger.current.contains(target)) return;
             setDropdownOpen(false);
         };
         document.addEventListener('click', clickHandler);
@@ -47,22 +42,11 @@ function DropdownSwitch({ align }) {
                 onClick={() => setDropdownOpen(!dropdownOpen)}
                 aria-expanded={dropdownOpen}
             >
-                <img
-                    className="mr-2 h-8 w-8 rounded-full"
-                    src={DropdownImage}
-                    width="32"
-                    height="32"
-                    alt="Group 01"
-                />
+                <img className="mr-2 h-8 w-8 rounded-full" src={DropdownImage} width="32" height="32" alt="Group 01" />
                 <div className="truncate">
-                    <span className="text-sm font-medium group-hover:text-gray-800 dark:text-gray-300 dark:group-hover:text-gray-200">
-                        Acme Inc.
-                    </span>
+                    <span className="text-sm font-medium group-hover:text-gray-800 dark:text-gray-300 dark:group-hover:text-gray-200">Acme Inc.</span>
                 </div>
-                <svg
-                    className="ml-1 h-3 w-3 shrink-0 fill-current text-gray-400 dark:text-gray-500"
-                    viewBox="0 0 12 12"
-                >
+                <svg className="ml-1 h-3 w-3 shrink-0 fill-current text-gray-400 dark:text-gray-500" viewBox="0 0 12 12">
                     <path d="M5.9 11.4L.5 6l1.4-1.4 4 4 4-4L11.3 6z" />
                 </svg>
             </button>
@@ -76,11 +60,7 @@ function DropdownSwitch({ align }) {
                 leaveStart="opacity-100"
                 leaveEnd="opacity-0"
             >
-                <ul
-                    ref={dropdown}
-                    onFocus={() => setDropdownOpen(true)}
-                    onBlur={() => setDropdownOpen(false)}
-                >
+                <ul ref={dropdown} onFocus={() => setDropdownOpen(true)} onBlur={() => setDropdownOpen(false)}>
                     <li>
                         <a
                             className="block px-3 py-1.5 text-sm font-medium text-gray-600 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-200"
@@ -89,19 +69,10 @@ function DropdownSwitch({ align }) {
                         >
                             <div className="flex items-center justify-between">
                                 <div className="flex grow items-center truncate">
-                                    <img
-                                        className="mr-2 h-7 w-7 rounded-full"
-                                        src={DropdownImage01}
-                                        width="28"
-                                        height="28"
-                                        alt="Channel 01"
-                                    />
+                                    <img className="mr-2 h-7 w-7 rounded-full" src={DropdownImage01} width="28" height="28" alt="Channel 01" />
                                     <div className="truncate">Acme Inc.</div>
                                 </div>
-                                <svg
-                                    className="ml-1 h-3 w-3 shrink-0 fill-current text-violet-500"
-                                    viewBox="0 0 12 12"
-                                >
+                                <svg className="ml-1 h-3 w-3 shrink-0 fill-current text-violet-500" viewBox="0 0 12 12">
                                     <path d="M10.28 1.28L3.989 7.575 1.695 5.28A1 1 0 00.28 6.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 1.28z" />
                                 </svg>
                             </div>
@@ -115,13 +86,7 @@ function DropdownSwitch({ align }) {
                         >
                             <div className="flex items-center justify-between">
                                 <div className="flex grow items-center truncate">
-                                    <img
-                                        className="mr-2 h-7 w-7 rounded-full"
-                                        src={DropdownImage02}
-                                        width="28"
-                                        height="28"
-                                        alt="Channel 02"
-                                    />
+                                    <img className="mr-2 h-7 w-7 rounded-full" src={DropdownImage02} width="28" height="28" alt="Channel 02" />
                                     <div className="truncate">Acme Limited</div>
                                 </div>
                             </div>
@@ -135,13 +100,7 @@ function DropdownSwitch({ align }) {
                         >
                             <div className="flex items-center justify-between">
                                 <div className="flex grow items-center truncate">
-                                    <img
-                                        className="mr-2 h-7 w-7 rounded-full"
-                                        src={DropdownImage03}
-                                        width="28"
-                                        height="28"
-                                        alt="Channel 03"
-                                    />
+                                    <img className="mr-2 h-7 w-7 rounded-full" src={DropdownImage03} width="28" height="28" alt="Channel 03" />
                                     <div className="truncate">Acme Srl</div>
                                 </div>
                             </div>

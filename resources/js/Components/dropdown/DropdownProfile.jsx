@@ -14,12 +14,7 @@ function DropdownProfile({ align }) {
     useEffect(() => {
         const clickHandler = ({ target }) => {
             if (!dropdown.current) return;
-            if (
-                !dropdownOpen ||
-                dropdown.current.contains(target) ||
-                trigger.current.contains(target)
-            )
-                return;
+            if (!dropdownOpen || dropdown.current.contains(target) || trigger.current.contains(target)) return;
             setDropdownOpen(false);
         };
         document.addEventListener('click', clickHandler);
@@ -45,21 +40,12 @@ function DropdownProfile({ align }) {
                 onClick={() => setDropdownOpen(!dropdownOpen)}
                 aria-expanded={dropdownOpen}
             >
-                <img
-                    className="h-8 w-8 rounded-full"
-                    src={UserAvatar}
-                    width="32"
-                    height="32"
-                    alt="User"
-                />
+                <img className="h-8 w-8 rounded-full" src={UserAvatar} width="32" height="32" alt="User" />
                 <div className="flex items-center truncate">
                     <span className="ml-2 truncate text-sm font-medium text-gray-600 group-hover:text-gray-800 dark:text-gray-100 dark:group-hover:text-white">
                         Acme Inc.
                     </span>
-                    <svg
-                        className="ml-1 h-3 w-3 shrink-0 fill-current text-gray-400 dark:text-gray-500"
-                        viewBox="0 0 12 12"
-                    >
+                    <svg className="ml-1 h-3 w-3 shrink-0 fill-current text-gray-400 dark:text-gray-500" viewBox="0 0 12 12">
                         <path d="M5.9 11.4L.5 6l1.4-1.4 4 4 4-4L11.3 6z" />
                     </svg>
                 </div>
@@ -75,18 +61,10 @@ function DropdownProfile({ align }) {
                 leaveStart="opacity-100"
                 leaveEnd="opacity-0"
             >
-                <div
-                    ref={dropdown}
-                    onFocus={() => setDropdownOpen(true)}
-                    onBlur={() => setDropdownOpen(false)}
-                >
+                <div ref={dropdown} onFocus={() => setDropdownOpen(true)} onBlur={() => setDropdownOpen(false)}>
                     <div className="mb-1 border-b border-gray-200 px-3 pb-2 pt-0.5 dark:border-gray-700/60">
-                        <div className="font-medium text-gray-800 dark:text-gray-100">
-                            Acme Inc.
-                        </div>
-                        <div className="text-xs italic text-gray-500 dark:text-gray-400">
-                            Administrator
-                        </div>
+                        <div className="font-medium text-gray-800 dark:text-gray-100">Acme Inc.</div>
+                        <div className="text-xs italic text-gray-500 dark:text-gray-400">Administrator</div>
                     </div>
                     <ul>
                         <li>

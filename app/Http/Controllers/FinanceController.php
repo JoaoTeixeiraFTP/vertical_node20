@@ -14,33 +14,26 @@ use Inertia\Response;
 
 final class FinanceController extends Controller
 {
-
-    public function __construct()
-    {
-    }
-
-    // METODOS QUE RENDIRIZAM AS PAGINAS
+    public function __construct() {}
 
     /**
      * Show the application dashboard.
-     *
-     * @return Response
      */
     public function index(): Response
     {
         return Inertia::render('finance/finance-dashboard', [
-            'invoices' => Inertia::defer(fn() => Invoices::fetch()
+            'invoices' => Inertia::defer(fn () => Invoices::fetch()
                 ->token(Auth::user()->get_subscriber->access_token)
                 ->no(Auth::user()->no)
                 ->filter('onlyheaders')
                 ->get()
                 ->wait()),
-            'currentAccount' => Inertia::defer(fn() => CurrentAccount::fetch()
+            'currentAccount' => Inertia::defer(fn () => CurrentAccount::fetch()
                 ->token(Auth::user()->get_subscriber->access_token)
                 ->no(Auth::user()->no)
                 ->get()
                 ->wait()),
-            'receipts' => Inertia::defer(fn() => Receipts::fetch()
+            'receipts' => Inertia::defer(fn () => Receipts::fetch()
                 ->token(Auth::user()->get_subscriber->access_token)
                 ->no(Auth::user()->no)
                 ->get()
@@ -59,8 +52,6 @@ final class FinanceController extends Controller
 
     /**
      * Show the application dashboard.
-     *
-     * @return Response
      */
     public function invoicePage(): Response
     {
@@ -68,18 +59,16 @@ final class FinanceController extends Controller
         $per_page = request()->input('per_page', 15);
 
         return Inertia::render('finance/invoices', [
-            'invoices' => Inertia::defer(fn() => Invoices::fetch()
+            'invoices' => Inertia::defer(fn () => Invoices::fetch()
                 ->token(Auth::user()->get_subscriber->access_token)
                 ->no(Auth::user()->no)
                 ->filter('onlyheaders')
-                ->paginate(perPage: $per_page, page: (int)$page))->merge()
+                ->paginate(perPage: $per_page, page: (int) $page))->merge(),
         ]);
     }
 
     /**
      * Show the application dashboard.
-     *
-     * @return Response
      */
     public function currentAccountPage(): Response
     {
@@ -87,17 +76,15 @@ final class FinanceController extends Controller
         $per_page = request()->input('per_page', 15);
 
         return Inertia::render('finance/current-account', [
-            'currentAccount' => Inertia::defer(fn() => CurrentAccount::fetch()
+            'currentAccount' => Inertia::defer(fn () => CurrentAccount::fetch()
                 ->token(Auth::user()->get_subscriber->access_token)
                 ->no(Auth::user()->no)
-                ->paginate(perPage: $per_page, page: (int)$page))->merge()
+                ->paginate(perPage: $per_page, page: (int) $page))->merge(),
         ]);
     }
 
     /**
      * Show the application dashboard.
-     *
-     * @return Response
      */
     public function receiptsPage(): Response
     {
@@ -105,10 +92,10 @@ final class FinanceController extends Controller
         $per_page = request()->input('per_page', 15);
 
         return Inertia::render('finance/receipts', [
-            'receipt' => Inertia::defer(fn() => Receipts::fetch()
+            'receipt' => Inertia::defer(fn () => Receipts::fetch()
                 ->token(Auth::user()->get_subscriber->access_token)
                 ->no(Auth::user()->no)
-                ->paginate(perPage: $per_page, page: (int)$page))->merge()
+                ->paginate(perPage: $per_page, page: (int) $page))->merge(),
         ]);
     }
 
@@ -118,20 +105,15 @@ final class FinanceController extends Controller
         $per_page = request()->input('per_page', 15);
 
         return Inertia::render('finance/notregularized', [
-            'notregularized' => Inertia::defer(fn() => CurrentAccount::fetch()
+            'notregularized' => Inertia::defer(fn () => CurrentAccount::fetch()
                 ->token(Auth::user()->get_subscriber->access_token)
                 ->no(Auth::user()->no)
-                ->paginate(perPage: $per_page, page: (int)$page))->merge()
+                ->paginate(perPage: $per_page, page: (int) $page))->merge(),
         ]);
     }
 
-
     /**
      * Show the application dashboard.
-     *
-     * @param $document
-     * @param $id
-     * @return Response
      */
     public function documentPage($document, $id): Response
     {
@@ -159,7 +141,7 @@ final class FinanceController extends Controller
         }
 
         return Inertia::render($page, [
-            'document' => Inertia::defer(fn() => $fetch
+            'document' => Inertia::defer(fn () => $fetch
                 ->token(Auth::user()->get_subscriber->access_token)
                 ->get()
                 ->wait()),

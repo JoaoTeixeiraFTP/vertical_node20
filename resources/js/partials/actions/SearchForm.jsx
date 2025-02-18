@@ -4,17 +4,8 @@ function SearchForm({ placeholder = 'Search…' }) {
             <label htmlFor="action-search" className="sr-only">
                 Search
             </label>
-            <input
-                id="action-search"
-                className="form-input bg-white pl-9 dark:bg-gray-800"
-                type="search"
-                placeholder={placeholder}
-            />
-            <button
-                className="group absolute inset-0 right-auto"
-                type="submit"
-                aria-label="Search"
-            >
+            <input id="action-search" className="form-input bg-white pl-9 dark:bg-gray-800" type="search" placeholder={placeholder} />
+            <button className="group absolute inset-0 right-auto" type="submit" aria-label="Search">
                 <svg
                     className="ml-3 mr-2 shrink-0 fill-current text-gray-400 group-hover:text-gray-500 dark:text-gray-500 dark:group-hover:text-gray-400"
                     width="16"

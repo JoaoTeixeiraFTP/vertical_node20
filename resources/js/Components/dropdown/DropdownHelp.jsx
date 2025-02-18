@@ -12,12 +12,7 @@ function DropdownHelp({ align }) {
     useEffect(() => {
         const clickHandler = ({ target }) => {
             if (!dropdown.current) return;
-            if (
-                !dropdownOpen ||
-                dropdown.current.contains(target) ||
-                trigger.current.contains(target)
-            )
-                return;
+            if (!dropdownOpen || dropdown.current.contains(target) || trigger.current.contains(target)) return;
             setDropdownOpen(false);
         };
         document.addEventListener('click', clickHandler);
@@ -52,10 +47,7 @@ function DropdownHelp({ align }) {
                     xmlns="http://www.w3.org/2000/svg"
                 >
                     <path d="M9 7.5a1 1 0 1 0-2 0v4a1 1 0 1 0 2 0v-4ZM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" />
-                    <path
-                        fillRule="evenodd"
-                        d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16Zm6-8A6 6 0 1 1 2 8a6 6 0 0 1 12 0Z"
-                    />
+                    <path fillRule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16Zm6-8A6 6 0 1 1 2 8a6 6 0 0 1 12 0Z" />
                 </svg>
             </button>
 
@@ -69,14 +61,8 @@ function DropdownHelp({ align }) {
                 leaveStart="opacity-100"
                 leaveEnd="opacity-0"
             >
-                <div
-                    ref={dropdown}
-                    onFocus={() => setDropdownOpen(true)}
-                    onBlur={() => setDropdownOpen(false)}
-                >
-                    <div className="px-3 pb-2 pt-1.5 text-xs font-semibold uppercase text-gray-400 dark:text-gray-500">
-                        Need help?
-                    </div>
+                <div ref={dropdown} onFocus={() => setDropdownOpen(true)} onBlur={() => setDropdownOpen(false)}>
+                    <div className="px-3 pb-2 pt-1.5 text-xs font-semibold uppercase text-gray-400 dark:text-gray-500">Need help?</div>
                     <ul>
                         <li>
                             <Link
@@ -84,10 +70,7 @@ function DropdownHelp({ align }) {
                                 to="#0"
                                 onClick={() => setDropdownOpen(!dropdownOpen)}
                             >
-                                <svg
-                                    className="mr-2 h-3 w-3 shrink-0 fill-current text-violet-500"
-                                    viewBox="0 0 12 12"
-                                >
+                                <svg className="mr-2 h-3 w-3 shrink-0 fill-current text-violet-500" viewBox="0 0 12 12">
                                     <rect y="3" width="12" height="9" rx="1" />
                                     <path d="M2 0h8v2H2z" />
                                 </svg>
@@ -100,10 +83,7 @@ function DropdownHelp({ align }) {
                                 to="#0"
                                 onClick={() => setDropdownOpen(!dropdownOpen)}
                             >
-                                <svg
-                                    className="mr-2 h-3 w-3 shrink-0 fill-current text-violet-500"
-                                    viewBox="0 0 12 12"
-                                >
+                                <svg className="mr-2 h-3 w-3 shrink-0 fill-current text-violet-500" viewBox="0 0 12 12">
                                     <path d="M10.5 0h-9A1.5 1.5 0 000 1.5v9A1.5 1.5 0 001.5 12h9a1.5 1.5 0 001.5-1.5v-9A1.5 1.5 0 0010.5 0zM10 7L8.207 5.207l-3 3-1.414-1.414 3-3L5 2h5v5z" />
                                 </svg>
                                 <span>Support Site</span>
@@ -115,10 +95,7 @@ function DropdownHelp({ align }) {
                                 to="#0"
                                 onClick={() => setDropdownOpen(!dropdownOpen)}
                             >
-                                <svg
-                                    className="mr-2 h-3 w-3 shrink-0 fill-current text-violet-500"
-                                    viewBox="0 0 12 12"
-                                >
+                                <svg className="mr-2 h-3 w-3 shrink-0 fill-current text-violet-500" viewBox="0 0 12 12">
                                     <path d="M11.854.146a.5.5 0 00-.525-.116l-11 4a.5.5 0 00-.015.934l4.8 1.921 1.921 4.8A.5.5 0 007.5 12h.008a.5.5 0 00.462-.329l4-11a.5.5 0 00-.116-.525z" />
                                 </svg>
                                 <span>Contact us</span>

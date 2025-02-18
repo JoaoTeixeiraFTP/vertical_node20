@@ -1,13 +1,12 @@
 'use client';
 
-import { BadgeCheck, Bell, ChevronsUpDown, CreditCard, LogOut, Sparkles, UserRound } from 'lucide-react';
+import { ChevronsUpDown, LogOut, UserRound } from 'lucide-react';
 
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuGroup,
     DropdownMenuItem,
-    DropdownMenuLabel,
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from '@/Components/dropdown/dropdown-menu.jsx';

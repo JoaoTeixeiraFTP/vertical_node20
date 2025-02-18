@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
 import { ScrollArea } from '@/Components/ui/scroll-area.jsx';
+import { useEffect, useRef, useState } from 'react';
 
 export default function AutoScrollList({ children, length }) {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -21,12 +21,9 @@ export default function AutoScrollList({ children, length }) {
 
     return (
         <ScrollArea className="h-full w-full rounded-md border">
-            <ul
-                ref={listRef}
-                className="absolute transition-transform duration-1000 ease-in-out">
+            <ul ref={listRef} className="absolute transition-transform duration-1000 ease-in-out">
                 {children}
             </ul>
         </ScrollArea>
     );
 }
-

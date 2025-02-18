@@ -18,7 +18,6 @@ Route::get('/orders', function () {
     return Inertia::render('orders');
 })->middleware(['auth'])->name('orders');
 
-
 Route::middleware('auth')->group(function () {
     // HOME
     Route::get('/home', [HomeController::class, 'index'])->name('home');
@@ -30,7 +29,7 @@ Route::middleware('auth')->group(function () {
         // DASHBOARD
         Route::get('/dashboard', [FinanceController::class, 'index'])->name('finance.dashboard');
 
-        //FATURAS
+        // FATURAS
         Route::get('/invoices', [FinanceController::class, 'invoicePage'])->name('finance.invoices');
         // Conta Corrente
         Route::get('/current-account', [FinanceController::class, 'currentAccountPage'])->name('finance.current-account');
@@ -38,13 +37,12 @@ Route::middleware('auth')->group(function () {
         // Recibos
         Route::get('/receipts', [FinanceController::class, 'receiptsPage'])->name('finance.receipts');
 
-        //Não Regularizado
+        // Não Regularizado
         Route::get('/notregularized', [FinanceController::class, 'notregularizedPage'])->name('finance.notregularized');
 
         Route::get('/document/{document}/{id}', [FinanceController::class, 'documentPage'])->name('finance.documents');
     });
 });
-
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -52,4 +50,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';

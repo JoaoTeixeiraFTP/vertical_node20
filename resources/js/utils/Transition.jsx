@@ -57,44 +57,28 @@ function CSSTransition({
             }}
             onEnter={() => {
                 if (!removeFromDom) nodeRef.current.style.display = null;
-                addClasses(nodeRef.current, [
-                    ...enterClasses,
-                    ...enterStartClasses,
-                ]);
+                addClasses(nodeRef.current, [...enterClasses, ...enterStartClasses]);
             }}
             onEntering={() => {
                 removeClasses(nodeRef.current, enterStartClasses);
                 addClasses(nodeRef.current, enterEndClasses);
             }}
             onEntered={() => {
-                removeClasses(nodeRef.current, [
-                    ...enterEndClasses,
-                    ...enterClasses,
-                ]);
+                removeClasses(nodeRef.current, [...enterEndClasses, ...enterClasses]);
             }}
             onExit={() => {
-                addClasses(nodeRef.current, [
-                    ...leaveClasses,
-                    ...leaveStartClasses,
-                ]);
+                addClasses(nodeRef.current, [...leaveClasses, ...leaveStartClasses]);
             }}
             onExiting={() => {
                 removeClasses(nodeRef.current, leaveStartClasses);
                 addClasses(nodeRef.current, leaveEndClasses);
             }}
             onExited={() => {
-                removeClasses(nodeRef.current, [
-                    ...leaveEndClasses,
-                    ...leaveClasses,
-                ]);
+                removeClasses(nodeRef.current, [...leaveEndClasses, ...leaveClasses]);
                 if (!removeFromDom) nodeRef.current.style.display = 'none';
             }}
         >
-            <Component
-                ref={nodeRef}
-                {...rest}
-                style={{ display: !removeFromDom ? 'none' : null }}
-            >
+            <Component ref={nodeRef} {...rest} style={{ display: !removeFromDom ? 'none' : null }}>
                 {children}
             </Component>
         </ReactCSSTransition>
@@ -107,13 +91,7 @@ function Transition({ show, appear, ...rest }) {
     const isChild = show === undefined;
 
     if (isChild) {
-        return (
-            <CSSTransition
-                appear={parent.appear || !parent.isInitialRender}
-                show={parent.show}
-                {...rest}
-            />
-        );
+        return <CSSTransition appear={parent.appear || !parent.isInitialRender} show={parent.show} {...rest} />;
     }
 
     return (

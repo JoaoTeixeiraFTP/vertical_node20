@@ -52,10 +52,7 @@ function ModalBlank({ children, id, modalOpen, setModalOpen }) {
                 leaveStart="opacity-100 translate-y-0"
                 leaveEnd="opacity-0 translate-y-4"
             >
-                <div
-                    ref={modalContent}
-                    className="max-h-full w-full max-w-lg overflow-auto rounded-lg bg-white shadow-lg dark:bg-gray-800"
-                >
+                <div ref={modalContent} className="max-h-full w-full max-w-lg overflow-auto rounded-lg bg-white shadow-lg dark:bg-gray-800">
                     {children}
                 </div>
             </Transition>

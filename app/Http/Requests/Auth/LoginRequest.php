@@ -46,9 +46,9 @@ class LoginRequest extends FormRequest
     {
         $this->ensureIsNotRateLimited();
 
-        $subscriber = (new SubscriberController())->getSubscriber($this->subscriber_url);
+        $subscriber = (new SubscriberController)->getSubscriber($this->subscriber_url);
 
-        $result = (new UserController())->login($subscriber, $this->subscriber_url, $this->email, $this->password, $this->no);
+        $result = (new UserController)->login($subscriber, $this->subscriber_url, $this->email, $this->password, $this->no);
 
         if (isset($result['data']) && ! Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {
             RateLimiter::hit($this->throttleKey());
