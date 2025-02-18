@@ -24,7 +24,7 @@ export default function Receipts({ receipt }) {
                         <div className="p-2 text-gray-900 dark:text-gray-100">
                             {receipt === undefined
                                 ? <Loading />
-                                : <DataTable columns={columns} data={receipt.data} />}
+                                : <DataTable columns={columns} data={receipt.data}  searchField={'restamp'} typeDocument={'receipts'}/>}
                         </div>
                     </div>
                     <Pagination>

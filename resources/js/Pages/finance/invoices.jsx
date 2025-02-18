@@ -29,7 +29,7 @@ export default function Invoices({ invoices }) {
                         <div className="p-2 text-gray-900 dark:text-gray-100">
                             {invoices === undefined
                                 ? <Loading />
-                                : <DataTable columns={columns} data={invoices.data} />}
+                                : <DataTable columns={columns} data={invoices.data} searchField={'ftstamp'} typeDocument={'invoices'}/>}
                         </div>
                     </div>
                     <Pagination>

@@ -19,7 +19,6 @@ Route::get('/orders', function () {
 })->middleware(['auth'])->name('orders');
 
 
-
 Route::middleware('auth')->group(function () {
     // HOME
     Route::get('/home', [HomeController::class, 'index'])->name('home');
@@ -30,19 +29,21 @@ Route::middleware('auth')->group(function () {
     Route::prefix('/finance')->group(function () {
         // DASHBOARD
         Route::get('/dashboard', [FinanceController::class, 'index'])->name('finance.dashboard');
-        
+
         //FATURAS
         Route::get('/invoices', [FinanceController::class, 'invoicePage'])->name('finance.invoices');
         // Conta Corrente
         Route::get('/current-account', [FinanceController::class, 'currentAccountPage'])->name('finance.current-account');
         Route::get('/current-account/all', [FinanceController::class, 'getAllCurrentAccount'])->name('finance.current-account.all');
         // Recibos
-    Route::get('/receipts', [FinanceController::class, 'receiptsPage'])->name('finance.receipts');
+        Route::get('/receipts', [FinanceController::class, 'receiptsPage'])->name('finance.receipts');
 
-    //Não Regularizado
-    Route::get('/notregularized', [FinanceController::class, 'notRegularizedPage'])->name('finance.notregularized');
-        });
+        //Não Regularizado
+        Route::get('/notregularized', [FinanceController::class, 'notRegularizedPage'])->name('finance.notregularized');
+
+        Route::get('/document/{document}/{id}', [FinanceController::class, 'documentPage'])->name('finance.documents');
     });
+});
 
 
 Route::middleware('auth')->group(function () {
@@ -51,4 +52,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

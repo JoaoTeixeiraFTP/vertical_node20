@@ -2,6 +2,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';
 import { Head } from '@inertiajs/react';
 import { VerticalBarChart } from '@/Components/chart/vertical-bar-chart.jsx';
 import Loading from '@/Components/Loading.jsx';
+import LineAreaChart from '@/Components/chart/line-area-chart.jsx';
 
 export default function FinanceDashboard({ invoices, currentAccount, receipts }) {
     // const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -17,13 +18,13 @@ export default function FinanceDashboard({ invoices, currentAccount, receipts })
     };
 
     const barConfig = {
-        first: {
+        ecred: {
             label: 'Creditos',
-            color: 'var(--chart-2)'
-        },
-        second: {
-            label: 'Debitos',
             color: 'var(--chart-3)'
+        },
+        edeb: {
+            label: 'Debitos',
+            color: 'var(--chart-4)'
         }
     };
 
@@ -32,6 +33,33 @@ export default function FinanceDashboard({ invoices, currentAccount, receipts })
             <Head title="Financeira Dashboard" />
 
             <div className="grid grid-flow-col-dense grid-cols-4 gap-4 p-4 grow">
+                <div className="col-span-2 h-fill">
+                    <div className="overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
+                        <div className="pb-1 pr-4 pl-0 text-gray-900 dark:text-gray-100">
+                            {invoices === undefined
+                                ? <Loading />
+                                : <LineAreaChart
+                                    title={'Faturas'}
+                                    description={''}
+                                    firstLine={'etotal'}
+                                    xfield={'fdata'}
+                                    data={invoices.data}
+                                    config={areaConfig}
+                                    xlabel={'Dia'}
+                                    ylabel={'Valores(€)'}
+                                >
+                                    <div className="flex items-start">
+                                        <div
+                                            className="text-3xl font-bold text-gray-800 dark:text-gray-100 mr-2">9 513
+                                        </div>
+                                        <div
+                                            className="text-sm font-medium text-green-700 px-1.5 bg-green-500/20 rounded-full">+49%
+                                        </div>
+                                    </div>
+                                </LineAreaChart>}
+                        </div>
+                    </div>
+                </div>
                 <div className="col-span-2 h-fill">
                     <div className="overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
                         <div className="pb-1 pr-4 pl-0 text-gray-900 dark:text-gray-100">

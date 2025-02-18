@@ -86,6 +86,7 @@ final class RequestBuilder
     {
         try {
             // Faz a requisição assíncrona
+//            dd($this->endpoint, $this->query);
             $promise = $this->client->requestAsync(
                 method: 'GET',
                 uri: $this->endpoint,

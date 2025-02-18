@@ -19,7 +19,7 @@ import {
 import { useState } from 'react';
 import { hexToRGB } from '@/utils/Utils.js';
 
-export default function LineAreaChart({ title, xlabel, ylabel , config, data,  children  }) {
+export default function LineAreaChart({ title, xlabel, ylabel, firstLine, secondLine , config, data,  children  }) {
 
     return (
         <Card>
@@ -42,16 +42,16 @@ export default function LineAreaChart({ title, xlabel, ylabel , config, data,  c
                     >
                         <defs>
                             <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="0%" stopColor={'rgba('+hexToRGB('#8470FF')+', 1)'} stopOpacity={0.5}/>
-                                <stop offset="75%" stopColor={'rgba('+hexToRGB('#8470FF')+', 0.3)'} stopOpacity={0.15} />
-                                <stop offset="100%" stopColor={'rgba('+hexToRGB('#8470FF')+', 0)'} stopOpacity={0} />
+                                <stop offset="0%" stopColor={'rgba('+hexToRGB('#8470FF')+', 1)'} stopOpacity={1}/>
+                                <stop offset="100%" stopColor={'rgba('+hexToRGB('#8470FF')+', 0.3)'} stopOpacity={1} />
+                                <stop offset="100%" stopColor={'rgba('+hexToRGB('#8470FF')+', 0)'} stopOpacity={1} />
                             </linearGradient>
                             <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="5%" stopColor='#6B7280' stopOpacity={0.1}/>
-                                <stop offset="95%" stopColor='#6B7280' stopOpacity={0}/>
+                                <stop offset="5%" stopColor='#6B7280' stopOpacity={1}/>
+                                <stop offset="95%" stopColor='#6B7280' stopOpacity={1}/>
                             </linearGradient>
                         </defs>
-                        <Legend verticalAlign="end" align={'right'} height={36}/>
+                        <Legend verticalAlign="top" align={'right'} height={36}/>
                         <XAxis
                             dataKey="month"
                             tick={false}
@@ -75,7 +75,7 @@ export default function LineAreaChart({ title, xlabel, ylabel , config, data,  c
                             content={<ChartTooltipContent indicator="dot" />}
                         />
                         <Area
-                            dataKey="second"
+                            dataKey={secondLine}
                             type="natural"
                             fill="url(#colorPv)"
                             fillOpacity={1}
@@ -83,7 +83,7 @@ export default function LineAreaChart({ title, xlabel, ylabel , config, data,  c
                             stackId="a"
                         />
                         <Area
-                            dataKey="first"
+                            dataKey={firstLine}
                             type="monotone"
                             fill="url(#colorUv)"
                             fillOpacity={1}

@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';
 import { Head } from '@inertiajs/react';
@@ -7,29 +7,12 @@ import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, Tabl
 import { VerticalBarChart } from '@/Components/chart/vertical-bar-chart.jsx';
 import Loading from '@/Components/Loading.jsx';
 import News from '@/Components/custom/news.jsx';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 
 export default function Home({ invoices, currentAccount, receipts, news }) {
-    const [areaData, setAreaData] = useState(null);
-    const [barData, setBarData] = useState(null);
 
-    const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
-
-    const chartData = [
-        { month: 'Janeiro', first: 186, second: 80 },
-        { month: 'Fevereiro', first: 305, second: 200 },
-        { month: 'Março', first: 237, second: 120 },
-        { month: 'Abril', first: 73, second: 190 },
-        { month: 'Maio', first: 209, second: 130 },
-        { month: 'Junho', first: 214, second: 140 },
-        { month: 'Julho', first: 186, second: 80 },
-        { month: 'Agosto', first: 305, second: 200 },
-        { month: 'Setembro', first: 237, second: 120 },
-        { month: 'Outrubro', first: 73, second: 190 },
-        { month: 'Novembro', first: 209, second: 130 },
-        { month: 'Dezembro', first: 214, second: 140 },
-    ];
+    const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
 
     const areaConfig = {
         first: {
@@ -46,14 +29,14 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
     };
 
     const barConfig = {
-        first: {
+        ecred: {
             label: 'Desktop',
             color: 'var(--chart-1-1)',
             start: 'var(--chart-1-1)',
             middle: 'var(--chart-1-2)',
             end: 'var(--chart-1-3)'
         },
-        second: {
+        edeb: {
             label: 'Mobile',
             color: 'var(--chart-2)'
         }
@@ -64,7 +47,7 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
         for (const argument of arguments) {
 
         }
-    }
+    };
 
     return (
         <AuthenticatedLayout
@@ -75,35 +58,41 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
                 <div className="col-span-2 h-fill">
                     <div className="overflow-hidden col-span-full bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
                         <div className="text-gray-900 dark:text-gray-100">
-                            <LineAreaChart
-                                title={'Rentatabilidade'}
-                                description={'Showing total visitors for the last 6 months'}
-                                data={chartData}
-                                config={areaConfig}
-                                xlabel={'Meses'}
-                                ylabel={'Valores'}
-                            >
-                                <div className="flex items-start">
-                                    <div
-                                        className="text-3xl font-bold text-gray-800 dark:text-gray-100 mr-2">9 513
+                            {invoices === undefined
+                                ? <Loading />
+                                : <LineAreaChart
+                                    title={'Rentatabilidade'}
+                                    description={'Showing total visitors for the last 6 months'}
+                                    firstLine={'etotal'}
+                                    xfield={'fdata'}
+                                    data={invoices.data}
+                                    config={areaConfig}
+                                    xlabel={'Meses'}
+                                    ylabel={'Valores'}
+                                >
+                                    <div className="flex items-start">
+                                        <div
+                                            className="text-3xl font-bold text-gray-800 dark:text-gray-100 mr-2">9 513
+                                        </div>
+                                        <div
+                                            className="text-sm font-medium text-green-700 px-1.5 bg-green-500/20 rounded-full">+49%
+                                        </div>
                                     </div>
-                                    <div
-                                        className="text-sm font-medium text-green-700 px-1.5 bg-green-500/20 rounded-full">+49%
-                                    </div>
-                                </div>
-                            </LineAreaChart>
+                                </LineAreaChart>}
                         </div>
                     </div>
                 </div>
                 <div className="col-span-2 col-start-3 h-fill">
                     <div className="overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
                         <div className="text-gray-900 dark:text-gray-100">
-                            <VerticalBarChart
+                            {currentAccount === undefined
+                                ? <Loading />
+                            :<VerticalBarChart
                                 title={'Faturação'}
                                 description={'Showing total visitors for the last 6 months'}
-                                yfield={['first', 'second']}
-                                xfield={'month'}
-                                data={chartData}
+                                yfield={['ecred', 'edeb']}
+                                xfield={'datalc'}
+                                data={currentAccount.data}
                                 config={barConfig}
                                 xlabel={'Meses'}
                                 ylabel={'Valores'}
@@ -116,7 +105,7 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
                                         className="text-sm font-medium text-green-700 px-1.5 bg-green-500/20 rounded-full">+49%
                                     </div>
                                 </div>
-                            </VerticalBarChart>
+                            </VerticalBarChart>}
                         </div>
                     </div>
                 </div>
@@ -143,7 +132,7 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
                                                 <TableCell>{ca.edebf}</TableCell>
                                             </TableRow>
                                         ))}
-                                </TableBody>
+                                    </TableBody>
                                 </Table>}
                         </div>
                     </div>

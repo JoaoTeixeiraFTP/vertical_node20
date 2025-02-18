@@ -133,25 +133,32 @@ final class FinanceController extends Controller
      * @param $id
      * @return Response
      */
-    public function getDocument($document, $id): Response
+    public function documentPage($document, $id): Response
     {
         $fetch = null;
+        $page = null;
 
-        if ($document === 'invoices') {
+        if ($document === 'invoices' || $document === 'billing') {
             $fetch = Invoices::fetch()
                 ->ffstamp($id);
+            $page = 'finance/document/invoice-document';
         } elseif ($document === 'current-account') {
             $fetch = CurrentAccount::fetch()
-                ->ccstamp($id);
+                ->ccstamp(trim($id));
+            $page = 'finance/document/account-document';
         } elseif ($document === 'receipts') {
             $fetch = Receipts::fetch()
                 ->restamp($id);
+            $page = 'finance/document/receipt-document';
+        } elseif ($document === 'notregularized') {
+            $fetch = CurrentAccount::fetch()
+                ->ccstamp($id);
+            $page = 'finance/document/notregularized-document';
         }
 
-        return Inertia::render('finance/document', [
+        return Inertia::render($page, [
             'document' => Inertia::defer(fn() => $fetch
                 ->token(Auth::user()->get_subscriber->access_token)
-                ->no(Auth::user()->no)
                 ->get()
                 ->wait()),
         ]);

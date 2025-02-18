@@ -26,7 +26,7 @@ export default function CurrentAccount({currentAccount}) {
                         <div className="p-2 text-gray-900 dark:text-gray-100">
                             {currentAccount === undefined
                                 ? <Loading />
-                                : <DataTable columns={columns} data={currentAccount.data} />}
+                                : <DataTable columns={columns} data={currentAccount.data} searchField={'ccstamp'} typeDocument={'current-account'} />}
                         </div>
                     </div>
                     <Pagination>

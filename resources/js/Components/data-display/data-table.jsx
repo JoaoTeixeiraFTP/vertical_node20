@@ -14,13 +14,19 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table";
+import { router } from '@inertiajs/react';
 
-export function DataTable({ columns, data }) {
+export function DataTable({ columns, data, typeDocument, searchField }) {
     const table = useReactTable({
         data,
         columns,
         getCoreRowModel: getCoreRowModel(),
     });
+
+    const handleRowClick = (typeDocument,id) => {
+        console.log(id);
+        router.get(`/finance/document/${typeDocument}/${id}`);
+    }
 
     return (
         <div className="rounded-md">
@@ -44,8 +50,9 @@ export function DataTable({ columns, data }) {
                 <TableBody>
                     {table.getRowModel().rows?.length ? (
                         table.getRowModel().rows.map((row) => (
-                            <TableRow
+                                <TableRow
                                 className={'hover:border-violet-500 hover:border-l-2'}
+                                onClick={() => handleRowClick(typeDocument, row.original[searchField])}
                                 key={row.id}
                                 data-state={row.getIsSelected() && "selected"}
                             >

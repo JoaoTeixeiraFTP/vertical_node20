@@ -11,7 +11,7 @@ import {
     PaginationPrevious
 } from '@/Components/ui/pagination.jsx';
 
-export default function notregularized({ notregularized }) {
+export default function NotRegularized({ notregularized }) {
     // const [sidebarOpen, setSidebarOpen] = useState(false);
 
     return (
@@ -23,7 +23,7 @@ export default function notregularized({ notregularized }) {
                         <div className="p-2 text-gray-900 dark:text-gray-100">
                             {notregularized === undefined
                                 ? <Loading />
-                                : <DataTable columns={columns} data={notregularized.data} />}
+                                : <DataTable columns={columns} data={notregularized.data}  searchField={'ccstamp'} typeDocument={'notregularized'}/>}
                         </div>
                     </div>
                     <Pagination>
