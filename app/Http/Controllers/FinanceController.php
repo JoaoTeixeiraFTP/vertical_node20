@@ -140,7 +140,8 @@ final class FinanceController extends Controller
 
         if ($document === 'invoices' || $document === 'billing') {
             $fetch = Invoices::fetch()
-                ->ftstamp($id);
+                ->ftstamp($id)
+                ->no(Auth::user()->no);
             $page = 'finance/document/invoice-document';
         } elseif ($document === 'current-account') {
             $fetch = CurrentAccount::fetch()
@@ -148,7 +149,8 @@ final class FinanceController extends Controller
             $page = 'finance/document/account-document';
         } elseif ($document === 'receipts') {
             $fetch = Receipts::fetch()
-                ->restamp($id);
+                ->restamp($id)
+                ->no(Auth::user()->no);
             $page = 'finance/document/receipt-document';
         } elseif ($document === 'notregularized') {
             $fetch = CurrentAccount::fetch()
