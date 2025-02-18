@@ -140,7 +140,7 @@ final class FinanceController extends Controller
 
         if ($document === 'invoices' || $document === 'billing') {
             $fetch = Invoices::fetch()
-                ->ffstamp($id);
+                ->ftstamp($id);
             $page = 'finance/document/invoice-document';
         } elseif ($document === 'current-account') {
             $fetch = CurrentAccount::fetch()

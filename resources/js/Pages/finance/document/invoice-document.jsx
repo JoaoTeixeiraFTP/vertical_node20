@@ -3,6 +3,11 @@ import { Head } from '@inertiajs/react';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';
 
 export default function InvoiceDocument({ document }) {
+    const formatEuro = new Intl.NumberFormat("pt-PT", {
+        style: "currency",
+        currency: "EUR",
+        minimumFractionDigits: 2,
+    })
     return <>
         <AuthenticatedLayout
             header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Faturas</span>}>
@@ -78,7 +83,7 @@ export default function InvoiceDocument({ document }) {
                                             </h3>
                                             <div className="mt-6 overflow-hidden rounded-md">
                                                 <table className="w-full text-left border-collapse">
-                                                    <thead className="text-xs uppercase text-gray-400 bg-gray-400">
+                                                    <thead className="text-xs uppercase text-gray-400 bg-gray-400 dark:text-gray-600">
                                                     <tr>
                                                         <th className="p-2 text-left first:rounded-l-md">Descrição</th>
                                                         <th className="p-2 text-left">Quantidade</th>
@@ -92,30 +97,35 @@ export default function InvoiceDocument({ document }) {
                                                     {document.data[0].fi.map((line) => (
                                                         <tr className="border-b border-gray-200 dark:border-gray-300">
                                                             <td className="py-3 font-medium">{line.design}</td>
+                                                            <td className="py-3 font-medium">{line.qtt}</td>
+                                                            <td className="py-3 font-medium">{formatEuro.format(line.epv)}</td>
+                                                            <td className="py-3 font-medium">{formatEuro.format(line.desconto)}</td>
+                                                            <td className="py-3 font-medium">{formatEuro.format(line.etiliquido)}</td>
+                                                            <td className="py-3 font-medium">{line.iva}%</td>
                                                         </tr>
                                                     ))}
                                                     </tbody>
-                                                    <tfoot>
-                                                    {/*<tr className="border-t border-gray-200 dark:border-gray-300">*/}
-                                                    {/*    <td colSpan="5" className="py-3 text-right font-bold text-sm">Subtotal</td>*/}
-                                                    {/*    <td className="py-3 text-sm dark:text-white">{ number_format(array_sum(array_column(document.data[0]['fi'], 'etiliquido')) ?? 0, 2, ',', '.') } €</td>*/}
-                                                    {/*</tr>*/}
-                                                    {/*<tr className="dark:border-gray-300">*/}
-                                                    {/*    <td colSpan="5" className="py-3 text-right font-bold text-sm">IVA</td>*/}
-                                                    {/*    <td className="py-3 text-sm dark:text-white">{ number_format(array_sum(array_column(document.data[0]['fi'], 'iva')) ?? 0, 2, ',', '.') } €</td>*/}
-                                                    {/*</tr>*/}
-                                                    {/*<tr className="dark:border-gray-300">*/}
-                                                    {/*    <td colSpan="5" className="py-3 text-right font-bold text-sm">Desconto</td>*/}
-                                                    {/*    <td className="py-3 text-sm dark:text-white">{ number_format(array_sum(array_column(document.data[0]['fi'], 'desconto')) ?? 0, 2, ',', '.') } €</td>*/}
-                                                    {/*</tr>*/}
-                                                    <tr>
-                                                        <td colSpan="5" className="py-3 text-right font-bold">Total</td>
-                                                        {/*<td className="py-3 dark:text-white">{ number_format(array_sum(array_map(function($linha) {*/}
-                                                        {/*    return ($linha['etiliquido'] ?? 0) - ($linha['desconto'] ?? 0);*/}
-                                                        {/*}, document.data[0]['fi'])) ?? 0, 2, ',', '.') } €</td>*/}
-                                                    </tr>
-                                                    </tfoot>
                                                 </table>
+                                                <div className="w-full flex justify-end">
+                                                    <div className="w-1/4">
+                                                        <div className="flex justify-between">
+                                                            <span  className="py-3 text-right font-bold text-sm me-2 w-1/2">Subtotal:</span>
+                                                            <span className="py-3 text-right text-sm dark:text-white w-1/2">{formatEuro.format(document.data[0].fi.reduce((n, {etiliquido}) => n + etiliquido, 0))}</span>
+                                                        </div>
+                                                        <div className="flex justify-between">
+                                                            <span className="py-3 text-right font-bold text-sm w-1/2">IVA:</span>
+                                                            <span className="py-3 text-right text-sm dark:text-white w-1/2">{formatEuro.format(document.data[0].fi.reduce((n, {iva}) => n + iva, 0))}</span>
+                                                        </div>
+                                                        <div className="flex justify-between">
+                                                            <span className="py-3 text-right font-bold text-sm w-1/2">Desconto:</span>
+                                                            <span className="py-3 text-right text-sm dark:text-white w-1/2">{formatEuro.format(document.data[0].fi.reduce((n, {desconto}) => n + desconto, 0))}</span>
+                                                        </div>
+                                                        <div className="flex justify-between font-bold mt-2">
+                                                            <span className="py-3 text-right font-bold w-1/2">Total:</span>
+                                                            <span className="py-3 text-right text-sm dark:text-white w-1/2">{formatEuro.format(document.data[0].fi.reduce((n, { etiliquido ,desconto }) => n + (etiliquido - desconto), 0))}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </section>}
                                 </div>

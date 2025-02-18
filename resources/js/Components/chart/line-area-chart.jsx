@@ -19,7 +19,7 @@ import {
 import { useState } from 'react';
 import { hexToRGB } from '@/utils/Utils.js';
 
-export default function LineAreaChart({ title, xlabel, ylabel, firstLine, secondLine , config, data,  children  }) {
+export default function LineAreaChart({ title, xlabel, ylabel, xfield, firstLine, secondLine , config, data,  children  }) {
 
     return (
         <Card>
@@ -31,13 +31,13 @@ export default function LineAreaChart({ title, xlabel, ylabel, firstLine, second
                 </CardDescription>
             </CardHeader>
             <CardContent>
-                <ChartContainer config={config}>
+                <ChartContainer config={config} >
                     <AreaChart
                         accessibilityLayer
                         data={data}
                         margin={{
-                            left: 8,
-                            right: 8,
+                            left: 4,
+                            right: 4,
                         }}
                     >
                         <defs>
@@ -53,22 +53,22 @@ export default function LineAreaChart({ title, xlabel, ylabel, firstLine, second
                         </defs>
                         <Legend verticalAlign="top" align={'right'} height={36}/>
                         <XAxis
-                            dataKey="month"
-                            tick={false}
+                            dataKey={xfield}
+                            tick={true}
                             tickLddine={false}
                             axisLine={false}
-                            tickMargin={0}
+                            tickMargin={5}
                         >
-                            <Label value={xlabel} fontSize={18} offset={0} position="insideBottom" />
+                            <Label value={xlabel} fontSize={18} offset={-5} position="insideBottom" />
                         </XAxis>
                         <YAxis
-                            tick={false}
+                            tick={true}
                             tickSize={0}
                             tickLine={false}
                             axisLine={false}
-                            tickMargin={0}
+                            tickMargin={5}
                         >
-                            <Label angle={-90} fontSize={18} value={ylabel} offset={20} position="insideLeft" />
+                            <Label angle={-90} fontSize={18} value={ylabel} offset={5} position="insideLeft"/>
                         </YAxis>
                         <ChartTooltip
                             cursor={false}

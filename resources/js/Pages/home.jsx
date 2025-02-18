@@ -8,6 +8,7 @@ import { VerticalBarChart } from '@/Components/chart/vertical-bar-chart.jsx';
 import Loading from '@/Components/Loading.jsx';
 import News from '@/Components/custom/news.jsx';
 import { useState } from 'react';
+import AutoScrollList from '@/Components/auto-scroll-list.jsx';
 
 
 export default function Home({ invoices, currentAccount, receipts, news }) {
@@ -115,25 +116,15 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
                         <div className="p-6 text-gray-900 dark:text-gray-100">
                             {currentAccount === undefined
                                 ? <Loading />
-                                : <Table>
-                                    <TableCaption>A list of your recent invoices.</TableCaption>
-                                    <TableHeader>
-                                        <TableRow>
-                                            <TableHead className="w-[100px]">nrdoc</TableHead>
-                                            <TableHead>cmdesc</TableHead>
-                                            <TableHead>edebf</TableHead>
-                                        </TableRow>
-                                    </TableHeader>
-                                    <TableBody>
+                                : <AutoScrollList>
                                         {currentAccount.data.map((ca) => (
-                                            <TableRow key={ca.nrdoc}>
-                                                <TableCell className="first:font-medium">{ca.nrdoc}</TableCell>
-                                                <TableCell>{ca.cmdesc}</TableCell>
-                                                <TableCell>{ca.edebf}</TableCell>
-                                            </TableRow>
+                                            <li key={ca.nrdoc}>
+                                                <span className="first:font-medium">{ca.nrdoc}</span>
+                                                <span>{ca.cmdesc}</span>
+                                                <span>{ca.edebf}</span>
+                                            </li>
                                         ))}
-                                    </TableBody>
-                                </Table>}
+                                </AutoScrollList>}
                         </div>
                     </div>
                 </div>
