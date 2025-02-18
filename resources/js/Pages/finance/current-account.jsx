@@ -48,7 +48,7 @@ export default function CurrentAccount({currentAccount}) {
                                     {currentAccount.links.map((link, index) =>
                                         index > 0 && index < currentAccount.last_page + 1
                                             ? <PaginationItem>
-                                                <PaginationLink isActive={(currentAccount.current_page === index)} className={'active:bg-violet-500 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-300 active:text-white  border-gray-200 dark:border-gray-700/60"'} href={link.url}>{link.label}</PaginationLink>
+                                                <PaginationLink key={index} isActive={(currentAccount.current_page === index)} className={'active:bg-violet-500 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-300 active:text-white  border-gray-200 dark:border-gray-700/60"'} href={link.url}>{link.label}</PaginationLink>
                                             </PaginationItem>
                                             : <span></span>
                                     )}</div>

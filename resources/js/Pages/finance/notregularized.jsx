@@ -2,7 +2,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';
 import { Head } from '@inertiajs/react';
 import Loading from '@/Components/Loading.jsx';
 import { DataTable } from '@/Components/data-display/data-table.jsx';
-import { columns } from '@/data/notregularized.ts';
+import { columns } from '@/data/NotRegularized.ts';
 import {
     Pagination,
     PaginationContent, PaginationEllipsis,

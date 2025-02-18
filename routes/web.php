@@ -39,7 +39,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/receipts', [FinanceController::class, 'receiptsPage'])->name('finance.receipts');
 
         //Não Regularizado
-        Route::get('/notregularized', [FinanceController::class, 'notRegularizedPage'])->name('finance.notregularized');
+        Route::get('/notregularized', [FinanceController::class, 'notregularizedPage'])->name('finance.notregularized');
 
         Route::get('/document/{document}/{id}', [FinanceController::class, 'documentPage'])->name('finance.documents');
     });
