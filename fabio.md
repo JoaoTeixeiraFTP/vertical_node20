@@ -1,7 +1,3 @@
-### Site
-
-- Font
-
 
 ### Sidebar
 
@@ -17,7 +13,6 @@
 - Area
 - Faturas
 - Label nos eixos, meses do ano 3 Letras no eixo Y
-- Retirar alguma da opacidade
 - Numero na descrição mais pequeno
 
 ### Card 2
@@ -38,7 +33,6 @@
 - Conta Corrente
 - Apresentar apenas não regularizados
 - Total de não regularizado no fundo
-- Adicionar scroll ao card
 
 ### Card 5
 
