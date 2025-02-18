@@ -20,15 +20,14 @@ export const columns: ColumnDef<Object>[] = [
         header: "Vencimento",
     },
     {
-        accessorKey: "datalc",
+        id: "idadevc",
         header: "Idade vc",
-        cell: ({ getValue }) => {
-            const datalc = getValue();
-            if (!datalc) return "-";
+        accessorFn: (row) => {
+            const datalc = row['datalc'] ?? "-";
 
             const hoje = new Date();
             const dataLancamento = new Date(datalc);
-            const diffDays = Math.floor((hoje - dataLancamento) / (1000 * 60 * 60 * 24));
+            const diffDays = Math.floor((hoje.getTime() - dataLancamento.getTime()) / (1000 * 60 * 60 * 24));
 
             return diffDays;
         }
