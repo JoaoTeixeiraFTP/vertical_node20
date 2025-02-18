@@ -139,7 +139,7 @@ final class FinanceController extends Controller
 
         if ($document === 'invoices') {
             $fetch = Invoices::fetch()
-                ->ffstamp($id);
+                ->ftstamp($id);
         } elseif ($document === 'current-account') {
             $fetch = CurrentAccount::fetch()
                 ->ccstamp($id);
