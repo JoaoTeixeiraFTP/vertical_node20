@@ -47,10 +47,9 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
                 <div className="h-fill col-span-2">
                     <div className="col-span-full overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
                         <div className="text-gray-900 dark:text-gray-100">
-                            {invoices === undefined ? (
-                                <Loading />
-                            ) : (
-                                <LineAreaChart
+                            {invoices === undefined
+                                ? <Loading />
+                                : <LineAreaChart
                                     title={'Rentatabilidade'}
                                     description={'Showing total visitors for the last 6 months'}
                                     firstLine={'etotal'}
@@ -64,8 +63,7 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
                                         <div className="mr-2 text-3xl font-bold text-gray-800 dark:text-gray-100">9 513</div>
                                         <div className="rounded-full bg-green-500/20 px-1.5 text-sm font-medium text-green-700">+49%</div>
                                     </div>
-                                </LineAreaChart>
-                            )}
+                                </LineAreaChart>}
                         </div>
                     </div>
                 </div>
