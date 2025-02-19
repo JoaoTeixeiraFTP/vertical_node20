@@ -19,7 +19,7 @@ export default function InvoiceDocument({ document }) {
 
     return (
         <>
-            <AuthenticatedLayout header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Faturas</span>}>
+            <AuthenticatedLayout header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Detalhe Faturas</span>}>
                 <Head title="Faturas" />
 
                 <div className="">
@@ -93,17 +93,25 @@ export default function InvoiceDocument({ document }) {
                                                     <table id={'table-document'} className="w-full border-collapse text-left">
                                                         <thead className="bg-gray-400 text-xs uppercase text-gray-400 dark:text-gray-600">
                                                             <tr>
+                                                                <th className="p-2 text-left first:rounded-l-md">Referência</th>
                                                                 <th className="p-2 text-left first:rounded-l-md">Descrição</th>
                                                                 <th className="p-2 text-left">Quantidade</th>
-                                                                <th className="p-2 text-left">Preço por Unidade</th>
-                                                                <th className="p-2 text-left">Desconto</th>
+                                                                <th className="p-2 text-left">Pr.Unit</th>
+                                                                <th className="p-2 text-left">Dsc 1</th>
+                                                                <th className="p-2 text-left">Dsc2</th>
                                                                 <th className="p-2 text-left">Total</th>
-                                                                <th className="p-2 text-left last:rounded-r-md">IVA</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
                                                             {document.data[0].fi.map((line) => (
                                                                 <tr className="border-b border-gray-200 dark:border-gray-300">
+                                                                    <td className="py-3 font-medium">{line.ref}</td>
+                                                                    <td className="py-3 font-medium">{line.design}</td>
+                                                                    <td className="py-3 font-medium">{line.qtt}</td>
+                                                                    <td className="py-3 font-medium">{formatEuro.format(line.epv)}</td>
+                                                                    <td className="py-3 font-medium">{(line.desconto)}</td>
+                                                                    <td className="py-3 font-medium">{line.desc2}</td>
+                                                                    <td className="py-3 font-medium">{formatEuro.format(line.etiliquido)}</td>
                                                                     <td className="py-3 text-[0.95em] font-medium">{line.design}</td>
                                                                     <td className="py-3 text-[0.95em] font-medium">{line.qtt}</td>
                                                                     <td className="py-3 text-[0.95em] font-medium">{formatEuro.format(line.epv)}</td>
@@ -160,7 +168,7 @@ export default function InvoiceDocument({ document }) {
                                         )}
                                     </div>
 
-                                    <footer id={'card-footer'} className="mt-6">
+                                    <footer className="mt-6">
                                         <div className="flex items-center justify-between border-t border-gray-200 pt-4 dark:border-gray-300">
                                             <button
                                                 className="btn bg-gray-400 text-white hover:bg-gray-600 dark:bg-gray-400 dark:hover:bg-gray-600"
@@ -168,10 +176,7 @@ export default function InvoiceDocument({ document }) {
                                             >
                                                 Voltar
                                             </button>
-                                            <button
-                                                onClick={() => prindDocument()}
-                                                className="btn ml-3 bg-gray-400 text-white hover:bg-gray-600 dark:bg-gray-400 dark:hover:bg-gray-600"
-                                            >
+                                            <button className="btn ml-3 bg-gray-400 text-white hover:bg-gray-600 dark:bg-gray-400 dark:hover:bg-gray-600">
                                                 Imprimir
                                             </button>
                                         </div>
