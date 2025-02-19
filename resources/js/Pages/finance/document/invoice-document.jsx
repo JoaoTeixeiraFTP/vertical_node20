@@ -88,12 +88,6 @@ export default function InvoiceDocument({ document }) {
                                                                 <th className="p-2 text-left">Dsc 1</th>
                                                                 <th className="p-2 text-left">Dsc2</th>
                                                                 <th className="p-2 text-left">Total</th>
-                                                                {/* <th className="p-2 text-left first:rounded-l-md">Descrição</th>
-                                                                <th className="p-2 text-left">Quantidade</th>
-                                                                <th className="p-2 text-left">Preço por Unidade</th>
-                                                                <th className="p-2 text-left">Desconto</th>
-                                                                <th className="p-2 text-left">Total</th>
-                                                                <th className="p-2 text-left last:rounded-r-md">IVA</th> */}
                                                             </tr>
                                                         </thead>
                                                         <tbody>
@@ -106,12 +100,6 @@ export default function InvoiceDocument({ document }) {
                                                                     <td className="py-3 font-medium">{formatEuro.format(line.desconto)}</td>
                                                                     <td className="py-3 font-medium">{formatEuro.format(line.desc2)}</td>
                                                                     <td className="py-3 font-medium">{formatEuro.format(line.etiliquido)}</td>
-                                                                    {/* <td className="py-3 font-medium">{line.design}</td>
-                                                                    <td className="py-3 font-medium">{line.qtt}</td>
-                                                                    <td className="py-3 font-medium">{formatEuro.format(line.epv)}</td>
-                                                                    <td className="py-3 font-medium">{formatEuro.format(line.desconto)}</td>
-                                                                    <td className="py-3 font-medium">{formatEuro.format(line.etiliquido)}</td>
-                                                                    <td className="py-3 font-medium">{line.iva}%</td> */}
                                                                 </tr>
                                                             ))}
                                                         </tbody>
