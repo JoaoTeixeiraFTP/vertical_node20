@@ -11,14 +11,14 @@ export default function AuthenticatedLayout({ header, children }) {
     const user = usePage().props.auth.user;
     return (
         <ThemeProvider>
-            <div className="flex h-[100dvh] overflow-hidden bg-gray-100 dark:bg-gray-900">
-                <SidebarProvider className="w-full grow">
+            <div className="flex h-[100dvh] overflow-hidden bg-gray-100 dark:bg-gray-900 print:bg-white">
+                <SidebarProvider id={'sidebar-provider'} className="w-full grow">
                     <AppSidebar />
-                    <main className="relative flex w-full flex-1 grow flex-col overflow-y-auto overflow-x-hidden">
+                    <main id={'main-page'} className="relative flex w-full flex-1 grow flex-col overflow-y-auto overflow-x-hidden">
                         <AppHeader user={user} />
                         <SidebarTrigger />
                         {header && (
-                            <header className="mb-4 sm:mb-0">
+                            <header id={'page-header'} className="mb-4 sm:mb-0">
                                 <div className="mx-auto px-4 py-2 sm:px-6 lg:px-12">
                                     <div className="grid h-full overflow-hidden sm:mb-8 sm:flex sm:items-center sm:justify-between">
                                         {/* Left: Title */}

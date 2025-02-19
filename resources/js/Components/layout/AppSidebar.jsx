@@ -55,10 +55,10 @@ export function AppSidebar({ ...props }) {
     data.user = usePage().props.auth.user;
 
     return (
-        <Sidebar collapsible="icon" {...props}>
+        <Sidebar id={'app-sidebar'} collapsible="icon" {...props}>
             <SidebarHeader className={'mb-12 justify-between px-4'}>
                 <ApplicationLogo />
-                <SidebarRail />
+                <SidebarRail id={'sidebar-toggle'} />
             </SidebarHeader>
             <SidebarContent>
                 <div className="grid gap-2 px-4">
