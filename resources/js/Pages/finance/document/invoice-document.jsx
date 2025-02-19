@@ -79,7 +79,7 @@ export default function InvoiceDocument({ document }) {
                                                 </h3>
                                                 <div className="mt-6 overflow-hidden rounded-md">
                                                     <table className="w-full border-collapse text-left">
-                                                        <thead className="bg-gray-400 text-xs uppercase text-gray-400 dark:text-gray-600">
+                                                        <thead className="bg-gray-400 text-xs uppercase text-gray-400 text-white dark:text-white">
                                                             <tr>
                                                                 <th className="p-2 text-left first:rounded-l-md">Referência</th>
                                                                 <th className="p-2 text-left first:rounded-l-md">Descrição</th>
@@ -97,8 +97,8 @@ export default function InvoiceDocument({ document }) {
                                                                     <td className="py-3 font-medium">{line.design}</td>
                                                                     <td className="py-3 font-medium">{line.qtt}</td>
                                                                     <td className="py-3 font-medium">{formatEuro.format(line.epv)}</td>
-                                                                    <td className="py-3 font-medium">{formatEuro.format(line.desconto)}</td>
-                                                                    <td className="py-3 font-medium">{formatEuro.format(line.desc2)}</td>
+                                                                    <td className="py-3 font-medium">{(line.desconto)}</td>
+                                                                    <td className="py-3 font-medium">{line.desc2}</td>
                                                                     <td className="py-3 font-medium">{formatEuro.format(line.etiliquido)}</td>
                                                                 </tr>
                                                             ))}
@@ -141,7 +141,7 @@ export default function InvoiceDocument({ document }) {
                                     <footer className="mt-6">
                                         <div className="flex items-center justify-between border-t border-gray-200 pt-4 dark:border-gray-300">
                                             <button
-                                                className="btn bg-gray-400 text-white hover:bg-gray-600 dark:bg-gray-400 dark:text-gray-300 dark:hover:bg-gray-600"
+                                                className="btn ml-3 bg-gray-400 text-white hover:bg-gray-600 dark:bg-gray-400 dark:hover:bg-gray-600"
                                                 onClick="history.back()"
                                             >
                                                 Voltar
