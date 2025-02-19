@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import placeholder from '../../../../public/images/placeholder.jpg'
 
 export default function News({ result }) {
     const [businessIndex, setBusinessIndex] = useState(0);
@@ -73,7 +74,7 @@ export default function News({ result }) {
                                 <div key={index} className={`w-80 flex-shrink-0 ${index !== techCrunchIndex && 'hidden'}`}>
                                     <div className="flex items-center space-x-3 py-2">
                                         <img
-                                            src={article.img || '/images/placeholder.jpg'}
+                                            src={article.img ?? placeholder}
                                             alt="Imagem"
                                             className="h-16 w-16 rounded-md object-cover"
                                         />
