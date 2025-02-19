@@ -8,21 +8,33 @@ export default function InvoiceDocument({ document }) {
         currency: 'EUR',
         minimumFractionDigits: 2,
     });
+
+    function prindDocument() {
+        // var printContents = this.$refs.container.innerHTML;
+        // var originalContents = document.body.innerHTML;
+        // document.body.innerHTML = printContents;
+        window.print();
+        // document.body.innerHTML = originalContents;
+    }
+
     return (
         <>
             <AuthenticatedLayout header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Faturas</span>}>
                 <Head title="Faturas" />
 
                 <div className="">
-                    <div className="mx-auto px-4 py-2 sm:px-6 lg:px-12">
-                        <div className="overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
+                    <div id={'page-document'} className="mx-auto px-4 py-2 sm:px-6 lg:px-12">
+                        <div id={'card-page'} className="overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
                             <div className="p-2 text-gray-900 dark:text-gray-100">
-                                <div className="mx-auto max-w-5xl grow rounded-md bg-[#fffff7] p-6 shadow-lg shadow-gray-300/50 dark:bg-gray-700 dark:shadow-gray-900/50">
+                                <div
+                                    id={'card-document'}
+                                    className="mx-auto max-w-5xl grow rounded-md bg-[#fffff7] p-6 shadow-lg shadow-gray-300/50 dark:bg-gray-700 dark:shadow-gray-900/50"
+                                >
                                     <div className="space-y-8 p-6">
                                         {document === undefined ? (
                                             <Loading />
                                         ) : (
-                                            <section>
+                                            <section id={'document-header'}>
                                                 <div className="flex items-center">
                                                     <div className="flex w-1/2 flex-col">
                                                         <div className="text-sm text-gray-600 dark:text-gray-400">Nome</div>
@@ -73,12 +85,12 @@ export default function InvoiceDocument({ document }) {
                                         {document === undefined ? (
                                             <Loading />
                                         ) : (
-                                            <section>
+                                            <section id={'document-lines'}>
                                                 <h3 className="mb-6 border-b border-gray-300 pb-3 text-xl font-extrabold leading-snug text-gray-800 dark:border-gray-300 dark:text-gray-100">
                                                     Linhas
                                                 </h3>
                                                 <div className="mt-6 overflow-hidden rounded-md">
-                                                    <table className="w-full border-collapse text-left">
+                                                    <table id={'table-document'} className="w-full border-collapse text-left">
                                                         <thead className="bg-gray-400 text-xs uppercase text-gray-400 dark:text-gray-600">
                                                             <tr>
                                                                 <th className="p-2 text-left first:rounded-l-md">Descrição</th>
@@ -92,35 +104,39 @@ export default function InvoiceDocument({ document }) {
                                                         <tbody>
                                                             {document.data[0].fi.map((line) => (
                                                                 <tr className="border-b border-gray-200 dark:border-gray-300">
-                                                                    <td className="py-3 font-medium">{line.design}</td>
-                                                                    <td className="py-3 font-medium">{line.qtt}</td>
-                                                                    <td className="py-3 font-medium">{formatEuro.format(line.epv)}</td>
-                                                                    <td className="py-3 font-medium">{formatEuro.format(line.desconto)}</td>
-                                                                    <td className="py-3 font-medium">{formatEuro.format(line.etiliquido)}</td>
-                                                                    <td className="py-3 font-medium">{line.iva}%</td>
+                                                                    <td className="py-3 text-[0.95em] font-medium">{line.design}</td>
+                                                                    <td className="py-3 text-[0.95em] font-medium">{line.qtt}</td>
+                                                                    <td className="py-3 text-[0.95em] font-medium">{formatEuro.format(line.epv)}</td>
+                                                                    <td className="py-3 text-[0.95em] font-medium">
+                                                                        {formatEuro.format(line.desconto)}
+                                                                    </td>
+                                                                    <td className="py-3 text-[0.95em] font-medium">
+                                                                        {formatEuro.format(line.etiliquido)}
+                                                                    </td>
+                                                                    <td className="py-3 text-[0.95em] font-medium">{line.iva}%</td>
                                                                 </tr>
                                                             ))}
                                                         </tbody>
                                                     </table>
-                                                    <div className="flex w-full justify-end">
-                                                        <div className="w-1/4">
-                                                            <div className="flex justify-between">
+                                                    <div className="flex w-full justify-end print:m-4">
+                                                        <div id={'document-footer'} className="w-2/4 print:pe-1">
+                                                            <div className="document-footer-content flex justify-between print:pe-2">
                                                                 <span className="me-2 w-1/2 py-3 text-right text-sm font-bold">Subtotal:</span>
-                                                                <span className="w-1/2 py-3 text-right text-sm dark:text-white">
+                                                                <span className="text-md w-1/2 py-3 text-right dark:text-white">
                                                                     {formatEuro.format(
                                                                         document.data[0].fi.reduce((n, { etiliquido }) => n + etiliquido, 0),
                                                                     )}
                                                                 </span>
                                                             </div>
-                                                            <div className="flex justify-between">
+                                                            <div className="document-footer-content flex justify-between print:pe-2">
                                                                 <span className="w-1/2 py-3 text-right text-sm font-bold">IVA:</span>
-                                                                <span className="w-1/2 py-3 text-right text-sm dark:text-white">
+                                                                <span className="text-md w-1/2 py-3 text-right dark:text-white">
                                                                     {formatEuro.format(document.data[0].fi.reduce((n, { iva }) => n + iva, 0))}
                                                                 </span>
                                                             </div>
-                                                            <div className="flex justify-between">
+                                                            <div className="document-footer-content flex justify-between print:pe-2">
                                                                 <span className="w-1/2 py-3 text-right text-sm font-bold">Desconto:</span>
-                                                                <span className="w-1/2 py-3 text-right text-sm dark:text-white">
+                                                                <span className="text-md w-1/2 py-3 text-right dark:text-white">
                                                                     {formatEuro.format(
                                                                         document.data[0].fi.reduce((n, { desconto }) => n + desconto, 0),
                                                                     )}
@@ -128,7 +144,7 @@ export default function InvoiceDocument({ document }) {
                                                             </div>
                                                             <div className="mt-2 flex justify-between font-bold">
                                                                 <span className="w-1/2 py-3 text-right font-bold">Total:</span>
-                                                                <span className="w-1/2 py-3 text-right text-sm dark:text-white">
+                                                                <span className="text-md w-1/2 py-3 text-right dark:text-white">
                                                                     {formatEuro.format(
                                                                         document.data[0].fi.reduce(
                                                                             (n, { etiliquido, desconto }) => n + (etiliquido - desconto),
@@ -144,7 +160,7 @@ export default function InvoiceDocument({ document }) {
                                         )}
                                     </div>
 
-                                    <footer className="mt-6">
+                                    <footer id={'card-footer'} className="mt-6">
                                         <div className="flex items-center justify-between border-t border-gray-200 pt-4 dark:border-gray-300">
                                             <button
                                                 className="btn bg-gray-400 text-white hover:bg-gray-600 dark:bg-gray-400 dark:hover:bg-gray-600"
@@ -152,7 +168,10 @@ export default function InvoiceDocument({ document }) {
                                             >
                                                 Voltar
                                             </button>
-                                            <button className="btn ml-3 bg-gray-400 text-white hover:bg-gray-600 dark:bg-gray-400 dark:hover:bg-gray-600">
+                                            <button
+                                                onClick={() => prindDocument()}
+                                                className="btn ml-3 bg-gray-400 text-white hover:bg-gray-600 dark:bg-gray-400 dark:hover:bg-gray-600"
+                                            >
                                                 Imprimir
                                             </button>
                                         </div>

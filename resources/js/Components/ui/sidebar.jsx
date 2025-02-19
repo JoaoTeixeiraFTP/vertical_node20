@@ -192,6 +192,7 @@ const SidebarTrigger = React.forwardRef(({ className, onClick, ...props }, ref) 
 
     return (
         <Button
+            id={'sidebar-trigger'}
             ref={ref}
             data-sidebar="trigger"
             variant="ghost"
