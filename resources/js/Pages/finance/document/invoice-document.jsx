@@ -105,13 +105,7 @@ export default function InvoiceDocument({ document }) {
                                                         <tbody>
                                                             {document.data[0].fi.map((line) => (
                                                                 <tr className="border-b border-gray-200 dark:border-gray-300">
-                                                                    <td className="py-3 font-medium">{line.ref}</td>
-                                                                    <td className="py-3 font-medium">{line.design}</td>
-                                                                    <td className="py-3 font-medium">{line.qtt}</td>
-                                                                    <td className="py-3 font-medium">{formatEuro.format(line.epv)}</td>
-                                                                    <td className="py-3 font-medium">{(line.desconto)}</td>
-                                                                    <td className="py-3 font-medium">{line.desc2}</td>
-                                                                    <td className="py-3 font-medium">{formatEuro.format(line.etiliquido)}</td>
+                                                                    <td className="py-3 text-[0.95em] font-medium">{line.ref}</td>
                                                                     <td className="py-3 text-[0.95em] font-medium">{line.design}</td>
                                                                     <td className="py-3 text-[0.95em] font-medium">{line.qtt}</td>
                                                                     <td className="py-3 text-[0.95em] font-medium">{formatEuro.format(line.epv)}</td>
