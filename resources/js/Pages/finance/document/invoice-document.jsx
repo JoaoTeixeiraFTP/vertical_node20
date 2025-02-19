@@ -10,7 +10,7 @@ export default function InvoiceDocument({ document }) {
     });
     return (
         <>
-            <AuthenticatedLayout header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Faturas</span>}>
+            <AuthenticatedLayout header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Detalhe Faturas</span>}>
                 <Head title="Faturas" />
 
                 <div className="">
