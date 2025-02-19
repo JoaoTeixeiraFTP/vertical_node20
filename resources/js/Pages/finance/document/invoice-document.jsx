@@ -81,23 +81,37 @@ export default function InvoiceDocument({ document }) {
                                                     <table className="w-full border-collapse text-left">
                                                         <thead className="bg-gray-400 text-xs uppercase text-gray-400 dark:text-gray-600">
                                                             <tr>
+                                                                <th className="p-2 text-left first:rounded-l-md">Referência</th>
                                                                 <th className="p-2 text-left first:rounded-l-md">Descrição</th>
+                                                                <th className="p-2 text-left">Quantidade</th>
+                                                                <th className="p-2 text-left">Pr.Unit</th>
+                                                                <th className="p-2 text-left">Dsc 1</th>
+                                                                <th className="p-2 text-left">Dsc2</th>
+                                                                <th className="p-2 text-left">Total</th>
+                                                                {/* <th className="p-2 text-left first:rounded-l-md">Descrição</th>
                                                                 <th className="p-2 text-left">Quantidade</th>
                                                                 <th className="p-2 text-left">Preço por Unidade</th>
                                                                 <th className="p-2 text-left">Desconto</th>
                                                                 <th className="p-2 text-left">Total</th>
-                                                                <th className="p-2 text-left last:rounded-r-md">IVA</th>
+                                                                <th className="p-2 text-left last:rounded-r-md">IVA</th> */}
                                                             </tr>
                                                         </thead>
                                                         <tbody>
                                                             {document.data[0].fi.map((line) => (
                                                                 <tr className="border-b border-gray-200 dark:border-gray-300">
+                                                                    <td className="py-3 font-medium">{line.ref}</td>
                                                                     <td className="py-3 font-medium">{line.design}</td>
                                                                     <td className="py-3 font-medium">{line.qtt}</td>
                                                                     <td className="py-3 font-medium">{formatEuro.format(line.epv)}</td>
                                                                     <td className="py-3 font-medium">{formatEuro.format(line.desconto)}</td>
+                                                                    <td className="py-3 font-medium">{formatEuro.format(line.desc2)}</td>
                                                                     <td className="py-3 font-medium">{formatEuro.format(line.etiliquido)}</td>
-                                                                    <td className="py-3 font-medium">{line.iva}%</td>
+                                                                    {/* <td className="py-3 font-medium">{line.design}</td>
+                                                                    <td className="py-3 font-medium">{line.qtt}</td>
+                                                                    <td className="py-3 font-medium">{formatEuro.format(line.epv)}</td>
+                                                                    <td className="py-3 font-medium">{formatEuro.format(line.desconto)}</td>
+                                                                    <td className="py-3 font-medium">{formatEuro.format(line.etiliquido)}</td>
+                                                                    <td className="py-3 font-medium">{line.iva}%</td> */}
                                                                 </tr>
                                                             ))}
                                                         </tbody>
@@ -116,14 +130,6 @@ export default function InvoiceDocument({ document }) {
                                                                 <span className="w-1/2 py-3 text-right text-sm font-bold">IVA:</span>
                                                                 <span className="w-1/2 py-3 text-right text-sm dark:text-white">
                                                                     {formatEuro.format(document.data[0].fi.reduce((n, { iva }) => n + iva, 0))}
-                                                                </span>
-                                                            </div>
-                                                            <div className="flex justify-between">
-                                                                <span className="w-1/2 py-3 text-right text-sm font-bold">Desconto:</span>
-                                                                <span className="w-1/2 py-3 text-right text-sm dark:text-white">
-                                                                    {formatEuro.format(
-                                                                        document.data[0].fi.reduce((n, { desconto }) => n + desconto, 0),
-                                                                    )}
                                                                 </span>
                                                             </div>
                                                             <div className="mt-2 flex justify-between font-bold">
@@ -147,7 +153,7 @@ export default function InvoiceDocument({ document }) {
                                     <footer className="mt-6">
                                         <div className="flex items-center justify-between border-t border-gray-200 pt-4 dark:border-gray-300">
                                             <button
-                                                className="btn bg-gray-400 text-white hover:bg-gray-600 dark:bg-gray-400 dark:text-gray-300 dark:hover:bg-gray-600"
+                                                className="btn ml-3 bg-gray-400 text-white hover:bg-gray-600 dark:bg-gray-400 dark:hover:bg-gray-600"
                                                 onClick="history.back()"
                                             >
                                                 Voltar
