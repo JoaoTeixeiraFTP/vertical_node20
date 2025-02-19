@@ -72,11 +72,11 @@ export default function News({ result }) {
                             {techCrunchNews.map((article, index) => (
                                 <div key={index} className={`w-80 flex-shrink-0 ${index !== techCrunchIndex && 'hidden'}`}>
                                     <div className="flex items-center space-x-3 py-2">
-                                        <img
+                                        {/* <img
                                             src={article.img || '/images/placeholder.jpg'}
                                             alt="Imagem"
                                             className="h-16 w-16 rounded-md object-cover"
-                                        />
+                                        /> */}
                                         <div>
                                             <h3 className="w-52 break-words text-sm font-semibold text-gray-800 dark:text-gray-100">
                                                 {article.title}
