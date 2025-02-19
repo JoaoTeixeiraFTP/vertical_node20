@@ -9,6 +9,5 @@
             "email": "email@example.com"
         }
     ],
-    "require": {
-    }
+    "require": {}
 }

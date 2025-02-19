@@ -3,7 +3,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';
 import { Head } from '@inertiajs/react';
 
 export default function InvoiceDocument({ document }) {
-    const formatEuro = new Intl.NumberFormat('pt-PT', {
+    const formatEuro = new Intl.NumberFormat('de-DE', {
         style: 'currency',
         currency: 'EUR',
         minimumFractionDigits: 2,

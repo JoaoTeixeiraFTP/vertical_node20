@@ -73,17 +73,13 @@ export default function ReceiptDocument({ document }) {
                                                             </div>
                                                         </li>
                                                         <li className="flex justify-between border-b border-gray-200 py-3 dark:border-gray-700/60">
-                                                            <div className="text-sm font-medium text-gray-800 dark:text-gray-100">
-                                                                Total
-                                                            </div>
+                                                            <div className="text-sm font-medium text-gray-800 dark:text-gray-100">Total</div>
                                                             <div className="text-sm text-gray-600 dark:text-gray-400">
                                                                 {line['total'] ?? 'Não disponível'}
                                                             </div>
                                                         </li>
                                                         <li className="flex justify-between border-b border-gray-200 py-3 dark:border-gray-700/60">
-                                                            <div className="text-sm font-medium text-gray-800 dark:text-gray-100">
-                                                                ETotal
-                                                            </div>
+                                                            <div className="text-sm font-medium text-gray-800 dark:text-gray-100">ETotal</div>
                                                             <div className="text-sm text-gray-600 dark:text-gray-400">
                                                                 {line['etotal'] ?? 'Não disponível'}
                                                             </div>

@@ -129,7 +129,7 @@ final class RequestBuilder
                     ]);
                 }
             )->otherwise(
-                function (RequestException $exception) {
+                function ($exception) {
                     // Captura erros de requisição e registra no log
                     Log::error('Erro ao fazer requisição para a API', [
                         'endpoint' => $this->endpoint,
