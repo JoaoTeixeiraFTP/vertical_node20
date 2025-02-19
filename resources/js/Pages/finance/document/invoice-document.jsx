@@ -97,8 +97,8 @@ export default function InvoiceDocument({ document }) {
                                                                     <td className="py-3 font-medium">{line.design}</td>
                                                                     <td className="py-3 font-medium">{line.qtt}</td>
                                                                     <td className="py-3 font-medium">{formatEuro.format(line.epv)}</td>
-                                                                    <td className="py-3 font-medium">{(line.desconto)}</td>
-                                                                    <td className="py-3 font-medium">{line.desc2}</td>
+                                                                    <td className="py-3 font-medium">{(line.desconto)}%</td>
+                                                                    <td className="py-3 font-medium">{line.desc2}%</td>
                                                                     <td className="py-3 font-medium">{formatEuro.format(line.etiliquido)}</td>
                                                                 </tr>
                                                             ))}
