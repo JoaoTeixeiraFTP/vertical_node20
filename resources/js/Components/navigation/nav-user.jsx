@@ -28,9 +28,9 @@ export function NavUser({ user }) {
                     <UserRound />
                     <a href={route('profile.edit')}>Profile</a>
                 </DropdownMenuItem>
-                <DropdownMenuItem>
+                <DropdownMenuItem onClick={() => router.post('/logout')} className={'cursor-pointer'}>
                     <LogOut />
-                    <button onClick={() => router.post('logout')}>Sair</button>
+                    <span>Sair</span>
                 </DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>
