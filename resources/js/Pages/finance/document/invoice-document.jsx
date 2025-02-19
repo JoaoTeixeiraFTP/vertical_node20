@@ -147,8 +147,8 @@ export default function InvoiceDocument({ document }) {
                                     <footer className="mt-6">
                                         <div className="flex items-center justify-between border-t border-gray-200 pt-4 dark:border-gray-300">
                                             <button
-                                                className="btn bg-gray-400 text-white hover:bg-gray-600 dark:bg-gray-400 dark:text-gray-300 dark:hover:bg-gray-600"
-                                                onClick="history.back()"
+                                                className="btn bg-gray-400 text-white hover:bg-gray-600 dark:bg-gray-400 dark:hover:bg-gray-600"
+                                                onClick={() => history.back()}
                                             >
                                                 Voltar
                                             </button>
