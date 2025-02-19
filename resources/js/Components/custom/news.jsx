@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import placeholder from '../../../../public/images/placeholder.jpg';
 
 export default function News({ result }) {
     const [businessIndex, setBusinessIndex] = useState(0);
@@ -51,7 +52,7 @@ export default function News({ result }) {
                             {businessNews.map((news, index) => (
                                 <div key={index} className={`w-80 flex-shrink-0 ${index !== businessIndex && 'hidden'}`}>
                                     <div className="flex items-center space-x-3 py-2">
-                                        <img src={news.img} alt="Imagem" className="h-16 w-16 rounded-md object-cover" />
+                                        <img src={news.img ?? placeholder} alt="Imagem" className="h-16 w-16 rounded-md object-cover" />
                                         <div>
                                             <h3 className="w-52 break-words text-sm font-semibold text-gray-800 dark:text-gray-100">{news.title}</h3>
                                             <p className="text-xs text-gray-600 dark:text-gray-300">{news.date}</p>
@@ -72,11 +73,7 @@ export default function News({ result }) {
                             {techCrunchNews.map((article, index) => (
                                 <div key={index} className={`w-80 flex-shrink-0 ${index !== techCrunchIndex && 'hidden'}`}>
                                     <div className="flex items-center space-x-3 py-2">
-                                        {/* <img
-                                            src={article.img || '/images/placeholder.jpg'}
-                                            alt="Imagem"
-                                            className="h-16 w-16 rounded-md object-cover"
-                                        /> */}
+                                        <img src={article.img ?? placeholder} alt="Imagem" className="h-16 w-16 rounded-md object-cover" />
                                         <div>
                                             <h3 className="w-52 break-words text-sm font-semibold text-gray-800 dark:text-gray-100">
                                                 {article.title}

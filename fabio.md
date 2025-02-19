@@ -1,4 +1,3 @@
-
 ### Sidebar
 
 - Alinhamento icons quando fechado

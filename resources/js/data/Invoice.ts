@@ -10,19 +10,19 @@ import { ColumnDef } from '@tanstack/react-table';
 
 export const columns: ColumnDef<Object>[] = [
     {
-        accessorKey: "fdata",
-        header: "Data",
+        accessorKey: 'fdata',
+        header: 'Data',
     },
     {
-        accessorKey: "pdata",
-        header: "Vencimente",
+        accessorKey: 'pdata',
+        header: 'Vencimente',
     },
     {
-        accessorKey: "nmdoc",
-        header: "Documento",
+        accessorKey: 'nmdoc',
+        header: 'Documento',
     },
     {
-        accessorKey: "etotal",
-        header: "Valor",
+        accessorKey: 'etotal',
+        header: 'Valor',
     },
-]
+];
