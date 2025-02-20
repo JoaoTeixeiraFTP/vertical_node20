@@ -3,10 +3,12 @@ import { DataTable } from '@/Components/data-display/data-table.jsx';
 import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '@/Components/ui/pagination.jsx';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';
 import { columns } from '@/data/Receipt.ts';
+import { formatEuro } from '@/utils/Utils.js';
 import { Head } from '@inertiajs/react';
 
 export default function Receipts({ receipt }) {
     // const [sidebarOpen, setSidebarOpen] = useState(false);
+    columns[2].accessorFn = (props) => formatEuro(props.etotal);
 
     return (
         <AuthenticatedLayout header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Recibos</span>}>

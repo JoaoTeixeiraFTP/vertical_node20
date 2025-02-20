@@ -5,6 +5,7 @@ import LineAreaChart from '@/Components/chart/line-area-chart.jsx';
 import { VerticalBarChart } from '@/Components/chart/vertical-bar-chart.jsx';
 import News from '@/Components/custom/news.jsx';
 import Loading from '@/Components/Loading.jsx';
+import NavLink from '@/Components/navigation/nav-link.jsx';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';
 import { Head } from '@inertiajs/react';
 
@@ -102,11 +103,15 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
                             ) : (
                                 <AutoScrollList title={'Não Regularizado'} length={currentAccount.data.length}>
                                     {currentAccount.data.map((ca) => (
-                                        <li key={ca.nrdoc} className={'flex gap-4'}>
+                                        <NavLink
+                                            href={route('finance.documents', ['current-account', ca.ccstamp])}
+                                            key={ca.nrdoc}
+                                            className={'flex gap-4'}
+                                        >
                                             <span className="first:font-medium">{ca.nrdoc}</span>
                                             <span>{ca.cmdesc}</span>
                                             <span>{ca.edebf}</span>
-                                        </li>
+                                        </NavLink>
                                     ))}
                                 </AutoScrollList>
                             )}

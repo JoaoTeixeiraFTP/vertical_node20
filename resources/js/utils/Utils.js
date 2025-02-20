@@ -14,6 +14,13 @@ export const hexToRGB = (h) => {
     return `${+r},${+g},${+b}`;
 };
 
+export const formatEuro = (value) =>
+    Intl.NumberFormat('de-DE', {
+        style: 'currency',
+        currency: 'EUR',
+        minimumFractionDigits: 2,
+    }).format(value);
+
 const BadgeColors = {
     COLORS: {
         test: {

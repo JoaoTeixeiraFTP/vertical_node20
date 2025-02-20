@@ -3,9 +3,13 @@ import { DataTable } from '@/Components/data-display/data-table.jsx';
 import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '@/Components/ui/pagination.jsx';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';
 import { columns } from '@/data/CurrentAccount.ts';
+import { formatEuro } from '@/utils/Utils.js';
 import { Head } from '@inertiajs/react';
 
 export default function CurrentAccount({ currentAccount }) {
+    columns[4].accessorFn = (props) => formatEuro(props.edeb);
+    columns[6].accessorFn = (props) => formatEuro(props.saldo);
+
     return (
         <AuthenticatedLayout header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Conta Corrente</span>}>
             <Head title="Conta Corrente" />
