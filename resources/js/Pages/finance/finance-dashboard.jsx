@@ -2,7 +2,10 @@ import AutoScrollList from '@/Components/auto-scroll-list.jsx';
 import LineAreaChart from '@/Components/chart/line-area-chart.jsx';
 import { VerticalBarChart } from '@/Components/chart/vertical-bar-chart.jsx';
 import Loading from '@/Components/Loading.jsx';
+import NavLink from '@/Components/navigation/nav-link.jsx';
+import { Badge } from '@/Components/ui/badge.jsx';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';
+import { getBadgeColors } from '@/utils/Utils.js';
 import { Head } from '@inertiajs/react';
 
 export default function FinanceDashboard({ invoices, currentAccount, receipts }) {
@@ -65,11 +68,17 @@ export default function FinanceDashboard({ invoices, currentAccount, receipts })
                             ) : (
                                 <AutoScrollList length={invoices.data.length}>
                                     {invoices.data.map((inv) => (
-                                        <li key={inv.ftstamp} className={'flex gap-4'}>
-                                            <span className="first:font-medium">{inv.nmdoc}</span>
-                                            <span>{inv.fdata}</span>
-                                            <span>{inv.etotal}</span>
-                                        </li>
+                                        <NavLink
+                                            href={route('finance.documents', ['invoices', inv.ftstamp])}
+                                            key={inv.ftstamp}
+                                            className={'flex gap-4'}
+                                        >
+                                            <Badge variant="simple" className={getBadgeColors(inv.nmdoc) + ' text-[0.95em]'}>
+                                                {inv.nmdoc}
+                                            </Badge>
+                                            <span className={'text-[0.95em]'}>{inv.fdata}</span>
+                                            <span className={'text-[0.95em]'}>{inv.etotal}</span>
+                                        </NavLink>
                                     ))}
                                 </AutoScrollList>
                             )}
@@ -109,11 +118,15 @@ export default function FinanceDashboard({ invoices, currentAccount, receipts })
                             ) : (
                                 <AutoScrollList length={currentAccount.data.length}>
                                     {currentAccount.data.map((ca) => (
-                                        <li key={ca.nrdoc} className={'flex gap-4'}>
+                                        <NavLink
+                                            href={route('finance.documents', ['current-account', ca.ccstamp])}
+                                            key={ca.nrdoc}
+                                            className={'flex gap-4'}
+                                        >
                                             <span className="first:font-medium">{ca.nrdoc}</span>
                                             <span>{ca.cmdesc}</span>
                                             <span>{ca.edebf}</span>
-                                        </li>
+                                        </NavLink>
                                     ))}
                                 </AutoScrollList>
                             )}
