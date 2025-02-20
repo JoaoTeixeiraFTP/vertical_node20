@@ -114,7 +114,7 @@ const ChartTooltipContent = React.forwardRef(
                 return null;
             }
 
-            return <div className={cn('dark:bg-grey-800 bg-white font-medium text-gray-800 dark:text-white', labelClassName)}>{value}</div>;
+            return <div className={cn('bg-white font-medium text-gray-800 dark:bg-gray-800 dark:text-white', labelClassName)}>{value}</div>;
         }, [label, labelFormatter, payload, hideLabel, labelClassName, config, labelKey]);
 
         if (!active || !payload?.length) {
@@ -127,7 +127,7 @@ const ChartTooltipContent = React.forwardRef(
             <div
                 ref={ref}
                 className={cn(
-                    'dark:bg-grey-800 grid min-w-[8rem] items-start gap-1.5 rounded-lg border border-neutral-200 border-neutral-200/50 bg-white px-2.5 py-1.5 text-xs text-gray-800 shadow-xl dark:border-neutral-800 dark:border-neutral-800/50 dark:text-white',
+                    'grid min-w-[8rem] items-start gap-1.5 rounded-lg border border-neutral-200 border-neutral-200/50 bg-white px-2.5 py-1.5 text-xs text-gray-800 shadow-xl dark:border-neutral-800 dark:border-neutral-800/50 dark:bg-gray-800 dark:text-white',
                     className,
                 )}
             >
