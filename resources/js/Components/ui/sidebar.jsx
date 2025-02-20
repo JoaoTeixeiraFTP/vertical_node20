@@ -70,6 +70,9 @@ const SidebarProvider = React.forwardRef(
             };
 
             window.addEventListener('keydown', handleKeyDown);
+            console.log('aqui');
+            <div>Estas onde?</div>
+
             return () => window.removeEventListener('keydown', handleKeyDown);
         }, [toggleSidebar]);
 

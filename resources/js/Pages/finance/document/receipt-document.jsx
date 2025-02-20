@@ -28,7 +28,7 @@ export default function AccountDocument({ document }) {
                                                 <div className="flex w-1/2 flex-col pl-4">
                                                     <div className="text-sm text-gray-600 dark:text-gray-400">Número</div>
                                                     <div className="text-lg font-bold text-gray-800 dark:text-gray-100">
-                                                        {document.data[0]['ndoc'] ?? 'Não disponível'}
+                                                        {document.data[0]['no'] ?? 'Não disponível'}
                                                     </div>
                                                 </div>
                                             </div>
@@ -38,12 +38,12 @@ export default function AccountDocument({ document }) {
                                                     <div className="text-sm text-gray-600 dark:text-gray-400">Série</div>
                                                     <div className="text-lg font-bold text-gray-800 dark:text-gray-100">Recibo de Cliente</div>
                                                 </div>
-                                                {/* <div className="flex w-1/2 flex-col pl-4">
+                                                <div className="flex w-1/2 flex-col pl-4">
                                                     <div className="text-sm text-gray-600 dark:text-gray-400">Número do documento</div>
                                                     <div className="text-lg font-bold text-gray-800 dark:text-gray-100">
-                                                        {document.data[0]['nrdoc'] ?? 'Não disponível'}
+                                                        {document.data[0]['rno'] ?? 'Não disponível'}
                                                     </div>
-                                                </div> */}
+                                                </div>
                                             </div>
 
                                             <div className="mt-6 overflow-hidden rounded-md">
@@ -52,16 +52,18 @@ export default function AccountDocument({ document }) {
                                                         <tr>
                                                             <th className="p-2 first:rounded-l-md last:rounded-r-md">Documento</th>
                                                             <th className="p-2">Nº do Documento</th>
-                                                            <th className="p-2">Emissão do Documento</th>
-                                                            <th className="p-2">Vencimento do Documento</th>
+                                                            <th className="p-2">Por Reg.</th>
+                                                            <th className="p-2">Regularizado</th>
+                                                            <th className="p-2">Desconto</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr className="border-b">
-                                                            <td className="p-2">{document.data[0]['cmdesc'] ?? 'Não disponível'}</td>
+                                                            <td className="p-2">{document.data[0]['desc1'] ?? 'Não disponível'}</td>
                                                             <td className="p-2">{document.data[0]['nrdoc'] ?? 'Não disponível'}</td>
-                                                            <td className="p-2">{document.data[0]['datalc'] ?? 'Não disponível'}</td>
-                                                            <td className="p-2">{document.data[0]['dataven'] ?? 'Não disponível'}</td>
+                                                            <td className="p-2">{document.data[0]['eval'] ?? 'Não disponível'}</td>
+                                                            <td className="p-2">{document.data[0]['erec'] ?? 'Não disponível'}</td>
+                                                            <td className="p-2">{document.data[0]['desconto'] ?? 'Não disponível'}</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -71,7 +73,7 @@ export default function AccountDocument({ document }) {
                                                 <div className="flex w-1/2 flex-col">
                                                     <div className="text-sm text-gray-600 dark:text-gray-400">Data do documento</div>
                                                     <div className="text-lg font-bold text-gray-800 dark:text-gray-100">
-                                                        {document.data[0]['datalc'] ?? 'Não disponível'}
+                                                        {document.data[0]['rdata'] ?? 'Não disponível'}
                                                     </div>
                                                 </div>
                                                 <div className="flex w-1/2 flex-col pl-4 text-right">

@@ -4,10 +4,10 @@ interface RowData {
     no: string;
     etotal: number;
     desc1: string;
-    ecred?: number;
-    ecredf?: number;
-    edef?: number;
-    edebf?: number;
+    ecred: number;
+    ecredf: number;
+    edef: number;
+    edebf: number;
     datalc: string;
     dataven: string;
 }
