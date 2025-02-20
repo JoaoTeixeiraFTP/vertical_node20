@@ -62,11 +62,11 @@ export default function FinanceDashboard({ invoices, currentAccount, receipts })
                 </div>
                 <div className="col-span-1 col-start-4">
                     <div className="col-span-full flex h-full flex-col rounded-xl bg-white shadow-sm dark:bg-gray-800 sm:col-span-6 xl:col-span-4">
-                        <div className="h-[70vh] p-6 text-gray-900 dark:text-gray-100">
+                        <div className="h-[60vh] text-gray-900 dark:text-gray-100">
                             {invoices === undefined ? (
                                 <Loading />
                             ) : (
-                                <AutoScrollList length={invoices.data.length}>
+                                <AutoScrollList title={'Lista de Faturas'} length={invoices.data.length}>
                                     {invoices.data.map((inv) => (
                                         <NavLink
                                             href={route('finance.documents', ['invoices', inv.ftstamp])}
@@ -112,11 +112,11 @@ export default function FinanceDashboard({ invoices, currentAccount, receipts })
                 </div>
                 <div className="col-span-1 col-start-4">
                     <div className="col-span-full flex h-full flex-col rounded-xl bg-white shadow-sm dark:bg-gray-800 sm:col-span-6 xl:col-span-4">
-                        <div className="h-[70vh] p-6 text-gray-900 dark:text-gray-100">
+                        <div className="h-[60vh] text-gray-900 dark:text-gray-100">
                             {currentAccount === undefined ? (
                                 <Loading />
                             ) : (
-                                <AutoScrollList length={currentAccount.data.length}>
+                                <AutoScrollList title={'Não Regularizado'} length={currentAccount.data.length}>
                                     {currentAccount.data.map((ca) => (
                                         <NavLink
                                             href={route('finance.documents', ['current-account', ca.ccstamp])}

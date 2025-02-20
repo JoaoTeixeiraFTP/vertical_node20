@@ -96,11 +96,11 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
                 </div>
                 <div className="col-span-2">
                     <div className="col-span-full flex flex-col rounded-xl bg-white shadow-sm dark:bg-gray-800 sm:col-span-6 xl:col-span-4">
-                        <div className="h-[40vh] p-6 text-gray-900 dark:text-gray-100">
+                        <div className="h-[40vh] text-gray-900 dark:text-gray-100">
                             {currentAccount === undefined ? (
                                 <Loading />
                             ) : (
-                                <AutoScrollList length={currentAccount.data.length}>
+                                <AutoScrollList title={'Não Regularizado'} length={currentAccount.data.length}>
                                     {currentAccount.data.map((ca) => (
                                         <li key={ca.nrdoc} className={'flex gap-4'}>
                                             <span className="first:font-medium">{ca.nrdoc}</span>

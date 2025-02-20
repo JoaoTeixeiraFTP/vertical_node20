@@ -1,6 +1,8 @@
+import { Card, CardContent, CardHeader, CardTitle } from '@/Components/ui/card.jsx';
+import { ScrollArea } from '@radix-ui/react-scroll-area';
 import { useEffect, useRef, useState } from 'react';
 
-export default function AutoScrollList({ children, length }) {
+export default function AutoScrollList({ title, children, length }) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
     const listRef = useRef(null);
@@ -36,14 +38,22 @@ export default function AutoScrollList({ children, length }) {
     };
 
     return (
-        <div className="relative h-full w-full overflow-hidden rounded-md border">
-            <ul ref={listRef} className="absolute transition-transform duration-1000 ease-in-out">
-                {children.map((child, index) => (
-                    <li key={index} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                        {child}
-                    </li>
-                ))}
-            </ul>
-        </div>
+        <Card>
+            <CardHeader>
+                <CardTitle>{title}</CardTitle>
+                <hr className="mb-4 mt-2 border-t border-gray-200 dark:border-gray-700" />
+            </CardHeader>
+            <CardContent>
+                <ScrollArea className={'m-0 h-full w-full overflow-hidden p-0'}>
+                    <ul ref={listRef} className="absolute transition-transform duration-1000 ease-in-out">
+                        {children.map((child, index) => (
+                            <li key={index} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                                {child}
+                            </li>
+                        ))}
+                    </ul>
+                </ScrollArea>
+            </CardContent>
+        </Card>
     );
 }
