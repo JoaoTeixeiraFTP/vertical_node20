@@ -78,7 +78,7 @@ export default function AccountDocument({ document }) {
                                                 </div>
                                                 <div className="flex w-1/2 flex-col pl-4 text-right">
                                                     <div className="text-sm text-gray-600 dark:text-gray-400">Total do documento</div>
-                                                    <div className="p-2">{formatEuro(document.data[0]['saldo']) ?? 'Não disponível'}</div>
+                                                    <div className="p-2">{formatEuro(document.data[0]['etotal']) ?? 'Não disponível'}</div>
                                                 </div>
                                             </div>
                                         </div>
