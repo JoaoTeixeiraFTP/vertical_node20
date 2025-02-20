@@ -3,9 +3,13 @@ import { DataTable } from '@/Components/data-display/data-table.jsx';
 import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '@/Components/ui/pagination.jsx';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';
 import { columns } from '@/data/CurrentAccount.ts';
+import { formatEuro } from '@/utils/Utils.js';
 import { Head } from '@inertiajs/react';
 
 export default function CurrentAccount({ currentAccount }) {
+    columns[4].accessorFn = (props) => formatEuro(props.edeb);
+    columns[6].accessorFn = (props) => formatEuro(props.saldo);
+
     return (
         <AuthenticatedLayout header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Conta Corrente</span>}>
             <Head title="Conta Corrente" />
@@ -36,9 +40,8 @@ export default function CurrentAccount({ currentAccount }) {
                                 <div className={'flex gap-2'}>
                                     {currentAccount.links.map((link, index) =>
                                         index > 0 && index < currentAccount.last_page + 1 ? (
-                                            <PaginationItem>
+                                            <PaginationItem key={index}>
                                                 <PaginationLink
-                                                    key={index}
                                                     isActive={currentAccount.current_page === index}
                                                     className={
                                                         'dark:border-gray-700/60" border-gray-200 bg-white text-gray-800 active:bg-violet-500 active:text-white dark:bg-gray-800 dark:text-gray-300'
@@ -49,7 +52,7 @@ export default function CurrentAccount({ currentAccount }) {
                                                 </PaginationLink>
                                             </PaginationItem>
                                         ) : (
-                                            <span></span>
+                                            <span key={index}></span>
                                         ),
                                     )}
                                 </div>

@@ -138,37 +138,22 @@ function TransactionsTable02({ selectedItems, setTransactionPanelOpen }) {
                                 <th className="w-px whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
                                     <div className="flex items-center">
                                         <label className="inline-flex">
-                                            <span className="sr-only">
-                                                Select all
-                                            </span>
-                                            <input
-                                                className="form-checkbox"
-                                                type="checkbox"
-                                                checked={selectAll}
-                                                onChange={handleSelectAll}
-                                            />
+                                            <span className="sr-only">Select all</span>
+                                            <input className="form-checkbox" type="checkbox" checked={selectAll} onChange={handleSelectAll} />
                                         </label>
                                     </div>
                                 </th>
                                 <th className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
-                                    <div className="text-left font-semibold">
-                                        Counterparty
-                                    </div>
+                                    <div className="text-left font-semibold">Counterparty</div>
                                 </th>
                                 <th className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
-                                    <div className="text-left font-semibold">
-                                        Payment Date
-                                    </div>
+                                    <div className="text-left font-semibold">Payment Date</div>
                                 </th>
                                 <th className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
-                                    <div className="text-left font-semibold">
-                                        Status
-                                    </div>
+                                    <div className="text-left font-semibold">Status</div>
                                 </th>
                                 <th className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
-                                    <div className="text-right font-semibold">
-                                        Amount
-                                    </div>
+                                    <div className="text-right font-semibold">Amount</div>
                                 </th>
                             </tr>
                         </thead>
@@ -185,12 +170,8 @@ function TransactionsTable02({ selectedItems, setTransactionPanelOpen }) {
                                         status={transaction.status}
                                         amount={transaction.amount}
                                         handleClick={handleClick}
-                                        isChecked={isCheck.includes(
-                                            transaction.id,
-                                        )}
-                                        setTransactionPanelOpen={
-                                            setTransactionPanelOpen
-                                        }
+                                        isChecked={isCheck.includes(transaction.id)}
+                                        setTransactionPanelOpen={setTransactionPanelOpen}
                                     />
                                 );
                             })}

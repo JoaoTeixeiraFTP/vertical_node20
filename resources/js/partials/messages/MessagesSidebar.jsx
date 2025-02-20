@@ -21,12 +21,7 @@ function MessagesSidebar({ msgSidebarOpen, setMsgSidebarOpen }) {
                                 <ChannelMenu />
                                 {/* Edit button */}
                                 <button className="ml-2 shrink-0 rounded-lg border border-gray-200 bg-white p-1.5 shadow-sm hover:border-gray-300 dark:border-gray-700/60 dark:bg-gray-800 dark:hover:border-gray-600">
-                                    <svg
-                                        className="fill-current text-gray-400 dark:text-gray-500"
-                                        width="16"
-                                        height="16"
-                                        viewBox="0 0 16 16"
-                                    >
+                                    <svg className="fill-current text-gray-400 dark:text-gray-500" width="16" height="16" viewBox="0 0 16 16">
                                         <path d="M11.7.3c-.4-.4-1-.4-1.4 0l-10 10c-.2.2-.3.4-.3.7v4c0 .6.4 1 1 1h4c.3 0 .5-.1.7-.3l10-10c.4-.4.4-1 0-1.4l-4-4zM4.6 14H2v-2.6l6-6L10.6 8l-6 6zM12 6.6L9.4 4 11 2.4 13.6 5 12 6.6z" />
                                     </svg>
                                 </button>
@@ -40,17 +35,8 @@ function MessagesSidebar({ msgSidebarOpen, setMsgSidebarOpen }) {
                             <label htmlFor="msg-search" className="sr-only">
                                 Search
                             </label>
-                            <input
-                                id="msg-search"
-                                className="form-input w-full bg-white pl-9 dark:bg-gray-800"
-                                type="search"
-                                placeholder="Search…"
-                            />
-                            <button
-                                className="group absolute inset-0 right-auto"
-                                type="submit"
-                                aria-label="Search"
-                            >
+                            <input id="msg-search" className="form-input w-full bg-white pl-9 dark:bg-gray-800" type="search" placeholder="Search…" />
+                            <button className="group absolute inset-0 right-auto" type="submit" aria-label="Search">
                                 <svg
                                     className="ml-3 mr-2 shrink-0 fill-current text-gray-400 group-hover:text-gray-500 dark:text-gray-500 dark:group-hover:text-gray-400"
                                     width="16"
@@ -64,15 +50,9 @@ function MessagesSidebar({ msgSidebarOpen, setMsgSidebarOpen }) {
                             </button>
                         </form>
                         {/* Direct messages */}
-                        <DirectMessages
-                            msgSidebarOpen={msgSidebarOpen}
-                            setMsgSidebarOpen={setMsgSidebarOpen}
-                        />
+                        <DirectMessages msgSidebarOpen={msgSidebarOpen} setMsgSidebarOpen={setMsgSidebarOpen} />
                         {/* Channels */}
-                        <Channels
-                            msgSidebarOpen={msgSidebarOpen}
-                            setMsgSidebarOpen={setMsgSidebarOpen}
-                        />
+                        <Channels msgSidebarOpen={msgSidebarOpen} setMsgSidebarOpen={setMsgSidebarOpen} />
                     </div>
                 </div>
             </div>

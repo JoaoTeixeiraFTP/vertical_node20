@@ -5,10 +5,14 @@ import LineAreaChart from '@/Components/chart/line-area-chart.jsx';
 import { VerticalBarChart } from '@/Components/chart/vertical-bar-chart.jsx';
 import News from '@/Components/custom/news.jsx';
 import Loading from '@/Components/Loading.jsx';
+import NavLink from '@/Components/navigation/nav-link.jsx';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';
+import { formatEuro } from '@/utils/Utils.js';
 import { Head } from '@inertiajs/react';
+import { useRef } from 'react';
 
 export default function Home({ invoices, currentAccount, receipts, news }) {
+    const totalDebits = useRef(0);
     const meses = ['Jan', 'Fev', 'Mar', 'Abr', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
 
     const areaConfig = {
@@ -37,6 +41,11 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
             label: 'Mobile',
             color: 'var(--chart-2)',
         },
+    };
+
+    const addDebit = (debit) => {
+        totalDebits.current = totalDebits.current + debit;
+        return formatEuro(debit);
     };
 
     return (
@@ -96,17 +105,27 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
                 </div>
                 <div className="col-span-2">
                     <div className="col-span-full flex flex-col rounded-xl bg-white shadow-sm dark:bg-gray-800 sm:col-span-6 xl:col-span-4">
-                        <div className="h-[40vh] p-6 text-gray-900 dark:text-gray-100">
+                        <div className="h-[40vh] text-gray-900 dark:text-gray-100">
                             {currentAccount === undefined ? (
                                 <Loading />
                             ) : (
-                                <AutoScrollList length={currentAccount.data.length}>
+                                <AutoScrollList title={'Não Regularizado'} length={currentAccount.data.length} footerValue={totalDebits}>
                                     {currentAccount.data.map((ca) => (
-                                        <li key={ca.nrdoc} className={'flex gap-4'}>
+                                        <NavLink
+                                            href={route('finance.documents', ['current-account', ca.ccstamp])}
+                                            key={ca.nrdoc}
+                                            className={'flex justify-between gap-4'}
+                                        >
                                             <span className="first:font-medium">{ca.nrdoc}</span>
                                             <span>{ca.cmdesc}</span>
-                                            <span>{ca.edebf}</span>
-                                        </li>
+                                            {ca.ecred - ca.ecredf > 0 || ca.edeb - ca.edebf > 0 ? (
+                                                <span className="text-sm text-red-600 dark:text-red-400">
+                                                    Em dívida: {addDebit(ca.edeb - ca.edebf)}
+                                                </span>
+                                            ) : (
+                                                <span className="text-sm text-green-600 dark:text-green-400">Sem dívida</span>
+                                            )}
+                                        </NavLink>
                                     ))}
                                 </AutoScrollList>
                             )}

@@ -1,11 +1,14 @@
 import Loading from '@/Components/Loading.jsx';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';
+import { formatEuro } from '@/utils/Utils.js';
 import { Head } from '@inertiajs/react';
 
 export default function AccountDocument({ document }) {
     return (
         <>
-            <AuthenticatedLayout header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Detalhe Conta Corrente</span>}>
+            <AuthenticatedLayout
+                header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Detalhe Conta Corrente</span>}
+            >
                 <Head title="Conta Corrente" />
 
                 <div className="">
@@ -47,7 +50,7 @@ export default function AccountDocument({ document }) {
 
                                             <div className="mt-6 overflow-hidden rounded-md">
                                                 <table className="w-full border-collapse text-left">
-                                                    <thead className="bg-gray-400 text-xs uppercase text-gray-400 text-white dark:text-white">
+                                                    <thead className="bg-gray-400 text-xs uppercase text-white dark:text-white">
                                                         <tr>
                                                             <th className="p-2 first:rounded-l-md last:rounded-r-md">Documento</th>
                                                             <th className="p-2">Nº do Documento</th>
@@ -75,7 +78,7 @@ export default function AccountDocument({ document }) {
                                                 </div>
                                                 <div className="flex w-1/2 flex-col pl-4 text-right">
                                                     <div className="text-sm text-gray-600 dark:text-gray-400">Total do documento</div>
-                                                    <div className="p-2">{document.data[0]['saldo'] ?? 'Não disponível'}</div>
+                                                    <div className="p-2">{formatEuro(document.data[0]['saldo']) ?? 'Não disponível'}</div>
                                                 </div>
                                             </div>
                                         </div>

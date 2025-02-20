@@ -9,33 +9,23 @@ function NotificationsPanel() {
         <div className="grow">
             {/* Panel body */}
             <div className="space-y-6 p-6">
-                <h2 className="mb-5 text-2xl font-bold text-gray-800 dark:text-gray-100">
-                    My Notifications
-                </h2>
+                <h2 className="mb-5 text-2xl font-bold text-gray-800 dark:text-gray-100">My Notifications</h2>
 
                 {/* General */}
                 <section>
-                    <h3 className="mb-1 text-xl font-bold leading-snug text-gray-800 dark:text-gray-100">
-                        General
-                    </h3>
+                    <h3 className="mb-1 text-xl font-bold leading-snug text-gray-800 dark:text-gray-100">General</h3>
                     <ul>
                         <li className="flex items-center justify-between border-b border-gray-200 py-3 dark:border-gray-700/60">
                             {/* Left */}
                             <div>
-                                <div className="font-semibold text-gray-800 dark:text-gray-100">
-                                    Comments and replies
-                                </div>
+                                <div className="font-semibold text-gray-800 dark:text-gray-100">Comments and replies</div>
                                 <div className="text-sm">
-                                    Excepteur sint occaecat cupidatat non
-                                    proident, sunt in culpa qui officia deserunt
-                                    mollit.
+                                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.
                                 </div>
                             </div>
                             {/* Right */}
                             <div className="ml-4 flex items-center">
-                                <div className="mr-2 text-sm italic text-gray-400 dark:text-gray-500">
-                                    {comments ? 'On' : 'Off'}
-                                </div>
+                                <div className="mr-2 text-sm italic text-gray-400 dark:text-gray-500">{comments ? 'On' : 'Off'}</div>
                                 <div className="form-switch">
                                     <input
                                         type="checkbox"
@@ -44,17 +34,9 @@ function NotificationsPanel() {
                                         checked={comments}
                                         onChange={() => setComments(!comments)}
                                     />
-                                    <label
-                                        className="bg-gray-400 dark:bg-gray-700"
-                                        htmlFor="comments"
-                                    >
-                                        <span
-                                            className="bg-white shadow-sm"
-                                            aria-hidden="true"
-                                        ></span>
-                                        <span className="sr-only">
-                                            Enable smart sync
-                                        </span>
+                                    <label className="bg-gray-400 dark:bg-gray-700" htmlFor="comments">
+                                        <span className="bg-white shadow-sm" aria-hidden="true"></span>
+                                        <span className="sr-only">Enable smart sync</span>
                                     </label>
                                 </div>
                             </div>
@@ -62,20 +44,14 @@ function NotificationsPanel() {
                         <li className="flex items-center justify-between border-b border-gray-200 py-3 dark:border-gray-700/60">
                             {/* Left */}
                             <div>
-                                <div className="font-semibold text-gray-800 dark:text-gray-100">
-                                    Messages
-                                </div>
+                                <div className="font-semibold text-gray-800 dark:text-gray-100">Messages</div>
                                 <div className="text-sm">
-                                    Excepteur sint occaecat cupidatat non
-                                    proident, sunt in culpa qui officia deserunt
-                                    mollit.
+                                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.
                                 </div>
                             </div>
                             {/* Right */}
                             <div className="ml-4 flex items-center">
-                                <div className="mr-2 text-sm italic text-gray-400 dark:text-gray-500">
-                                    {messages ? 'On' : 'Off'}
-                                </div>
+                                <div className="mr-2 text-sm italic text-gray-400 dark:text-gray-500">{messages ? 'On' : 'Off'}</div>
                                 <div className="form-switch">
                                     <input
                                         type="checkbox"
@@ -84,17 +60,9 @@ function NotificationsPanel() {
                                         checked={messages}
                                         onChange={() => setMessages(!messages)}
                                     />
-                                    <label
-                                        className="bg-gray-400 dark:bg-gray-700"
-                                        htmlFor="messages"
-                                    >
-                                        <span
-                                            className="bg-white shadow-sm"
-                                            aria-hidden="true"
-                                        ></span>
-                                        <span className="sr-only">
-                                            Enable smart sync
-                                        </span>
+                                    <label className="bg-gray-400 dark:bg-gray-700" htmlFor="messages">
+                                        <span className="bg-white shadow-sm" aria-hidden="true"></span>
+                                        <span className="sr-only">Enable smart sync</span>
                                     </label>
                                 </div>
                             </div>
@@ -102,19 +70,12 @@ function NotificationsPanel() {
                         <li className="flex items-center justify-between border-b border-gray-200 py-3 dark:border-gray-700/60">
                             {/* Left */}
                             <div>
-                                <div className="font-semibold text-gray-800 dark:text-gray-100">
-                                    Mentions
-                                </div>
-                                <div className="text-sm">
-                                    Excepteur sint occaecat cupidatat non in
-                                    culpa qui officia deserunt mollit.
-                                </div>
+                                <div className="font-semibold text-gray-800 dark:text-gray-100">Mentions</div>
+                                <div className="text-sm">Excepteur sint occaecat cupidatat non in culpa qui officia deserunt mollit.</div>
                             </div>
                             {/* Right */}
                             <div className="ml-4 flex items-center">
-                                <div className="mr-2 text-sm italic text-gray-400 dark:text-gray-500">
-                                    {mentions ? 'On' : 'Off'}
-                                </div>
+                                <div className="mr-2 text-sm italic text-gray-400 dark:text-gray-500">{mentions ? 'On' : 'Off'}</div>
                                 <div className="form-switch">
                                     <input
                                         type="checkbox"
@@ -123,17 +84,9 @@ function NotificationsPanel() {
                                         checked={mentions}
                                         onChange={() => setMentions(!mentions)}
                                     />
-                                    <label
-                                        className="bg-gray-400 dark:bg-gray-700"
-                                        htmlFor="mentions"
-                                    >
-                                        <span
-                                            className="bg-white shadow-sm"
-                                            aria-hidden="true"
-                                        ></span>
-                                        <span className="sr-only">
-                                            Enable smart sync
-                                        </span>
+                                    <label className="bg-gray-400 dark:bg-gray-700" htmlFor="mentions">
+                                        <span className="bg-white shadow-sm" aria-hidden="true"></span>
+                                        <span className="sr-only">Enable smart sync</span>
                                     </label>
                                 </div>
                             </div>
@@ -143,20 +96,14 @@ function NotificationsPanel() {
 
                 {/* Shares */}
                 <section>
-                    <h3 className="mb-1 text-xl font-bold leading-snug text-gray-800 dark:text-gray-100">
-                        Shares
-                    </h3>
+                    <h3 className="mb-1 text-xl font-bold leading-snug text-gray-800 dark:text-gray-100">Shares</h3>
                     <ul>
                         <li className="flex items-center justify-between border-b border-gray-200 py-3 dark:border-gray-700/60">
                             {/* Left */}
                             <div>
-                                <div className="font-semibold text-gray-800 dark:text-gray-100">
-                                    Shares of my content
-                                </div>
+                                <div className="font-semibold text-gray-800 dark:text-gray-100">Shares of my content</div>
                                 <div className="text-sm">
-                                    Excepteur sint occaecat cupidatat non
-                                    proident, sunt in culpa qui officia deserunt
-                                    mollit.
+                                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.
                                 </div>
                             </div>
                             {/* Right */}
@@ -169,13 +116,8 @@ function NotificationsPanel() {
                         <li className="flex items-center justify-between border-b border-gray-200 py-3 dark:border-gray-700/60">
                             {/* Left */}
                             <div>
-                                <div className="font-semibold text-gray-800 dark:text-gray-100">
-                                    Team invites
-                                </div>
-                                <div className="text-sm">
-                                    Excepteur sint occaecat cupidatat non in
-                                    culpa qui officia deserunt mollit.
-                                </div>
+                                <div className="font-semibold text-gray-800 dark:text-gray-100">Team invites</div>
+                                <div className="text-sm">Excepteur sint occaecat cupidatat non in culpa qui officia deserunt mollit.</div>
                             </div>
                             {/* Right */}
                             <div className="ml-4 flex items-center">
@@ -187,19 +129,12 @@ function NotificationsPanel() {
                         <li className="flex items-center justify-between border-b border-gray-200 py-3 dark:border-gray-700/60">
                             {/* Left */}
                             <div>
-                                <div className="font-semibold text-gray-800 dark:text-gray-100">
-                                    Smart connection
-                                </div>
-                                <div className="text-sm">
-                                    Excepteur sint occaecat cupidatat non in
-                                    culpa qui officia deserunt mollit.
-                                </div>
+                                <div className="font-semibold text-gray-800 dark:text-gray-100">Smart connection</div>
+                                <div className="text-sm">Excepteur sint occaecat cupidatat non in culpa qui officia deserunt mollit.</div>
                             </div>
                             {/* Right */}
                             <div className="ml-4 flex items-center">
-                                <div className="mr-2 hidden text-sm italic text-gray-400 dark:text-gray-500 md:block">
-                                    Active
-                                </div>
+                                <div className="mr-2 hidden text-sm italic text-gray-400 dark:text-gray-500 md:block">Active</div>
                                 <button className="btn-sm border-gray-200 text-red-500 shadow-sm hover:border-gray-300 dark:border-gray-700/60 dark:hover:border-gray-600">
                                     Disable
                                 </button>

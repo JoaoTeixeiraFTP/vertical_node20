@@ -2,10 +2,15 @@ import AutoScrollList from '@/Components/auto-scroll-list.jsx';
 import LineAreaChart from '@/Components/chart/line-area-chart.jsx';
 import { VerticalBarChart } from '@/Components/chart/vertical-bar-chart.jsx';
 import Loading from '@/Components/Loading.jsx';
+import NavLink from '@/Components/navigation/nav-link.jsx';
+import { Badge } from '@/Components/ui/badge.jsx';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';
+import { formatEuro, getBadgeColors } from '@/utils/Utils.js';
 import { Head } from '@inertiajs/react';
+import { useRef } from 'react';
 
 export default function FinanceDashboard({ invoices, currentAccount, receipts }) {
+    const totalDebits = useRef(0);
     const areaConfig = {
         first: {
             label: 'Faturas',
@@ -25,6 +30,11 @@ export default function FinanceDashboard({ invoices, currentAccount, receipts })
             label: 'Debitos',
             color: 'var(--chart-4)',
         },
+    };
+
+    const addDebit = (debit) => {
+        totalDebits.current = totalDebits.current + debit;
+        return formatEuro(debit);
     };
 
     return (
@@ -59,17 +69,23 @@ export default function FinanceDashboard({ invoices, currentAccount, receipts })
                 </div>
                 <div className="col-span-1 col-start-4">
                     <div className="col-span-full flex h-full flex-col rounded-xl bg-white shadow-sm dark:bg-gray-800 sm:col-span-6 xl:col-span-4">
-                        <div className="h-[70vh] p-6 text-gray-900 dark:text-gray-100">
+                        <div className="h-[60vh] text-gray-900 dark:text-gray-100">
                             {invoices === undefined ? (
                                 <Loading />
                             ) : (
-                                <AutoScrollList length={invoices.data.length}>
+                                <AutoScrollList title={'Lista de Faturas'} length={invoices.data.length}>
                                     {invoices.data.map((inv) => (
-                                        <li key={inv.ftstamp} className={'flex gap-4'}>
-                                            <span className="first:font-medium">{inv.nmdoc}</span>
-                                            <span>{inv.fdata}</span>
-                                            <span>{inv.etotal}</span>
-                                        </li>
+                                        <NavLink
+                                            href={route('finance.documents', ['invoices', inv.ftstamp])}
+                                            key={inv.ftstamp}
+                                            className={'flex gap-4'}
+                                        >
+                                            <Badge variant="simple" className={getBadgeColors(inv.nmdoc) + ' text-[0.95em]'}>
+                                                {inv.nmdoc}
+                                            </Badge>
+                                            <span className={'text-[0.95em]'}>{inv.fdata}</span>
+                                            <span className={'text-[0.95em]'}>{formatEuro(inv.etotal)}</span>
+                                        </NavLink>
                                     ))}
                                 </AutoScrollList>
                             )}
@@ -103,17 +119,27 @@ export default function FinanceDashboard({ invoices, currentAccount, receipts })
                 </div>
                 <div className="col-span-1 col-start-4">
                     <div className="col-span-full flex h-full flex-col rounded-xl bg-white shadow-sm dark:bg-gray-800 sm:col-span-6 xl:col-span-4">
-                        <div className="h-[70vh] p-6 text-gray-900 dark:text-gray-100">
+                        <div className="h-[55vh] text-gray-900 dark:text-gray-100">
                             {currentAccount === undefined ? (
                                 <Loading />
                             ) : (
-                                <AutoScrollList length={currentAccount.data.length}>
+                                <AutoScrollList title={'Não Regularizado'} length={currentAccount.data.length} footerValue={totalDebits}>
                                     {currentAccount.data.map((ca) => (
-                                        <li key={ca.nrdoc} className={'flex gap-4'}>
+                                        <NavLink
+                                            href={route('finance.documents', ['current-account', ca.ccstamp])}
+                                            key={ca.nrdoc}
+                                            className={'flex justify-between gap-4'}
+                                        >
                                             <span className="first:font-medium">{ca.nrdoc}</span>
                                             <span>{ca.cmdesc}</span>
-                                            <span>{ca.edebf}</span>
-                                        </li>
+                                            {ca.ecred - ca.ecredf > 0 || ca.edeb - ca.edebf > 0 ? (
+                                                <span className="text-sm text-red-600 dark:text-red-400">
+                                                    Em dívida: {addDebit(ca.edeb - ca.edebf)}
+                                                </span>
+                                            ) : (
+                                                <span className="text-sm text-green-600 dark:text-green-400">Sem dívida</span>
+                                            )}
+                                        </NavLink>
                                     ))}
                                 </AutoScrollList>
                             )}

@@ -25,30 +25,16 @@ function TransactionsTableItem(props) {
                 <div className="flex items-center">
                     <label className="inline-flex">
                         <span className="sr-only">Select</span>
-                        <input
-                            id={props.id}
-                            className="form-checkbox"
-                            type="checkbox"
-                            onChange={props.handleClick}
-                            checked={props.isChecked}
-                        />
+                        <input id={props.id} className="form-checkbox" type="checkbox" onChange={props.handleClick} checked={props.isChecked} />
                     </label>
                 </div>
             </td>
             <td className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5 md:w-1/2">
                 <div className="flex items-center">
                     <div className="mr-2 h-9 w-9 shrink-0 sm:mr-3">
-                        <img
-                            className="rounded-full"
-                            src={props.image}
-                            width="36"
-                            height="36"
-                            alt={props.name}
-                        />
+                        <img className="rounded-full" src={props.image} width="36" height="36" alt={props.name} />
                     </div>
-                    <div className="font-medium text-gray-800 dark:text-gray-100">
-                        {props.name}
-                    </div>
+                    <div className="font-medium text-gray-800 dark:text-gray-100">{props.name}</div>
                 </div>
             </td>
             <td className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
@@ -56,19 +42,13 @@ function TransactionsTableItem(props) {
             </td>
             <td className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
                 <div className="text-left">
-                    <div
-                        className={`inline-flex rounded-full px-2.5 py-1 text-center text-xs font-medium ${statusColor(props.status)}`}
-                    >
+                    <div className={`inline-flex rounded-full px-2.5 py-1 text-center text-xs font-medium ${statusColor(props.status)}`}>
                         {props.status}
                     </div>
                 </div>
             </td>
             <td className="w-px whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
-                <div
-                    className={`text-right font-medium ${amountColor(props.amount)}`}
-                >
-                    {props.amount}
-                </div>
+                <div className={`text-right font-medium ${amountColor(props.amount)}`}>{props.amount}</div>
             </td>
         </tr>
     );

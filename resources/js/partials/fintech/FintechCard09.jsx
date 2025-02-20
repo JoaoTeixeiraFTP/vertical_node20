@@ -30,17 +30,11 @@ function FintechCard09() {
     return (
         <div className="col-span-full flex flex-col rounded-xl bg-white shadow-sm dark:bg-gray-800 sm:col-span-6 xl:col-span-4">
             <header className="flex items-center border-b border-gray-100 px-5 py-4 dark:border-gray-700/60">
-                <h2 className="font-semibold text-gray-800 dark:text-gray-100">
-                    Portfolio Value
-                </h2>
+                <h2 className="font-semibold text-gray-800 dark:text-gray-100">Portfolio Value</h2>
             </header>
             <div className="px-5 py-3">
-                <div className="mb-2 text-sm italic">
-                    Hey Mark, here is the value of your portfolio:
-                </div>
-                <div className="text-3xl font-bold text-gray-800 dark:text-gray-100">
-                    $224,807.27
-                </div>
+                <div className="mb-2 text-sm italic">Hey Mark, here is the value of your portfolio:</div>
+                <div className="text-3xl font-bold text-gray-800 dark:text-gray-100">$224,807.27</div>
             </div>
             {/* Chart built with Chart.js 3 */}
             {/* Change the height attribute to adjust the chart height */}

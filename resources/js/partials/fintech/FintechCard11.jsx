@@ -2,10 +2,7 @@ import { chartAreaGradient } from '../../../../../../Documents/mosaicreact/mosai
 import LineChart from '../../../../../../Documents/mosaicreact/mosaic-react/src/charts/LineChart08.jsx';
 
 // Import utilities
-import {
-    hexToRGB,
-    tailwindConfig,
-} from '../../../../../../Documents/mosaicreact/mosaic-react/src/utils/Utils.js';
+import { hexToRGB, tailwindConfig } from '../../../../../../Documents/mosaicreact/mosaic-react/src/utils/Utils.js';
 
 function FintechCard11() {
     const chartData = {
@@ -41,9 +38,7 @@ function FintechCard11() {
             // Line
             {
                 data: [
-                    222, 222, 226, 271, 365, 365, 238, 324, 288, 206, 324, 324,
-                    500, 409, 409, 273, 232, 273, 500, 570, 767, 808, 685, 767,
-                    685, 685,
+                    222, 222, 226, 271, 365, 365, 238, 324, 288, 206, 324, 324, 500, 409, 409, 273, 232, 273, 500, 570, 767, 808, 685, 767, 685, 685,
                 ],
                 fill: true,
                 backgroundColor: function (context) {
@@ -65,8 +60,7 @@ function FintechCard11() {
                 pointRadius: 0,
                 pointHoverRadius: 3,
                 pointBackgroundColor: tailwindConfig().theme.colors.green[500],
-                pointHoverBackgroundColor:
-                    tailwindConfig().theme.colors.green[500],
+                pointHoverBackgroundColor: tailwindConfig().theme.colors.green[500],
                 pointBorderWidth: 0,
                 pointHoverBorderWidth: 0,
                 clip: 20,
@@ -80,19 +74,11 @@ function FintechCard11() {
             <div className="px-5 pt-5">
                 <header>
                     <h3 className="mb-1 text-sm font-semibold uppercase text-gray-500">
-                        <span className="text-gray-800 dark:text-gray-100">
-                            Amzn
-                        </span>{' '}
-                        - Amazon Inc.
+                        <span className="text-gray-800 dark:text-gray-100">Amzn</span> - Amazon Inc.
                     </h3>
-                    <div className="mb-1 text-2xl font-bold text-gray-800 dark:text-gray-100">
-                        $3,400.35
-                    </div>
+                    <div className="mb-1 text-2xl font-bold text-gray-800 dark:text-gray-100">$3,400.35</div>
                     <div className="text-sm">
-                        <span className="font-medium text-green-600">
-                            +$142 (3,7%)
-                        </span>{' '}
-                        - Today
+                        <span className="font-medium text-green-600">+$142 (3,7%)</span> - Today
                     </div>
                 </header>
             </div>

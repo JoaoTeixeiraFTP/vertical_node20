@@ -5,7 +5,9 @@ import { Head } from '@inertiajs/react';
 export default function AccountDocument({ document }) {
     return (
         <>
-            <AuthenticatedLayout header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Detalhe Não Regularizado</span>}>
+            <AuthenticatedLayout
+                header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Detalhe Não Regularizado</span>}
+            >
                 <Head title="Conta Corrente" />
 
                 <div className="">

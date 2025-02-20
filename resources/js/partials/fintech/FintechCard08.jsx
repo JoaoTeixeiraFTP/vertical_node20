@@ -2,10 +2,7 @@ import { chartAreaGradient } from '../../../../../../Documents/mosaicreact/mosai
 import LineChart from '../../../../../../Documents/mosaicreact/mosaic-react/src/charts/LineChart07.jsx';
 
 // Import utilities
-import {
-    hexToRGB,
-    tailwindConfig,
-} from '../../../../../../Documents/mosaicreact/mosaic-react/src/utils/Utils.js';
+import { hexToRGB, tailwindConfig } from '../../../../../../Documents/mosaicreact/mosaic-react/src/utils/Utils.js';
 
 function FintechCard08() {
     const chartData = {
@@ -35,8 +32,7 @@ function FintechCard08() {
                 pointRadius: 0,
                 pointHoverRadius: 3,
                 pointBackgroundColor: tailwindConfig().theme.colors.green[500],
-                pointHoverBackgroundColor:
-                    tailwindConfig().theme.colors.green[500],
+                pointHoverBackgroundColor: tailwindConfig().theme.colors.green[500],
                 pointBorderWidth: 0,
                 pointHoverBorderWidth: 0,
                 clip: 20,
@@ -52,8 +48,7 @@ function FintechCard08() {
                 pointRadius: 0,
                 pointHoverRadius: 3,
                 pointBackgroundColor: tailwindConfig().theme.colors.green[200],
-                pointHoverBackgroundColor:
-                    tailwindConfig().theme.colors.green[500],
+                pointHoverBackgroundColor: tailwindConfig().theme.colors.green[500],
                 pointBorderWidth: 0,
                 pointHoverBorderWidth: 0,
                 clip: 20,
@@ -65,20 +60,12 @@ function FintechCard08() {
     return (
         <div className="col-span-full flex flex-col rounded-xl bg-white shadow-sm dark:bg-gray-800 sm:col-span-12 xl:col-span-4">
             <header className="flex items-center border-b border-gray-100 px-5 py-4 dark:border-gray-700/60">
-                <h2 className="font-semibold text-gray-800 dark:text-gray-100">
-                    Growth Portfolio
-                </h2>
+                <h2 className="font-semibold text-gray-800 dark:text-gray-100">Growth Portfolio</h2>
             </header>
             <div className="px-5 py-3">
-                <div className="mb-2 text-sm italic">
-                    Hey Mark, by age 65 you could have:
-                </div>
-                <div className="text-3xl font-bold text-gray-800 dark:text-gray-100">
-                    $2M - $3.5M
-                </div>
-                <div className="text-sm text-gray-500 dark:text-gray-400">
-                    Risk level 8
-                </div>
+                <div className="mb-2 text-sm italic">Hey Mark, by age 65 you could have:</div>
+                <div className="text-3xl font-bold text-gray-800 dark:text-gray-100">$2M - $3.5M</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400">Risk level 8</div>
             </div>
             {/* Chart built with Chart.js 3 */}
             <div className="grow">

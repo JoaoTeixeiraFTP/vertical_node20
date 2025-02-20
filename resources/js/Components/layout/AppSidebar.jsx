@@ -4,7 +4,7 @@ import ApplicationLogo from '@/Components/ApplicationLogo.jsx';
 import { NavMain } from '@/Components/navigation/nav-main.jsx';
 import { NavSimple } from '@/Components/navigation/nav-simple.jsx';
 import { NavUserSidebar } from '@/Components/navigation/nav-user-sidebar.jsx';
-import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarRail } from '@/Components/ui/sidebar.jsx';
+import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarRail, SidebarTrigger } from '@/Components/ui/sidebar.jsx';
 import { usePage } from '@inertiajs/react';
 
 const data = {
@@ -70,6 +70,7 @@ export function AppSidebar({ ...props }) {
             <SidebarFooter className="sm:hidden">
                 <NavUserSidebar user={data.user} />
             </SidebarFooter>
+            <SidebarTrigger />
         </Sidebar>
     );
 }

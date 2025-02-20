@@ -8,7 +8,7 @@ import { hexToRGB } from '@/utils/Utils.js';
 
 export default function LineAreaChart({ title, xlabel, ylabel, xfield, firstLine, secondLine, config, data, children }) {
     return (
-        <Card>
+        <Card className={'block'}>
             <CardHeader>
                 <CardTitle>{title}</CardTitle>
                 <hr className="mb-4 mt-2 border-t border-gray-200 dark:border-gray-700" />
@@ -36,7 +36,7 @@ export default function LineAreaChart({ title, xlabel, ylabel, xfield, firstLine
                             </linearGradient>
                         </defs>
                         <Legend verticalAlign="top" align={'right'} height={36} />
-                        <XAxis dataKey={xfield} tick={true} tickLddine={false} axisLine={false} tickMargin={5}>
+                        <XAxis dataKey={xfield} tick={true} tickLine={true} axisLine={false} tickMargin={0}>
                             <Label value={xlabel} fontSize={18} offset={-5} position="insideBottom" />
                         </XAxis>
                         <YAxis tick={true} tickSize={0} tickLine={false} axisLine={false} tickMargin={5}>

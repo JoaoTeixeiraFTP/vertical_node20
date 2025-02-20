@@ -7,9 +7,7 @@ function SettingsSidebar() {
         <div className="no-scrollbar flex min-w-[15rem] flex-nowrap overflow-x-scroll border-b border-gray-200 px-3 py-6 dark:border-gray-700/60 md:block md:space-y-3 md:overflow-auto md:border-b-0 md:border-r">
             {/* Group 1 */}
             <div>
-                <div className="mb-3 text-xs font-semibold uppercase text-gray-400 dark:text-gray-500">
-                    Business settings
-                </div>
+                <div className="mb-3 text-xs font-semibold uppercase text-gray-400 dark:text-gray-500">Business settings</div>
                 <ul className="mr-3 flex flex-nowrap md:mr-0 md:block">
                     <li className="mr-0.5 md:mb-0.5 md:mr-0">
                         <NavLink
@@ -120,9 +118,7 @@ function SettingsSidebar() {
             </div>
             {/* Group 2 */}
             <div>
-                <div className="mb-3 text-xs font-semibold uppercase text-gray-400 dark:text-gray-500">
-                    Experience
-                </div>
+                <div className="mb-3 text-xs font-semibold uppercase text-gray-400 dark:text-gray-500">Experience</div>
                 <ul className="mr-3 flex flex-nowrap md:mr-0 md:block">
                     <li className="mr-0.5 md:mb-0.5 md:mr-0">
                         <NavLink

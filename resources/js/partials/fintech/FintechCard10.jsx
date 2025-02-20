@@ -2,10 +2,7 @@ import { chartAreaGradient } from '../../../../../../Documents/mosaicreact/mosai
 import LineChart from '../../../../../../Documents/mosaicreact/mosaic-react/src/charts/LineChart08.jsx';
 
 // Import utilities
-import {
-    hexToRGB,
-    tailwindConfig,
-} from '../../../../../../Documents/mosaicreact/mosaic-react/src/utils/Utils.js';
+import { hexToRGB, tailwindConfig } from '../../../../../../Documents/mosaicreact/mosaic-react/src/utils/Utils.js';
 
 function FintechCard10() {
     const chartData = {
@@ -41,9 +38,7 @@ function FintechCard10() {
             // Line
             {
                 data: [
-                    732, 610, 610, 504, 504, 504, 349, 349, 504, 342, 504, 610,
-                    391, 192, 154, 273, 191, 191, 126, 263, 349, 252, 323, 322,
-                    270, 232,
+                    732, 610, 610, 504, 504, 504, 349, 349, 504, 342, 504, 610, 391, 192, 154, 273, 191, 191, 126, 263, 349, 252, 323, 322, 270, 232,
                 ],
                 fill: true,
                 backgroundColor: function (context) {
@@ -65,8 +60,7 @@ function FintechCard10() {
                 pointRadius: 0,
                 pointHoverRadius: 3,
                 pointBackgroundColor: tailwindConfig().theme.colors.red[500],
-                pointHoverBackgroundColor:
-                    tailwindConfig().theme.colors.red[500],
+                pointHoverBackgroundColor: tailwindConfig().theme.colors.red[500],
                 pointBorderWidth: 0,
                 pointHoverBorderWidth: 0,
                 clip: 20,
@@ -80,19 +74,11 @@ function FintechCard10() {
             <div className="px-5 pt-5">
                 <header>
                     <h3 className="mb-1 text-sm font-semibold uppercase text-gray-500">
-                        <span className="text-gray-800 dark:text-gray-100">
-                            Google
-                        </span>{' '}
-                        - Alphabet
+                        <span className="text-gray-800 dark:text-gray-100">Google</span> - Alphabet
                     </h3>
-                    <div className="mb-1 text-2xl font-bold text-gray-800 dark:text-gray-100">
-                        $2,860.96
-                    </div>
+                    <div className="mb-1 text-2xl font-bold text-gray-800 dark:text-gray-100">$2,860.96</div>
                     <div className="text-sm">
-                        <span className="font-medium text-red-500">
-                            -$49 (4,7%)
-                        </span>{' '}
-                        - Today
+                        <span className="font-medium text-red-500">-$49 (4,7%)</span> - Today
                     </div>
                 </header>
             </div>

@@ -2,10 +2,7 @@ import { chartAreaGradient } from '../../../../../../Documents/mosaicreact/mosai
 import LineChart from '../../../../../../Documents/mosaicreact/mosaic-react/src/charts/LineChart08.jsx';
 
 // Import utilities
-import {
-    hexToRGB,
-    tailwindConfig,
-} from '../../../../../../Documents/mosaicreact/mosaic-react/src/utils/Utils.js';
+import { hexToRGB, tailwindConfig } from '../../../../../../Documents/mosaicreact/mosaic-react/src/utils/Utils.js';
 
 function FintechCard12() {
     const chartData = {
@@ -41,9 +38,7 @@ function FintechCard12() {
             // Line
             {
                 data: [
-                    540, 466, 540, 466, 385, 432, 334, 334, 289, 289, 200, 289,
-                    222, 289, 289, 403, 554, 304, 289, 270, 134, 270, 829, 644,
-                    688, 664,
+                    540, 466, 540, 466, 385, 432, 334, 334, 289, 289, 200, 289, 222, 289, 289, 403, 554, 304, 289, 270, 134, 270, 829, 644, 688, 664,
                 ],
                 fill: true,
                 backgroundColor: function (context) {
@@ -65,8 +60,7 @@ function FintechCard12() {
                 pointRadius: 0,
                 pointHoverRadius: 3,
                 pointBackgroundColor: tailwindConfig().theme.colors.green[500],
-                pointHoverBackgroundColor:
-                    tailwindConfig().theme.colors.green[500],
+                pointHoverBackgroundColor: tailwindConfig().theme.colors.green[500],
                 pointBorderWidth: 0,
                 pointHoverBorderWidth: 0,
                 clip: 20,
@@ -80,19 +74,11 @@ function FintechCard12() {
             <div className="px-5 pt-5">
                 <header>
                     <h3 className="mb-1 text-xs font-semibold uppercase text-gray-500">
-                        <span className="text-gray-800 dark:text-gray-100">
-                            Twtr
-                        </span>{' '}
-                        - Twitter Inc.
+                        <span className="text-gray-800 dark:text-gray-100">Twtr</span> - Twitter Inc.
                     </h3>
-                    <div className="mb-1 text-2xl font-bold text-gray-800 dark:text-gray-100">
-                        $43.07
-                    </div>
+                    <div className="mb-1 text-2xl font-bold text-gray-800 dark:text-gray-100">$43.07</div>
                     <div className="text-sm">
-                        <span className="font-medium text-green-600">
-                            +$4,20 (9,2%)
-                        </span>{' '}
-                        - Today
+                        <span className="font-medium text-green-600">+$4,20 (9,2%)</span> - Today
                     </div>
                 </header>
             </div>
