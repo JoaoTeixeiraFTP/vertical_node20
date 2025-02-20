@@ -1,36 +1,37 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import placeholder from '../../../../public/images/placeholder.jpg';
 
 export default function News({ result }) {
-    const [businessIndex, setBusinessIndex] = useState(0);
+    const [businessIndex, setBusinessIndex] = useState(1);
     const [techCrunchIndex, setTechCrunchIndex] = useState(0);
 
     const businessNews = result.businessNews?.length ? result.businessNews : [];
     const techCrunchNews = result.techCrunchHeadlines?.length ? result.techCrunchHeadlines : [];
 
-    // Se não houver notícias em nenhuma das categorias, mostrar "Carregando..."
     const isLoading = businessNews.length === 0 && techCrunchNews.length === 0;
     const isFullWidth = (businessNews.length > 0 && techCrunchNews.length === 0) || (businessNews.length === 0 && techCrunchNews.length > 0);
 
-    // Rotação automática do Business News
+    const updateBusinessIndex = useCallback(() => {
+        setBusinessIndex((prevIndex) => (prevIndex + 1) % businessNews.length);
+    }, [businessNews.length]);
+
+    const updateTechCrunchIndex = useCallback(() => {
+        setTechCrunchIndex((prevIndex) => (prevIndex + 1) % techCrunchNews.length);
+    }, [techCrunchNews.length]);
+
     useEffect(() => {
         if (businessNews.length > 1) {
-            const interval = setInterval(() => {
-                setBusinessIndex((prevIndex) => (prevIndex + 1) % businessNews.length);
-            }, 6000);
+            const interval = setInterval(updateBusinessIndex, 6000);
             return () => clearInterval(interval);
         }
-    }, [businessNews]);
+    }, [businessNews.length, updateBusinessIndex]);
 
-    // Rotação automática do TechCrunch News
     useEffect(() => {
         if (techCrunchNews.length > 1) {
-            const interval = setInterval(() => {
-                setTechCrunchIndex((prevIndex) => (prevIndex + 1) % techCrunchNews.length);
-            }, 6000);
+            const interval = setInterval(updateTechCrunchIndex, 6000);
             return () => clearInterval(interval);
         }
-    }, [techCrunchNews]);
+    }, [techCrunchNews.length, updateTechCrunchIndex]);
 
     if (isLoading) {
         return (
@@ -85,7 +86,6 @@ export default function News({ result }) {
                             ))}
                         </div>
 
-                        {/* Pagination Dots */}
                         {techCrunchNews.length > 1 && (
                             <div className="mt-3 flex justify-center space-x-2">
                                 {techCrunchNews.map((_, index) => (

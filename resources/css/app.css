@@ -107,7 +107,6 @@
 }
 
 @media print {
-
     @page {
         size: A4;
         margin: 10mm;
@@ -120,38 +119,53 @@
         background: white;
     }
 
-    #app-header, #app-sidebar, #page-header, #card-footer, #sidebar-trigger {
+    #app-header,
+    #app-sidebar,
+    #page-header,
+    #card-footer,
+    #sidebar-trigger {
         @apply hidden;
     }
 
-    #card-page, #card-document {
-        @apply shadow-none border-none;
+    #card-page,
+    #card-document {
+        @apply border-none shadow-none;
         background: white;
         color: black;
     }
 
-    #document-header div, #document-footer span, #document-lines h3 {
+    #document-header div,
+    #document-footer span,
+    #document-lines h3 {
         color: black;
     }
 
-    #page-document, #main-page, #sidebar-provider {
+    #page-document,
+    #main-page,
+    #sidebar-provider {
         @apply m-0 p-0;
         background: white;
     }
 
-    #table-document, #table-document thead, #document-footer .document-footer-content {
+    #table-document,
+    #table-document thead,
+    #document-footer .document-footer-content {
         background: #e6e7ec !important;
         color: black;
     }
 
-    #table-document tr th, #table-document tr td, #document-footer .document-footer-content  {
+    #table-document tr th,
+    #table-document tr td,
+    #document-footer .document-footer-content {
         border-right: white solid 1px;
     }
-    #table-document tr, #document-footer .document-footer-content  {
+    #table-document tr,
+    #document-footer .document-footer-content {
         border-bottom: white solid 1px;
     }
 
-    #table-document td, #document-footer .document-footer-content span  {
-        @apply text-[0.75em] ps-2 pe-2;
+    #table-document td,
+    #document-footer .document-footer-content span {
+        @apply pe-2 ps-2 text-[0.75em];
     }
 }

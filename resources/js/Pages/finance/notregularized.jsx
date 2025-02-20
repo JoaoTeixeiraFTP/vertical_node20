@@ -39,7 +39,7 @@ export default function NotRegularized({ notregularized }) {
                                 <div className={'flex gap-2'}>
                                     {notregularized.links.map((link, index) =>
                                         index > 0 && index < notregularized.last_page + 1 ? (
-                                            <PaginationItem>
+                                            <PaginationItem key={index}>
                                                 <PaginationLink
                                                     isActive={notregularized.current_page === index}
                                                     className={
@@ -51,7 +51,7 @@ export default function NotRegularized({ notregularized }) {
                                                 </PaginationLink>
                                             </PaginationItem>
                                         ) : (
-                                            <span></span>
+                                            <span key={index}></span>
                                         ),
                                     )}
                                 </div>

@@ -1,12 +1,10 @@
 import { chartAreaGradient } from '@/charts/ChartjsConfig.jsx';
 import LineChart from '@/charts/LineChart01.jsx';
 import EditMenu from '@/Components/dropdown/DropdownEditMenu.jsx';
-import { useTheme } from '@/utils/ThemeContext.jsx';
 import { hexToRGB } from '@/utils/Utils.js';
 import { Link } from '@inertiajs/react';
 
 function DashboardCard01() {
-    const theme = useTheme();
     const chartData = {
         labels: [
             '12-01-2022',

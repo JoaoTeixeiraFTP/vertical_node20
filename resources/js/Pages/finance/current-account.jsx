@@ -40,9 +40,8 @@ export default function CurrentAccount({ currentAccount }) {
                                 <div className={'flex gap-2'}>
                                     {currentAccount.links.map((link, index) =>
                                         index > 0 && index < currentAccount.last_page + 1 ? (
-                                            <PaginationItem>
+                                            <PaginationItem key={index}>
                                                 <PaginationLink
-                                                    key={index}
                                                     isActive={currentAccount.current_page === index}
                                                     className={
                                                         'dark:border-gray-700/60" border-gray-200 bg-white text-gray-800 active:bg-violet-500 active:text-white dark:bg-gray-800 dark:text-gray-300'
@@ -53,7 +52,7 @@ export default function CurrentAccount({ currentAccount }) {
                                                 </PaginationLink>
                                             </PaginationItem>
                                         ) : (
-                                            <span></span>
+                                            <span key={index}></span>
                                         ),
                                     )}
                                 </div>

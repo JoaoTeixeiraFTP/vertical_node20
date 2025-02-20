@@ -57,7 +57,7 @@ export default function Invoices({ invoices }) {
                                                 </PaginationLink>
                                             </PaginationItem>
                                         ) : (
-                                            <span></span>
+                                            <span key={index}></span>
                                         ),
                                     )}
                                 </div>

@@ -40,7 +40,7 @@ export default function Receipts({ receipt }) {
                                 <div className={'flex gap-2'}>
                                     {receipt.links.map((link, index) =>
                                         index > 0 && index < receipt.last_page + 1 ? (
-                                            <PaginationItem>
+                                            <PaginationItem key={index}>
                                                 <PaginationLink
                                                     isActive={receipt.current_page === index}
                                                     className={
@@ -52,7 +52,7 @@ export default function Receipts({ receipt }) {
                                                 </PaginationLink>
                                             </PaginationItem>
                                         ) : (
-                                            <span></span>
+                                            <span key={index}></span>
                                         ),
                                     )}
                                 </div>

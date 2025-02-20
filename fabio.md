@@ -30,8 +30,6 @@
 
 - Tabela
 - Conta Corrente
-- Apresentar apenas não regularizados
-- Total de não regularizado no fundo
 
 ### Card 5
 

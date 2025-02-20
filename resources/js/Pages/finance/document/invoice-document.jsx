@@ -103,8 +103,8 @@ export default function InvoiceDocument({ document }) {
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                            {document.data[0].fi.map((line) => (
-                                                                <tr className="border-b border-gray-200 dark:border-gray-300">
+                                                            {document.data[0].fi.map((line, index) => (
+                                                                <tr key={index} className="border-b border-gray-200 dark:border-gray-300">
                                                                     <td className="py-3 text-[0.95em] font-medium">{line.ref}</td>
                                                                     <td className="py-3 text-[0.95em] font-medium">{line.design}</td>
                                                                     <td className="py-3 text-[0.95em] font-medium">{line.qtt}</td>
@@ -170,7 +170,10 @@ export default function InvoiceDocument({ document }) {
                                             >
                                                 Voltar
                                             </button>
-                                            <button className="btn ml-3 bg-gray-400 text-white hover:bg-gray-600 dark:bg-gray-400 dark:hover:bg-gray-600">
+                                            <button
+                                                onClick={() => prindDocument()}
+                                                className="btn ml-3 bg-gray-400 text-white hover:bg-gray-600 dark:bg-gray-400 dark:hover:bg-gray-600"
+                                            >
                                                 Imprimir
                                             </button>
                                         </div>
