@@ -91,7 +91,7 @@ export default function InvoiceDocument({ document }) {
                                                 </h3>
                                                 <div className="mt-6 overflow-hidden rounded-md">
                                                     <table id={'table-document'} className="w-full border-collapse text-left">
-                                                        <thead className="bg-gray-400 text-xs uppercase text-gray-400 dark:text-gray-600">
+                                                        <thead className="bg-gray-400 text-xs uppercase text-gray-400 text-white dark:text-white">
                                                             <tr>
                                                                 <th className="p-2 text-left first:rounded-l-md">Referência</th>
                                                                 <th className="p-2 text-left first:rounded-l-md">Descrição</th>
