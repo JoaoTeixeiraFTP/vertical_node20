@@ -1,8 +1,9 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/Components/ui/card.jsx';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/Components/ui/card.jsx';
+import { formatEuro } from '@/utils/Utils.js';
 import { ScrollArea } from '@radix-ui/react-scroll-area';
 import { useEffect, useRef, useState } from 'react';
 
-export default function AutoScrollList({ title, children, length }) {
+export default function AutoScrollList({ title, children, length, footerValue = null }) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
     const listRef = useRef(null);
@@ -38,7 +39,7 @@ export default function AutoScrollList({ title, children, length }) {
     };
 
     return (
-        <Card>
+        <Card className={'block'}>
             <CardHeader>
                 <CardTitle>{title}</CardTitle>
                 <hr className="mb-4 mt-2 border-t border-gray-200 dark:border-gray-700" />
@@ -54,6 +55,16 @@ export default function AutoScrollList({ title, children, length }) {
                     </ul>
                 </ScrollArea>
             </CardContent>
+            {footerValue !== null ? (
+                <CardFooter>
+                    <h1 className="text-lg font-semibold text-gray-800 dark:text-gray-100">
+                        Total:
+                        <span className="text-red-600 dark:text-red-400"> {formatEuro(footerValue.current)}</span>
+                    </h1>
+                </CardFooter>
+            ) : (
+                <div hidden={true}></div>
+            )}
         </Card>
     );
 }
