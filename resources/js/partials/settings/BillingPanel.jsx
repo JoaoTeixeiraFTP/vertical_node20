@@ -4,103 +4,68 @@ function BillingPanel() {
             {/* Panel body */}
             <div className="space-y-6 p-6">
                 <div>
-                    <h2 className="mb-4 text-2xl font-bold text-gray-800 dark:text-gray-100">
-                        Billing & Invoices
-                    </h2>
+                    <h2 className="mb-4 text-2xl font-bold text-gray-800 dark:text-gray-100">Billing & Invoices</h2>
                     <div className="text-sm">
-                        This workspace’s Basic Plan is set to{' '}
-                        <strong className="font-medium">$34</strong> per month
-                        and will renew on{' '}
+                        This workspace’s Basic Plan is set to <strong className="font-medium">$34</strong> per month and will renew on{' '}
                         <strong className="font-medium">July 9, 2024</strong>.
                     </div>
                 </div>
 
                 {/* Billing Information */}
                 <section>
-                    <h3 className="mb-1 text-xl font-bold leading-snug text-gray-800 dark:text-gray-100">
-                        Billing Information
-                    </h3>
+                    <h3 className="mb-1 text-xl font-bold leading-snug text-gray-800 dark:text-gray-100">Billing Information</h3>
                     <ul>
                         <li className="border-b border-gray-200 py-3 dark:border-gray-700/60 md:flex md:items-center md:justify-between">
                             {/* Left */}
-                            <div className="text-sm font-medium text-gray-800 dark:text-gray-100">
-                                Payment Method
-                            </div>
+                            <div className="text-sm font-medium text-gray-800 dark:text-gray-100">Payment Method</div>
                             {/* Right */}
                             <div className="ml-4 text-sm text-gray-600 dark:text-gray-400">
-                                <span className="mr-3">
-                                    Mastercard ending 9282
-                                </span>
-                                <a
-                                    className="font-medium text-violet-500 hover:text-violet-600 dark:hover:text-violet-400"
-                                    href="#0"
-                                >
+                                <span className="mr-3">Mastercard ending 9282</span>
+                                <a className="font-medium text-violet-500 hover:text-violet-600 dark:hover:text-violet-400" href="#0">
                                     Edit
                                 </a>
                             </div>
                         </li>
                         <li className="border-b border-gray-200 py-3 dark:border-gray-700/60 md:flex md:items-center md:justify-between">
                             {/* Left */}
-                            <div className="text-sm font-medium text-gray-800 dark:text-gray-100">
-                                Billing Interval
-                            </div>
+                            <div className="text-sm font-medium text-gray-800 dark:text-gray-100">Billing Interval</div>
                             {/* Right */}
                             <div className="ml-4 text-sm text-gray-600 dark:text-gray-400">
                                 <span className="mr-3">Annually</span>
-                                <a
-                                    className="font-medium text-violet-500 hover:text-violet-600 dark:hover:text-violet-400"
-                                    href="#0"
-                                >
+                                <a className="font-medium text-violet-500 hover:text-violet-600 dark:hover:text-violet-400" href="#0">
                                     Edit
                                 </a>
                             </div>
                         </li>
                         <li className="border-b border-gray-200 py-3 dark:border-gray-700/60 md:flex md:items-center md:justify-between">
                             {/* Left */}
-                            <div className="text-sm font-medium text-gray-800 dark:text-gray-100">
-                                VAT/GST Number
-                            </div>
+                            <div className="text-sm font-medium text-gray-800 dark:text-gray-100">VAT/GST Number</div>
                             {/* Right */}
                             <div className="ml-4 text-sm text-gray-600 dark:text-gray-400">
                                 <span className="mr-3">UK849700927</span>
-                                <a
-                                    className="font-medium text-violet-500 hover:text-violet-600 dark:hover:text-violet-400"
-                                    href="#0"
-                                >
+                                <a className="font-medium text-violet-500 hover:text-violet-600 dark:hover:text-violet-400" href="#0">
                                     Edit
                                 </a>
                             </div>
                         </li>
                         <li className="border-b border-gray-200 py-3 dark:border-gray-700/60 md:flex md:items-center md:justify-between">
                             {/* Left */}
-                            <div className="text-sm font-medium text-gray-800 dark:text-gray-100">
-                                Your Address
-                            </div>
+                            <div className="text-sm font-medium text-gray-800 dark:text-gray-100">Your Address</div>
                             {/* Right */}
                             <div className="ml-4 text-sm text-gray-600 dark:text-gray-400">
-                                <span className="mr-3">
-                                    34 Savoy Street, London, UK, 24E8X
-                                </span>
-                                <a
-                                    className="font-medium text-violet-500 hover:text-violet-600 dark:hover:text-violet-400"
-                                    href="#0"
-                                >
+                                <span className="mr-3">34 Savoy Street, London, UK, 24E8X</span>
+                                <a className="font-medium text-violet-500 hover:text-violet-600 dark:hover:text-violet-400" href="#0">
                                     Edit
                                 </a>
                             </div>
                         </li>
                         <li className="border-b border-gray-200 py-3 dark:border-gray-700/60 md:flex md:items-center md:justify-between">
                             {/* Left */}
-                            <div className="text-sm font-medium text-gray-800 dark:text-gray-100">
-                                Billing Address
-                            </div>
+                            <div className="text-sm font-medium text-gray-800 dark:text-gray-100">Billing Address</div>
                             {/* Right */}
                             <div className="ml-4 text-sm text-gray-600 dark:text-gray-400">
                                 <span className="mr-3">hello@cruip.com</span>
-                                <a
-                                    className="font-medium text-violet-500 hover:text-violet-600 dark:hover:text-violet-400"
-                                    href="#0"
-                                >
+                                <a className="font-medium text-violet-500 hover:text-violet-600 dark:hover:text-violet-400" href="#0">
                                     Edit
                                 </a>
                             </div>
@@ -110,28 +75,20 @@ function BillingPanel() {
 
                 {/* Invoices */}
                 <section>
-                    <h3 className="mb-1 text-xl font-bold leading-snug text-gray-800 dark:text-gray-100">
-                        Invoices
-                    </h3>
+                    <h3 className="mb-1 text-xl font-bold leading-snug text-gray-800 dark:text-gray-100">Invoices</h3>
                     {/* Table */}
                     <table className="w-full table-auto dark:text-gray-400">
                         {/* Table header */}
                         <thead className="text-xs uppercase text-gray-400 dark:text-gray-500">
                             <tr className="md:flex-no-wrap flex flex-wrap md:table-row">
                                 <th className="block w-full py-2 md:table-cell md:w-auto">
-                                    <div className="text-left font-semibold">
-                                        Year
-                                    </div>
+                                    <div className="text-left font-semibold">Year</div>
                                 </th>
                                 <th className="hidden w-full py-2 md:table-cell md:w-auto">
-                                    <div className="text-left font-semibold">
-                                        Plan
-                                    </div>
+                                    <div className="text-left font-semibold">Plan</div>
                                 </th>
                                 <th className="hidden w-full py-2 md:table-cell md:w-auto">
-                                    <div className="text-left font-semibold">
-                                        Amount
-                                    </div>
+                                    <div className="text-left font-semibold">Amount</div>
                                 </th>
                                 <th className="hidden w-full py-2 md:table-cell md:w-auto">
                                     <div className="text-right font-semibold"></div>
@@ -143,36 +100,21 @@ function BillingPanel() {
                             {/* Row */}
                             <tr className="md:flex-no-wrap flex flex-wrap border-b border-gray-200 py-2 dark:border-gray-700/60 md:table-row md:py-0">
                                 <td className="block w-full py-0.5 md:table-cell md:w-auto md:py-2">
-                                    <div className="text-left font-medium text-gray-800 dark:text-gray-100">
-                                        2024
-                                    </div>
+                                    <div className="text-left font-medium text-gray-800 dark:text-gray-100">2024</div>
                                 </td>
                                 <td className="block w-full py-0.5 md:table-cell md:w-auto md:py-2">
-                                    <div className="text-left">
-                                        Basic Plan - Annualy
-                                    </div>
+                                    <div className="text-left">Basic Plan - Annualy</div>
                                 </td>
                                 <td className="block w-full py-0.5 md:table-cell md:w-auto md:py-2">
-                                    <div className="text-left font-medium">
-                                        $349.00
-                                    </div>
+                                    <div className="text-left font-medium">$349.00</div>
                                 </td>
                                 <td className="block w-full py-0.5 md:table-cell md:w-auto md:py-2">
                                     <div className="flex items-center text-right md:justify-end">
-                                        <a
-                                            className="font-medium text-violet-500 hover:text-violet-600 dark:hover:text-violet-400"
-                                            href="#0"
-                                        >
+                                        <a className="font-medium text-violet-500 hover:text-violet-600 dark:hover:text-violet-400" href="#0">
                                             HTML
                                         </a>
-                                        <span
-                                            className="mx-2 block h-4 w-px bg-gray-200 dark:bg-gray-700"
-                                            aria-hidden="true"
-                                        ></span>
-                                        <a
-                                            className="font-medium text-violet-500 hover:text-violet-600 dark:hover:text-violet-400"
-                                            href="#0"
-                                        >
+                                        <span className="mx-2 block h-4 w-px bg-gray-200 dark:bg-gray-700" aria-hidden="true"></span>
+                                        <a className="font-medium text-violet-500 hover:text-violet-600 dark:hover:text-violet-400" href="#0">
                                             PDF
                                         </a>
                                     </div>
@@ -181,36 +123,21 @@ function BillingPanel() {
                             {/* Row */}
                             <tr className="md:flex-no-wrap flex flex-wrap border-b border-gray-200 py-2 dark:border-gray-700/60 md:table-row md:py-0">
                                 <td className="block w-full py-0.5 md:table-cell md:w-auto md:py-2">
-                                    <div className="text-left font-medium text-gray-800 dark:text-gray-100">
-                                        2024
-                                    </div>
+                                    <div className="text-left font-medium text-gray-800 dark:text-gray-100">2024</div>
                                 </td>
                                 <td className="block w-full py-0.5 md:table-cell md:w-auto md:py-2">
-                                    <div className="text-left">
-                                        Basic Plan - Annualy
-                                    </div>
+                                    <div className="text-left">Basic Plan - Annualy</div>
                                 </td>
                                 <td className="block w-full py-0.5 md:table-cell md:w-auto md:py-2">
-                                    <div className="text-left font-medium">
-                                        $349.00
-                                    </div>
+                                    <div className="text-left font-medium">$349.00</div>
                                 </td>
                                 <td className="block w-full py-0.5 md:table-cell md:w-auto md:py-2">
                                     <div className="flex items-center text-right md:justify-end">
-                                        <a
-                                            className="font-medium text-violet-500 hover:text-violet-600 dark:hover:text-violet-400"
-                                            href="#0"
-                                        >
+                                        <a className="font-medium text-violet-500 hover:text-violet-600 dark:hover:text-violet-400" href="#0">
                                             HTML
                                         </a>
-                                        <span
-                                            className="mx-2 block h-4 w-px bg-gray-200 dark:bg-gray-700"
-                                            aria-hidden="true"
-                                        ></span>
-                                        <a
-                                            className="font-medium text-violet-500 hover:text-violet-600 dark:hover:text-violet-400"
-                                            href="#0"
-                                        >
+                                        <span className="mx-2 block h-4 w-px bg-gray-200 dark:bg-gray-700" aria-hidden="true"></span>
+                                        <a className="font-medium text-violet-500 hover:text-violet-600 dark:hover:text-violet-400" href="#0">
                                             PDF
                                         </a>
                                     </div>

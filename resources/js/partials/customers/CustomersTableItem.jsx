@@ -5,13 +5,7 @@ function CustomersTableItem(props) {
                 <div className="flex items-center">
                     <label className="inline-flex">
                         <span className="sr-only">Select</span>
-                        <input
-                            id={props.id}
-                            className="form-checkbox"
-                            type="checkbox"
-                            onChange={props.handleClick}
-                            checked={props.isChecked}
-                        />
+                        <input id={props.id} className="form-checkbox" type="checkbox" onChange={props.handleClick} checked={props.isChecked} />
                     </label>
                 </div>
             </td>
@@ -32,17 +26,9 @@ function CustomersTableItem(props) {
             <td className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
                 <div className="flex items-center">
                     <div className="mr-2 h-10 w-10 shrink-0 sm:mr-3">
-                        <img
-                            className="rounded-full"
-                            src={props.image}
-                            width="40"
-                            height="40"
-                            alt={props.name}
-                        />
+                        <img className="rounded-full" src={props.image} width="40" height="40" alt={props.name} />
                     </div>
-                    <div className="font-medium text-gray-800 dark:text-gray-100">
-                        {props.name}
-                    </div>
+                    <div className="font-medium text-gray-800 dark:text-gray-100">{props.name}</div>
                 </div>
             </td>
             <td className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
@@ -55,14 +41,10 @@ function CustomersTableItem(props) {
                 <div className="text-center">{props.orders}</div>
             </td>
             <td className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
-                <div className="text-left font-medium text-sky-600">
-                    {props.lastOrder}
-                </div>
+                <div className="text-left font-medium text-sky-600">{props.lastOrder}</div>
             </td>
             <td className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
-                <div className="text-left font-medium text-green-600">
-                    {props.spent}
-                </div>
+                <div className="text-left font-medium text-green-600">{props.spent}</div>
             </td>
             <td className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
                 <div className="text-center">{props.refunds}</div>

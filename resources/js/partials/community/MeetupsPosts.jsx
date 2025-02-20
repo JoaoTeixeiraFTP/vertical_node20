@@ -36,10 +36,7 @@ function MeetupsPosts() {
                     <button className="absolute right-0 top-0 mr-4 mt-4">
                         <div className="rounded-full bg-gray-900 bg-opacity-60 text-gray-100">
                             <span className="sr-only">Like</span>
-                            <svg
-                                className="h-8 w-8 fill-current"
-                                viewBox="0 0 32 32"
-                            >
+                            <svg className="h-8 w-8 fill-current" viewBox="0 0 32 32">
                                 <path d="M22.682 11.318A4.485 4.485 0 0019.5 10a4.377 4.377 0 00-3.5 1.707A4.383 4.383 0 0012.5 10a4.5 4.5 0 00-3.182 7.682L16 24l6.682-6.318a4.5 4.5 0 000-6.364zm-1.4 4.933L16 21.247l-5.285-5A2.5 2.5 0 0112.5 12c1.437 0 2.312.681 3.5 2.625C17.187 12.681 18.062 12 19.5 12a2.5 2.5 0 011.785 4.251h-.003z" />
                             </svg>
                         </div>
@@ -48,32 +45,21 @@ function MeetupsPosts() {
                 {/* Content */}
                 <div className="flex grow flex-col p-5">
                     <div className="grow">
-                        <div className="mb-2 text-sm font-semibold uppercase text-violet-500">
-                            Mon 27 Dec, 2024
-                        </div>
-                        <Link
-                            className="mb-2 inline-flex"
-                            to="/community/meetups-post"
-                        >
+                        <div className="mb-2 text-sm font-semibold uppercase text-violet-500">Mon 27 Dec, 2024</div>
+                        <Link className="mb-2 inline-flex" to="/community/meetups-post">
                             <h3 className="text-lg font-bold text-gray-800 dark:text-gray-100">
-                                Silicon Valley Bootstrapper Breakfast Online for
-                                2024
+                                Silicon Valley Bootstrapper Breakfast Online for 2024
                             </h3>
                         </Link>
                         <div className="text-sm">
-                            Lorem ipsum is placeholder text commonly used in the
-                            graphic, print, and publishing industries for
-                            previewing layouts.
+                            Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts.
                         </div>
                     </div>
                     {/* Footer */}
                     <div className="mt-3 flex items-center justify-between">
                         {/* Tag */}
                         <div className="inline-flex items-center rounded-full border border-gray-200 px-2.5 py-1 text-center text-xs font-medium text-gray-600 dark:border-gray-700/60 dark:text-gray-400">
-                            <svg
-                                className="mr-2 h-3 w-4 fill-gray-400 dark:fill-gray-500"
-                                viewBox="0 0 16 12"
-                            >
+                            <svg className="mr-2 h-3 w-4 fill-gray-400 dark:fill-gray-500" viewBox="0 0 16 12">
                                 <path d="m16 2-4 2.4V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7.6l4 2.4V2ZM2 10V2h8v8H2Z" />
                             </svg>
                             <span>Online Event</span>
@@ -103,9 +89,7 @@ function MeetupsPosts() {
                                     alt="User 05"
                                 />
                             </div>
-                            <div className="text-xs font-medium italic text-gray-400 dark:text-gray-500">
-                                +22
-                            </div>
+                            <div className="text-xs font-medium italic text-gray-400 dark:text-gray-500">+22</div>
                         </div>
                     </div>
                 </div>
@@ -129,10 +113,7 @@ function MeetupsPosts() {
                     <button className="absolute right-0 top-0 mr-4 mt-4">
                         <div className="rounded-full bg-gray-900 bg-opacity-60 text-gray-100">
                             <span className="sr-only">Like</span>
-                            <svg
-                                className="h-8 w-8 fill-current"
-                                viewBox="0 0 32 32"
-                            >
+                            <svg className="h-8 w-8 fill-current" viewBox="0 0 32 32">
                                 <path d="M22.682 11.318A4.485 4.485 0 0019.5 10a4.377 4.377 0 00-3.5 1.707A4.383 4.383 0 0012.5 10a4.5 4.5 0 00-3.182 7.682L16 24l6.682-6.318a4.5 4.5 0 000-6.364zm-1.4 4.933L16 21.247l-5.285-5A2.5 2.5 0 0112.5 12c1.437 0 2.312.681 3.5 2.625C17.187 12.681 18.062 12 19.5 12a2.5 2.5 0 011.785 4.251h-.003z" />
                             </svg>
                         </div>
@@ -141,31 +122,19 @@ function MeetupsPosts() {
                 {/* Content */}
                 <div className="flex grow flex-col p-5">
                     <div className="grow">
-                        <div className="mb-2 text-sm font-semibold uppercase text-violet-500">
-                            Mon 27 Dec, 2024
-                        </div>
-                        <Link
-                            className="mb-2 inline-flex"
-                            to="/community/meetups-post"
-                        >
-                            <h3 className="text-lg font-bold text-gray-800 dark:text-gray-100">
-                                New York &amp; New Jersey Virtual Retreat 2024
-                            </h3>
+                        <div className="mb-2 text-sm font-semibold uppercase text-violet-500">Mon 27 Dec, 2024</div>
+                        <Link className="mb-2 inline-flex" to="/community/meetups-post">
+                            <h3 className="text-lg font-bold text-gray-800 dark:text-gray-100">New York &amp; New Jersey Virtual Retreat 2024</h3>
                         </Link>
                         <div className="text-sm">
-                            Lorem ipsum is placeholder text commonly used in the
-                            graphic, print, and publishing industries for
-                            previewing layouts.
+                            Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts.
                         </div>
                     </div>
                     {/* Footer */}
                     <div className="mt-3 flex items-center justify-between">
                         {/* Tag */}
                         <div className="inline-flex items-center rounded-full border border-gray-200 px-2.5 py-1 text-center text-xs font-medium text-gray-600 dark:border-gray-700/60 dark:text-gray-400">
-                            <svg
-                                className="mr-2 h-3 w-4 fill-gray-400 dark:fill-gray-500"
-                                viewBox="0 0 16 12"
-                            >
+                            <svg className="mr-2 h-3 w-4 fill-gray-400 dark:fill-gray-500" viewBox="0 0 16 12">
                                 <path d="m16 2-4 2.4V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7.6l4 2.4V2ZM2 10V2h8v8H2Z" />
                             </svg>
                             <span>Online Event</span>
@@ -195,9 +164,7 @@ function MeetupsPosts() {
                                     alt="User 04"
                                 />
                             </div>
-                            <div className="text-xs font-medium italic text-gray-400 dark:text-gray-500">
-                                +132
-                            </div>
+                            <div className="text-xs font-medium italic text-gray-400 dark:text-gray-500">+132</div>
                         </div>
                     </div>
                 </div>
@@ -221,10 +188,7 @@ function MeetupsPosts() {
                     <button className="absolute right-0 top-0 mr-4 mt-4">
                         <div className="rounded-full bg-gray-900 bg-opacity-60 text-gray-100">
                             <span className="sr-only">Like</span>
-                            <svg
-                                className="h-8 w-8 fill-current"
-                                viewBox="0 0 32 32"
-                            >
+                            <svg className="h-8 w-8 fill-current" viewBox="0 0 32 32">
                                 <path d="M22.682 11.318A4.485 4.485 0 0019.5 10a4.377 4.377 0 00-3.5 1.707A4.383 4.383 0 0012.5 10a4.5 4.5 0 00-3.182 7.682L16 24l6.682-6.318a4.5 4.5 0 000-6.364zm-1.4 4.933L16 21.247l-5.285-5A2.5 2.5 0 0112.5 12c1.437 0 2.312.681 3.5 2.625C17.187 12.681 18.062 12 19.5 12a2.5 2.5 0 011.785 4.251h-.003z" />
                             </svg>
                         </div>
@@ -233,31 +197,19 @@ function MeetupsPosts() {
                 {/* Content */}
                 <div className="flex grow flex-col p-5">
                     <div className="grow">
-                        <div className="mb-2 text-sm font-semibold uppercase text-violet-500">
-                            Wed 29 Dec, 2024
-                        </div>
-                        <Link
-                            className="mb-2 inline-flex"
-                            to="/community/meetups-post"
-                        >
-                            <h3 className="text-lg font-bold text-gray-800 dark:text-gray-100">
-                                The World of AI and Machine Learning — Open Chat
-                            </h3>
+                        <div className="mb-2 text-sm font-semibold uppercase text-violet-500">Wed 29 Dec, 2024</div>
+                        <Link className="mb-2 inline-flex" to="/community/meetups-post">
+                            <h3 className="text-lg font-bold text-gray-800 dark:text-gray-100">The World of AI and Machine Learning — Open Chat</h3>
                         </Link>
                         <div className="text-sm">
-                            Lorem ipsum is placeholder text commonly used in the
-                            graphic, print, and publishing industries for
-                            previewing layouts.
+                            Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts.
                         </div>
                     </div>
                     {/* Footer */}
                     <div className="mt-3 flex items-center justify-between">
                         {/* Tag */}
                         <div className="inline-flex items-center rounded-full border border-gray-200 px-2.5 py-1 text-center text-xs font-medium text-gray-600 dark:border-gray-700/60 dark:text-gray-400">
-                            <svg
-                                className="mr-2 h-3 w-4 fill-gray-400 dark:fill-gray-500"
-                                viewBox="0 0 16 12"
-                            >
+                            <svg className="mr-2 h-3 w-4 fill-gray-400 dark:fill-gray-500" viewBox="0 0 16 12">
                                 <path d="m16 2-4 2.4V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7.6l4 2.4V2ZM2 10V2h8v8H2Z" />
                             </svg>
                             <span>Online Event</span>
@@ -287,9 +239,7 @@ function MeetupsPosts() {
                                     alt="User 01"
                                 />
                             </div>
-                            <div className="text-xs font-medium italic text-gray-400 dark:text-gray-500">
-                                +12
-                            </div>
+                            <div className="text-xs font-medium italic text-gray-400 dark:text-gray-500">+12</div>
                         </div>
                     </div>
                 </div>
@@ -313,10 +263,7 @@ function MeetupsPosts() {
                     <button className="absolute right-0 top-0 mr-4 mt-4">
                         <div className="rounded-full bg-gray-900 bg-opacity-60 text-gray-100">
                             <span className="sr-only">Like</span>
-                            <svg
-                                className="h-8 w-8 fill-current"
-                                viewBox="0 0 32 32"
-                            >
+                            <svg className="h-8 w-8 fill-current" viewBox="0 0 32 32">
                                 <path d="M22.682 11.318A4.485 4.485 0 0019.5 10a4.377 4.377 0 00-3.5 1.707A4.383 4.383 0 0012.5 10a4.5 4.5 0 00-3.182 7.682L16 24l6.682-6.318a4.5 4.5 0 000-6.364zm-1.4 4.933L16 21.247l-5.285-5A2.5 2.5 0 0112.5 12c1.437 0 2.312.681 3.5 2.625C17.187 12.681 18.062 12 19.5 12a2.5 2.5 0 011.785 4.251h-.003z" />
                             </svg>
                         </div>
@@ -325,31 +272,19 @@ function MeetupsPosts() {
                 {/* Content */}
                 <div className="flex grow flex-col p-5">
                     <div className="grow">
-                        <div className="mb-2 text-sm font-semibold uppercase text-violet-500">
-                            Wed 29 Dec, 2024
-                        </div>
-                        <Link
-                            className="mb-2 inline-flex"
-                            to="/community/meetups-post"
-                        >
-                            <h3 className="text-lg font-bold text-gray-800 dark:text-gray-100">
-                                NYC Code &amp; Coffee 2.0 @ Freehold Brooklyn
-                            </h3>
+                        <div className="mb-2 text-sm font-semibold uppercase text-violet-500">Wed 29 Dec, 2024</div>
+                        <Link className="mb-2 inline-flex" to="/community/meetups-post">
+                            <h3 className="text-lg font-bold text-gray-800 dark:text-gray-100">NYC Code &amp; Coffee 2.0 @ Freehold Brooklyn</h3>
                         </Link>
                         <div className="text-sm">
-                            Lorem ipsum is placeholder text commonly used in the
-                            graphic, print, and publishing industries for
-                            previewing layouts.
+                            Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts.
                         </div>
                     </div>
                     {/* Footer */}
                     <div className="mt-3 flex items-center justify-between">
                         {/* Tag */}
                         <div className="inline-flex items-center rounded-full border border-gray-200 px-2.5 py-1 text-center text-xs font-medium text-gray-600 dark:border-gray-700/60 dark:text-gray-400">
-                            <svg
-                                className="mr-2 h-3 w-4 fill-gray-400 dark:fill-gray-500"
-                                viewBox="0 0 16 12"
-                            >
+                            <svg className="mr-2 h-3 w-4 fill-gray-400 dark:fill-gray-500" viewBox="0 0 16 12">
                                 <path d="m16 2-4 2.4V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7.6l4 2.4V2ZM2 10V2h8v8H2Z" />
                             </svg>
                             <span>Online Event</span>
@@ -372,9 +307,7 @@ function MeetupsPosts() {
                                     alt="User 02"
                                 />
                             </div>
-                            <div className="text-xs font-medium italic text-gray-400 dark:text-gray-500">
-                                +17
-                            </div>
+                            <div className="text-xs font-medium italic text-gray-400 dark:text-gray-500">+17</div>
                         </div>
                     </div>
                 </div>
@@ -398,10 +331,7 @@ function MeetupsPosts() {
                     <button className="absolute right-0 top-0 mr-4 mt-4">
                         <div className="rounded-full bg-gray-900 bg-opacity-60 text-gray-100">
                             <span className="sr-only">Like</span>
-                            <svg
-                                className="h-8 w-8 fill-current"
-                                viewBox="0 0 32 32"
-                            >
+                            <svg className="h-8 w-8 fill-current" viewBox="0 0 32 32">
                                 <path d="M22.682 11.318A4.485 4.485 0 0019.5 10a4.377 4.377 0 00-3.5 1.707A4.383 4.383 0 0012.5 10a4.5 4.5 0 00-3.182 7.682L16 24l6.682-6.318a4.5 4.5 0 000-6.364zm-1.4 4.933L16 21.247l-5.285-5A2.5 2.5 0 0112.5 12c1.437 0 2.312.681 3.5 2.625C17.187 12.681 18.062 12 19.5 12a2.5 2.5 0 011.785 4.251h-.003z" />
                             </svg>
                         </div>
@@ -410,31 +340,19 @@ function MeetupsPosts() {
                 {/* Content */}
                 <div className="flex grow flex-col p-5">
                     <div className="grow">
-                        <div className="mb-2 text-sm font-semibold uppercase text-violet-500">
-                            Mon 3 Jan, 2024
-                        </div>
-                        <Link
-                            className="mb-2 inline-flex"
-                            to="/community/meetups-post"
-                        >
-                            <h3 className="text-lg font-bold text-gray-800 dark:text-gray-100">
-                                Acme Inc. London Meetup: Women in Tech Night
-                            </h3>
+                        <div className="mb-2 text-sm font-semibold uppercase text-violet-500">Mon 3 Jan, 2024</div>
+                        <Link className="mb-2 inline-flex" to="/community/meetups-post">
+                            <h3 className="text-lg font-bold text-gray-800 dark:text-gray-100">Acme Inc. London Meetup: Women in Tech Night</h3>
                         </Link>
                         <div className="text-sm">
-                            Lorem ipsum is placeholder text commonly used in the
-                            graphic, print, and publishing industries for
-                            previewing layouts.
+                            Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts.
                         </div>
                     </div>
                     {/* Footer */}
                     <div className="mt-3 flex items-center justify-between">
                         {/* Tag */}
                         <div className="inline-flex items-center rounded-full border border-gray-200 px-2.5 py-1 text-center text-xs font-medium text-gray-600 dark:border-gray-700/60 dark:text-gray-400">
-                            <svg
-                                className="mr-2 h-3 w-4 fill-gray-400 dark:fill-gray-500"
-                                viewBox="0 0 16 12"
-                            >
+                            <svg className="mr-2 h-3 w-4 fill-gray-400 dark:fill-gray-500" viewBox="0 0 16 12">
                                 <path d="m16 2-4 2.4V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7.6l4 2.4V2ZM2 10V2h8v8H2Z" />
                             </svg>
                             <span>Online Event</span>
@@ -457,9 +375,7 @@ function MeetupsPosts() {
                                     alt="User 01"
                                 />
                             </div>
-                            <div className="text-xs font-medium italic text-gray-400 dark:text-gray-500">
-                                +117
-                            </div>
+                            <div className="text-xs font-medium italic text-gray-400 dark:text-gray-500">+117</div>
                         </div>
                     </div>
                 </div>
@@ -483,10 +399,7 @@ function MeetupsPosts() {
                     <button className="absolute right-0 top-0 mr-4 mt-4">
                         <div className="rounded-full bg-gray-900 bg-opacity-60 text-gray-100">
                             <span className="sr-only">Like</span>
-                            <svg
-                                className="h-8 w-8 fill-current"
-                                viewBox="0 0 32 32"
-                            >
+                            <svg className="h-8 w-8 fill-current" viewBox="0 0 32 32">
                                 <path d="M22.682 11.318A4.485 4.485 0 0019.5 10a4.377 4.377 0 00-3.5 1.707A4.383 4.383 0 0012.5 10a4.5 4.5 0 00-3.182 7.682L16 24l6.682-6.318a4.5 4.5 0 000-6.364zm-1.4 4.933L16 21.247l-5.285-5A2.5 2.5 0 0112.5 12c1.437 0 2.312.681 3.5 2.625C17.187 12.681 18.062 12 19.5 12a2.5 2.5 0 011.785 4.251h-.003z" />
                             </svg>
                         </div>
@@ -495,31 +408,19 @@ function MeetupsPosts() {
                 {/* Content */}
                 <div className="flex grow flex-col p-5">
                     <div className="grow">
-                        <div className="mb-2 text-sm font-semibold uppercase text-violet-500">
-                            Thu 6 Jan, 2024
-                        </div>
-                        <Link
-                            className="mb-2 inline-flex"
-                            to="/community/meetups-post"
-                        >
-                            <h3 className="text-lg font-bold text-gray-800 dark:text-gray-100">
-                                Founder Worldwide - First Meetup of 2022!
-                            </h3>
+                        <div className="mb-2 text-sm font-semibold uppercase text-violet-500">Thu 6 Jan, 2024</div>
+                        <Link className="mb-2 inline-flex" to="/community/meetups-post">
+                            <h3 className="text-lg font-bold text-gray-800 dark:text-gray-100">Founder Worldwide - First Meetup of 2022!</h3>
                         </Link>
                         <div className="text-sm">
-                            Lorem ipsum is placeholder text commonly used in the
-                            graphic, print, and publishing industries for
-                            previewing layouts.
+                            Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts.
                         </div>
                     </div>
                     {/* Footer */}
                     <div className="mt-3 flex items-center justify-between">
                         {/* Tag */}
                         <div className="inline-flex items-center rounded-full border border-gray-200 px-2.5 py-1 text-center text-xs font-medium text-gray-600 dark:border-gray-700/60 dark:text-gray-400">
-                            <svg
-                                className="mr-2 h-3 w-4 fill-gray-400 dark:fill-gray-500"
-                                viewBox="0 0 16 12"
-                            >
+                            <svg className="mr-2 h-3 w-4 fill-gray-400 dark:fill-gray-500" viewBox="0 0 16 12">
                                 <path d="m16 2-4 2.4V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7.6l4 2.4V2ZM2 10V2h8v8H2Z" />
                             </svg>
                             <span>Online Event</span>
@@ -549,9 +450,7 @@ function MeetupsPosts() {
                                     alt="User 04"
                                 />
                             </div>
-                            <div className="text-xs font-medium italic text-gray-400 dark:text-gray-500">
-                                +64
-                            </div>
+                            <div className="text-xs font-medium italic text-gray-400 dark:text-gray-500">+64</div>
                         </div>
                     </div>
                 </div>
@@ -575,10 +474,7 @@ function MeetupsPosts() {
                     <button className="absolute right-0 top-0 mr-4 mt-4">
                         <div className="rounded-full bg-gray-900 bg-opacity-60 text-gray-100">
                             <span className="sr-only">Like</span>
-                            <svg
-                                className="h-8 w-8 fill-current"
-                                viewBox="0 0 32 32"
-                            >
+                            <svg className="h-8 w-8 fill-current" viewBox="0 0 32 32">
                                 <path d="M22.682 11.318A4.485 4.485 0 0019.5 10a4.377 4.377 0 00-3.5 1.707A4.383 4.383 0 0012.5 10a4.5 4.5 0 00-3.182 7.682L16 24l6.682-6.318a4.5 4.5 0 000-6.364zm-1.4 4.933L16 21.247l-5.285-5A2.5 2.5 0 0112.5 12c1.437 0 2.312.681 3.5 2.625C17.187 12.681 18.062 12 19.5 12a2.5 2.5 0 011.785 4.251h-.003z" />
                             </svg>
                         </div>
@@ -587,32 +483,21 @@ function MeetupsPosts() {
                 {/* Content */}
                 <div className="flex grow flex-col p-5">
                     <div className="grow">
-                        <div className="mb-2 text-sm font-semibold uppercase text-violet-500">
-                            Thu 6 Jan, 2024
-                        </div>
-                        <Link
-                            className="mb-2 inline-flex"
-                            to="/community/meetups-post"
-                        >
+                        <div className="mb-2 text-sm font-semibold uppercase text-violet-500">Thu 6 Jan, 2024</div>
+                        <Link className="mb-2 inline-flex" to="/community/meetups-post">
                             <h3 className="text-lg font-bold text-gray-800 dark:text-gray-100">
-                                NYC Blockchain Network - Monthly 3rd Thursday
-                                Meetup
+                                NYC Blockchain Network - Monthly 3rd Thursday Meetup
                             </h3>
                         </Link>
                         <div className="text-sm">
-                            Lorem ipsum is placeholder text commonly used in the
-                            graphic, print, and publishing industries for
-                            previewing layouts.
+                            Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts.
                         </div>
                     </div>
                     {/* Footer */}
                     <div className="mt-3 flex items-center justify-between">
                         {/* Tag */}
                         <div className="inline-flex items-center rounded-full border border-gray-200 px-2.5 py-1 text-center text-xs font-medium text-gray-600 dark:border-gray-700/60 dark:text-gray-400">
-                            <svg
-                                className="mr-2 h-3 w-4 fill-gray-400 dark:fill-gray-500"
-                                viewBox="0 0 16 12"
-                            >
+                            <svg className="mr-2 h-3 w-4 fill-gray-400 dark:fill-gray-500" viewBox="0 0 16 12">
                                 <path d="m16 2-4 2.4V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7.6l4 2.4V2ZM2 10V2h8v8H2Z" />
                             </svg>
                             <span>Online Event</span>
@@ -635,9 +520,7 @@ function MeetupsPosts() {
                                     alt="User 04"
                                 />
                             </div>
-                            <div className="text-xs font-medium italic text-gray-400 dark:text-gray-500">
-                                +112
-                            </div>
+                            <div className="text-xs font-medium italic text-gray-400 dark:text-gray-500">+112</div>
                         </div>
                     </div>
                 </div>
@@ -661,10 +544,7 @@ function MeetupsPosts() {
                     <button className="absolute right-0 top-0 mr-4 mt-4">
                         <div className="rounded-full bg-gray-900 bg-opacity-60 text-gray-100">
                             <span className="sr-only">Like</span>
-                            <svg
-                                className="h-8 w-8 fill-current"
-                                viewBox="0 0 32 32"
-                            >
+                            <svg className="h-8 w-8 fill-current" viewBox="0 0 32 32">
                                 <path d="M22.682 11.318A4.485 4.485 0 0019.5 10a4.377 4.377 0 00-3.5 1.707A4.383 4.383 0 0012.5 10a4.5 4.5 0 00-3.182 7.682L16 24l6.682-6.318a4.5 4.5 0 000-6.364zm-1.4 4.933L16 21.247l-5.285-5A2.5 2.5 0 0112.5 12c1.437 0 2.312.681 3.5 2.625C17.187 12.681 18.062 12 19.5 12a2.5 2.5 0 011.785 4.251h-.003z" />
                             </svg>
                         </div>
@@ -673,32 +553,21 @@ function MeetupsPosts() {
                 {/* Content */}
                 <div className="flex grow flex-col p-5">
                     <div className="grow">
-                        <div className="mb-2 text-sm font-semibold uppercase text-violet-500">
-                            Fri 7 Jan, 2024
-                        </div>
-                        <Link
-                            className="mb-2 inline-flex"
-                            to="/community/meetups-post"
-                        >
+                        <div className="mb-2 text-sm font-semibold uppercase text-violet-500">Fri 7 Jan, 2024</div>
+                        <Link className="mb-2 inline-flex" to="/community/meetups-post">
                             <h3 className="text-lg font-bold text-gray-800 dark:text-gray-100">
-                                Build a Personal Brand and Boost Your Career in
-                                AI!
+                                Build a Personal Brand and Boost Your Career in AI!
                             </h3>
                         </Link>
                         <div className="text-sm">
-                            Lorem ipsum is placeholder text commonly used in the
-                            graphic, print, and publishing industries for
-                            previewing layouts.
+                            Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts.
                         </div>
                     </div>
                     {/* Footer */}
                     <div className="mt-3 flex items-center justify-between">
                         {/* Tag */}
                         <div className="inline-flex items-center rounded-full border border-gray-200 px-2.5 py-1 text-center text-xs font-medium text-gray-600 dark:border-gray-700/60 dark:text-gray-400">
-                            <svg
-                                className="mr-2 h-3 w-4 fill-gray-400 dark:fill-gray-500"
-                                viewBox="0 0 16 12"
-                            >
+                            <svg className="mr-2 h-3 w-4 fill-gray-400 dark:fill-gray-500" viewBox="0 0 16 12">
                                 <path d="m16 2-4 2.4V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7.6l4 2.4V2ZM2 10V2h8v8H2Z" />
                             </svg>
                             <span>Online Event</span>
@@ -728,9 +597,7 @@ function MeetupsPosts() {
                                     alt="User 06"
                                 />
                             </div>
-                            <div className="text-xs font-medium italic text-gray-400 dark:text-gray-500">
-                                +32
-                            </div>
+                            <div className="text-xs font-medium italic text-gray-400 dark:text-gray-500">+32</div>
                         </div>
                     </div>
                 </div>

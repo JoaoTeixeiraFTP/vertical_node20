@@ -8,7 +8,7 @@ import { hexToRGB } from '@/utils/Utils.js';
 
 export default function LineAreaChart({ title, xlabel, ylabel, xfield, firstLine, secondLine, config, data, children }) {
     return (
-        <Card>
+        <Card className={'block'}>
             <CardHeader>
                 <CardTitle>{title}</CardTitle>
                 <hr className="mb-4 mt-2 border-t border-gray-200 dark:border-gray-700" />

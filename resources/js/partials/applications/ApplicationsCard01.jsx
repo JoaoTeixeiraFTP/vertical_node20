@@ -5,22 +5,14 @@ function ApplicationsCard01(props) {
         <div className="col-span-full overflow-hidden rounded-xl bg-white shadow-sm dark:bg-gray-800 sm:col-span-6 xl:col-span-3">
             <div className="flex h-full flex-col">
                 {/* Image */}
-                <img
-                    className="w-full"
-                    src={props.image}
-                    width="286"
-                    height="160"
-                    alt={props.title}
-                />
+                <img className="w-full" src={props.image} width="286" height="160" alt={props.title} />
                 {/* Card Content */}
                 <div className="flex grow flex-col p-5">
                     {/* Card body */}
                     <div className="grow">
                         {/* Header */}
                         <header className="mb-2">
-                            <h3 className="mb-1 text-lg font-semibold text-gray-800 dark:text-gray-100">
-                                {props.title}
-                            </h3>
+                            <h3 className="mb-1 text-lg font-semibold text-gray-800 dark:text-gray-100">{props.title}</h3>
                             <div className="text-sm">{props.content}</div>
                         </header>
                         {/* Rating */}

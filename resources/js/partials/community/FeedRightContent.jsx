@@ -15,10 +15,7 @@ function FeedRightContent() {
                     {/* Search form */}
                     <div className="mb-6">
                         <form className="relative">
-                            <label
-                                htmlFor="feed-search-desktop"
-                                className="sr-only"
-                            >
+                            <label htmlFor="feed-search-desktop" className="sr-only">
                                 Search
                             </label>
                             <input
@@ -27,11 +24,7 @@ function FeedRightContent() {
                                 type="search"
                                 placeholder="Search…"
                             />
-                            <button
-                                className="group absolute inset-0 right-auto"
-                                type="submit"
-                                aria-label="Search"
-                            >
+                            <button className="group absolute inset-0 right-auto" type="submit" aria-label="Search">
                                 <svg
                                     className="ml-3 mr-2 shrink-0 fill-current text-gray-400 group-hover:text-gray-500 dark:text-gray-500 dark:group-hover:text-gray-400"
                                     width="16"
@@ -50,26 +43,16 @@ function FeedRightContent() {
                     <div className="space-y-4">
                         {/* Block 1 */}
                         <div className="rounded-xl bg-white p-4 dark:bg-gray-800">
-                            <div className="mb-4 text-xs font-semibold uppercase text-gray-400 dark:text-gray-500">
-                                Top Communities
-                            </div>
+                            <div className="mb-4 text-xs font-semibold uppercase text-gray-400 dark:text-gray-500">Top Communities</div>
                             <ul className="space-y-3">
                                 <li>
                                     <div className="flex items-center justify-between">
                                         <div className="flex grow items-center">
                                             <div className="relative mr-3">
-                                                <img
-                                                    className="h-8 w-8 rounded-full"
-                                                    src={GroupAvatar01}
-                                                    width="32"
-                                                    height="32"
-                                                    alt="Group 01"
-                                                />
+                                                <img className="h-8 w-8 rounded-full" src={GroupAvatar01} width="32" height="32" alt="Group 01" />
                                             </div>
                                             <div className="truncate">
-                                                <span className="text-sm font-medium text-gray-800 dark:text-gray-100">
-                                                    Introductions
-                                                </span>
+                                                <span className="text-sm font-medium text-gray-800 dark:text-gray-100">Introductions</span>
                                             </div>
                                         </div>
                                         <button className="btn-xs rounded-full border-gray-200 px-2.5 py-1 text-xs text-gray-800 shadow-none hover:border-gray-300 dark:border-gray-700/60 dark:text-gray-300 dark:hover:border-gray-600">
@@ -81,18 +64,10 @@ function FeedRightContent() {
                                     <div className="flex items-center justify-between">
                                         <div className="flex grow items-center">
                                             <div className="relative mr-3">
-                                                <img
-                                                    className="h-8 w-8 rounded-full"
-                                                    src={GroupAvatar02}
-                                                    width="32"
-                                                    height="32"
-                                                    alt="Group 02"
-                                                />
+                                                <img className="h-8 w-8 rounded-full" src={GroupAvatar02} width="32" height="32" alt="Group 02" />
                                             </div>
                                             <div className="truncate">
-                                                <span className="text-sm font-medium text-gray-800 dark:text-gray-100">
-                                                    HackerNews
-                                                </span>
+                                                <span className="text-sm font-medium text-gray-800 dark:text-gray-100">HackerNews</span>
                                             </div>
                                         </div>
                                         <button className="btn-xs rounded-full border-gray-200 px-2.5 py-1 text-xs text-gray-800 shadow-none hover:border-gray-300 dark:border-gray-700/60 dark:text-gray-300 dark:hover:border-gray-600">
@@ -104,27 +79,14 @@ function FeedRightContent() {
                                     <div className="flex items-center justify-between">
                                         <div className="flex grow items-center">
                                             <div className="relative mr-3">
-                                                <img
-                                                    className="h-8 w-8 rounded-full"
-                                                    src={GroupAvatar03}
-                                                    width="32"
-                                                    height="32"
-                                                    alt="Group 03"
-                                                />
+                                                <img className="h-8 w-8 rounded-full" src={GroupAvatar03} width="32" height="32" alt="Group 03" />
                                             </div>
                                             <div className="truncate">
-                                                <span className="text-sm font-medium text-gray-800 dark:text-gray-100">
-                                                    ReactJs
-                                                </span>
+                                                <span className="text-sm font-medium text-gray-800 dark:text-gray-100">ReactJs</span>
                                             </div>
                                         </div>
                                         <button className="inline-flex rounded-full bg-green-500/20 px-2.5 py-1 text-center text-xs font-medium text-green-700">
-                                            <svg
-                                                className="shrink-0 fill-current"
-                                                width="16"
-                                                height="16"
-                                                viewBox="0 0 16 16"
-                                            >
+                                            <svg className="shrink-0 fill-current" width="16" height="16" viewBox="0 0 16 16">
                                                 <path d="m2.457 8.516.969-.99 2.516 2.481 5.324-5.304.985.989-6.309 6.284z" />
                                             </svg>
                                         </button>
@@ -134,18 +96,10 @@ function FeedRightContent() {
                                     <div className="flex items-center justify-between">
                                         <div className="flex grow items-center">
                                             <div className="relative mr-3">
-                                                <img
-                                                    className="h-8 w-8 rounded-full"
-                                                    src={GroupAvatar04}
-                                                    width="32"
-                                                    height="32"
-                                                    alt="Group 04"
-                                                />
+                                                <img className="h-8 w-8 rounded-full" src={GroupAvatar04} width="32" height="32" alt="Group 04" />
                                             </div>
                                             <div className="truncate">
-                                                <span className="text-sm font-medium text-gray-800 dark:text-gray-100">
-                                                    JustChatting
-                                                </span>
+                                                <span className="text-sm font-medium text-gray-800 dark:text-gray-100">JustChatting</span>
                                             </div>
                                         </div>
                                         <button className="btn-xs rounded-full border-gray-200 px-2.5 py-1 text-xs text-gray-800 shadow-none hover:border-gray-300 dark:border-gray-700/60 dark:text-gray-300 dark:hover:border-gray-600">
@@ -163,26 +117,16 @@ function FeedRightContent() {
 
                         {/* Block 2 */}
                         <div className="rounded-xl bg-white p-4 dark:bg-gray-800">
-                            <div className="mb-4 text-xs font-semibold uppercase text-gray-400 dark:text-gray-500">
-                                Who to follow
-                            </div>
+                            <div className="mb-4 text-xs font-semibold uppercase text-gray-400 dark:text-gray-500">Who to follow</div>
                             <ul className="space-y-3">
                                 <li>
                                     <div className="flex items-center justify-between">
                                         <div className="flex grow items-center">
                                             <div className="relative mr-3">
-                                                <img
-                                                    className="h-8 w-8 rounded-full"
-                                                    src={UserImage02}
-                                                    width="32"
-                                                    height="32"
-                                                    alt="User 02"
-                                                />
+                                                <img className="h-8 w-8 rounded-full" src={UserImage02} width="32" height="32" alt="User 02" />
                                             </div>
                                             <div className="truncate">
-                                                <span className="text-sm font-medium text-gray-800 dark:text-gray-100">
-                                                    Elly Boutin
-                                                </span>
+                                                <span className="text-sm font-medium text-gray-800 dark:text-gray-100">Elly Boutin</span>
                                             </div>
                                         </div>
                                         <button className="btn-xs rounded-full border-gray-200 px-2.5 py-1 text-xs text-gray-800 shadow-none hover:border-gray-300 dark:border-gray-700/60 dark:text-gray-300 dark:hover:border-gray-600">
@@ -194,18 +138,10 @@ function FeedRightContent() {
                                     <div className="flex items-center justify-between">
                                         <div className="flex grow items-center">
                                             <div className="relative mr-3">
-                                                <img
-                                                    className="h-8 w-8 rounded-full"
-                                                    src={UserImage04}
-                                                    width="32"
-                                                    height="32"
-                                                    alt="User 04"
-                                                />
+                                                <img className="h-8 w-8 rounded-full" src={UserImage04} width="32" height="32" alt="User 04" />
                                             </div>
                                             <div className="truncate">
-                                                <span className="text-sm font-medium text-gray-800 dark:text-gray-100">
-                                                    Rich Harris
-                                                </span>
+                                                <span className="text-sm font-medium text-gray-800 dark:text-gray-100">Rich Harris</span>
                                             </div>
                                         </div>
                                         <button className="btn-xs rounded-full border-gray-200 px-2.5 py-1 text-xs text-gray-800 shadow-none hover:border-gray-300 dark:border-gray-700/60 dark:text-gray-300 dark:hover:border-gray-600">
@@ -217,18 +153,10 @@ function FeedRightContent() {
                                     <div className="flex items-center justify-between">
                                         <div className="flex grow items-center">
                                             <div className="relative mr-3">
-                                                <img
-                                                    className="h-8 w-8 rounded-full"
-                                                    src={UserImage05}
-                                                    width="32"
-                                                    height="32"
-                                                    alt="User 05"
-                                                />
+                                                <img className="h-8 w-8 rounded-full" src={UserImage05} width="32" height="32" alt="User 05" />
                                             </div>
                                             <div className="truncate">
-                                                <span className="text-sm font-medium text-gray-800 dark:text-gray-100">
-                                                    Mary Porzio
-                                                </span>
+                                                <span className="text-sm font-medium text-gray-800 dark:text-gray-100">Mary Porzio</span>
                                             </div>
                                         </div>
                                         <button className="btn-xs rounded-full border-gray-200 px-2.5 py-1 text-xs text-gray-800 shadow-none hover:border-gray-300 dark:border-gray-700/60 dark:text-gray-300 dark:hover:border-gray-600">
@@ -240,18 +168,10 @@ function FeedRightContent() {
                                     <div className="flex items-center justify-between">
                                         <div className="flex grow items-center">
                                             <div className="relative mr-3">
-                                                <img
-                                                    className="h-8 w-8 rounded-full"
-                                                    src={UserImage01}
-                                                    width="32"
-                                                    height="32"
-                                                    alt="User 01"
-                                                />
+                                                <img className="h-8 w-8 rounded-full" src={UserImage01} width="32" height="32" alt="User 01" />
                                             </div>
                                             <div className="truncate">
-                                                <span className="text-sm font-medium text-gray-800 dark:text-gray-100">
-                                                    Brian Lovin
-                                                </span>
+                                                <span className="text-sm font-medium text-gray-800 dark:text-gray-100">Brian Lovin</span>
                                             </div>
                                         </div>
                                         <button className="btn-xs rounded-full border-gray-200 px-2.5 py-1 text-xs text-gray-800 shadow-none hover:border-gray-300 dark:border-gray-700/60 dark:text-gray-300 dark:hover:border-gray-600">
@@ -269,9 +189,7 @@ function FeedRightContent() {
 
                         {/* Block 3 */}
                         <div className="rounded-xl bg-white p-4 dark:bg-gray-800">
-                            <div className="mb-4 text-xs font-semibold uppercase text-gray-400 dark:text-gray-500">
-                                Trends for you
-                            </div>
+                            <div className="mb-4 text-xs font-semibold uppercase text-gray-400 dark:text-gray-500">Trends for you</div>
                             <ul className="space-y-3">
                                 <li>
                                     <div className="mb-1 text-sm">
@@ -279,13 +197,10 @@ function FeedRightContent() {
                                             className="font-medium text-gray-800 hover:text-gray-900 dark:text-gray-100 dark:hover:text-white"
                                             href="#0"
                                         >
-                                            Tracking your website traffic on
-                                            launch day 📈
+                                            Tracking your website traffic on launch day 📈
                                         </a>
                                     </div>
-                                    <div className="text-xs text-gray-500">
-                                        248 comments
-                                    </div>
+                                    <div className="text-xs text-gray-500">248 comments</div>
                                 </li>
                                 <li>
                                     <div className="mb-1 text-sm">
@@ -296,9 +211,7 @@ function FeedRightContent() {
                                             Freemium model questions
                                         </a>
                                     </div>
-                                    <div className="text-xs text-gray-500">
-                                        47 comments
-                                    </div>
+                                    <div className="text-xs text-gray-500">47 comments</div>
                                 </li>
                                 <li>
                                     <div className="mb-1 text-sm">
@@ -309,9 +222,7 @@ function FeedRightContent() {
                                             Slack and Community
                                         </a>
                                     </div>
-                                    <div className="text-xs text-gray-500">
-                                        24 comments
-                                    </div>
+                                    <div className="text-xs text-gray-500">24 comments</div>
                                 </li>
                                 <li>
                                     <div className="mb-1 text-sm">
@@ -319,13 +230,10 @@ function FeedRightContent() {
                                             className="font-medium text-gray-800 hover:text-gray-900 dark:text-gray-100 dark:hover:text-white"
                                             href="#0"
                                         >
-                                            Who owns user onboarding in your
-                                            company?
+                                            Who owns user onboarding in your company?
                                         </a>
                                     </div>
-                                    <div className="text-xs text-gray-500">
-                                        17 comments
-                                    </div>
+                                    <div className="text-xs text-gray-500">17 comments</div>
                                 </li>
                                 <li>
                                     <div className="mb-1 text-sm">
@@ -333,13 +241,10 @@ function FeedRightContent() {
                                             className="font-medium text-gray-800 hover:text-gray-900 dark:text-gray-100 dark:hover:text-white"
                                             href="#0"
                                         >
-                                            Questions from a very confused Web3
-                                            startup founder 🤔
+                                            Questions from a very confused Web3 startup founder 🤔
                                         </a>
                                     </div>
-                                    <div className="text-xs text-gray-500">
-                                        9 comments
-                                    </div>
+                                    <div className="text-xs text-gray-500">9 comments</div>
                                 </li>
                             </ul>
                             <div className="mt-4">

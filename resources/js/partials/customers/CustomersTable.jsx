@@ -171,10 +171,7 @@ function CustomersTable({ selectedItems }) {
         <div className="relative rounded-xl bg-white shadow-sm dark:bg-gray-800">
             <header className="px-5 py-4">
                 <h2 className="font-semibold text-gray-800 dark:text-gray-100">
-                    All Customers{' '}
-                    <span className="font-medium text-gray-400 dark:text-gray-500">
-                        248
-                    </span>
+                    All Customers <span className="font-medium text-gray-400 dark:text-gray-500">248</span>
                 </h2>
             </header>
             <div>
@@ -187,15 +184,8 @@ function CustomersTable({ selectedItems }) {
                                 <th className="w-px whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
                                     <div className="flex items-center">
                                         <label className="inline-flex">
-                                            <span className="sr-only">
-                                                Select all
-                                            </span>
-                                            <input
-                                                className="form-checkbox"
-                                                type="checkbox"
-                                                checked={selectAll}
-                                                onChange={handleSelectAll}
-                                            />
+                                            <span className="sr-only">Select all</span>
+                                            <input className="form-checkbox" type="checkbox" checked={selectAll} onChange={handleSelectAll} />
                                         </label>
                                     </div>
                                 </th>
@@ -203,32 +193,22 @@ function CustomersTable({ selectedItems }) {
                                     <span className="sr-only">Favourite</span>
                                 </th>
                                 <th className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
-                                    <div className="text-left font-semibold">
-                                        Order
-                                    </div>
+                                    <div className="text-left font-semibold">Order</div>
                                 </th>
                                 <th className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
-                                    <div className="text-left font-semibold">
-                                        Email
-                                    </div>
+                                    <div className="text-left font-semibold">Email</div>
                                 </th>
                                 <th className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
-                                    <div className="text-left font-semibold">
-                                        Location
-                                    </div>
+                                    <div className="text-left font-semibold">Location</div>
                                 </th>
                                 <th className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
                                     <div className="font-semibold">Orders</div>
                                 </th>
                                 <th className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
-                                    <div className="text-left font-semibold">
-                                        Last order
-                                    </div>
+                                    <div className="text-left font-semibold">Last order</div>
                                 </th>
                                 <th className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
-                                    <div className="text-left font-semibold">
-                                        Total spent
-                                    </div>
+                                    <div className="text-left font-semibold">Total spent</div>
                                 </th>
                                 <th className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
                                     <div className="font-semibold">Refunds</div>
@@ -255,9 +235,7 @@ function CustomersTable({ selectedItems }) {
                                         refunds={customer.refunds}
                                         fav={customer.fav}
                                         handleClick={handleClick}
-                                        isChecked={isCheck.includes(
-                                            customer.id,
-                                        )}
+                                        isChecked={isCheck.includes(customer.id)}
                                     />
                                 );
                             })}

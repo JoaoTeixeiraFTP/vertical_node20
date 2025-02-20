@@ -2,10 +2,7 @@ import { chartAreaGradient } from '../../../../../../Documents/mosaicreact/mosai
 import LineChart from '../../../../../../Documents/mosaicreact/mosaic-react/src/charts/LineChart08.jsx';
 
 // Import utilities
-import {
-    hexToRGB,
-    tailwindConfig,
-} from '../../../../../../Documents/mosaicreact/mosaic-react/src/utils/Utils.js';
+import { hexToRGB, tailwindConfig } from '../../../../../../Documents/mosaicreact/mosaic-react/src/utils/Utils.js';
 
 function FintechCard13() {
     const chartData = {
@@ -41,9 +38,7 @@ function FintechCard13() {
             // Line
             {
                 data: [
-                    245, 288, 332, 404, 404, 314, 314, 314, 314, 314, 234, 314,
-                    234, 234, 314, 314, 314, 388, 314, 202, 202, 202, 202, 514,
-                    720, 642,
+                    245, 288, 332, 404, 404, 314, 314, 314, 314, 314, 234, 314, 234, 234, 314, 314, 314, 388, 314, 202, 202, 202, 202, 514, 720, 642,
                 ],
                 fill: true,
                 backgroundColor: function (context) {
@@ -65,8 +60,7 @@ function FintechCard13() {
                 pointRadius: 0,
                 pointHoverRadius: 3,
                 pointBackgroundColor: tailwindConfig().theme.colors.green[500],
-                pointHoverBackgroundColor:
-                    tailwindConfig().theme.colors.green[500],
+                pointHoverBackgroundColor: tailwindConfig().theme.colors.green[500],
                 pointBorderWidth: 0,
                 pointHoverBorderWidth: 0,
                 clip: 20,
@@ -80,19 +74,11 @@ function FintechCard13() {
             <div className="px-5 pt-5">
                 <header>
                     <h3 className="mb-1 text-sm font-semibold uppercase text-gray-500">
-                        <span className="text-gray-800 dark:text-gray-100">
-                            Facebook
-                        </span>{' '}
-                        - Meta Inc.
+                        <span className="text-gray-800 dark:text-gray-100">Facebook</span> - Meta Inc.
                     </h3>
-                    <div className="mb-1 text-2xl font-bold text-gray-800 dark:text-gray-100">
-                        $333.79
-                    </div>
+                    <div className="mb-1 text-2xl font-bold text-gray-800 dark:text-gray-100">$333.79</div>
                     <div className="text-sm">
-                        <span className="font-medium text-green-600">
-                            +$19,70 (4%)
-                        </span>{' '}
-                        - Today
+                        <span className="font-medium text-green-600">+$19,70 (4%)</span> - Today
                     </div>
                 </header>
             </div>

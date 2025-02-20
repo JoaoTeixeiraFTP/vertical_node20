@@ -21,23 +21,18 @@ function ForumRightContent() {
                     <div className="space-y-4">
                         {/* Block 1 */}
                         <div className="rounded-xl bg-white p-4 dark:bg-gray-800">
-                            <div className="mb-4 text-xs font-semibold uppercase text-gray-400 dark:text-gray-500">
-                                Forum Meetups
-                            </div>
+                            <div className="mb-4 text-xs font-semibold uppercase text-gray-400 dark:text-gray-500">Forum Meetups</div>
                             <ul>
                                 {/* Event 1 */}
                                 <li className="relative pb-4 last-of-type:pb-0">
                                     <div className="pl-6">
-                                        <div className="mb-0.5 text-xs font-medium uppercase text-violet-600">
-                                            Mon 27 Dec
-                                        </div>
+                                        <div className="mb-0.5 text-xs font-medium uppercase text-violet-600">Mon 27 Dec</div>
                                         <div className="mb-2 text-sm">
                                             <a
                                                 className="font-medium text-gray-800 hover:text-gray-900 dark:text-gray-100 dark:hover:text-white"
                                                 href="#0"
                                             >
-                                                Silicon Valley Bootstrapper
-                                                Breakfast Online for 2024
+                                                Silicon Valley Bootstrapper Breakfast Online for 2024
                                             </a>
                                         </div>
                                         {/* Avatars */}
@@ -65,9 +60,7 @@ function ForumRightContent() {
                                                     alt="User 04"
                                                 />
                                             </div>
-                                            <div className="text-xs font-medium italic text-gray-400 dark:text-gray-500">
-                                                +22
-                                            </div>
+                                            <div className="text-xs font-medium italic text-gray-400 dark:text-gray-500">+22</div>
                                         </div>
                                     </div>
                                     {/* Timeline element */}
@@ -79,16 +72,13 @@ function ForumRightContent() {
                                 {/* Event 2 */}
                                 <li className="relative pb-4 last-of-type:pb-0">
                                     <div className="pl-6">
-                                        <div className="mb-0.5 text-xs font-medium uppercase text-violet-600">
-                                            Mon 27 Dec
-                                        </div>
+                                        <div className="mb-0.5 text-xs font-medium uppercase text-violet-600">Mon 27 Dec</div>
                                         <div className="mb-2 text-sm">
                                             <a
                                                 className="font-medium text-gray-800 hover:text-gray-900 dark:text-gray-100 dark:hover:text-white"
                                                 href="#0"
                                             >
-                                                New York &amp; New Jersey
-                                                Virtual Retreat
+                                                New York &amp; New Jersey Virtual Retreat
                                             </a>
                                         </div>
                                         {/* Avatars */}
@@ -116,9 +106,7 @@ function ForumRightContent() {
                                                     alt="User 05"
                                                 />
                                             </div>
-                                            <div className="text-xs font-medium italic text-gray-400 dark:text-gray-500">
-                                                +132
-                                            </div>
+                                            <div className="text-xs font-medium italic text-gray-400 dark:text-gray-500">+132</div>
                                         </div>
                                     </div>
                                     {/* Timeline element */}
@@ -130,16 +118,13 @@ function ForumRightContent() {
                                 {/* Event 3 */}
                                 <li className="relative pb-4 last-of-type:pb-0">
                                     <div className="pl-6">
-                                        <div className="mb-0.5 text-xs font-medium uppercase text-violet-600">
-                                            Mon 29 Dec
-                                        </div>
+                                        <div className="mb-0.5 text-xs font-medium uppercase text-violet-600">Mon 29 Dec</div>
                                         <div className="mb-2 text-sm">
                                             <a
                                                 className="font-medium text-gray-800 hover:text-gray-900 dark:text-gray-100 dark:hover:text-white"
                                                 href="#0"
                                             >
-                                                The World of AI and Machine
-                                                Learning - Open Chat
+                                                The World of AI and Machine Learning - Open Chat
                                             </a>
                                         </div>
                                         {/* Avatars */}
@@ -167,9 +152,7 @@ function ForumRightContent() {
                                                     alt="User 01"
                                                 />
                                             </div>
-                                            <div className="text-xs font-medium italic text-gray-400 dark:text-gray-500">
-                                                +12
-                                            </div>
+                                            <div className="text-xs font-medium italic text-gray-400 dark:text-gray-500">+12</div>
                                         </div>
                                     </div>
                                     {/* Timeline element */}
@@ -181,16 +164,13 @@ function ForumRightContent() {
                                 {/* Event 4 */}
                                 <li className="relative pb-4 last-of-type:pb-0">
                                     <div className="pl-6">
-                                        <div className="mb-0.5 text-xs font-medium uppercase text-violet-600">
-                                            Mon 29 Dec
-                                        </div>
+                                        <div className="mb-0.5 text-xs font-medium uppercase text-violet-600">Mon 29 Dec</div>
                                         <div className="mb-2 text-sm">
                                             <a
                                                 className="font-medium text-gray-800 hover:text-gray-900 dark:text-gray-100 dark:hover:text-white"
                                                 href="#0"
                                             >
-                                                NYC Code &amp; Coffee 2.0 @
-                                                Freehold Brooklyn
+                                                NYC Code &amp; Coffee 2.0 @ Freehold Brooklyn
                                             </a>
                                         </div>
                                         {/* Avatars */}
@@ -218,9 +198,7 @@ function ForumRightContent() {
                                                     alt="User 04"
                                                 />
                                             </div>
-                                            <div className="text-xs font-medium italic text-gray-400 dark:text-gray-500">
-                                                +17
-                                            </div>
+                                            <div className="text-xs font-medium italic text-gray-400 dark:text-gray-500">+17</div>
                                         </div>
                                     </div>
                                     {/* Timeline element */}
@@ -239,9 +217,7 @@ function ForumRightContent() {
 
                         {/* Block 2 */}
                         <div className="rounded-xl bg-white p-4 dark:bg-gray-800">
-                            <div className="mb-4 text-xs font-semibold uppercase text-gray-400 dark:text-gray-500">
-                                Popular Stories
-                            </div>
+                            <div className="mb-4 text-xs font-semibold uppercase text-gray-400 dark:text-gray-500">Popular Stories</div>
                             <ul className="space-y-3">
                                 <li>
                                     <div className="mb-1 text-sm">
@@ -249,16 +225,11 @@ function ForumRightContent() {
                                             className="font-medium text-gray-800 hover:text-gray-900 dark:text-gray-100 dark:hover:text-white"
                                             href="#0"
                                         >
-                                            I built and sold 2 small SaaS
-                                            products and quit my job in the last
-                                            two years — AMA
+                                            I built and sold 2 small SaaS products and quit my job in the last two years — AMA
                                         </a>
                                     </div>
                                     <div className="text-xs text-gray-500">
-                                        <a
-                                            className="font-medium text-violet-500 hover:text-violet-600 dark:hover:text-violet-400"
-                                            href="#0"
-                                        >
+                                        <a className="font-medium text-violet-500 hover:text-violet-600 dark:hover:text-violet-400" href="#0">
                                             markusj
                                         </a>{' '}
                                         · 2d · 312 comments
@@ -270,15 +241,11 @@ function ForumRightContent() {
                                             className="font-medium text-gray-800 hover:text-gray-900 dark:text-gray-100 dark:hover:text-white"
                                             href="#0"
                                         >
-                                            Besides Product Hunt, where else
-                                            should I promote my new project? 🤔
+                                            Besides Product Hunt, where else should I promote my new project? 🤔
                                         </a>
                                     </div>
                                     <div className="text-xs text-gray-500">
-                                        <a
-                                            className="font-medium text-violet-500 hover:text-violet-600 dark:hover:text-violet-400"
-                                            href="#0"
-                                        >
+                                        <a className="font-medium text-violet-500 hover:text-violet-600 dark:hover:text-violet-400" href="#0">
                                             katemerlu
                                         </a>{' '}
                                         · 2h · 7 comments
@@ -290,15 +257,11 @@ function ForumRightContent() {
                                             className="font-medium text-gray-800 hover:text-gray-900 dark:text-gray-100 dark:hover:text-white"
                                             href="#0"
                                         >
-                                            Which are the main channels you use
-                                            to drive traffic to your website? 📈
+                                            Which are the main channels you use to drive traffic to your website? 📈
                                         </a>
                                     </div>
                                     <div className="text-xs text-gray-500">
-                                        <a
-                                            className="font-medium text-violet-500 hover:text-violet-600 dark:hover:text-violet-400"
-                                            href="#0"
-                                        >
+                                        <a className="font-medium text-violet-500 hover:text-violet-600 dark:hover:text-violet-400" href="#0">
                                             sophiestar
                                         </a>{' '}
                                         · 3d · 66 comments
@@ -310,15 +273,11 @@ function ForumRightContent() {
                                             className="font-medium text-gray-800 hover:text-gray-900 dark:text-gray-100 dark:hover:text-white"
                                             href="#0"
                                         >
-                                            Failed for the past 12 years as a
-                                            tech entrepreneur. My key takeaways.
+                                            Failed for the past 12 years as a tech entrepreneur. My key takeaways.
                                         </a>
                                     </div>
                                     <div className="text-xs text-gray-500">
-                                        <a
-                                            className="font-medium text-violet-500 hover:text-violet-600 dark:hover:text-violet-400"
-                                            href="#0"
-                                        >
+                                        <a className="font-medium text-violet-500 hover:text-violet-600 dark:hover:text-violet-400" href="#0">
                                             ekuplu89
                                         </a>{' '}
                                         · 4h · 14 comments
@@ -330,16 +289,11 @@ function ForumRightContent() {
                                             className="font-medium text-gray-800 hover:text-gray-900 dark:text-gray-100 dark:hover:text-white"
                                             href="#0"
                                         >
-                                            How to build a following on Twitter
-                                            as a founder - A guide to growing
-                                            your audience 🚀
+                                            How to build a following on Twitter as a founder - A guide to growing your audience 🚀
                                         </a>
                                     </div>
                                     <div className="text-xs text-gray-500">
-                                        <a
-                                            className="font-medium text-violet-500 hover:text-violet-600 dark:hover:text-violet-400"
-                                            href="#0"
-                                        >
+                                        <a className="font-medium text-violet-500 hover:text-violet-600 dark:hover:text-violet-400" href="#0">
                                             molliehacks
                                         </a>{' '}
                                         · 3d · 32 comments

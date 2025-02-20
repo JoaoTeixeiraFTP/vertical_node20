@@ -22,55 +22,22 @@ function FintechCard02() {
                                 xmlnsXlink="http://www.w3.org/1999/xlink"
                             >
                                 <defs>
-                                    <linearGradient
-                                        x1="50%"
-                                        y1="0%"
-                                        x2="50%"
-                                        y2="100%"
-                                        id="icon1-b"
-                                    >
+                                    <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="icon1-b">
                                         <stop stopColor="#B7ACFF" offset="0%" />
-                                        <stop
-                                            stopColor="#E6E1FF"
-                                            offset="100%"
-                                        />
+                                        <stop stopColor="#E6E1FF" offset="100%" />
                                     </linearGradient>
-                                    <linearGradient
-                                        x1="50%"
-                                        y1="24.537%"
-                                        x2="50%"
-                                        y2="100%"
-                                        id="icon1-c"
-                                    >
+                                    <linearGradient x1="50%" y1="24.537%" x2="50%" y2="100%" id="icon1-c">
                                         <stop stopColor="#4634B1" offset="0%" />
-                                        <stop
-                                            stopColor="#4634B1"
-                                            stopOpacity="0"
-                                            offset="100%"
-                                        />
+                                        <stop stopColor="#4634B1" stopOpacity="0" offset="100%" />
                                     </linearGradient>
-                                    <path
-                                        id="icon1-a"
-                                        d="M16 0l16 32-16-5-16 5z"
-                                    />
+                                    <path id="icon1-a" d="M16 0l16 32-16-5-16 5z" />
                                 </defs>
-                                <g
-                                    transform="rotate(90 16 16)"
-                                    fill="none"
-                                    fillRule="evenodd"
-                                >
+                                <g transform="rotate(90 16 16)" fill="none" fillRule="evenodd">
                                     <mask id="icon1-d" fill="#fff">
                                         <use xlinkHref="#icon1-a" />
                                     </mask>
-                                    <use
-                                        fill="url(#icon1-b)"
-                                        xlinkHref="#icon1-a"
-                                    />
-                                    <path
-                                        fill="url(#icon1-c)"
-                                        mask="url(#icon1-d)"
-                                        d="M16-6h20v38H16z"
-                                    />
+                                    <use fill="url(#icon1-b)" xlinkHref="#icon1-a" />
+                                    <path fill="url(#icon1-c)" mask="url(#icon1-d)" d="M16-6h20v38H16z" />
                                 </g>
                             </svg>
                             {/* Card number */}
@@ -89,34 +56,14 @@ function FintechCard02() {
                                 </div>
                             </div>
                             {/* Mastercard logo */}
-                            <svg
-                                className="absolute bottom-0 right-0"
-                                width="48"
-                                height="28"
-                                viewBox="0 0 48 28"
-                            >
-                                <circle
-                                    fill="#F0BB33"
-                                    cx="34"
-                                    cy="14"
-                                    r="14"
-                                    fillOpacity=".8"
-                                />
-                                <circle
-                                    fill="#FF5656"
-                                    cx="14"
-                                    cy="14"
-                                    r="14"
-                                    fillOpacity=".8"
-                                />
+                            <svg className="absolute bottom-0 right-0" width="48" height="28" viewBox="0 0 48 28">
+                                <circle fill="#F0BB33" cx="34" cy="14" r="14" fillOpacity=".8" />
+                                <circle fill="#FF5656" cx="14" cy="14" r="14" fillOpacity=".8" />
                             </svg>
                         </div>
                     </div>
                     {/* Options button */}
-                    <EditMenu
-                        align="right"
-                        className="absolute right-0 top-0 inline-flex"
-                    >
+                    <EditMenu align="right" className="absolute right-0 top-0 inline-flex">
                         <li>
                             <Link
                                 className="flex px-3 py-1 text-sm font-medium text-gray-600 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-200"
@@ -134,10 +81,7 @@ function FintechCard02() {
                             </Link>
                         </li>
                         <li>
-                            <Link
-                                className="flex px-3 py-1 text-sm font-medium text-red-500 hover:text-red-600"
-                                to="#0"
-                            >
+                            <Link className="flex px-3 py-1 text-sm font-medium text-red-500 hover:text-red-600" to="#0">
                                 Remove
                             </Link>
                         </li>
@@ -145,48 +89,28 @@ function FintechCard02() {
                 </div>
                 {/* Details */}
                 <div className="mt-3 flex grow flex-col justify-center">
-                    <div className="mb-3 text-xs font-semibold uppercase text-gray-500">
-                        Details
-                    </div>
+                    <div className="mb-3 text-xs font-semibold uppercase text-gray-500">Details</div>
                     <div className="space-y-2">
                         <div>
                             <div className="mb-2 flex justify-between text-sm">
-                                <div className="text-gray-300">
-                                    Payment Limits
-                                </div>
+                                <div className="text-gray-300">Payment Limits</div>
                                 <div className="italic text-gray-400">
-                                    $780,00{' '}
-                                    <span className="text-gray-500 dark:text-gray-400">
-                                        /
-                                    </span>{' '}
-                                    $1,500.00
+                                    $780,00 <span className="text-gray-500 dark:text-gray-400">/</span> $1,500.00
                                 </div>
                             </div>
                             <div className="relative h-2 w-full rounded bg-gray-600">
-                                <div
-                                    className="absolute inset-0 rounded-full bg-green-400"
-                                    aria-hidden="true"
-                                    style={{ width: '50%' }}
-                                />
+                                <div className="absolute inset-0 rounded-full bg-green-400" aria-hidden="true" style={{ width: '50%' }} />
                             </div>
                         </div>
                         <div>
                             <div className="mb-2 flex justify-between text-sm">
                                 <div className="text-gray-300">ATM Limits</div>
                                 <div className="italic text-gray-400">
-                                    $179,00{' '}
-                                    <span className="text-gray-500 dark:text-gray-400">
-                                        /
-                                    </span>{' '}
-                                    $1,000.00
+                                    $179,00 <span className="text-gray-500 dark:text-gray-400">/</span> $1,000.00
                                 </div>
                             </div>
                             <div className="relative h-2 w-full rounded bg-gray-600">
-                                <div
-                                    className="absolute inset-0 rounded-full bg-green-400"
-                                    aria-hidden="true"
-                                    style={{ width: '35%' }}
-                                />
+                                <div className="absolute inset-0 rounded-full bg-green-400" aria-hidden="true" style={{ width: '35%' }} />
                             </div>
                         </div>
                     </div>

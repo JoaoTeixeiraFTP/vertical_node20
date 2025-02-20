@@ -18,8 +18,7 @@ function OrdersTable({ selectedItems }) {
             items: '1',
             location: '🇨🇳 Shanghai, CN',
             type: 'Subscription',
-            description:
-                'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            description: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         },
         {
             id: '1',
@@ -32,8 +31,7 @@ function OrdersTable({ selectedItems }) {
             items: '2',
             location: '🇲🇽 Mexico City, MX',
             type: 'Subscription',
-            description:
-                'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            description: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         },
         {
             id: '2',
@@ -46,8 +44,7 @@ function OrdersTable({ selectedItems }) {
             items: '2',
             location: '🇮🇹 Milan, IT',
             type: 'One-time',
-            description:
-                'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            description: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         },
         {
             id: '3',
@@ -60,8 +57,7 @@ function OrdersTable({ selectedItems }) {
             items: '1',
             location: '🇮🇹 Bologna, IT',
             type: 'One-time',
-            description:
-                'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            description: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         },
         {
             id: '4',
@@ -74,8 +70,7 @@ function OrdersTable({ selectedItems }) {
             items: '1',
             location: '🇬🇧 London, UK',
             type: 'Subscription',
-            description:
-                'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            description: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         },
         {
             id: '5',
@@ -88,8 +83,7 @@ function OrdersTable({ selectedItems }) {
             items: '1',
             location: '🇫🇷 Paris, FR',
             type: 'One-time',
-            description:
-                'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            description: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         },
         {
             id: '6',
@@ -102,8 +96,7 @@ function OrdersTable({ selectedItems }) {
             items: '1',
             location: '🇫🇷 Marseille, FR',
             type: 'Subscription',
-            description:
-                'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            description: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         },
         {
             id: '7',
@@ -116,8 +109,7 @@ function OrdersTable({ selectedItems }) {
             items: '2',
             location: '🇺🇸 New York, USA',
             type: 'Subscription',
-            description:
-                'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            description: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         },
         {
             id: '8',
@@ -130,8 +122,7 @@ function OrdersTable({ selectedItems }) {
             items: '2',
             location: '🇨🇳 Shanghai, CN',
             type: 'One-time',
-            description:
-                'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            description: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         },
         {
             id: '9',
@@ -144,8 +135,7 @@ function OrdersTable({ selectedItems }) {
             items: '1',
             location: '🇬🇧 Sheffield, UK',
             type: 'Subscription',
-            description:
-                'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            description: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         },
     ];
 
@@ -184,10 +174,7 @@ function OrdersTable({ selectedItems }) {
         <div className="relative rounded-xl bg-white shadow-sm dark:bg-gray-800">
             <header className="px-5 py-4">
                 <h2 className="font-semibold text-gray-800 dark:text-gray-100">
-                    All Orders{' '}
-                    <span className="font-medium text-gray-400 dark:text-gray-500">
-                        442
-                    </span>
+                    All Orders <span className="font-medium text-gray-400 dark:text-gray-500">442</span>
                 </h2>
             </header>
             <div>
@@ -200,55 +187,34 @@ function OrdersTable({ selectedItems }) {
                                 <th className="w-px whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
                                     <div className="flex items-center">
                                         <label className="inline-flex">
-                                            <span className="sr-only">
-                                                Select all
-                                            </span>
-                                            <input
-                                                className="form-checkbox"
-                                                type="checkbox"
-                                                checked={selectAll}
-                                                onChange={handleSelectAll}
-                                            />
+                                            <span className="sr-only">Select all</span>
+                                            <input className="form-checkbox" type="checkbox" checked={selectAll} onChange={handleSelectAll} />
                                         </label>
                                     </div>
                                 </th>
                                 <th className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
-                                    <div className="text-left font-semibold">
-                                        Order
-                                    </div>
+                                    <div className="text-left font-semibold">Order</div>
                                 </th>
                                 <th className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
-                                    <div className="text-left font-semibold">
-                                        Date
-                                    </div>
+                                    <div className="text-left font-semibold">Date</div>
                                 </th>
                                 <th className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
-                                    <div className="text-left font-semibold">
-                                        Customer
-                                    </div>
+                                    <div className="text-left font-semibold">Customer</div>
                                 </th>
                                 <th className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
-                                    <div className="text-left font-semibold">
-                                        Total
-                                    </div>
+                                    <div className="text-left font-semibold">Total</div>
                                 </th>
                                 <th className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
-                                    <div className="text-left font-semibold">
-                                        Status
-                                    </div>
+                                    <div className="text-left font-semibold">Status</div>
                                 </th>
                                 <th className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
                                     <div className="font-semibold">Items</div>
                                 </th>
                                 <th className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
-                                    <div className="text-left font-semibold">
-                                        Location
-                                    </div>
+                                    <div className="text-left font-semibold">Location</div>
                                 </th>
                                 <th className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
-                                    <div className="text-left font-semibold">
-                                        Payment type
-                                    </div>
+                                    <div className="text-left font-semibold">Payment type</div>
                                 </th>
                                 <th className="whitespace-nowrap px-2 py-3 first:pl-5 last:pr-5">
                                     <span className="sr-only">Menu</span>

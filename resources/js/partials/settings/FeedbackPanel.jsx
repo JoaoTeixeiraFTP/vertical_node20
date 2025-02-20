@@ -4,27 +4,18 @@ function FeedbackPanel() {
             {/* Panel body */}
             <div className="space-y-6 p-6">
                 <div>
-                    <h2 className="mb-4 text-2xl font-bold text-gray-800 dark:text-gray-100">
-                        Give Feedback
-                    </h2>
-                    <div className="text-sm">
-                        Our product depends on customer feedback to improve the
-                        overall experience!
-                    </div>
+                    <h2 className="mb-4 text-2xl font-bold text-gray-800 dark:text-gray-100">Give Feedback</h2>
+                    <div className="text-sm">Our product depends on customer feedback to improve the overall experience!</div>
                 </div>
 
                 {/* Rate */}
                 <section>
                     <h3 className="mb-6 text-xl font-bold leading-snug text-gray-800 dark:text-gray-100">
-                        How likely would you recommend us to a friend or
-                        colleague?
+                        How likely would you recommend us to a friend or colleague?
                     </h3>
                     <div className="w-full max-w-xl">
                         <div className="relative">
-                            <div
-                                className="absolute left-0 top-1/2 -mt-px h-0.5 w-full bg-gray-200 dark:bg-gray-700/60"
-                                aria-hidden="true"
-                            ></div>
+                            <div className="absolute left-0 top-1/2 -mt-px h-0.5 w-full bg-gray-200 dark:bg-gray-700/60" aria-hidden="true"></div>
                             <ul className="relative flex w-full justify-between">
                                 <li className="flex">
                                     <button className="h-3 w-3 rounded-full border-2 border-gray-400 bg-white dark:border-gray-500 dark:bg-gray-800">
@@ -62,19 +53,12 @@ function FeedbackPanel() {
 
                 {/* Tell us in words */}
                 <section>
-                    <h3 className="mb-5 text-xl font-bold leading-snug text-gray-800 dark:text-gray-100">
-                        Tell us in words
-                    </h3>
+                    <h3 className="mb-5 text-xl font-bold leading-snug text-gray-800 dark:text-gray-100">Tell us in words</h3>
                     {/* Form */}
                     <label className="sr-only" htmlFor="feedback">
                         Leave a feedback
                     </label>
-                    <textarea
-                        id="feedback"
-                        className="form-textarea w-full focus:border-gray-300"
-                        rows="4"
-                        placeholder="I really enjoy…"
-                    ></textarea>
+                    <textarea id="feedback" className="form-textarea w-full focus:border-gray-300" rows="4" placeholder="I really enjoy…"></textarea>
                 </section>
             </div>
 
