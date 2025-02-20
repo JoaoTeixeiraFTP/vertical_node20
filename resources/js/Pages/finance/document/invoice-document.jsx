@@ -162,7 +162,7 @@ export default function InvoiceDocument({ document }) {
                                         )}
                                     </div>
 
-                                    <footer className="mt-6">
+                                    <footer id={'card-footer'} className="mt-6">
                                         <div className="flex items-center justify-between border-t border-gray-200 pt-4 dark:border-gray-300">
                                             <button
                                                 className="btn bg-gray-400 text-white hover:bg-gray-600 dark:bg-gray-400 dark:hover:bg-gray-600"
