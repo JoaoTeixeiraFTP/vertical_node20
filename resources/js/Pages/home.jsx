@@ -13,6 +13,7 @@ import { useRef } from 'react';
 
 export default function Home({ invoices, currentAccount, receipts, news }) {
     const totalDebits = useRef(0);
+    const chartData = useRef(null);
     const meses = ['Jan', 'Fev', 'Mar', 'Abr', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
 
     const areaConfig = {
@@ -43,6 +44,17 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
         },
     };
 
+    const formatChart = (data, fieldDate, fieldValue) => {
+        chartData.current = data.map((item) => {
+            return {
+                date: meses[new Date(item[fieldDate]).getMonth()],
+                value: item[fieldValue],
+            };
+        });
+        // Só mudar para chartData.current
+        return data;
+    };
+
     const addDebit = (debit) => {
         totalDebits.current = totalDebits.current + debit;
         return formatEuro(debit);
@@ -62,9 +74,9 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
                                 <LineAreaChart
                                     title={'Rentatabilidade'}
                                     description={'Showing total visitors for the last 6 months'}
-                                    firstLine={'etotal'}
-                                    xfield={'fdata'}
-                                    data={invoices.data}
+                                    firstLine={'etotal'} // mudar aqui para value
+                                    xfield={'fdata'} // mudar para date
+                                    data={formatChart(invoices.data, 'fdata', 'etotal')}
                                     config={areaConfig}
                                     xlabel={'Meses'}
                                     ylabel={'Valores'}
