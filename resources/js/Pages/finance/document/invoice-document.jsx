@@ -186,7 +186,7 @@ export default function InvoiceDocument({ document }) {
                         </div>
                     </div>
                 </div>
-                <img src={banner} alt={'banner'} className={'print: bottom-0 hidden print:absolute print:block'} />
+                <img src={banner} alt={'banner'} className={'hidden print:absolute print:bottom-0 print:block'} />
             </AuthenticatedLayout>
         </>
     );

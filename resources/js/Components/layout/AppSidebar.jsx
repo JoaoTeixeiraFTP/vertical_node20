@@ -61,7 +61,7 @@ export function AppSidebar({ ...props }) {
                 <SidebarRail id={'sidebar-toggle'} />
             </SidebarHeader>
             <SidebarContent>
-                <div className="grid gap-2 px-4">
+                <div className="grid gap-2 px-3">
                     <NavSimple item={data.home} />
                     <NavMain items={data.finance} />
                     <NavSimple item={data.orders} />

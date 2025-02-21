@@ -1,16 +1,14 @@
 export default function NavSpan({ active = false, className = '', children, ...props }) {
     return (
-        <span
+        <div
             {...props}
-            className={
-                'inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium leading-5 transition duration-150 ease-in-out focus:outline-none ' +
-                (active
-                    ? 'border-indigo-400 text-gray-900 focus:border-indigo-700 dark:border-indigo-600 dark:text-gray-100'
-                    : '[&>span:first-child]dark:text-violet-500 [&>span:last-child]dark:text-white border-transparent text-gray-900 hover:border-gray-300 hover:text-gray-700 focus:border-gray-300 focus:text-gray-700 dark:text-white dark:hover:border-gray-700 dark:hover:text-gray-300 dark:focus:border-gray-700 dark:focus:text-gray-300 [&>span:first-child]:text-violet-500 [&>span:last-child]:text-gray-900') +
-                className
-            }
+            className={`flex w-full items-start gap-4 rounded-lg py-2 pe-[6em] ps-4 ${
+                active
+                    ? 'border-indigo-400 bg-indigo-50 text-indigo-700 focus:border-indigo-700 focus:bg-indigo-100 focus:text-indigo-800 dark:border-indigo-600 dark:bg-indigo-900/50 dark:text-indigo-300 dark:focus:border-indigo-300 dark:focus:bg-indigo-900 dark:focus:text-indigo-200'
+                    : 'border-transparent text-gray-800 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800 focus:border-gray-300 focus:bg-gray-50 focus:text-gray-800 dark:text-white dark:hover:border-gray-600 dark:hover:bg-gray-700 dark:hover:text-gray-200 dark:focus:border-gray-600 dark:focus:bg-gray-700 dark:focus:text-gray-200'
+            } text-base transition duration-150 ease-in-out focus:outline-none ${className}`}
         >
             {children}
-        </span>
+        </div>
     );
 }

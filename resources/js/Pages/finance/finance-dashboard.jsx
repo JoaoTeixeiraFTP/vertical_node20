@@ -78,7 +78,7 @@ export default function FinanceDashboard({ invoices, currentAccount, receipts })
                                         <NavLink
                                             href={route('finance.documents', ['invoices', inv.ftstamp])}
                                             key={inv.ftstamp}
-                                            className={'flex gap-4'}
+                                            className={'flex justify-between gap-4'}
                                         >
                                             <Badge variant="simple" className={getBadgeColors(inv.nmdoc) + ' text-[0.95em]'}>
                                                 {inv.nmdoc}
@@ -139,6 +139,29 @@ export default function FinanceDashboard({ invoices, currentAccount, receipts })
                                             ) : (
                                                 <span className="text-sm text-green-600 dark:text-green-400">Sem dívida</span>
                                             )}
+                                        </NavLink>
+                                    ))}
+                                </AutoScrollList>
+                            )}
+                        </div>
+                    </div>
+                </div>
+                <div className="col-span-1 col-start-4">
+                    <div className="col-span-full flex h-full flex-col rounded-xl bg-white shadow-sm dark:bg-gray-800 sm:col-span-6 xl:col-span-4">
+                        <div className="h-[60vh] text-gray-900 dark:text-gray-100">
+                            {receipts === undefined ? (
+                                <Loading />
+                            ) : (
+                                <AutoScrollList title={'Lista de Faturas'} length={receipts.data.length}>
+                                    {receipts.data.map((re) => (
+                                        <NavLink
+                                            href={route('finance.documents', ['receipts', re.restamp])}
+                                            key={re.restamp}
+                                            className={'flex justify-between gap-4'}
+                                        >
+                                            <span className={'text-[0.95em]'}>{re.rdata}</span>
+                                            <span className={'text-[0.95em]'}>{re.nome}</span>
+                                            <span className={'text-[0.95em]'}>{formatEuro(re.etotal)}</span>
                                         </NavLink>
                                     ))}
                                 </AutoScrollList>

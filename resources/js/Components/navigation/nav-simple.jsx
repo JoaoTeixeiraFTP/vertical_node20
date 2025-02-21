@@ -11,11 +11,11 @@ export function NavSimple({ item }) {
             <SidebarMenuItem key={item.name}>
                 <SidebarMenuButton
                     asChild
-                    className={'mb-0.5 rounded-lg bg-[linear-gradient(135deg,var(--tw-gradient-stops))] py-2 pl-4 pr-3 last:mb-0 ' + gradient}
+                    className={'mb-0.5 rounded-lg bg-[linear-gradient(135deg,var(--tw-gradient-stops))] pl-4 pr-3 last:mb-0 ' + gradient}
                 >
                     <ResponsiveNavLink href={item.url} active={route().current(item.name)}>
                         {item.icon && <item.icon />}
-                        <span className="m-2">{item.name}</span>
+                        <span className="m-4">{item.name}</span>
                     </ResponsiveNavLink>
                 </SidebarMenuButton>
             </SidebarMenuItem>

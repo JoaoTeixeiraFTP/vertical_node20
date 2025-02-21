@@ -18,15 +18,15 @@ export default function AuthenticatedLayout({ header, children }) {
                         <AppHeader user={user} />
                         {header && (
                             <header id={'page-header'} className="mb-4 sm:mb-0">
-                                <div className="mx-auto px-4 py-2 sm:px-6 lg:px-4">
+                                <div className="mx-auto px-2 py-2 sm:px-6 lg:px-4">
                                     <div className="grid h-full overflow-hidden sm:flex sm:justify-between">
                                         {/* Left: Title */}
-                                        <div className="order-last mx-2 my-2 sm:order-first sm:my-0 sm:ms-8">
+                                        <div className="order-last mx-0 my-2 sm:order-first sm:my-0">
                                             <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">{header}</h1>
                                         </div>
 
                                         {/* Right: Actions */}
-                                        <div className="sm:text-md order-first flex justify-end gap-2 text-sm sm:order-last sm:me-8">
+                                        <div className="sm:text-md order-first flex justify-end gap-2 text-sm sm:order-last">
                                             {/* Filter button */}
                                             <FilterButton align="right" />
                                             {/* Datepicker built with React Day Picker */}

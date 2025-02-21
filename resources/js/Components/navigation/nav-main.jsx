@@ -18,18 +18,20 @@ import { usePage } from '@inertiajs/react';
 
 export function NavMain({ items }) {
     const page = usePage();
-    const gradient = page.url.includes(items.url_name) ? 'from-violet-500/[0.12] dark:from-violet-500/[0.24] to-violet-500/[0.04]' : '';
+    const gradient = page.url.includes(items.url_name)
+        ? 'from-violet-500/[0.12] hover:dark:from-violet-500/[0.24] hover:to-violet-500/[0.04] dark:from-violet-500/[0.24] to-violet-500/[0.04]'
+        : '';
 
     return (
         <SidebarGroup className={'rounded-lg bg-[linear-gradient(135deg,var(--tw-gradient-stops))] ' + gradient}>
             <SidebarMenu>
                 <Collapsible key={items.title} asChild defaultOpen={items.isActive} className={'group/collapsible'}>
                     <SidebarMenuItem>
-                        <CollapsibleTrigger asChild className="">
-                            <SidebarMenuButton tooltip={items.title}>
-                                <NavSpan>
+                        <CollapsibleTrigger>
+                            <SidebarMenuButton asChild tooltip={items.title} className={'mb-0.5 rounded-lg pl-4 pr-3 last:mb-0'}>
+                                <NavSpan active={route().current(items.url_name)}>
                                     {items.icon && <items.icon />}
-                                    <span className="m-2">{items.title}</span>
+                                    <span className="">{items.title}</span>
                                     <ChevronRight className="ml-auto rotate-90 transition-transform duration-200 group-data-[state=open]/collapsible:-rotate-90" />
                                 </NavSpan>
                             </SidebarMenuButton>
