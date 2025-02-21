@@ -2,7 +2,7 @@ import Loading from '@/Components/Loading.jsx';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';
 import { Head } from '@inertiajs/react';
 import banner from '../../../../../public/images/banner.jfif';
-import image_logo from '../../../../../public/images/logo.jfif';
+import image_logo from '../../../../../public/images/FTP_logo.jfif';
 
 export default function InvoiceDocument({ document }) {
     const formatEuro = new Intl.NumberFormat('de-DE', {

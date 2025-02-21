@@ -3,6 +3,7 @@
 import AutoScrollList from '@/Components/auto-scroll-list.jsx';
 import LineAreaChart from '@/Components/chart/line-area-chart.jsx';
 import { VerticalBarChart } from '@/Components/chart/vertical-bar-chart.jsx';
+import Currencies from '@/Components/custom/Currencies.jsx';
 import News from '@/Components/custom/news.jsx';
 import Loading from '@/Components/Loading.jsx';
 import NavLink from '@/Components/navigation/nav-link.jsx';
@@ -10,6 +11,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';
 import { formatEuro } from '@/utils/Utils.js';
 import { Head } from '@inertiajs/react';
 import { useRef } from 'react';
+import image_logo from '../../../public/images/FTP_logo_no_bg.png';
 
 export default function Home({ invoices, currentAccount, receipts, news }) {
     const totalDebits = useRef(0);
@@ -64,8 +66,8 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
         <AuthenticatedLayout header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Home</span>}>
             <Head title="Home" />
 
-            <div className="grid grow grid-flow-col-dense grid-cols-4 gap-4 p-4">
-                <div className="h-fill col-span-2">
+            <div className="grid h-screen grow grid-cols-12 flex-row gap-4 p-4">
+                <div id={'area-chart'} className="col-span-12 sm:col-span-6">
                     <div className="col-span-full overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
                         <div className="text-gray-900 dark:text-gray-100">
                             {invoices === undefined ? (
@@ -90,7 +92,7 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
                         </div>
                     </div>
                 </div>
-                <div className="h-fill col-span-2 col-start-3">
+                <div id={'bar-chart'} className="col-span-12 sm:col-span-6 sm:col-start-7">
                     <div className="overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
                         <div className="text-gray-900 dark:text-gray-100">
                             {currentAccount === undefined ? (
@@ -115,9 +117,9 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
                         </div>
                     </div>
                 </div>
-                <div className="col-span-2">
-                    <div className="col-span-full flex flex-col rounded-xl bg-white shadow-sm dark:bg-gray-800 sm:col-span-6 xl:col-span-4">
-                        <div className="h-[40vh] text-gray-900 dark:text-gray-100">
+                <div id={'table-no-reguralized'} className="col-span-6 sm:row-span-1 xl:col-span-4">
+                    <div className="flex-col rounded-xl bg-white shadow-sm dark:bg-gray-800">
+                        <div className="min-h-[25vh] text-gray-900 dark:text-gray-100">
                             {currentAccount === undefined ? (
                                 <Loading />
                             ) : (
@@ -126,12 +128,12 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
                                         <NavLink
                                             href={route('finance.documents', ['current-account', ca.ccstamp])}
                                             key={ca.nrdoc}
-                                            className={'flex justify-between gap-4'}
+                                            className={'flex-col justify-between gap-4'}
                                         >
                                             <span className="first:font-medium">{ca.nrdoc}</span>
                                             <span>{ca.cmdesc}</span>
                                             {ca.ecred - ca.ecredf > 0 || ca.edeb - ca.edebf > 0 ? (
-                                                <span className="text-sm text-red-600 dark:text-red-400">
+                                                <span className="text-right text-sm text-red-600 dark:text-red-400">
                                                     Em dívida: {addDebit(ca.edeb - ca.edebf)}
                                                 </span>
                                             ) : (
@@ -144,9 +146,44 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
                         </div>
                     </div>
                 </div>
-                <div className="col-span-2 col-start-3">
-                    <div className="col-span-full flex flex-col rounded-xl bg-white shadow-sm dark:bg-gray-800 sm:col-span-6 xl:col-span-4">
+                <div id={'table-currencies'} className="col-span-6 col-start-7 xl:col-span-8 xl:col-start-5">
+                    <div className="bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
+                        <div className="text-gray-900 dark:text-gray-100">
+                            <Currencies />
+                        </div>
+                    </div>
+                </div>
+                <div id={'news'} className="col-span-6 col-start-7 xl:col-span-4 xl:col-start-5">
+                    <div className="flex flex-col rounded-xl bg-white shadow-sm dark:bg-gray-800">
                         <div className="p-6 text-gray-900 dark:text-gray-100">{news === undefined ? <Loading /> : <News result={news.data} />}</div>
+                    </div>
+                </div>
+                <div id={'message-day'} className="col-span-6 col-start-7 xl:col-span-4 xl:col-start-9">
+                    <div className="overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
+                        <header className="px-5 py-4 dark:border-gray-700/60">
+                            <h2 className="font-semibold text-gray-800 dark:text-gray-100">Mensagem do Mês</h2>
+                        </header>
+                        <hr className="mx-5 mb-4 border-t border-gray-200 dark:border-gray-700" />
+
+                        <div className="flex grow flex-col justify-center p-5">
+                            <ul className="space-y-4">
+                                <li className="flex items-start space-x-4">
+                                    <div className="flex-1 text-center">
+                                        <a href="https://ftpporto.com/">
+                                            <img
+                                                src={image_logo}
+                                                alt="Image"
+                                                className="h-30 mx-auto w-36 rounded-md object-cover dark:bg-gray-800"
+                                            />
+                                        </a>
+                                        <p className="mt-4 text-sm font-medium">
+                                            Lembre-se de que as oportunidades não caem do céu, são contruídas pelo seu trabalho árduo.
+                                        </p>
+                                        <p className="text-xs text-gray-500 dark:text-gray-400">FTP</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

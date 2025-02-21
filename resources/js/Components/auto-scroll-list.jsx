@@ -45,7 +45,7 @@ export default function AutoScrollList({ title, children, length, footerValue = 
                 <hr className="mb-4 mt-2 border-t border-gray-200 dark:border-gray-700" />
             </CardHeader>
             <CardContent>
-                <ScrollArea className={'m-0 h-full w-full overflow-hidden p-0'}>
+                <ScrollArea className={'m-0 h-full w-full grow overflow-hidden p-0'}>
                     <ul ref={listRef} className="absolute transition-transform duration-1000 ease-in-out">
                         {children.map((child, index) => (
                             <li key={index} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
