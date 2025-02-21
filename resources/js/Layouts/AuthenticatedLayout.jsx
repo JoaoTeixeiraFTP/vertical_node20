@@ -21,12 +21,12 @@ export default function AuthenticatedLayout({ header, children }) {
                                 <div className="mx-auto px-4 py-2 sm:px-6 lg:px-4">
                                     <div className="grid h-full overflow-hidden sm:flex sm:justify-between">
                                         {/* Left: Title */}
-                                        <div className="order-last mb-2 mt-2 sm:order-first sm:mb-0 sm:mt-0">
+                                        <div className="order-last mx-2 my-2 sm:order-first sm:my-0 sm:ms-8">
                                             <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">{header}</h1>
                                         </div>
 
                                         {/* Right: Actions */}
-                                        <div className="sm:text-md order-first flex justify-end gap-2 text-sm sm:order-last">
+                                        <div className="sm:text-md order-first flex justify-end gap-2 text-sm sm:order-last sm:me-8">
                                             {/* Filter button */}
                                             <FilterButton align="right" />
                                             {/* Datepicker built with React Day Picker */}
