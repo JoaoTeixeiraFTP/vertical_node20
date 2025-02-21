@@ -1,6 +1,8 @@
 import Loading from '@/Components/Loading.jsx';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';
 import { Head } from '@inertiajs/react';
+import banner from '../../../../../public/images/banner.jfif';
+import image_logo from '../../../../../public/images/logo.jfif';
 
 export default function InvoiceDocument({ document }) {
     const formatEuro = new Intl.NumberFormat('de-DE', {
@@ -9,7 +11,7 @@ export default function InvoiceDocument({ document }) {
         minimumFractionDigits: 2,
     });
 
-    function prindDocument() {
+    function printDocument() {
         // var printContents = this.$refs.container.innerHTML;
         // var originalContents = document.body.innerHTML;
         // document.body.innerHTML = printContents;
@@ -21,6 +23,7 @@ export default function InvoiceDocument({ document }) {
         <>
             <AuthenticatedLayout header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Detalhe Faturas</span>}>
                 <Head title="Faturas" />
+                <img src={image_logo} width={64} height={64} alt={'logo'} className={'hidden print:block'} />
 
                 <div className="">
                     <div id={'page-document'} className="mx-auto px-4 py-2 sm:px-6 lg:px-12">
@@ -171,7 +174,7 @@ export default function InvoiceDocument({ document }) {
                                                 Voltar
                                             </button>
                                             <button
-                                                onClick={() => prindDocument()}
+                                                onClick={() => printDocument()}
                                                 className="btn ml-3 bg-gray-400 text-white hover:bg-gray-600 dark:bg-gray-400 dark:hover:bg-gray-600"
                                             >
                                                 Imprimir
@@ -183,6 +186,7 @@ export default function InvoiceDocument({ document }) {
                         </div>
                     </div>
                 </div>
+                <img src={banner} alt={'banner'} className={'print: bottom-0 hidden print:absolute print:block'} />
             </AuthenticatedLayout>
         </>
     );
