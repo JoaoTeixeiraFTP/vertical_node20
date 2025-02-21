@@ -30,7 +30,7 @@ export function NavMain({ items }) {
                                 <NavSpan>
                                     {items.icon && <items.icon />}
                                     <span className="m-2">{items.title}</span>
-                                    <ChevronRight className="ml-auto rotate-45 transition-transform duration-200 group-data-[state=open]/collapsible:-rotate-45" />
+                                    <ChevronRight className="ml-auto rotate-90 transition-transform duration-200 group-data-[state=open]/collapsible:-rotate-90" />
                                 </NavSpan>
                             </SidebarMenuButton>
                         </CollapsibleTrigger>
