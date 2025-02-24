@@ -1,10 +1,10 @@
 import { usePage } from '@inertiajs/react';
 // import * as React from 'react';
 import Datepicker from '@/Components/Datepicker.jsx';
-import FilterButton from '@/Components/Dropdown/DropdownFilter.jsx';
+import FilterButton from '@/Components/dropdown/DropdownFilter.jsx';
 import AppHeader from '@/Components/layout/AppHeader.jsx';
 import { AppSidebar } from '@/Components/layout/AppSidebar.jsx';
-import { SidebarProvider } from '@/Components/ui/sidebar.jsx';
+import { SidebarProvider } from '@/js/Components/ui/sidebar.jsx';
 import { ThemeProvider } from '@/utils/ThemeContext.jsx';
 
 export default function AuthenticatedLayout({ header, children }) {
