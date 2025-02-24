@@ -6,7 +6,7 @@
 
 @import 'tailwindcss/utilities';
 
-@import '../../public/fonts/Inter/web/Inter.css';
+@import '../../public/fonts/Inter/web/inter.css';
 
 [x-cloak] {
     display: none;
