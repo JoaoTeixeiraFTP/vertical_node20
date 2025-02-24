@@ -26,7 +26,7 @@ export default function InvoiceDocument({ document }) {
                 <img src={image_logo} width={64} height={64} alt={'logo'} className={'hidden print:block'} />
 
                 <div className="">
-                    <div id={'page-document'} className="mx-auto px-4 py-2 sm:px-6 lg:px-12">
+                    <div id={'page-document'} className="mx-auto px-4 py-2">
                         <div id={'card-page'} className="overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
                             <div className="p-2 text-gray-900 dark:text-gray-100">
                                 <div

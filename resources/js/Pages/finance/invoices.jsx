@@ -20,7 +20,7 @@ export default function Invoices({ invoices }) {
             <Head title="Faturas" />
 
             <div className="">
-                <div className="mx-auto px-4 py-2 sm:px-6 lg:px-12">
+                <div className="mx-auto px-4 py-2">
                     <div className="overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
                         <div className="p-2 text-gray-900 dark:text-gray-100">
                             {invoices === undefined ? (
