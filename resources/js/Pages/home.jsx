@@ -117,7 +117,7 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
                         </div>
                     </div>
                 </div>
-                <div id={'table-no-reguralized'} className="col-span-6 sm:row-span-1 xl:col-span-4">
+                <div id={'table-no-reguralized'} className="col-span-6 row-span-2 sm:row-span-1 xl:col-span-4">
                     <div className="flex-col rounded-xl bg-white shadow-sm dark:bg-gray-800">
                         <div className="min-h-[25vh] text-gray-900 dark:text-gray-100">
                             {currentAccount === undefined ? (
@@ -128,7 +128,7 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
                                         <NavLink
                                             href={route('finance.documents', ['current-account', ca.ccstamp])}
                                             key={ca.nrdoc}
-                                            className={'flex-col justify-between gap-4'}
+                                            className={'w-full justify-between gap-4'}
                                         >
                                             <span className="first:font-medium">{ca.nrdoc}</span>
                                             <span>{ca.cmdesc}</span>

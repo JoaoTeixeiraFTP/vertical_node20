@@ -35,7 +35,7 @@ export default function AutoScrollList({ title, children, length, footerValue = 
     const handleMouseLeave = () => {
         timeoutRef.current = setTimeout(() => {
             setIsPaused(false);
-        }, 10000); // Espera 10s antes de reiniciar
+        }, 4000); // Espera 10s antes de reiniciar
     };
 
     return (
@@ -46,9 +46,9 @@ export default function AutoScrollList({ title, children, length, footerValue = 
             </CardHeader>
             <CardContent>
                 <ScrollArea className={'m-0 h-full w-full grow overflow-hidden p-0'}>
-                    <ul ref={listRef} className="absolute transition-transform duration-1000 ease-in-out">
+                    <ul ref={listRef} className="absolute w-full transition-transform duration-1000 ease-in-out">
                         {children.map((child, index) => (
-                            <li key={index} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                            <li key={index} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={'w-full'}>
                                 {child}
                             </li>
                         ))}
