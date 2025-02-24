@@ -2,8 +2,8 @@
 
 import { Bar, BarChart, Label, Legend, XAxis } from 'recharts';
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/Components/ui/card';
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/Components/ui/chart';
 
 export function VerticalBarChart({ title, xlabel, ylabel, yfield, xfield, config, data, children }) {
     return (

@@ -2,8 +2,8 @@
 
 import { Area, AreaChart, Label, Legend, XAxis, YAxis } from 'recharts';
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/Components/ui/card';
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/Components/ui/chart';
 import { hexToRGB } from '@/utils/Utils.js';
 
 export default function LineAreaChart({ title, xlabel, ylabel, xfield, firstLine, secondLine, config, data, children }) {

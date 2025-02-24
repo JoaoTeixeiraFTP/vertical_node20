@@ -10,8 +10,8 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from '@/Components/dropdown/dropdown-menu.jsx';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { SidebarMenu, SidebarMenuButton, SidebarMenuItem, useSidebar } from '@/components/ui/sidebar';
+import { Avatar, AvatarFallback, AvatarImage } from '@/Components/ui/avatar';
+import { SidebarMenu, SidebarMenuButton, SidebarMenuItem, useSidebar } from '@/Components/ui/sidebar';
 import { router } from '@inertiajs/react';
 
 export function NavUserSidebar({ user }) {

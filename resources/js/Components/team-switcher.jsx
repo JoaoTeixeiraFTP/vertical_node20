@@ -10,7 +10,7 @@ import {
     DropdownMenuShortcut,
     DropdownMenuTrigger,
 } from '@/Components/dropdown/dropdown-menu.jsx';
-import { SidebarMenu, SidebarMenuButton, SidebarMenuItem, useSidebar } from '@/components/ui/sidebar';
+import { SidebarMenu, SidebarMenuButton, SidebarMenuItem, useSidebar } from '@/Components/ui/sidebar';
 
 export function TeamSwitcher({ teams }) {
     const { isMobile } = useSidebar();
