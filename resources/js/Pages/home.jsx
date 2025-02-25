@@ -154,13 +154,13 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
                     </div>
                 </div>
                 <div id={'news'} className="col-span-6 col-start-7 xl:col-span-4 xl:col-start-5">
-                    <div className="flex flex-col rounded-xl bg-white shadow-sm dark:bg-gray-800">
-                        <div className="p-6 text-gray-900 dark:text-gray-100">{news === undefined ? <Loading /> : <News result={news.data} />}</div>
+                    <div className="overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
+                        {news === undefined ? <Loading /> : <News result={news.data} />}
                     </div>
                 </div>
                 <div id={'message-day'} className="col-span-6 col-start-7 xl:col-span-4 xl:col-start-9">
                     <div className="overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
-                        <header className="px-5 py-4 dark:border-gray-700/60">
+                        <header className="px-5 pt-6 dark:border-gray-700/60">
                             <h2 className="font-semibold text-gray-800 dark:text-gray-100">Mensagem do Mês</h2>
                         </header>
                         <hr className="mx-5 mb-4 border-t border-gray-200 dark:border-gray-700" />
