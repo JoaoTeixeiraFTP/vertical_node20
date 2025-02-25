@@ -5,7 +5,7 @@ import { Bar, BarChart, Label, Legend, XAxis } from 'recharts';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/Components/ui/card';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/Components/ui/chart';
 
-export function VerticalBarChart({ title, xlabel, ylabel, yfield, xfield, config, data, children }) {
+export function VerticalBarChart({ title, config, data, children }) {
     return (
         <Card>
             <CardHeader>
@@ -16,12 +16,22 @@ export function VerticalBarChart({ title, xlabel, ylabel, yfield, xfield, config
             <CardContent>
                 <ChartContainer className={'m-0 p-0'} config={config}>
                     <BarChart accessibilityLayer data={data}>
-                        <XAxis dataKey={xfield} tick={true} tickLine={true} axisLine={false} tickMargin={0}>
-                            <Label value={xlabel} fontSize={18} offset={-5} position="insideBottom" />
+                        <XAxis dataKey={config.x.field} tick={true} tickLine={true} axisLine={false} tickMargin={0}>
+                            <Label value={config.x.label} fontSize={18} offset={-5} position="insideBottom" />
                         </XAxis>
                         <ChartTooltip cursor={false} content={<ChartTooltipContent indicator="dashed" />} />
-                        <Bar dataKey={yfield[0]} fill={'var(--color-' + yfield[0] + ')'} radius={4} />
-                        <Bar dataKey={yfield[1]} fill={'var(--color-' + yfield[1] + ')'} radius={4} />
+                        <Bar
+                            name={config[config.y.field[0]].label}
+                            dataKey={config.y.field[0]}
+                            fill={'var(--color-' + config.y.field[0] + ')'}
+                            radius={4}
+                        />
+                        <Bar
+                            name={config[config.y.field[1]].label}
+                            dataKey={config.y.field[1]}
+                            fill={'var(--color-' + config.y.field[1] + ')'}
+                            radius={4}
+                        />
                         <Legend verticalAlign="top" align={'right'} height={36} />
                     </BarChart>
                 </ChartContainer>

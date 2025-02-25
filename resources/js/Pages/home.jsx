@@ -19,29 +19,40 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
     const meses = ['Jan', 'Fev', 'Mar', 'Abr', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
 
     const areaConfig = {
-        first: {
-            label: 'Desktop',
-            color: 'var(--chart-1-1)',
-            start: 'var(--chart-1-1)',
-            middle: 'var(--chart-1-2)',
-            end: 'var(--chart-1-3)',
+        x: {
+            label: 'Meses',
+            field: 'fdata',
         },
-        second: {
-            label: 'Mobile',
-            color: 'var(--chart-6)',
+        y: {
+            label: 'Valores (€)',
+            field: ['etotal', 'basei'], // CORRIGIR
+        },
+        etotal: {
+            label: 'Receitas',
+            color: '#8470FF',
+        },
+        basei: {
+            // CORRIGIR
+            label: 'Despesas',
+            color: '#6B7280',
         },
     };
 
     const barConfig = {
+        x: {
+            label: 'Meses',
+            field: 'datalc',
+        },
+        y: {
+            label: 'Valores (€)',
+            field: ['ecred', 'edeb'],
+        },
         ecred: {
-            label: 'Desktop',
+            label: 'Crédito',
             color: 'var(--chart-1-1)',
-            start: 'var(--chart-1-1)',
-            middle: 'var(--chart-1-2)',
-            end: 'var(--chart-1-3)',
         },
         edeb: {
-            label: 'Mobile',
+            label: 'Débito',
             color: 'var(--chart-2)',
         },
     };
@@ -50,7 +61,7 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
         chartData.current = data.map((item) => {
             return {
                 date: meses[new Date(item[fieldDate]).getMonth()],
-                value: item[fieldValue],
+                value1: item[fieldValue],
             };
         });
         // Só mudar para chartData.current
@@ -73,16 +84,7 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
                             {invoices === undefined ? (
                                 <Loading />
                             ) : (
-                                <LineAreaChart
-                                    title={'Rentatabilidade'}
-                                    description={'Showing total visitors for the last 6 months'}
-                                    firstLine={'etotal'} // mudar aqui para value
-                                    xfield={'fdata'} // mudar para date
-                                    data={formatChart(invoices.data, 'fdata', 'etotal')}
-                                    config={areaConfig}
-                                    xlabel={'Meses'}
-                                    ylabel={'Valores'}
-                                >
+                                <LineAreaChart title={'Rentatabilidade'} data={formatChart(invoices.data, 'fdata', 'etotal')} config={areaConfig}>
                                     <div className="flex items-start">
                                         <div className="mr-2 text-3xl font-bold text-gray-800 dark:text-gray-100">9 513</div>
                                         <div className="rounded-full bg-green-500/20 px-1.5 text-sm font-medium text-green-700">+49%</div>
@@ -98,16 +100,7 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
                             {currentAccount === undefined ? (
                                 <Loading />
                             ) : (
-                                <VerticalBarChart
-                                    title={'Faturação'}
-                                    description={'Showing total visitors for the last 6 months'}
-                                    yfield={['ecred', 'edeb']}
-                                    xfield={'datalc'}
-                                    data={currentAccount.data}
-                                    config={barConfig}
-                                    xlabel={'Meses'}
-                                    ylabel={'Valores'}
-                                >
+                                <VerticalBarChart title={'Faturação'} data={currentAccount.data} config={barConfig}>
                                     <div className="flex items-start">
                                         <div className="mr-2 text-3xl font-bold text-gray-800 dark:text-gray-100">9 513</div>
                                         <div className="rounded-full bg-green-500/20 px-1.5 text-sm font-medium text-green-700">+49%</div>
@@ -117,7 +110,7 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
                         </div>
                     </div>
                 </div>
-                <div id={'table-no-reguralized'} className="col-span-6 row-span-2 sm:row-span-1 xl:col-span-4">
+                <div id={'table-no-reguralized'} className="col-span-12 row-span-2 sm:row-span-1 xl:col-span-4">
                     <div className="flex-col rounded-xl bg-white shadow-sm dark:bg-gray-800">
                         <div className="min-h-[25vh] text-gray-900 dark:text-gray-100">
                             {currentAccount === undefined ? (

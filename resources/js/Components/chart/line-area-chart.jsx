@@ -6,9 +6,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/Com
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/Components/ui/chart';
 import { hexToRGB } from '@/utils/Utils.js';
 
-export default function LineAreaChart({ title, xlabel, ylabel, xfield, firstLine, secondLine, config, data, children }) {
+export default function LineAreaChart({ title, config, data, children }) {
     return (
-        <Card className={'block'}>
+        <Card>
             <CardHeader>
                 <CardTitle>{title}</CardTitle>
                 <hr className="mb-4 mt-2 border-t border-gray-200 dark:border-gray-700" />
@@ -16,41 +16,42 @@ export default function LineAreaChart({ title, xlabel, ylabel, xfield, firstLine
             </CardHeader>
             <CardContent>
                 <ChartContainer config={config}>
-                    <AreaChart
-                        accessibilityLayer
-                        data={data}
-                        margin={{
-                            left: 4,
-                            right: 4,
-                        }}
-                    >
+                    <AreaChart accessibilityLayer data={data}>
                         <defs>
                             <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="0%" stopColor={'rgba(' + hexToRGB('#8470FF') + ', 1)'} stopOpacity={1} />
-                                <stop offset="100%" stopColor={'rgba(' + hexToRGB('#8470FF') + ', 0.3)'} stopOpacity={1} />
-                                <stop offset="100%" stopColor={'rgba(' + hexToRGB('#8470FF') + ', 0)'} stopOpacity={1} />
+                                <stop offset="0%" stopColor={'rgba(' + hexToRGB(config[config.y.field[0]].color) + ', 1)'} stopOpacity={1} />
+                                <stop offset="100%" stopColor={'rgba(' + hexToRGB(config[config.y.field[0]].color) + ', 0.3)'} stopOpacity={1} />
+                                <stop offset="100%" stopColor={'rgba(' + hexToRGB(config[config.y.field[0]].color) + ', 0)'} stopOpacity={1} />
                             </linearGradient>
                             <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="5%" stopColor="#6B7280" stopOpacity={1} />
-                                <stop offset="95%" stopColor="#6B7280" stopOpacity={1} />
+                                <stop offset="5%" stopColor={config[config.y.field[1]].color} stopOpacity={1} />
+                                <stop offset="95%" stopColor={config[config.y.field[1]].color} stopOpacity={1} />
                             </linearGradient>
                         </defs>
                         <Legend verticalAlign="top" align={'right'} height={36} />
-                        <XAxis dataKey={xfield} tick={true} tickLine={true} axisLine={false} tickMargin={0}>
-                            <Label value={xlabel} fontSize={18} offset={-5} position="insideBottom" />
+                        <XAxis dataKey={config.x.field} tick={true} tickLine={true} axisLine={false} tickMargin={0}>
+                            <Label value={config.x.label} fontSize={18} offset={-5} position="insideBottom" />
                         </XAxis>
                         <YAxis tick={true} tickSize={0} tickLine={false} axisLine={false} tickMargin={5}>
-                            <Label angle={-90} fontSize={18} value={ylabel} offset={5} position="insideLeft" />
+                            <Label angle={-90} fontSize={18} value={config.y.label} offset={5} position="insideLeft" />
                         </YAxis>
                         <ChartTooltip cursor={false} content={<ChartTooltipContent indicator="dot" />} />
-                        <Area dataKey={secondLine} type="natural" fill="url(#colorPv)" fillOpacity={1} stroke="var(--color-second)" stackId="a" />
                         <Area
-                            dataKey={firstLine}
+                            name={config[config.y.field[1]].label}
+                            dataKey={config.y.field[1]}
+                            type="natural"
+                            fill="url(#colorPv)"
+                            fillOpacity={1}
+                            stroke={config[config.y.field[1]].color}
+                            stackId="a"
+                        />
+                        <Area
+                            name={config[config.y.field[0]].label}
+                            dataKey={config.y.field[0]}
                             type="monotone"
                             fill="url(#colorUv)"
                             fillOpacity={1}
-                            strokeWidth={1.2}
-                            stroke="var(--color-first)"
+                            stroke={config[config.y.field[0]].color}
                             stackId="b"
                         />
                     </AreaChart>

@@ -12,23 +12,41 @@ import { useRef } from 'react';
 export default function FinanceDashboard({ invoices, currentAccount, receipts }) {
     const totalDebits = useRef(0);
     const areaConfig = {
-        first: {
-            label: 'Faturas',
-            color: 'var(--chart-1-1)',
-            start: 'var(--chart-1-1)',
-            middle: 'var(--chart-1-2)',
-            end: 'var(--chart-1-3)',
+        x: {
+            label: 'Meses',
+            field: 'fdata',
+        },
+        y: {
+            label: 'Valores (€)',
+            field: ['etotal', 'basei'], // CORRIGIR
+        },
+        etotal: {
+            label: 'Receitas',
+            color: '#8470FF',
+        },
+        basei: {
+            // CORRIGIR
+            label: 'Despesas',
+            color: '#6B7280',
         },
     };
 
     const barConfig = {
+        x: {
+            label: 'Meses',
+            field: 'datalc',
+        },
+        y: {
+            label: 'Valores (€)',
+            field: ['ecred', 'edeb'],
+        },
         ecred: {
-            label: 'Creditos',
-            color: 'var(--chart-3)',
+            label: 'Crédito',
+            color: 'var(--chart-1-1)',
         },
         edeb: {
-            label: 'Debitos',
-            color: 'var(--chart-4)',
+            label: 'Débito',
+            color: 'var(--chart-2)',
         },
     };
 
@@ -119,7 +137,7 @@ export default function FinanceDashboard({ invoices, currentAccount, receipts })
                 </div>
                 <div className="col-span-1 col-start-4">
                     <div className="col-span-full flex h-full flex-col rounded-xl bg-white shadow-sm dark:bg-gray-800 sm:col-span-6 xl:col-span-4">
-                        <div className="h-[55vh] text-gray-900 dark:text-gray-100">
+                        <div className="h-[60vh] text-gray-900 dark:text-gray-100">
                             {currentAccount === undefined ? (
                                 <Loading />
                             ) : (
