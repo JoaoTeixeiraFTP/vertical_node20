@@ -164,7 +164,7 @@ const Sidebar = React.forwardRef(({ side = 'left', variant = 'sidebar', collapsi
             />
             <div
                 className={cn(
-                    'fixed inset-y-0 z-10 hidden h-svh w-[--sidebar-width] transition-[left,right,width] duration-200 ease-linear md:flex',
+                    'fixed inset-y-0 z-30 hidden h-svh w-[--sidebar-width] transition-[left,right,width] duration-200 ease-linear md:flex',
                     side === 'left'
                         ? 'left-0 group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)]'
                         : 'right-0 group-data-[collapsible=offcanvas]:right-[calc(var(--sidebar-width)*-1)]',
@@ -198,7 +198,7 @@ const SidebarTrigger = React.forwardRef(({ className, onClick, ...props }, ref) 
             data-sidebar="trigger"
             variant="ghost"
             size="icon"
-            className={cn('absolute bottom-0 right-1 h-7 w-7', className)}
+            className={cn('h-7 w-7', className)}
             onClick={(event) => {
                 onClick?.(event);
                 toggleSidebar();

@@ -14,7 +14,7 @@ export function NavSimple({ item }) {
                     className={'mb-0.5 rounded-lg bg-[linear-gradient(135deg,var(--tw-gradient-stops))] pl-2 pr-3 last:mb-0 ' + gradient}
                 >
                     <ResponsiveNavLink href={item.url} active={route().current(item.name)}>
-                        {item.icon && <item.icon />}
+                        {item.icon && <item.icon data-child />}
                         <span className="m-4">{item.name}</span>
                     </ResponsiveNavLink>
                 </SidebarMenuButton>
