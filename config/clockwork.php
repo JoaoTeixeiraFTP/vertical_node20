@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'enable' => env('CLOCKWORK_ENABLE', false),
+    'enable' => env('CLOCKWORK_ENABLE', true),
 
     /*
     |------------------------------------------------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return [
             'collect_data' => env('CLOCKWORK_HTTP_REQUESTS_COLLECT_DATA', true),
 
             // Collect raw request and response content (high storage usage with large responses)
-            'collect_raw_data' => env('CLOCKWORK_HTTP_REQUESTS_COLLECT_RAW_DATA', false),
+            'collect_raw_data' => env('CLOCKWORK_HTTP_REQUESTS_COLLECT_RAW_DATA', true),
         ],
 
         // Laravel log (you can still log directly to Clockwork with laravel log disabled)
@@ -90,7 +90,7 @@ return [
 
         // Sent notifications
         'notifications' => [
-            'enabled' => env('CLOCKWORK_NOTIFICATIONS_ENABLED', true),
+            'enabled' => env('CLOCKWORK_NOTIFICATIONS_ENABLED', false),
         ],
 
         // Performance metrics

@@ -60,7 +60,7 @@ export default function FinanceDashboard({ invoices, currentAccount, receipts })
             <Head title="Financeira Dashboard" />
 
             <div className="grid grow grid-flow-col-dense grid-cols-4 gap-4 p-4">
-                <div className="h-fill col-span-3">
+                <div id={'invoicesChart'} className="h-fill col-span-3">
                     <div className="overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
                         <div className="pb-1 pl-0 pr-4 text-gray-900 dark:text-gray-100">
                             {invoices === undefined ? (
@@ -76,7 +76,7 @@ export default function FinanceDashboard({ invoices, currentAccount, receipts })
                         </div>
                     </div>
                 </div>
-                <div className="col-span-1 col-start-4">
+                <div id={'invoicesTable'} className="col-span-1 col-start-4">
                     <div className="col-span-full flex h-full flex-col rounded-xl bg-white shadow-sm dark:bg-gray-800 sm:col-span-6 xl:col-span-4">
                         <div className="h-[60vh] text-gray-900 dark:text-gray-100">
                             {invoices === undefined ? (
@@ -101,7 +101,7 @@ export default function FinanceDashboard({ invoices, currentAccount, receipts })
                         </div>
                     </div>
                 </div>
-                <div className="h-fill col-span-3">
+                <div id={'currentAccountsChart'} className="h-fill col-span-3">
                     <div className="overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
                         <div className="pb-1 pl-0 pr-4 text-gray-900 dark:text-gray-100">
                             {currentAccount === undefined ? (
@@ -117,9 +117,9 @@ export default function FinanceDashboard({ invoices, currentAccount, receipts })
                         </div>
                     </div>
                 </div>
-                <div className="col-span-1 col-start-4">
+                <div id={'currentAccountsTable'} className="col-span-1 col-start-4">
                     <div className="col-span-full flex h-full flex-col rounded-xl bg-white shadow-sm dark:bg-gray-800 sm:col-span-6 xl:col-span-4">
-                        <div className="h-[60vh] text-gray-900 dark:text-gray-100">
+                        <div className="h-[55vh] text-gray-900 dark:text-gray-100">
                             {currentAccount === undefined ? (
                                 <Loading />
                             ) : (
@@ -146,7 +146,7 @@ export default function FinanceDashboard({ invoices, currentAccount, receipts })
                         </div>
                     </div>
                 </div>
-                <div className="col-span-1 col-start-4">
+                <div id={'receiptsTable'} className="col-span-1 col-start-4">
                     <div className="col-span-full flex h-full flex-col rounded-xl bg-white shadow-sm dark:bg-gray-800 sm:col-span-6 xl:col-span-4">
                         <div className="h-[60vh] text-gray-900 dark:text-gray-100">
                             {receipts === undefined ? (
