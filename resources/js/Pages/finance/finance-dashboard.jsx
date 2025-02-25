@@ -82,7 +82,12 @@ export default function FinanceDashboard({ invoices, currentAccount, receipts })
                             {invoices === undefined ? (
                                 <Loading />
                             ) : (
-                                <AutoScrollList title={'Lista de Faturas'} length={invoices.data.length}>
+                                <AutoScrollList
+                                    title={'Lista de Faturas'}
+                                    length={invoices.data.length}
+                                    className={'max-h-[60vh]'}
+                                    classNameUl={'max-h-[60vh]'}
+                                >
                                     {invoices.data.map((inv) => (
                                         <NavLink
                                             href={route('finance.documents', ['invoices', inv.ftstamp])}
@@ -123,7 +128,13 @@ export default function FinanceDashboard({ invoices, currentAccount, receipts })
                             {currentAccount === undefined ? (
                                 <Loading />
                             ) : (
-                                <AutoScrollList title={'Não Regularizado'} length={currentAccount.data.length} footerValue={totalDebits}>
+                                <AutoScrollList
+                                    title={'Não Regularizado'}
+                                    length={currentAccount.data.length}
+                                    footerValue={totalDebits}
+                                    className={'max-h-[60vh]'}
+                                    classNameUl={'max-h-[55vh]'}
+                                >
                                     {currentAccount.data.map((ca) => (
                                         <NavLink
                                             href={route('finance.documents', ['current-account', ca.ccstamp])}

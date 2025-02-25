@@ -116,7 +116,13 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
                             {currentAccount === undefined ? (
                                 <Loading />
                             ) : (
-                                <AutoScrollList title={'Não Regularizado'} length={currentAccount.data.length} footerValue={totalDebits}>
+                                <AutoScrollList
+                                    title={'Não Regularizado'}
+                                    length={currentAccount.data.length}
+                                    footerValue={totalDebits}
+                                    className={'max-h-[60vh]'}
+                                    classNameUl={'max-h-[45vh]'}
+                                >
                                     {currentAccount.data.map((ca) => (
                                         <NavLink
                                             href={route('finance.documents', ['current-account', ca.ccstamp])}
