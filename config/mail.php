@@ -37,8 +37,6 @@ return [
 
     'mailers' => [
 
-
-
         'ses' => [
             'transport' => 'ses',
         ],
