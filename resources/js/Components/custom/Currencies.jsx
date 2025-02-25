@@ -32,7 +32,7 @@ export default function Currencies() {
                             <td className="py-3 text-sm">€23T</td>
                             <td className="py-3">
                                 <svg className="h-6 w-20" viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg">
-                                    <polyline fill="none" stroke="#10B981" stroke-width="2" points="0,20 20,15 40,10 60,15 80,10 100,5" />
+                                    <polyline fill="none" stroke="#10B981" strokeWidth="2" points="0,20 20,15 40,10 60,15 80,10 100,5" />
                                 </svg>
                             </td>
                             <td className="py-3 text-sm">€1</td>
@@ -51,7 +51,7 @@ export default function Currencies() {
                             <td className="py-3 text-sm">€17T</td>
                             <td className="py-3">
                                 <svg className="h-6 w-20" viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg">
-                                    <polyline fill="none" stroke="#EF4444" stroke-width="2" points="0,10 20,15 40,20 60,25 80,20 100,25" />
+                                    <polyline fill="none" stroke="#EF4444" strokeWidth="2" points="0,10 20,15 40,20 60,25 80,20 100,25" />
                                 </svg>
                             </td>
                             <td className="py-3 text-sm">€1.1</td>
@@ -70,7 +70,7 @@ export default function Currencies() {
                             <td className="py-3 text-sm">€3T</td>
                             <td className="py-3">
                                 <svg className="h-6 w-20" viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg">
-                                    <polyline fill="none" stroke="#10B981" stroke-width="2" points="0,15 20,10 40,5 60,10 80,15 100,10" />
+                                    <polyline fill="none" stroke="#10B981" strokeWidth="2" points="0,15 20,10 40,5 60,10 80,15 100,10" />
                                 </svg>
                             </td>
                             <td className="py-3 text-sm">€0.2</td>

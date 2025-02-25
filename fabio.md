@@ -26,25 +26,8 @@
 - Donut
 - TABELA??
 
-### Card 4
-
-- Tabela
-- Conta Corrente
-
 ### Card 5
 
 - News
-- Corrigir imagens
-- Adicionar hr
 - Data nao esta aparecer
 - Se nao tiver um dos cria duas Linhas do que tiver para apresentar
-
-### Card 6
-
-- Tabela
-- Moedas/Banca
-- Tabela com algumas cores das subidas e descidas do mesmo
-
-### Card 7
-
-- Mensagem do dia
