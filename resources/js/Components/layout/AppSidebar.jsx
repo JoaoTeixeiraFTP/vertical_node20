@@ -70,7 +70,7 @@ export function AppSidebar({ ...props }) {
             <SidebarFooter className="sm:hidden">
                 <NavUserSidebar user={data.user} />
             </SidebarFooter>
-            <SidebarTrigger />
+            <SidebarTrigger className={'z-40 hidden sm:absolute sm:bottom-2 sm:right-1 sm:block'} />
         </Sidebar>
     );
 }

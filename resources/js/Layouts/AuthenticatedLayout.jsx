@@ -4,7 +4,7 @@ import Datepicker from '@/Components/Datepicker.jsx';
 import FilterButton from '@/Components/dropdown/DropdownFilter.jsx';
 import AppHeader from '@/Components/layout/AppHeader.jsx';
 import { AppSidebar } from '@/Components/layout/AppSidebar.jsx';
-import { SidebarProvider } from '@/Components/ui/sidebar.jsx';
+import { SidebarProvider, SidebarTrigger } from '@/Components/ui/sidebar.jsx';
 import { ThemeProvider } from '@/utils/ThemeContext.jsx';
 
 export default function AuthenticatedLayout({ header, children }) {
@@ -14,6 +14,7 @@ export default function AuthenticatedLayout({ header, children }) {
             <div className="flex h-[100dvh] overflow-hidden bg-gray-100 dark:bg-gray-900 print:bg-white">
                 <SidebarProvider id={'sidebar-provider'} className="w-full grow">
                     <AppSidebar />
+                    <SidebarTrigger className={'absolute left-1 top-2 z-40 cursor-pointer sm:hidden'} />
                     <main id={'main-page'} className="relative flex w-full flex-1 grow flex-col overflow-y-auto overflow-x-hidden">
                         <AppHeader user={user} />
                         {header && (
