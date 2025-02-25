@@ -39,14 +39,14 @@ export default function AutoScrollList({ title, children, length, footerValue = 
     };
 
     return (
-        <Card className={'block'}>
+        <Card className={'block max-h-[60vh]'}>
             <CardHeader>
                 <CardTitle>{title}</CardTitle>
                 <hr className="mb-4 mt-2 border-t border-gray-200 dark:border-gray-700" />
             </CardHeader>
             <CardContent>
-                <ScrollArea className={'m-0 h-full w-full grow overflow-hidden p-0'}>
-                    <ul ref={listRef} className="absolute w-full transition-transform duration-1000 ease-in-out">
+                <ScrollArea className={'m-0 w-full overflow-hidden p-0'}>
+                    <ul ref={listRef} className="max-h-[45vh] w-full transition-transform duration-1000 ease-in-out">
                         {children.map((child, index) => (
                             <li key={index} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={'w-full'}>
                                 {child}

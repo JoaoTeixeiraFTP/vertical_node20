@@ -110,9 +110,9 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
                         </div>
                     </div>
                 </div>
-                <div id={'table-no-reguralized'} className="col-span-12 row-span-2 sm:row-span-1 xl:col-span-4">
+                <div id={'table-no-reguralized'} className="col-span-12 row-span-2 sm:row-span-2 xl:col-span-4">
                     <div className="flex-col rounded-xl bg-white shadow-sm dark:bg-gray-800">
-                        <div className="min-h-[25vh] text-gray-900 dark:text-gray-100">
+                        <div className="h-[60vh] text-gray-900 dark:text-gray-100">
                             {currentAccount === undefined ? (
                                 <Loading />
                             ) : (
@@ -147,12 +147,12 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
                     </div>
                 </div>
                 <div id={'news'} className="col-span-6 col-start-7 xl:col-span-4 xl:col-start-5">
-                    <div className="overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
+                    <div className="h-[60vh] overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
                         {news === undefined ? <Loading /> : <News result={news.data} />}
                     </div>
                 </div>
                 <div id={'message-day'} className="col-span-6 col-start-7 xl:col-span-4 xl:col-start-9">
-                    <div className="overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
+                    <div className="min-h-[30vh] overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
                         <header className="px-5 pt-6 dark:border-gray-700/60">
                             <h2 className="font-semibold text-gray-800 dark:text-gray-100">Mensagem do Mês</h2>
                         </header>
