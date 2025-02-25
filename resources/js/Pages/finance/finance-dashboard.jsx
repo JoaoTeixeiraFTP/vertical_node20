@@ -66,16 +66,7 @@ export default function FinanceDashboard({ invoices, currentAccount, receipts })
                             {invoices === undefined ? (
                                 <Loading />
                             ) : (
-                                <LineAreaChart
-                                    title={'Faturas'}
-                                    description={''}
-                                    firstLine={'etotal'}
-                                    xfield={'fdata'}
-                                    data={invoices.data}
-                                    config={areaConfig}
-                                    xlabel={'Dia'}
-                                    ylabel={'Valores(€)'}
-                                >
+                                <LineAreaChart title={'Faturas'} data={invoices.data} config={areaConfig}>
                                     <div className="flex items-start">
                                         <div className="mr-2 text-3xl font-bold text-gray-800 dark:text-gray-100">9 513</div>
                                         <div className="rounded-full bg-green-500/20 px-1.5 text-sm font-medium text-green-700">+49%</div>
@@ -116,16 +107,7 @@ export default function FinanceDashboard({ invoices, currentAccount, receipts })
                             {currentAccount === undefined ? (
                                 <Loading />
                             ) : (
-                                <VerticalBarChart
-                                    title={'Contas Correntes'}
-                                    description={''}
-                                    yfield={['ecred', 'edeb']}
-                                    xfield={'datalc'}
-                                    data={currentAccount.data}
-                                    config={barConfig}
-                                    xlabel={'Dia'}
-                                    ylabel={'Valores (€)'}
-                                >
+                                <VerticalBarChart title={'Contas Correntes'} data={currentAccount.data} config={barConfig}>
                                     <div className="flex items-start">
                                         <div className="mr-2 text-3xl font-bold text-gray-800 dark:text-gray-100">9 513</div>
                                         <div className="rounded-full bg-green-500/20 px-1.5 text-sm font-medium text-green-700">+49%</div>
