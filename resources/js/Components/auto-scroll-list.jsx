@@ -43,7 +43,7 @@ export default function AutoScrollList({ title, children, length, className, cla
         <Card className={cn('block', className)}>
             <CardHeader>
                 <CardTitle>{title}</CardTitle>
-                <hr className="mb-4 mt-2 border-t border-gray-200 dark:border-gray-700" />
+                <hr className="mb-2 mt-2 border-t border-gray-200 dark:border-gray-700" />
             </CardHeader>
             <CardContent>
                 <ScrollArea className={'m-0 w-full overflow-hidden p-0'}>

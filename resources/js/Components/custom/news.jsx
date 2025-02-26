@@ -34,7 +34,7 @@ export default function News({ result }) {
     }, [techCrunchNews.length, updateTechCrunchIndex]);
 
     return (
-        <Card className={'block h-[30vh]'}>
+        <Card className={'block h-96'}>
             <CardHeader>
                 <CardTitle>Business</CardTitle>
                 <hr className="mb-2 mt-2 border-t border-gray-200 dark:border-gray-700" />
@@ -66,7 +66,7 @@ export default function News({ result }) {
                             ))}
                         </div>
                         {businessNews.length > 1 && (
-                            <div className="mt-2 flex justify-center space-x-2">
+                            <div className="flex justify-center space-x-2">
                                 {businessNews.map((_, index) => (
                                     <span
                                         key={index}
