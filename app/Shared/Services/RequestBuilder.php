@@ -138,7 +138,7 @@ final class RequestBuilder
                         'status_code' => $exception->getCode(),
                     ]);
 
-                    throw new ApiRequestException('Erro ao fazer requisição para a API: '.$exception->getMessage(), $exception->getCode(), $exception);
+                    throw new ApiRequestException('Erro ao fazer requisição para a API: ', $exception->getCode(), $exception);
                 }
             );
         } catch (GuzzleException $e) {
