@@ -29,12 +29,13 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
         },
         etotal: {
             label: 'Receitas',
-            color: '#8470FF',
+            color: '--chart-1',
         },
         basei: {
             // CORRIGIR
             label: 'Despesas',
-            color: '#6B7280',
+            color: '--chart-5',
+            // color: '#e30f0f',
         },
     };
 
@@ -110,7 +111,7 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
                         </div>
                     </div>
                 </div>
-                <div id={'table-no-reguralized'} className="col-span-12 row-span-2 sm:row-span-2 xl:col-span-4">
+                <div id={'table-no-reguralized'} className="col-span-12 row-span-2 sm:col-span-6 sm:row-span-2 xl:col-span-4">
                     <div className="flex-col rounded-xl bg-white shadow-sm dark:bg-gray-800">
                         <div className="h-[60vh] text-gray-900 dark:text-gray-100">
                             {currentAccount === undefined ? (
@@ -145,19 +146,19 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
                         </div>
                     </div>
                 </div>
-                <div id={'table-currencies'} className="col-span-6 col-start-7 xl:col-span-8 xl:col-start-5">
+                <div id={'table-currencies'} className="col-span-12 sm:col-span-6 sm:col-start-7 xl:col-span-8 xl:col-start-5">
                     <div className="bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
                         <div className="text-gray-900 dark:text-gray-100">
                             <Currencies />
                         </div>
                     </div>
                 </div>
-                <div id={'news'} className="col-span-6 col-start-7 xl:col-span-4 xl:col-start-5">
-                    <div className="h-[60vh] overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
+                <div id={'news'} className="col-span-12 sm:col-span-6 sm:col-start-7 xl:col-span-4 xl:col-start-5">
+                    <div className="h-[75vh] overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg xl:h-[60vh]">
                         {news === undefined ? <Loading /> : <News result={news.data} />}
                     </div>
                 </div>
-                <div id={'message-day'} className="col-span-6 col-start-7 xl:col-span-4 xl:col-start-9">
+                <div id={'message-day'} className="col-span-12 sm:col-span-6 sm:col-start-7 xl:col-span-4 xl:col-start-9">
                     <div className="min-h-[30vh] overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
                         <header className="px-5 pt-6 dark:border-gray-700/60">
                             <h2 className="font-semibold text-gray-800 dark:text-gray-100">Mensagem do Mês</h2>
