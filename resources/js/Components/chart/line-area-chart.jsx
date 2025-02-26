@@ -19,13 +19,13 @@ export default function LineAreaChart({ title, config, data, children }) {
                     <AreaChart accessibilityLayer data={data}>
                         <defs>
                             <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="0%" stopColor={'rgba(' + hexToRGB(config[config.y.field[0]].color) + ', 1)'} stopOpacity={1} />
-                                <stop offset="100%" stopColor={'rgba(' + hexToRGB(config[config.y.field[0]].color) + ', 0.3)'} stopOpacity={1} />
-                                <stop offset="100%" stopColor={'rgba(' + hexToRGB(config[config.y.field[0]].color) + ', 0)'} stopOpacity={1} />
+                                <stop offset="20%" stopColor={'rgba(' + hexToRGB(config[config.y.field[0]].color) + ', 0.4)'} stopOpacity={0.7} />
+                                <stop offset="90%" stopColor={'rgba(' + hexToRGB(config[config.y.field[0]].color) + ', 0.2)'} stopOpacity={0.7} />
+                                <stop offset="100%" stopColor={'rgba(' + hexToRGB(config[config.y.field[0]].color) + ', 0)'} stopOpacity={0.7} />
                             </linearGradient>
                             <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="5%" stopColor={config[config.y.field[1]].color} stopOpacity={1} />
-                                <stop offset="95%" stopColor={config[config.y.field[1]].color} stopOpacity={1} />
+                                <stop offset="0%" stopColor={'rgba(' + hexToRGB(config[config.y.field[1]].color) + ', 1)'} stopOpacity={0} />
+                                <stop offset="0%" stopColor={'rgba(' + hexToRGB(config[config.y.field[1]].color) + ', 0.3)'} stopOpacity={0} />
                             </linearGradient>
                         </defs>
                         <Legend verticalAlign="top" align={'right'} height={36} />
@@ -39,11 +39,11 @@ export default function LineAreaChart({ title, config, data, children }) {
                         <Area
                             name={config[config.y.field[1]].label}
                             dataKey={config.y.field[1]}
-                            type="natural"
+                            type="monotone"
                             fill="url(#colorPv)"
                             fillOpacity={1}
-                            stroke={config[config.y.field[1]].color}
-                            stackId="a"
+                            strokeWidth={1.5}
+                            stroke={'var(' + config[config.y.field[1]].color + ')'}
                         />
                         <Area
                             name={config[config.y.field[0]].label}
@@ -51,8 +51,8 @@ export default function LineAreaChart({ title, config, data, children }) {
                             type="monotone"
                             fill="url(#colorUv)"
                             fillOpacity={1}
-                            stroke={config[config.y.field[0]].color}
-                            stackId="b"
+                            strokeWidth={1.5}
+                            stroke={'var(' + config[config.y.field[0]].color + ')'}
                         />
                     </AreaChart>
                 </ChartContainer>
