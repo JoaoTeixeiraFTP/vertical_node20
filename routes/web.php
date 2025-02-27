@@ -18,6 +18,10 @@ Route::get('/orders', function () {
     return Inertia::render('orders');
 })->middleware(['auth'])->name('orders');
 
+Route::get('/support', function () {
+    return Inertia::render('support');
+})->middleware(['auth'])->name('support');
+
 Route::middleware('auth')->group(function () {
     // HOME
     Route::get('/home', [HomeController::class, 'index'])->name('home');
