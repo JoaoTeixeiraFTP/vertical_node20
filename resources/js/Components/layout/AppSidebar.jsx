@@ -49,6 +49,12 @@ const data = {
         url: route('orders'),
         icon: Cog,
     },
+    support: {
+        url_name: '/support',
+        name: 'Suporte',
+        url: route('support'),
+        icon: Cog,
+    },
 };
 
 export function AppSidebar({ ...props }) {
@@ -65,6 +71,7 @@ export function AppSidebar({ ...props }) {
                     <NavSimple item={data.home} />
                     <NavMain items={data.finance} />
                     <NavSimple item={data.orders} />
+                    <NavSimple item={data.support} />
                 </div>
             </SidebarContent>
             <SidebarFooter className="sm:hidden">
