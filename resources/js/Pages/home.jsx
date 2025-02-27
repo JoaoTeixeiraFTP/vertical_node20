@@ -2,6 +2,7 @@
 
 import AutoScrollList from '@/Components/auto-scroll-list.jsx';
 import LineAreaChart from '@/Components/chart/line-area-chart.jsx';
+import { PieDonutChart } from '@/Components/chart/pie-donut-chart.jsx';
 import { VerticalBarChart } from '@/Components/chart/vertical-bar-chart.jsx';
 import Currencies from '@/Components/custom/Currencies.jsx';
 import News from '@/Components/custom/news.jsx';
@@ -54,6 +55,29 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
         },
         edeb: {
             label: 'Débito',
+            color: 'var(--chart-2)',
+        },
+    };
+
+    const pieData = [
+        { departamento: 'support', vendas: 200, fill: 'var(--color-support)' },
+        { departamento: 'tecnico', vendas: 150, fill: 'var(--color-tecnico)' },
+        { departamento: 'id', vendas: 100, fill: 'var(--color-id)' },
+    ];
+
+    const pieConfig = {
+        dataKey: 'vendas',
+        nameKey: 'departamento',
+        support: {
+            label: 'Departamento Support',
+            color: 'var(--chart-5)',
+        },
+        tecnico: {
+            label: 'Departamento Técnico',
+            color: 'var(--chart-3)',
+        },
+        id: {
+            label: 'Departamento I/D',
             color: 'var(--chart-2)',
         },
     };
@@ -113,7 +137,9 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
                 </div>
                 <div id={'donut'} className={'col-span-12 h-96 sm:col-span-6 xl:col-span-4'}>
                     <div className={'overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg'}>
-                        <div className={'h-full w-full'}>donut</div>
+                        <div className={'h-full w-full'}>
+                            <PieDonutChart data={pieData} config={pieConfig} title={'Distribuição de Vendas por Departamentos'} />
+                        </div>
                     </div>
                 </div>
                 <div id={'table-no-reguralized'} className="col-span-12 col-start-4 h-96 sm:col-span-6 xl:col-span-4">
