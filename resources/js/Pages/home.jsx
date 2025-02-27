@@ -14,7 +14,7 @@ import { Head } from '@inertiajs/react';
 import { useRef } from 'react';
 import image_logo from '../../../public/images/FTP_logo_no_bg.png';
 
-export default function Home({ invoices, currentAccount, receipts, news }) {
+export default function Home({ auth, invoices, currentAccount, receipts, news }) {
     const totalDebits = useRef(0);
     const chartData = useRef(null);
     const meses = ['Jan', 'Fev', 'Mar', 'Abr', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
@@ -100,7 +100,7 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
     };
 
     return (
-        <AuthenticatedLayout header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Home</span>}>
+        <AuthenticatedLayout auth={auth} header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Home</span>}>
             <Head title="Home" />
 
             <div className="grid h-screen grid-cols-12 gap-4 p-4">
