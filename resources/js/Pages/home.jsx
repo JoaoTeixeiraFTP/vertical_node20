@@ -52,7 +52,7 @@ export default function Home({ auth, invoices, currentAccount, receipts, news })
         },
         ecred: {
             label: 'Crédito',
-            color: 'var(--chart-1-1)',
+            color: 'var(--chart-1)',
         },
         edeb: {
             label: 'Débito',
