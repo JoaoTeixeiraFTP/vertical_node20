@@ -22,12 +22,13 @@ export default function FinanceDashboard({ invoices, currentAccount, receipts })
         },
         etotal: {
             label: 'Receitas',
-            color: '#8470FF',
+            color: '--chart-1',
         },
         basei: {
             // CORRIGIR
             label: 'Despesas',
-            color: '#6B7280',
+            color: '--chart-5',
+            // color: '#e30f0f',
         },
     };
 

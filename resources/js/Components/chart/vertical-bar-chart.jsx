@@ -14,7 +14,7 @@ export function VerticalBarChart({ title, config, data, children }) {
                 <CardDescription>{children}</CardDescription>
             </CardHeader>
             <CardContent>
-                <ChartContainer className={'m-0 p-0'} config={config}>
+                <ChartContainer className={'m-0 max-h-60 w-full p-0'} config={config}>
                     <BarChart accessibilityLayer data={data}>
                         <XAxis dataKey={config.x.field} tick={true} tickLine={true} axisLine={false} tickMargin={0}>
                             <Label value={config.x.label} fontSize={18} offset={-5} position="insideBottom" />

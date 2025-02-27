@@ -8,14 +8,14 @@ import { hexToRGB } from '@/utils/Utils.js';
 
 export default function LineAreaChart({ title, config, data, children }) {
     return (
-        <Card>
+        <Card className={''}>
             <CardHeader>
                 <CardTitle>{title}</CardTitle>
                 <hr className="mb-4 mt-2 border-t border-gray-200 dark:border-gray-700" />
                 <CardDescription>{children}</CardDescription>
             </CardHeader>
             <CardContent>
-                <ChartContainer config={config}>
+                <ChartContainer config={config} className={'max-h-60 w-full'}>
                     <AreaChart accessibilityLayer data={data}>
                         <defs>
                             <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
