@@ -6,12 +6,12 @@ import { columns } from '@/data/Receipt.ts';
 import { formatEuro } from '@/utils/Utils.js';
 import { Head } from '@inertiajs/react';
 
-export default function Receipts({ receipt }) {
+export default function Receipts({ auth, receipt }) {
     // const [sidebarOpen, setSidebarOpen] = useState(false);
     columns[2].accessorFn = (props) => formatEuro(props.etotal);
 
     return (
-        <AuthenticatedLayout header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Recibos</span>}>
+        <AuthenticatedLayout auth={auth} header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Recibos</span>}>
             <Head title="Recibos" />
 
             <div className="">
