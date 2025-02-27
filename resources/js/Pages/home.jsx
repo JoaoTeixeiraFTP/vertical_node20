@@ -104,13 +104,18 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
             <Head title="Home" />
 
             <div className="grid h-screen grid-cols-12 gap-4 p-4">
-                <div id={'area-chart'} className={baseSizeCard + ' row-start-1 sm:col-span-6 md:col-span-6'}>
+                <div id={'area-chart'} className={baseSizeCard + ' row-start-1 sm:col-span-6'}>
                     <div className="h-full overflow-hidden rounded-lg bg-white shadow-sm dark:bg-gray-800">
                         <div className="text-gray-900 dark:text-gray-100">
                             {invoices === undefined ? (
                                 <Loading />
                             ) : (
-                                <LineAreaChart title={'Rentatabilidade'} data={formatChart(invoices.data, 'fdata', 'etotal')} config={areaConfig}>
+                                <LineAreaChart
+                                    sizeChart={'max-h-60'}
+                                    title={'Rentatabilidade'}
+                                    data={formatChart(invoices.data, 'fdata', 'etotal')}
+                                    config={areaConfig}
+                                >
                                     <div className="flex items-start">
                                         <div className="mr-2 text-3xl font-bold text-gray-800 dark:text-gray-100">9 513</div>
                                         <div className="rounded-full bg-green-500/20 px-1.5 text-sm font-medium text-green-700">+49%</div>
@@ -126,7 +131,7 @@ export default function Home({ invoices, currentAccount, receipts, news }) {
                             {currentAccount === undefined ? (
                                 <Loading />
                             ) : (
-                                <VerticalBarChart title={'Faturação'} data={currentAccount.data} config={barConfig}>
+                                <VerticalBarChart sizeChart={'max-h-60'} title={'Faturação'} data={currentAccount.data} config={barConfig}>
                                     <div className="flex items-start">
                                         <div className="mr-2 text-3xl font-bold text-gray-800 dark:text-gray-100">9 513</div>
                                         <div className="rounded-full bg-green-500/20 px-1.5 text-sm font-medium text-green-700">+49%</div>

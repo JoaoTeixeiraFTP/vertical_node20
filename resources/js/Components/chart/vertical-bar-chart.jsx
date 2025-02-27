@@ -5,7 +5,7 @@ import { Bar, BarChart, Label, Legend, XAxis } from 'recharts';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/Components/ui/card';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/Components/ui/chart';
 
-export function VerticalBarChart({ title, config, data, children }) {
+export function VerticalBarChart({ title, config, data, children, sizeChart }) {
     return (
         <Card>
             <CardHeader>
@@ -14,7 +14,7 @@ export function VerticalBarChart({ title, config, data, children }) {
                 <CardDescription>{children}</CardDescription>
             </CardHeader>
             <CardContent>
-                <ChartContainer className={'m-0 max-h-60 w-full p-0'} config={config}>
+                <ChartContainer className={sizeChart + ' m-0 w-full p-0'} config={config}>
                     <BarChart accessibilityLayer data={data}>
                         <XAxis dataKey={config.x.field} tick={true} tickLine={true} axisLine={false} tickMargin={0}>
                             <Label value={config.x.label} fontSize={18} offset={-5} position="insideBottom" />
