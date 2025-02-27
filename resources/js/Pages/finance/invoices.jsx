@@ -7,7 +7,7 @@ import { columns } from '@/data/Invoice.ts';
 import { formatEuro, getBadgeColors } from '@/utils/Utils.js';
 import { Head } from '@inertiajs/react';
 
-export default function Invoices({ invoices }) {
+export default function Invoices({ auth, invoices }) {
     columns[2].cell = (props) => (
         <Badge variant="simple" className={getBadgeColors(props.getValue())}>
             {props.getValue()}
@@ -16,7 +16,7 @@ export default function Invoices({ invoices }) {
     columns[3].accessorFn = (props) => formatEuro(props.etotal);
 
     return (
-        <AuthenticatedLayout header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Faturas</span>}>
+        <AuthenticatedLayout auth={auth} header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Faturas</span>}>
             <Head title="Faturas" />
 
             <div className="">

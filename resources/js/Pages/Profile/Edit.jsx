@@ -3,9 +3,12 @@ import { Head } from '@inertiajs/react';
 import DeleteUserForm from './Partials/DeleteUserForm';
 import UpdatePasswordForm from './Partials/UpdatePasswordForm';
 
-export default function Edit() {
+export default function Edit({ auth }) {
     return (
-        <AuthenticatedLayout header={<span className="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">Profile</span>}>
+        <AuthenticatedLayout
+            auth={auth}
+            header={<span className="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">Profile</span>}
+        >
             <Head title="Profile" />
 
             <div className="py-12">
