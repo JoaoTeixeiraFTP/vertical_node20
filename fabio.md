@@ -1,7 +1,6 @@
 ### Sidebar
 
 - Alinhamento icons quando fechado
-- Accordion Icon desaparece quando sidebar fechado
 
 ### Header
 
@@ -17,17 +16,6 @@
 ### Card 2
 
 - Barras
-- Faturas
+- Faturas -> está conta corrente
 - Label nos eixos, meses do ano 3 Letras no eixo Y
 - Se é para manter numero na descrição
-
-### Card 3
-
-- Donut
-- TABELA??
-
-### Card 5
-
-- News
-- Data nao esta aparecer
-- Se nao tiver um dos cria duas Linhas do que tiver para apresentar

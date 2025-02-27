@@ -34,7 +34,7 @@ export default function News({ result }) {
     }, [techCrunchNews.length, updateTechCrunchIndex]);
 
     return (
-        <Card className={'block h-[30vh]'}>
+        <Card className={'block h-96'}>
             <CardHeader>
                 <CardTitle>Business</CardTitle>
                 <hr className="mb-2 mt-2 border-t border-gray-200 dark:border-gray-700" />
@@ -45,26 +45,28 @@ export default function News({ result }) {
                     <div className="overflow-hidden">
                         <div className="flex transition-all duration-500 ease-in-out">
                             {businessNews.map((news, index) => (
-                                <div key={index} className={`w-full flex-shrink-0 ${index !== businessIndex && 'hidden'}`}>
-                                    <div className="mb-4 flex items-center space-x-3 py-2">
+                                <div key={index} className={`w-full ${index !== businessIndex && 'hidden'}`}>
+                                    <div className="mb-4 flex items-center space-x-3 py-1">
                                         <img src={news.urlToImage ?? placeholder} alt="Imagem" className="h-16 w-16 rounded-md object-cover" />
                                         <div>
-                                            <h3 className="w-42 break-words text-sm font-semibold text-gray-800 dark:text-gray-100">{news.title}</h3>
-                                            <p className="text-xs text-gray-600 dark:text-gray-300">{news.date}</p>
+                                            <h3 className="w-full break-words text-sm font-semibold text-gray-800 dark:text-gray-100">
+                                                {news.title}
+                                            </h3>
+                                            <p className="text-xs text-gray-600 dark:text-gray-300">{news.publishedAt}</p>
                                         </div>
                                     </div>
-                                    <div className="flex items-center space-x-3 py-2">
-                                        <img src={news.urlToImage ?? placeholder} alt="Imagem" className="h-16 w-16 rounded-md object-cover" />
-                                        <div>
-                                            <h3 className="w-42 break-words text-sm font-semibold text-gray-800 dark:text-gray-100">{news.title}</h3>
-                                            <p className="text-xs text-gray-600 dark:text-gray-300">{news.date}</p>
-                                        </div>
-                                    </div>
+                                    {/*<div className="flex items-center space-x-3 py-2">*/}
+                                    {/*    <img src={news.urlToImage ?? placeholder} alt="Imagem" className="h-16 w-16 rounded-md object-cover" />*/}
+                                    {/*    <div>*/}
+                                    {/*        <h3 className="w-42 break-words text-sm font-semibold text-gray-800 dark:text-gray-100">{news.title}</h3>*/}
+                                    {/*        <p className="text-xs text-gray-600 dark:text-gray-300">{news.date}</p>*/}
+                                    {/*    </div>*/}
+                                    {/*</div>*/}
                                 </div>
                             ))}
                         </div>
                         {businessNews.length > 1 && (
-                            <div className="mt-3 flex justify-center space-x-2">
+                            <div className="flex justify-center space-x-2">
                                 {businessNews.map((_, index) => (
                                     <span
                                         key={index}
@@ -88,31 +90,31 @@ export default function News({ result }) {
                         <div className="overflow-hidden">
                             <div className="row-span-2 grid transition-all duration-500 ease-in-out">
                                 {techCrunchNews.map((article, index) => (
-                                    <div key={index} className={`w-80 flex-shrink-0 ${index !== techCrunchIndex && 'hidden'}`}>
-                                        <div className="mb-4 flex items-center space-x-3 py-2">
+                                    <div key={index} className={`w-full ${index !== techCrunchIndex && 'hidden'}`}>
+                                        <div className="mb-4 flex items-center space-x-3 py-1">
                                             <img src={article.urlToImage ?? placeholder} alt="Imagem" className="h-16 w-16 rounded-md object-cover" />
                                             <div>
-                                                <h3 className="w-42 break-words text-sm font-semibold text-gray-800 dark:text-gray-100">
+                                                <h3 className="w-full break-words text-sm font-semibold text-gray-800 dark:text-gray-100">
                                                     {article.title}
                                                 </h3>
-                                                <p className="text-xs text-gray-600 dark:text-gray-300">{article.date}</p>
+                                                <p className="text-xs text-gray-600 dark:text-gray-300">{article.publishedAt}</p>
                                             </div>
                                         </div>
-                                        <div className="flex items-center space-x-3 py-2">
-                                            <img src={article.urlToImage ?? placeholder} alt="Imagem" className="h-16 w-16 rounded-md object-cover" />
-                                            <div>
-                                                <h3 className="w-52 break-words text-sm font-semibold text-gray-800 dark:text-gray-100">
-                                                    {article.title}
-                                                </h3>
-                                                <p className="text-wrap text-xs text-gray-600 dark:text-gray-300">{article.date}</p>
-                                            </div>
-                                        </div>
+                                        {/*<div className="flex items-center space-x-3 py-2">*/}
+                                        {/*    <img src={article.urlToImage ?? placeholder} alt="Imagem" className="h-16 w-16 rounded-md object-cover" />*/}
+                                        {/*    <div>*/}
+                                        {/*        <h3 className="w-52 break-words text-sm font-semibold text-gray-800 dark:text-gray-100">*/}
+                                        {/*            {article.title}*/}
+                                        {/*        </h3>*/}
+                                        {/*        <p className="text-wrap text-xs text-gray-600 dark:text-gray-300">{article.date}</p>*/}
+                                        {/*    </div>*/}
+                                        {/*</div>*/}
                                     </div>
                                 ))}
                             </div>
 
                             {techCrunchNews.length > 1 && (
-                                <div className="mt-3 flex justify-center space-x-2">
+                                <div className="mt-2 flex justify-center space-x-2">
                                     {techCrunchNews.map((_, index) => (
                                         <span
                                             key={index}
