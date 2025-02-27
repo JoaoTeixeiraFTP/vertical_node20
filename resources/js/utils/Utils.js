@@ -5,7 +5,6 @@ function getCssVariable(variable) {
 
 export const hexToRGB = (value) => {
     let h = getCssVariable(value);
-    console.log(value);
     let r = 0;
     let g = 0;
     let b = 0;
