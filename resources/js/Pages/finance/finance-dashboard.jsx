@@ -45,7 +45,7 @@ export default function FinanceDashboard({ auth, invoices, currentAccount, recei
         },
         ecred: {
             label: 'Crédito',
-            color: 'var(--chart-1-1)',
+            color: 'var(--chart-1)',
         },
         edeb: {
             label: 'Débito',
@@ -55,7 +55,7 @@ export default function FinanceDashboard({ auth, invoices, currentAccount, recei
 
     const receiptConfig = {
         x: {
-            label: 'Meses',
+            label: 'Recibo',
             field: 'rno',
         },
         y: {
@@ -64,12 +64,12 @@ export default function FinanceDashboard({ auth, invoices, currentAccount, recei
         },
         etotal: {
             label: 'Receitas',
-            color: '--chart-1',
+            color: '--chart-3',
         },
         basei: {
             // CORRIGIR
             label: 'Despesas',
-            color: '--chart-5',
+            color: '--chart-4',
             // color: '#e30f0f',
         },
     };
@@ -191,7 +191,7 @@ export default function FinanceDashboard({ auth, invoices, currentAccount, recei
                             {receipts === undefined ? (
                                 <Loading />
                             ) : (
-                                <LineAreaChart title={'Faturas'} data={receipts.data} config={receiptConfig}>
+                                <LineAreaChart title={'Recibos'} data={receipts.data} config={receiptConfig}>
                                     <div className="flex items-start">
                                         <div className="mr-2 text-3xl font-bold text-gray-800 dark:text-gray-100">9 513</div>
                                         <div className="rounded-full bg-green-500/20 px-1.5 text-sm font-medium text-green-700">+49%</div>
