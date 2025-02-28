@@ -1,4 +1,4 @@
-import { ChartArea, Cog, Home } from 'lucide-react';
+import { ChartArea, Cog, Home, Wrench } from 'lucide-react';
 
 import ApplicationLogo from '@/Components/ApplicationLogo.jsx';
 import { NavMain } from '@/Components/navigation/nav-main.jsx';
@@ -52,7 +52,7 @@ const data = {
         url_name: '/support',
         name: 'Suporte',
         url: route('support'),
-        icon: Cog,
+        icon: Wrench,
     },
 };
 
