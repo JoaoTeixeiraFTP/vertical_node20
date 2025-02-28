@@ -8,6 +8,7 @@ use App\Models\Api\Vertical;
 use App\Models\User;
 use App\Shared\Controllers\Controller;
 use App\Shared\Result;
+use Exception;
 use Throwable;
 
 final class UserController extends Controller
@@ -21,7 +22,6 @@ final class UserController extends Controller
         $code = null;
 
         try {
-            // TODO CONFIRMAR COM TEIXEIRA
             $response = Vertical::fetch()
                 ->token($subscriber['data']->access_token)
                 ->get()

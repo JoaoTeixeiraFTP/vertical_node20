@@ -16,7 +16,6 @@
     all: initial;
 }
 
-
 @layer base {
     :root {
         --font-inter: 'Inter', sans-serif;
@@ -39,7 +38,7 @@
         --border: hsl(0 0% 89.8%);
         --input: hsl(0 0% 89.8%);
         --ring: hsl(0 0% 3.9%);
-        --chart-1: #8370FF;
+        --chart-1: #8370ff;
         --chart-2: hsl(173 58% 39%);
         --chart-3: hsl(197 37% 24%);
         --chart-4: hsl(43 74% 66%);
@@ -76,7 +75,7 @@
         --border: hsl(0 0% 14.9%);
         --input: hsl(0 0% 14.9%);
         --ring: hsl(0 0% 83.1%);
-        --chart-1: #8370FF;
+        --chart-1: #8370ff;
         --chart-2: hsl(205, 97%, 70%);
         --chart-3: hsl(30 80% 55%);
         --chart-4: hsl(280 65% 60%);

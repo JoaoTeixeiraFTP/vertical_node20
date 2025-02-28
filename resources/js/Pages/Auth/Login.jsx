@@ -1,5 +1,5 @@
-import Loading from '@/Components/Loading.jsx';
-import LoginForm from '@/Components/LoginForm.jsx';
+import Loading from '@/Components/custom/Loading.jsx';
+import LoginForm from '@/Components/form/LoginForm.jsx';
 import { Button } from '@/Components/ui/button.jsx';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@/Components/ui/dialog.jsx';
 import GuestLayout from '@/Layouts/GuestLayout';

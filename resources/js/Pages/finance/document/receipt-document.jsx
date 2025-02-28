@@ -1,4 +1,4 @@
-import Loading from '@/Components/Loading.jsx';
+import Loading from '@/Components/custom/Loading.jsx';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';
 import { formatEuro } from '@/utils/Utils.js';
 import { Head, usePage } from '@inertiajs/react';

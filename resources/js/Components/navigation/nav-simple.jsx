@@ -1,4 +1,4 @@
-import ResponsiveNavLink from '@/Components/ResponsiveNavLink.jsx';
+import ResponsiveNavLink from '@/Components/navigation/ResponsiveNavLink.jsx';
 import { SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/Components/ui/sidebar.jsx';
 import { usePage } from '@inertiajs/react';
 

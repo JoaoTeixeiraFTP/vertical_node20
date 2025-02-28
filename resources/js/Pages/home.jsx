@@ -1,12 +1,12 @@
 'use client';
 
-import AutoScrollList from '@/Components/auto-scroll-list.jsx';
 import LineAreaChart from '@/Components/chart/line-area-chart.jsx';
 import { PieDonutChart } from '@/Components/chart/pie-donut-chart.jsx';
 import { VerticalBarChart } from '@/Components/chart/vertical-bar-chart.jsx';
 import Currencies from '@/Components/custom/Currencies.jsx';
+import Loading from '@/Components/custom/Loading.jsx';
 import News from '@/Components/custom/news.jsx';
-import Loading from '@/Components/Loading.jsx';
+import AutoScrollList from '@/Components/data-display/auto-scroll-list.jsx';
 import NavLink from '@/Components/navigation/nav-link.jsx';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';
 import { formatEuro } from '@/utils/Utils.js';

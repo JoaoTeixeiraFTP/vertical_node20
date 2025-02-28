@@ -1,7 +1,7 @@
-import AutoScrollList from '@/Components/auto-scroll-list.jsx';
 import LineAreaChart from '@/Components/chart/line-area-chart.jsx';
 import { VerticalBarChart } from '@/Components/chart/vertical-bar-chart.jsx';
-import Loading from '@/Components/Loading.jsx';
+import Loading from '@/Components/custom/Loading.jsx';
+import AutoScrollList from '@/Components/data-display/auto-scroll-list.jsx';
 import NavLink from '@/Components/navigation/nav-link.jsx';
 import { Badge } from '@/Components/ui/badge.jsx';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';
@@ -12,6 +12,7 @@ import { useRef } from 'react';
 export default function FinanceDashboard({ auth, invoices, currentAccount, receipts }) {
     const page = usePage();
     const totalDebits = useRef(0);
+
     const invoiceConfig = {
         x: {
             label: 'Meses',

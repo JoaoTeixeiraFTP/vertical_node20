@@ -1,8 +1,8 @@
 import Help from '@/Components/custom/Help.jsx';
 import Notifications from '@/Components/custom/Notifications.jsx';
+import ThemeToggle from '@/Components/layout/ThemeToggle.jsx';
 import SearchModal from '@/Components/modal/ModalSearch';
 import { NavUser } from '@/Components/navigation/nav-user.jsx';
-import ThemeToggle from '@/Components/ThemeToggle.jsx';
 import { usePage } from '@inertiajs/react';
 import { Search } from 'lucide-react';
 import { useState } from 'react';
