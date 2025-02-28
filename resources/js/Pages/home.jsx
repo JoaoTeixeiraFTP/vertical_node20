@@ -154,7 +154,7 @@ export default function Home({ auth, invoices, currentAccount, receipts, news })
                     </div>
                 </div>
                 <div id={'table-no-reguralized'} className={baseSizeCard + ' row-start-4 sm:col-span-6 sm:row-start-2 xl:col-span-4 xl:col-start-5'}>
-                    <div className="flex-col rounded-lg bg-white shadow-sm dark:bg-gray-800">
+                    <div className="h-full flex-col rounded-lg bg-white shadow-sm dark:bg-gray-800">
                         <div className="text-gray-900 dark:text-gray-100">
                             {currentAccount === undefined ? (
                                 <Loading />
@@ -163,8 +163,8 @@ export default function Home({ auth, invoices, currentAccount, receipts, news })
                                     title={'Não Regularizado'}
                                     length={currentAccount.data.length}
                                     footerValue={totalDebits}
-                                    className={'max-h-96'}
-                                    classNameUl={'h-64'}
+                                    className={'max-h-60'}
+                                    classNameUl={'h-50'}
                                 >
                                     {currentAccount.data.map((ca) => (
                                         <NavLink

@@ -1,7 +1,7 @@
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/Components/ui/card.jsx';
+import { ScrollArea, ScrollBar } from '@/Components/ui/scroll-area.jsx';
 import { cn } from '@/lib/utils.js';
 import { formatEuro } from '@/utils/Utils.js';
-import { ScrollArea } from '@radix-ui/react-scroll-area';
 import { useEffect, useRef, useState } from 'react';
 
 export default function AutoScrollList({ title, children, length, className, classNameUl, footerValue = null }) {
@@ -46,7 +46,7 @@ export default function AutoScrollList({ title, children, length, className, cla
                 <hr className="mb-2 mt-2 border-t border-gray-200 dark:border-gray-700" />
             </CardHeader>
             <CardContent>
-                <ScrollArea className={'m-0 w-full overflow-hidden p-0'}>
+                <ScrollArea className={cn('m-0 w-full overflow-hidden p-0', className)}>
                     <ul ref={listRef} className={cn('w-full transition-transform duration-1000 ease-in-out', classNameUl)}>
                         {children.map((child, index) => (
                             <li key={index} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={'w-full'}>
@@ -54,6 +54,7 @@ export default function AutoScrollList({ title, children, length, className, cla
                             </li>
                         ))}
                     </ul>
+                    <ScrollBar orientation={'horizontal'} />
                 </ScrollArea>
             </CardContent>
             {footerValue !== null ? (

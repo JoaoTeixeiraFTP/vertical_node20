@@ -1,10 +1,3 @@
-### Sidebar
-
-- Alinhamento icons quando fechado
-
-### Header
-
-- Adicionar os botões adicionais que estão a faltar
 
 ### Card 1
 
