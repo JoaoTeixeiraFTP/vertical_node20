@@ -2,10 +2,11 @@ import Loading from '@/Components/Loading.jsx';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';
 import { Head } from '@inertiajs/react';
 
-export default function AccountDocument({ document }) {
+export default function AccountDocument({ auth, document }) {
     return (
         <>
             <AuthenticatedLayout
+                auth={auth}
                 header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Detalhe Não Regularizado</span>}
             >
                 <Head title="Conta Corrente" />

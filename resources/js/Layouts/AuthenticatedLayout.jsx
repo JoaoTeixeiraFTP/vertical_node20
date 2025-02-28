@@ -1,4 +1,3 @@
-import { usePage } from '@inertiajs/react';
 // import * as React from 'react';
 import Datepicker from '@/Components/Datepicker.jsx';
 import FilterButton from '@/Components/dropdown/DropdownFilter.jsx';
@@ -7,16 +6,15 @@ import { AppSidebar } from '@/Components/layout/AppSidebar.jsx';
 import { SidebarProvider, SidebarTrigger } from '@/Components/ui/sidebar.jsx';
 import { ThemeProvider } from '@/utils/ThemeContext.jsx';
 
-export default function AuthenticatedLayout({ header, children }) {
-    const user = usePage().props.auth.user;
+export default function AuthenticatedLayout({ auth, header, children }) {
     return (
         <ThemeProvider>
             <div className="flex h-screen overflow-hidden bg-gray-100 dark:bg-gray-900 print:bg-white">
                 <SidebarProvider id={'sidebar-provider'} className="w-full grow">
-                    <AppSidebar />
+                    <AppSidebar auth={auth} />
                     <SidebarTrigger className={'absolute left-1 top-2 z-40 cursor-pointer sm:hidden'} />
                     <main id={'main-page'} className="relative mb-4 flex w-full flex-1 grow flex-col overflow-y-auto overflow-x-hidden">
-                        <AppHeader user={user} />
+                        <AppHeader user={auth} />
                         {header && (
                             <header id={'page-header'} className="mb-4 sm:mb-0">
                                 <div className="mx-auto px-2 py-2 sm:px-6 lg:px-4">

@@ -3,10 +3,13 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';
 import { formatEuro } from '@/utils/Utils.js';
 import { Head } from '@inertiajs/react';
 
-export default function AccountDocument({ document }) {
+export default function AccountDocument({ auth, document }) {
     return (
         <>
-            <AuthenticatedLayout header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Detalhe Recibos</span>}>
+            <AuthenticatedLayout
+                auth={auth}
+                header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Detalhe Recibos</span>}
+            >
                 <Head title="Recibos" />
 
                 <div className="">

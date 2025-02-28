@@ -8,11 +8,11 @@ use App\Models\Api\Datalink;
 use App\Models\Api\UserApi;
 use App\Models\Api\Vertical;
 use App\Models\Subscriber;
-use App\Repositories\SubscriberRepository;
 use App\Shared\Controllers\Controller;
 use App\Shared\Exceptions\ApiRequestException;
 use App\Shared\Result;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 final class SubscriberController extends Controller
@@ -129,16 +129,16 @@ final class SubscriberController extends Controller
         ]);
     }
 
-    public function getSubscriberName(SubscriberRepository $repository, string $url): string
+    public function getSubscriberName(string $url): string
     {
-        $result = $repository->getSubscriberOnDb($url);
+        $result = $this->getSubscriber($url);
 
         return $result['data']['name'];
     }
 
-    public function getLogo(SubscriberRepository $repository, string $url): string
+    public function getLogo(string $url): string
     {
-        $result = $repository->getSubscriberOnDb($url);
+        $result = $this->getSubscriber($url);
 
         if ($result['data']) {
             return $result['data']['logo'] ?? $result['data']['default_logo'];
@@ -148,15 +148,39 @@ final class SubscriberController extends Controller
 
     }
 
-    public function getLoginImage(SubscriberRepository $repository, string $url): string
+    public function getLoginImage(string $url): string
     {
-        $result = $repository->getSubscriberOnDb($url);
+        $result = $this->getSubscriber($url);
 
         if ($result['data']) {
             return $result['data']['login_image'] ?? $result['data']['default_login_image'];
         }
 
         return asset('images/auth-image.jpg');
+    }
 
+    public function updateSubscriber(string $field, string $imageUrl): Result
+    {
+        $result = null;
+        $messages = [];
+        $code = null;
+
+        try {
+            $result = Subscriber::updateOrCreate(
+                ['id' => Auth::id()],
+                [$field => $imageUrl]
+            );
+            $code = 200;
+        } catch (Throwable $e) {
+            report($e);
+            $messages[] = $e;
+            $code = 406;
+        }
+
+        return new Result([
+            'data' => $result,
+            'errorMessages' => $messages,
+            'status' => $code,
+        ]);
     }
 }

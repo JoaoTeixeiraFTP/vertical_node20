@@ -9,7 +9,7 @@ import { formatEuro, getBadgeColors } from '@/utils/Utils.js';
 import { Head } from '@inertiajs/react';
 import { useRef } from 'react';
 
-export default function FinanceDashboard({ invoices, currentAccount, receipts }) {
+export default function FinanceDashboard({ auth, invoices, currentAccount, receipts }) {
     const totalDebits = useRef(0);
     const areaConfig = {
         x: {
@@ -57,12 +57,15 @@ export default function FinanceDashboard({ invoices, currentAccount, receipts })
     };
 
     return (
-        <AuthenticatedLayout header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Financeira Dashboard</span>}>
+        <AuthenticatedLayout
+            auth={auth}
+            header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Financeira Dashboard</span>}
+        >
             <Head title="Financeira Dashboard" />
 
             <div className="grid grow grid-flow-col-dense grid-cols-4 gap-4 p-4">
-                <div id={'invoicesChart'} className="h-fill col-span-3">
-                    <div className="overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
+                <div id={'invoicesChart'} className="h-fill col-span-4 row-start-1 sm:col-span-3">
+                    <div className="overflow-hidden rounded-lg bg-white shadow-sm dark:bg-gray-800">
                         <div className="pb-1 pl-0 pr-4 text-gray-900 dark:text-gray-100">
                             {invoices === undefined ? (
                                 <Loading />
@@ -77,7 +80,7 @@ export default function FinanceDashboard({ invoices, currentAccount, receipts })
                         </div>
                     </div>
                 </div>
-                <div id={'invoicesTable'} className="col-span-1 col-start-4">
+                <div id={'invoicesTable'} className="col-span-4 row-start-2 sm:col-span-1 sm:col-start-4 sm:row-start-1">
                     <div className="col-span-full flex h-full flex-col rounded-xl bg-white shadow-sm dark:bg-gray-800 sm:col-span-6 xl:col-span-4">
                         <div className="h-[60vh] text-gray-900 dark:text-gray-100">
                             {invoices === undefined ? (
@@ -86,8 +89,8 @@ export default function FinanceDashboard({ invoices, currentAccount, receipts })
                                 <AutoScrollList
                                     title={'Lista de Faturas'}
                                     length={invoices.data.length}
-                                    className={'max-h-[60vh]'}
-                                    classNameUl={'max-h-[60vh]'}
+                                    className={'max-h-[45vh] sm:max-h-[50vh] xl:max-h-[60vh]'}
+                                    classNameUl={'max-h-[50vh] sm:max-h-[50vh] xl:max-h-[65vh]'}
                                 >
                                     {invoices.data.map((inv) => (
                                         <NavLink
@@ -107,8 +110,8 @@ export default function FinanceDashboard({ invoices, currentAccount, receipts })
                         </div>
                     </div>
                 </div>
-                <div id={'currentAccountsChart'} className="h-fill col-span-3">
-                    <div className="overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
+                <div id={'currentAccountsChart'} className="h-fill col-span-4 row-start-3 sm:col-span-3 sm:row-start-2">
+                    <div className="overflow-hidden rounded-lg bg-white shadow-sm dark:bg-gray-800">
                         <div className="pb-1 pl-0 pr-4 text-gray-900 dark:text-gray-100">
                             {currentAccount === undefined ? (
                                 <Loading />
@@ -123,9 +126,9 @@ export default function FinanceDashboard({ invoices, currentAccount, receipts })
                         </div>
                     </div>
                 </div>
-                <div id={'currentAccountsTable'} className="col-span-1 col-start-4">
+                <div id={'currentAccountsTable'} className="col-span-4 row-start-4 sm:col-span-1 sm:col-start-4 sm:row-start-2">
                     <div className="col-span-full flex h-full flex-col rounded-xl bg-white shadow-sm dark:bg-gray-800 sm:col-span-6 xl:col-span-4">
-                        <div className="h-[55vh] text-gray-900 dark:text-gray-100">
+                        <div className="h-[60vh] text-gray-900 dark:text-gray-100">
                             {currentAccount === undefined ? (
                                 <Loading />
                             ) : (
@@ -133,8 +136,8 @@ export default function FinanceDashboard({ invoices, currentAccount, receipts })
                                     title={'Não Regularizado'}
                                     length={currentAccount.data.length}
                                     footerValue={totalDebits}
-                                    className={'max-h-[60vh]'}
-                                    classNameUl={'max-h-[55vh]'}
+                                    className={'max-h-[45vh] sm:max-h-[50vh] xl:max-h-[60vh]'}
+                                    classNameUl={'max-h-[45vh] sm:max-h-[47vh] xl:max-h-[60vh]'}
                                 >
                                     {currentAccount.data.map((ca) => (
                                         <NavLink
@@ -158,13 +161,18 @@ export default function FinanceDashboard({ invoices, currentAccount, receipts })
                         </div>
                     </div>
                 </div>
-                <div id={'receiptsTable'} className="col-span-1 col-start-4">
+                <div id={'receiptsTable'} className="col-span-4 row-start-5 sm:col-span-1 sm:col-start-4 sm:row-start-3">
                     <div className="col-span-full flex h-full flex-col rounded-xl bg-white shadow-sm dark:bg-gray-800 sm:col-span-6 xl:col-span-4">
                         <div className="h-[60vh] text-gray-900 dark:text-gray-100">
                             {receipts === undefined ? (
                                 <Loading />
                             ) : (
-                                <AutoScrollList title={'Lista de Faturas'} length={receipts.data.length}>
+                                <AutoScrollList
+                                    title={'Lista de Faturas'}
+                                    length={receipts.data.length}
+                                    className={'max-h-[45vh] sm:max-h-[50vh] xl:max-h-[60vh]'}
+                                    classNameUl={'max-h-[50vh] sm:max-h-[50vh] xl:max-h-[65vh]'}
+                                >
                                     {receipts.data.map((re) => (
                                         <NavLink
                                             href={route('finance.documents', ['receipts', re.restamp])}

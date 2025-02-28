@@ -15,18 +15,14 @@ final class ProductController extends Controller
 
     public function index()
     {
-        $dataFeed = new DataFeed;
-
-        return view('pages.products.main', compact('dataFeed'));
+        //
     }
 
     /**
      * Displays the products screen
      */
-    public function getAllProducts(): Factory|View
+    public function getAllProducts()
     {
-        $result = $this->productRepository->getProducts();
-
-        return view('pages.products.list', compact('result'));
+        //
     }
 }

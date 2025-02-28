@@ -5,7 +5,6 @@ import { NavMain } from '@/Components/navigation/nav-main.jsx';
 import { NavSimple } from '@/Components/navigation/nav-simple.jsx';
 import { NavUserSidebar } from '@/Components/navigation/nav-user-sidebar.jsx';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarRail, SidebarTrigger } from '@/Components/ui/sidebar.jsx';
-import { usePage } from '@inertiajs/react';
 
 const data = {
     finance: {
@@ -57,11 +56,11 @@ const data = {
     },
 };
 
-export function AppSidebar({ ...props }) {
-    data.user = usePage().props.auth.user;
+export function AppSidebar({ auth }) {
+    data.user = auth.user;
 
     return (
-        <Sidebar id={'app-sidebar'} collapsible="icon" {...props}>
+        <Sidebar id={'app-sidebar'} collapsible="icon">
             <SidebarHeader className={'mb-12 justify-between px-4'}>
                 <ApplicationLogo />
                 <SidebarRail id={'sidebar-toggle'} />

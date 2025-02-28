@@ -6,12 +6,15 @@ import { columns } from '@/data/NotRegularized.ts';
 import { formatEuro } from '@/utils/Utils.js';
 import { Head } from '@inertiajs/react';
 
-export default function NotRegularized({ notregularized }) {
+export default function NotRegularized({ auth, notregularized }) {
     // const [sidebarOpen, setSidebarOpen] = useState(false);
     columns[4].accessorFn = (props) => formatEuro(props.saldo);
 
     return (
-        <AuthenticatedLayout header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Não Regularizado</span>}>
+        <AuthenticatedLayout
+            auth={auth}
+            header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Não Regularizado</span>}
+        >
             <Head title="Não Regularizado" />
             <div className="">
                 <div className="mx-auto px-4 py-2">

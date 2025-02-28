@@ -4,7 +4,7 @@ import { Head } from '@inertiajs/react';
 import banner from '../../../../../public/images/banner.jfif';
 import image_logo from '../../../../../public/images/FTP_logo.jfif';
 
-export default function InvoiceDocument({ document }) {
+export default function InvoiceDocument({ auth, document }) {
     const formatEuro = new Intl.NumberFormat('de-DE', {
         style: 'currency',
         currency: 'EUR',
@@ -21,7 +21,10 @@ export default function InvoiceDocument({ document }) {
 
     return (
         <>
-            <AuthenticatedLayout header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Detalhe Faturas</span>}>
+            <AuthenticatedLayout
+                auth={auth}
+                header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Detalhe Faturas</span>}
+            >
                 <Head title="Faturas" />
                 <img src={image_logo} width={64} height={64} alt={'logo'} className={'hidden print:block'} />
 
