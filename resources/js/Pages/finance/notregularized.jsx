@@ -4,14 +4,16 @@ import { Pagination, PaginationContent, PaginationItem, PaginationLink, Paginati
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';
 import { columns } from '@/data/NotRegularized.ts';
 import { formatEuro } from '@/utils/Utils.js';
-import { Head } from '@inertiajs/react';
+import { Head, usePage } from '@inertiajs/react';
 
 export default function NotRegularized({ auth, notregularized }) {
     // const [sidebarOpen, setSidebarOpen] = useState(false);
     columns[4].accessorFn = (props) => formatEuro(props.saldo);
+    const page = usePage();
 
     return (
         <AuthenticatedLayout
+            url={page.url}
             auth={auth}
             header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Não Regularizado</span>}
         >

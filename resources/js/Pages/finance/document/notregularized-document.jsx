@@ -1,11 +1,13 @@
 import Loading from '@/Components/Loading.jsx';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';
-import { Head } from '@inertiajs/react';
+import { Head, usePage } from '@inertiajs/react';
 
 export default function AccountDocument({ auth, document }) {
+    const page = usePage();
     return (
         <>
             <AuthenticatedLayout
+                url={page.url}
                 auth={auth}
                 header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Detalhe Não Regularizado</span>}
             >

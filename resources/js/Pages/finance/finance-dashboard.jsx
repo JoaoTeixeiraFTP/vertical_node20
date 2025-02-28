@@ -6,12 +6,13 @@ import NavLink from '@/Components/navigation/nav-link.jsx';
 import { Badge } from '@/Components/ui/badge.jsx';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';
 import { formatEuro, getBadgeColors } from '@/utils/Utils.js';
-import { Head } from '@inertiajs/react';
+import { Head, usePage } from '@inertiajs/react';
 import { useRef } from 'react';
 
 export default function FinanceDashboard({ auth, invoices, currentAccount, receipts }) {
+    const page = usePage();
     const totalDebits = useRef(0);
-    const areaConfig = {
+    const invoiceConfig = {
         x: {
             label: 'Meses',
             field: 'fdata',
@@ -32,7 +33,7 @@ export default function FinanceDashboard({ auth, invoices, currentAccount, recei
         },
     };
 
-    const barConfig = {
+    const accountConfig = {
         x: {
             label: 'Meses',
             field: 'datalc',
@@ -51,6 +52,27 @@ export default function FinanceDashboard({ auth, invoices, currentAccount, recei
         },
     };
 
+    const receiptConfig = {
+        x: {
+            label: 'Meses',
+            field: 'rno',
+        },
+        y: {
+            label: 'Valores (€)',
+            field: ['etotal', 'basei'], // CORRIGIR
+        },
+        etotal: {
+            label: 'Receitas',
+            color: '--chart-1',
+        },
+        basei: {
+            // CORRIGIR
+            label: 'Despesas',
+            color: '--chart-5',
+            // color: '#e30f0f',
+        },
+    };
+
     const addDebit = (debit) => {
         totalDebits.current = totalDebits.current + debit;
         return formatEuro(debit);
@@ -58,6 +80,7 @@ export default function FinanceDashboard({ auth, invoices, currentAccount, recei
 
     return (
         <AuthenticatedLayout
+            url={page.url}
             auth={auth}
             header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Financeira Dashboard</span>}
         >
@@ -70,7 +93,7 @@ export default function FinanceDashboard({ auth, invoices, currentAccount, recei
                             {invoices === undefined ? (
                                 <Loading />
                             ) : (
-                                <LineAreaChart title={'Faturas'} data={invoices.data} config={areaConfig}>
+                                <LineAreaChart title={'Faturas'} data={invoices.data} config={invoiceConfig}>
                                     <div className="flex items-start">
                                         <div className="mr-2 text-3xl font-bold text-gray-800 dark:text-gray-100">9 513</div>
                                         <div className="rounded-full bg-green-500/20 px-1.5 text-sm font-medium text-green-700">+49%</div>
@@ -116,7 +139,7 @@ export default function FinanceDashboard({ auth, invoices, currentAccount, recei
                             {currentAccount === undefined ? (
                                 <Loading />
                             ) : (
-                                <VerticalBarChart title={'Contas Correntes'} data={currentAccount.data} config={barConfig}>
+                                <VerticalBarChart title={'Contas Correntes'} data={currentAccount.data} config={accountConfig}>
                                     <div className="flex items-start">
                                         <div className="mr-2 text-3xl font-bold text-gray-800 dark:text-gray-100">9 513</div>
                                         <div className="rounded-full bg-green-500/20 px-1.5 text-sm font-medium text-green-700">+49%</div>
@@ -157,6 +180,22 @@ export default function FinanceDashboard({ auth, invoices, currentAccount, recei
                                         </NavLink>
                                     ))}
                                 </AutoScrollList>
+                            )}
+                        </div>
+                    </div>
+                </div>
+                <div id={'receiptsChart'} className="h-fill col-span-4 row-start-3 sm:col-span-3">
+                    <div className="overflow-hidden rounded-lg bg-white shadow-sm dark:bg-gray-800">
+                        <div className="pb-1 pl-0 pr-4 text-gray-900 dark:text-gray-100">
+                            {receipts === undefined ? (
+                                <Loading />
+                            ) : (
+                                <LineAreaChart title={'Faturas'} data={receipts.data} config={receiptConfig}>
+                                    <div className="flex items-start">
+                                        <div className="mr-2 text-3xl font-bold text-gray-800 dark:text-gray-100">9 513</div>
+                                        <div className="rounded-full bg-green-500/20 px-1.5 text-sm font-medium text-green-700">+49%</div>
+                                    </div>
+                                </LineAreaChart>
                             )}
                         </div>
                     </div>

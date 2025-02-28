@@ -5,7 +5,7 @@ import { Pagination, PaginationContent, PaginationItem, PaginationLink, Paginati
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';
 import { columns } from '@/data/Invoice.ts';
 import { formatEuro, getBadgeColors } from '@/utils/Utils.js';
-import { Head } from '@inertiajs/react';
+import { Head, usePage } from '@inertiajs/react';
 
 export default function Invoices({ auth, invoices }) {
     columns[2].cell = (props) => (
@@ -15,8 +15,14 @@ export default function Invoices({ auth, invoices }) {
     );
     columns[3].accessorFn = (props) => formatEuro(props.etotal);
 
+    const page = usePage();
+
     return (
-        <AuthenticatedLayout auth={auth} header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Faturas</span>}>
+        <AuthenticatedLayout
+            url={page.url}
+            auth={auth}
+            header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Faturas</span>}
+        >
             <Head title="Faturas" />
 
             <div className="">

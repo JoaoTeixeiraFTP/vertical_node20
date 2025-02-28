@@ -1,6 +1,6 @@
 import Loading from '@/Components/Loading.jsx';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';
-import { Head } from '@inertiajs/react';
+import { Head, usePage } from '@inertiajs/react';
 import banner from '../../../../../public/images/banner.jfif';
 import image_logo from '../../../../../public/images/FTP_logo.jfif';
 
@@ -10,6 +10,7 @@ export default function InvoiceDocument({ auth, document }) {
         currency: 'EUR',
         minimumFractionDigits: 2,
     });
+    const page = usePage();
 
     function printDocument() {
         // var printContents = this.$refs.container.innerHTML;
@@ -22,6 +23,7 @@ export default function InvoiceDocument({ auth, document }) {
     return (
         <>
             <AuthenticatedLayout
+                page={page.url}
                 auth={auth}
                 header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Detalhe Faturas</span>}
             >

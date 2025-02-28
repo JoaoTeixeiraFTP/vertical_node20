@@ -6,12 +6,12 @@ import { AppSidebar } from '@/Components/layout/AppSidebar.jsx';
 import { SidebarProvider, SidebarTrigger } from '@/Components/ui/sidebar.jsx';
 import { ThemeProvider } from '@/utils/ThemeContext.jsx';
 
-export default function AuthenticatedLayout({ auth, header, children }) {
+export default function AuthenticatedLayout({ auth, header, url, children }) {
     return (
         <ThemeProvider>
             <div className="flex h-screen overflow-hidden bg-gray-100 dark:bg-gray-900 print:bg-white">
                 <SidebarProvider id={'sidebar-provider'} className="w-full grow">
-                    <AppSidebar auth={auth} />
+                    <AppSidebar auth={auth} url={url} />
                     <SidebarTrigger className={'absolute left-1 top-2 z-40 cursor-pointer md:hidden'} />
                     <main id={'main-page'} className="relative mb-4 flex w-full flex-1 grow flex-col overflow-y-auto overflow-x-hidden">
                         <AppHeader user={auth} />

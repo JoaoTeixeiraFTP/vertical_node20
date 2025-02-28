@@ -1,11 +1,13 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import { Head } from '@inertiajs/react';
+import { Head, usePage } from '@inertiajs/react';
 import DeleteUserForm from './Partials/DeleteUserForm';
 import UpdatePasswordForm from './Partials/UpdatePasswordForm';
 
 export default function Edit({ auth }) {
+    const page = usePage();
     return (
         <AuthenticatedLayout
+            url={page.url}
             auth={auth}
             header={<span className="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">Profile</span>}
         >

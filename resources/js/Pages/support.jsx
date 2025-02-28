@@ -1,9 +1,14 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import { Head } from '@inertiajs/react';
+import { Head, usePage } from '@inertiajs/react';
 
 export default function Support({ auth }) {
+    const page = usePage();
     return (
-        <AuthenticatedLayout auth={auth} header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Suporte</span>}>
+        <AuthenticatedLayout
+            url={page.url}
+            auth={auth}
+            header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Suporte</span>}
+        >
             <Head title="Suporte" />
 
             <div className="">

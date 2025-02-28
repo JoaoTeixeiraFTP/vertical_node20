@@ -10,11 +10,12 @@ import Loading from '@/Components/Loading.jsx';
 import NavLink from '@/Components/navigation/nav-link.jsx';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';
 import { formatEuro } from '@/utils/Utils.js';
-import { Head } from '@inertiajs/react';
+import { Head, usePage } from '@inertiajs/react';
 import { useRef } from 'react';
 import image_logo from '../../../public/images/FTP_logo_no_bg.png';
 
 export default function Home({ auth, invoices, currentAccount, receipts, news }) {
+    const page = usePage();
     const totalDebits = useRef(0);
     const chartData = useRef(null);
     const meses = ['Jan', 'Fev', 'Mar', 'Abr', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
@@ -100,7 +101,11 @@ export default function Home({ auth, invoices, currentAccount, receipts, news })
     };
 
     return (
-        <AuthenticatedLayout auth={auth} header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Home</span>}>
+        <AuthenticatedLayout
+            url={page.url}
+            auth={auth}
+            header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Home</span>}
+        >
             <Head title="Home" />
 
             <div className="grid h-screen grid-cols-12 gap-4 p-4">

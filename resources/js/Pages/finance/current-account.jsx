@@ -4,14 +4,17 @@ import { Pagination, PaginationContent, PaginationItem, PaginationLink, Paginati
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';
 import { columns } from '@/data/CurrentAccount.ts';
 import { formatEuro } from '@/utils/Utils.js';
-import { Head } from '@inertiajs/react';
+import { Head, usePage } from '@inertiajs/react';
 
 export default function CurrentAccount({ auth, currentAccount }) {
     columns[4].accessorFn = (props) => formatEuro(props.edeb);
     columns[6].accessorFn = (props) => formatEuro(props.saldo);
 
+    const page = usePage();
+
     return (
         <AuthenticatedLayout
+            url={page.url}
             auth={auth}
             header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Conta Corrente</span>}
         >
