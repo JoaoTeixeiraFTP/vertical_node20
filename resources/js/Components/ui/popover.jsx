@@ -9,14 +9,14 @@ const Popover = PopoverPrimitive.Root;
 
 const PopoverTrigger = PopoverPrimitive.Trigger;
 
-const PopoverContent = React.forwardRef(({ className, align = 'center', sideOffset = 4, ...props }, ref) => (
+const PopoverContent = React.forwardRef(({ className, align = 'end', sideOffset = 4, ...props }, ref) => (
     <PopoverPrimitive.Portal>
         <PopoverPrimitive.Content
             ref={ref}
             align={align}
             sideOffset={sideOffset}
             className={cn(
-                'form-input w-[15.5rem] rounded-lg pl-9 font-medium text-gray-600 hover:text-gray-800 dark:bg-gray-800 dark:text-gray-300 dark:hover:text-gray-100',
+                'form-input w-[15.5rem] rounded-lg font-medium text-gray-600 hover:text-gray-800 dark:bg-gray-800 dark:text-gray-300 dark:hover:text-gray-100',
                 className,
             )}
             {...props}

@@ -31,7 +31,7 @@ export function NavMain({ items }) {
                             <SidebarMenuButton asChild tooltip={items.title} className={'mb-0.5 rounded-lg pl-4 pr-3 last:mb-0'}>
                                 <NavSpan active={route().current(items.url_name)}>
                                     {items.icon && <items.icon />}
-                                    <span className="">{items.title}</span>
+                                    <span className="ms-2">{items.title}</span>
                                     <ChevronRight className="ml-auto rotate-90 transition-transform duration-200 group-data-[state=open]/collapsible:-rotate-90" />
                                 </NavSpan>
                             </SidebarMenuButton>
