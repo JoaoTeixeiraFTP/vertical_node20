@@ -2,7 +2,7 @@ import { Link } from '@inertiajs/react';
 import { useEffect, useRef, useState } from 'react';
 import Transition from '../../utils/Transition.jsx';
 
-function DropdownNotifications({ align }) {
+export default function Notifications({ align }) {
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
     const trigger = useRef(null);
@@ -111,5 +111,3 @@ function DropdownNotifications({ align }) {
         </div>
     );
 }
-
-export default DropdownNotifications;
