@@ -53,37 +53,13 @@ function FilterButton({ align }) {
                             <li className="px-3 py-1">
                                 <label className="flex items-center">
                                     <input type="checkbox" className="form-checkbox" />
-                                    <span className="ml-2 text-sm font-medium">Direct VS Indirect</span>
-                                </label>
-                            </li>
-                            <li className="px-3 py-1">
-                                <label className="flex items-center">
-                                    <input type="checkbox" className="form-checkbox" />
-                                    <span className="ml-2 text-sm font-medium">Real Time Value</span>
-                                </label>
-                            </li>
-                            <li className="px-3 py-1">
-                                <label className="flex items-center">
-                                    <input type="checkbox" className="form-checkbox" />
-                                    <span className="ml-2 text-sm font-medium">Top Channels</span>
-                                </label>
-                            </li>
-                            <li className="px-3 py-1">
-                                <label className="flex items-center">
-                                    <input type="checkbox" className="form-checkbox" />
-                                    <span className="ml-2 text-sm font-medium">Sales VS Refunds</span>
-                                </label>
-                            </li>
-                            <li className="px-3 py-1">
-                                <label className="flex items-center">
-                                    <input type="checkbox" className="form-checkbox" />
                                     <span className="ml-2 text-sm font-medium">Ultimas Faturas</span>
                                 </label>
                             </li>
                             <li className="px-3 py-1">
                                 <label className="flex items-center">
                                     <input type="checkbox" className="form-checkbox" />
-                                    <span className="ml-2 text-sm font-medium">Total Spent</span>
+                                    <span className="ml-2 text-sm font-medium">Total Gasto</span>
                                 </label>
                             </li>
                         </ul>
