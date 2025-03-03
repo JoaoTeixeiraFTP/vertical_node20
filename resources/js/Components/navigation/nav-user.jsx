@@ -26,7 +26,7 @@ export function NavUser({ user }) {
             <DropdownMenuContent>
                 <DropdownMenuItem>
                     <UserRound />
-                    <a href={route('profile.edit')}>Profile</a>
+                    <a href={route('profile.edit')}>Prefile</a>
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => router.post('/logout')} className={'cursor-pointer'}>
                     <LogOut />

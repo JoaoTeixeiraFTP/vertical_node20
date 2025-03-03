@@ -9,7 +9,7 @@ export default function Edit({ auth }) {
         <AuthenticatedLayout
             url={page.url}
             auth={auth}
-            header={<span className="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">Profile</span>}
+            header={<span className="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">Prefile</span>}
         >
             <Head title="Profile" />
 
