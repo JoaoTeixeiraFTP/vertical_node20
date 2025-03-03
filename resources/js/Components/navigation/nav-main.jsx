@@ -3,7 +3,7 @@
 import { ChevronRight } from 'lucide-react';
 
 import NavSpan from '@/Components/navigation/nav-span.jsx';
-import ResponsiveNavLink from '@/Components/ResponsiveNavLink.jsx';
+import ResponsiveNavLink from '@/Components/navigation/ResponsiveNavLink.jsx';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/Components/ui/collapsible.jsx';
 import {
     SidebarGroup,
@@ -27,8 +27,8 @@ export function NavMain({ items }) {
             <SidebarMenu>
                 <Collapsible key={items.title} asChild defaultOpen={items.isActive} className={'group/collapsible'}>
                     <SidebarMenuItem>
-                        <CollapsibleTrigger>
-                            <SidebarMenuButton asChild tooltip={items.title} className={'mb-0.5 rounded-lg pl-4 pr-3 last:mb-0'}>
+                        <CollapsibleTrigger className={'w-full'}>
+                            <SidebarMenuButton asChild tooltip={items.title} className={'mb-0.5 w-full rounded-lg pl-4 pr-3 last:mb-0'}>
                                 <NavSpan active={route().current(items.url_name)}>
                                     {items.icon && <items.icon />}
                                     <span className="ms-2">{items.title}</span>

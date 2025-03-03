@@ -1,8 +1,8 @@
 'use client';
 
 import Checkbox from '@/Components/Checkbox.jsx';
-import InputError from '@/Components/InputError.jsx';
-import InputLabel from '@/Components/InputLabel.jsx';
+import InputError from '@/Components/form/InputError.jsx';
+import InputLabel from '@/Components/form/InputLabel.jsx';
 import PrimaryButton from '@/Components/PrimaryButton.jsx';
 import TextInput from '@/Components/TextInput.jsx';
 import { useForm } from '@inertiajs/react';

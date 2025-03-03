@@ -1,7 +1,7 @@
-import AutoScrollList from '@/Components/auto-scroll-list.jsx';
 import LineAreaChart from '@/Components/chart/line-area-chart.jsx';
 import { VerticalBarChart } from '@/Components/chart/vertical-bar-chart.jsx';
-import Loading from '@/Components/Loading.jsx';
+import Loading from '@/Components/custom/Loading.jsx';
+import AutoScrollList from '@/Components/data-display/auto-scroll-list.jsx';
 import NavLink from '@/Components/navigation/nav-link.jsx';
 import { Badge } from '@/Components/ui/badge.jsx';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';
@@ -12,6 +12,7 @@ import { useRef } from 'react';
 export default function FinanceDashboard({ auth, invoices, currentAccount, receipts }) {
     const page = usePage();
     const totalDebits = useRef(0);
+
     const invoiceConfig = {
         x: {
             label: 'Meses',
@@ -44,7 +45,7 @@ export default function FinanceDashboard({ auth, invoices, currentAccount, recei
         },
         ecred: {
             label: 'Crédito',
-            color: 'var(--chart-1-1)',
+            color: 'var(--chart-1)',
         },
         edeb: {
             label: 'Débito',
@@ -54,7 +55,7 @@ export default function FinanceDashboard({ auth, invoices, currentAccount, recei
 
     const receiptConfig = {
         x: {
-            label: 'Meses',
+            label: 'Recibo',
             field: 'rno',
         },
         y: {
@@ -63,12 +64,12 @@ export default function FinanceDashboard({ auth, invoices, currentAccount, recei
         },
         etotal: {
             label: 'Receitas',
-            color: '--chart-1',
+            color: '--chart-3',
         },
         basei: {
             // CORRIGIR
             label: 'Despesas',
-            color: '--chart-5',
+            color: '--chart-4',
             // color: '#e30f0f',
         },
     };
@@ -190,7 +191,7 @@ export default function FinanceDashboard({ auth, invoices, currentAccount, recei
                             {receipts === undefined ? (
                                 <Loading />
                             ) : (
-                                <LineAreaChart title={'Faturas'} data={receipts.data} config={receiptConfig}>
+                                <LineAreaChart title={'Recibos'} data={receipts.data} config={receiptConfig}>
                                     <div className="flex items-start">
                                         <div className="mr-2 text-3xl font-bold text-gray-800 dark:text-gray-100">9 513</div>
                                         <div className="rounded-full bg-green-500/20 px-1.5 text-sm font-medium text-green-700">+49%</div>

@@ -16,7 +16,6 @@
     all: initial;
 }
 
-
 @layer base {
     :root {
         --font-inter: 'Inter', sans-serif;
@@ -39,11 +38,11 @@
         --border: hsl(0 0% 89.8%);
         --input: hsl(0 0% 89.8%);
         --ring: hsl(0 0% 3.9%);
-        --chart-1: #8370FF;
-        --chart-2: hsl(173 58% 39%);
-        --chart-3: hsl(197 37% 24%);
-        --chart-4: hsl(43 74% 66%);
-        --chart-5: hsl(27 87% 67%);
+        --chart-1: #8370ff;
+        --chart-2: #2A9D90;
+        --chart-3: #274754;
+        --chart-4: #E8C468;
+        --chart-5: #F4A462;
         --radius: 0.5rem;
         --sidebar-background: hsl(0 0% 98%);
         --sidebar-foreground: hsl(240 5.3% 26.1%);
@@ -76,11 +75,11 @@
         --border: hsl(0 0% 14.9%);
         --input: hsl(0 0% 14.9%);
         --ring: hsl(0 0% 83.1%);
-        --chart-1: #8370FF;
-        --chart-2: hsl(205, 97%, 70%);
-        --chart-3: hsl(30 80% 55%);
-        --chart-4: hsl(280 65% 60%);
-        --chart-5: hsl(340 75% 55%);
+        --chart-1: #8370ff;
+        --chart-2: #68BFFD;
+        --chart-3: #E88C30;
+        --chart-4: #AF57DB;
+        --chart-5: #E23670;
         --sidebar-background: hsl(215 28% 17%);
         --sidebar-foreground: hsl(240 4.8% 95.9%);
         --sidebar-primary: hsl(224.3 76.3% 48%);

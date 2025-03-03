@@ -4,12 +4,9 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
-use App\Models\Api\CurrentAccount;
 use App\Models\Api\Orders;
 use App\Shared\Controllers\Controller;
-use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -17,8 +14,8 @@ final class OrdersController extends Controller
 {
     public function index(): Response
     {
-       $page = request()->input('page', 1);
-       $per_page = request()->input('per_page', 15);
+        $page = request()->input('page', 1);
+        $per_page = request()->input('per_page', 15);
 
         $rows = Orders::fakeData();
 
@@ -30,16 +27,16 @@ final class OrdersController extends Controller
 
         return Inertia::render(
             'orders', [
-            'orders' => Inertia::defer(fn () => new LengthAwarePaginator(
-                items: collect($pagedData ?? []),
-                total: $totalPages,
-                perPage: $per_page,
-                currentPage: $page,
-                options: [
-                    'path' => request()->url(),
-                    'query' => request()->query(),
-                ])
-            )]
+                'orders' => Inertia::defer(fn () => new LengthAwarePaginator(
+                    items: collect($pagedData ?? []),
+                    total: $totalPages,
+                    perPage: $per_page,
+                    currentPage: $page,
+                    options: [
+                        'path' => request()->url(),
+                        'query' => request()->query(),
+                    ])
+                )]
         );
     }
 }

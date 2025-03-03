@@ -1,4 +1,4 @@
-import Loading from '@/Components/Loading.jsx';
+import Loading from '@/Components/custom/Loading.jsx';
 import { DataTable } from '@/Components/data-display/data-table.jsx';
 import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '@/Components/ui/pagination.jsx';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';

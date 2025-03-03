@@ -11,6 +11,7 @@ final class Vertical
 {
     private static array $params = [];
 
+    // CRIA OS METODOS COM BASE DO $params
     public static function __callStatic($method, $arguments)
     {
         if (in_array($method, self::$params)) {
@@ -22,6 +23,7 @@ final class Vertical
 
     public static function fetch(): RequestBuilder
     {
-        return new RequestBuilder(endpoint: 'phc/Vertical'); // Define o endpoint
+        // A QUE ROTA CLIENT VAI FAZER REQUEST
+        return new RequestBuilder(endpoint: 'phc/Vertical');
     }
 }

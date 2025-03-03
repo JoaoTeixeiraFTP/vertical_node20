@@ -17,4 +17,4 @@ composer.lock
 /resources/js/partials/orders/
 /resources/js/partials/settings/
 /resources/js/partials/tasks/
-/storage/clockwork/
+storage/clockwork/
