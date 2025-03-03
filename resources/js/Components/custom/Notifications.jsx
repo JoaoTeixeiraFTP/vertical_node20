@@ -38,7 +38,7 @@ export default function Notifications({ align }) {
                 onClick={() => setDropdownOpen(!dropdownOpen)}
                 aria-expanded={dropdownOpen}
             >
-                <span className="sr-only">Notifications</span>
+                <span className="sr-only">Notificações</span>
                 <svg
                     className="fill-current text-gray-500/80 dark:text-gray-400/80"
                     width={16}
@@ -63,7 +63,7 @@ export default function Notifications({ align }) {
                 leaveEnd="opacity-0"
             >
                 <div ref={dropdown} onFocus={() => setDropdownOpen(true)} onBlur={() => setDropdownOpen(false)}>
-                    <div className="px-4 pb-2 pt-1.5 text-xs font-semibold uppercase text-gray-400 dark:text-gray-500">Notifications</div>
+                    <div className="px-4 pb-2 pt-1.5 text-xs font-semibold uppercase text-gray-400 dark:text-gray-500">Notificações</div>
                     <ul>
                         <li className="border-b border-gray-200 last:border-0 dark:border-gray-700/60">
                             <Link
@@ -72,8 +72,8 @@ export default function Notifications({ align }) {
                                 onClick={() => setDropdownOpen(!dropdownOpen)}
                             >
                                 <span className="mb-2 block text-sm">
-                                    📣 <span className="font-medium text-gray-800 dark:text-gray-100">Edit your information in a swipe</span> Sint
-                                    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.
+                                    📣 <span className="font-medium text-gray-800 dark:text-gray-100">Cliente</span>Recebeste um novo 
+                                    pedido de Teste,Lda. Verifica os detalhes e procede com o processamento!
                                 </span>
                                 <span className="block text-xs font-medium text-gray-400 dark:text-gray-500">Feb 12, 2024</span>
                             </Link>
@@ -85,8 +85,8 @@ export default function Notifications({ align }) {
                                 onClick={() => setDropdownOpen(!dropdownOpen)}
                             >
                                 <span className="mb-2 block text-sm">
-                                    📣 <span className="font-medium text-gray-800 dark:text-gray-100">Edit your information in a swipe</span> Sint
-                                    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.
+                                    📣 <span className="font-medium text-gray-800 dark:text-gray-100">Fatura</span>A fatura #2682 de 
+                                    Costa,Lda venceu há 23 dias. Contacto para regularização.
                                 </span>
                                 <span className="block text-xs font-medium text-gray-400 dark:text-gray-500">Feb 9, 2024</span>
                             </Link>
@@ -99,8 +99,8 @@ export default function Notifications({ align }) {
                             >
                                 <span className="mb-2 block text-sm">
                                     🚀
-                                    <span className="font-medium text-gray-800 dark:text-gray-100">Say goodbye to paper receipts!</span> Sint occaecat
-                                    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.
+                                    <span className="font-medium text-gray-800 dark:text-gray-100">Say goodbye to paper receipts!</span>"Porsche 
+                                    abriu um novo ticket de suporte: '#6942'. Responde o mais rápido possível!
                                 </span>
                                 <span className="block text-xs font-medium text-gray-400 dark:text-gray-500">Jan 24, 2024</span>
                             </Link>
