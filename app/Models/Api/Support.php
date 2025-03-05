@@ -7,7 +7,7 @@ namespace App\Models\Api;
 use App\Shared\Services\RequestBuilder;
 use BadMethodCallException;
 
-final class Invoices
+final class Support
 {
     private static array $params = [
         'no',

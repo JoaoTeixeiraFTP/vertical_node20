@@ -3,6 +3,7 @@
 use App\Http\Controllers\FinanceController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SupportController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -18,9 +19,7 @@ Route::get('/orders', function () {
     return Inertia::render('orders');
 })->middleware(['auth'])->name('orders');
 
-Route::get('/support', function () {
-    return Inertia::render('support');
-})->middleware(['auth'])->name('support');
+Route::middleware(['auth:sanctum', 'auth'])->get('/support', [SupportController::class, 'supportPage'])->name('support');
 
 Route::middleware('auth')->group(function () {
     // HOME

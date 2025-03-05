@@ -7,10 +7,11 @@ namespace App\Http\Controllers;
 use App\Models\Api\Support;
 use App\Shared\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Inertia\Inertia;
 use Inertia\Response;
 
-final class FinanceController extends Controller
+final class SupportController extends Controller
 {
     public function __construct() {}
 
@@ -21,7 +22,6 @@ final class FinanceController extends Controller
     {
     }
 
-
     /**
      * Show the application dashboard.
      */
@@ -29,12 +29,18 @@ final class FinanceController extends Controller
     {
         $page = request()->input('page', 1);
         $per_page = request()->input('per_page', 15);
-
+        
+        
+        $user = Auth::user();
+        
+        $supportData = Support::fetch()
+            ->token($user->get_subscriber->access_token)
+            ->no($user->no)
+            ->paginate(perPage: $per_page, page: (int) $page);
+        
+        
         return Inertia::render('support', [
-            'support' => Inertia::defer(fn () => Support::fetch()
-                ->token(Auth::user()->get_subscriber->access_token)
-                ->no(Auth::user()->no)
-                ->paginate(perPage: $per_page, page: (int) $page))->merge(),
+            'support' => Inertia::defer(fn () => $supportData->merge()),
         ]);
     }
 }
