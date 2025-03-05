@@ -36,7 +36,7 @@ export default function AutoScrollList({ title, children, length, className, cla
     const handleMouseLeave = () => {
         timeoutRef.current = setTimeout(() => {
             setIsPaused(false);
-        }, 4000); // Espera 10s antes de reiniciar
+        }, 1000); // Espera 1s antes de reiniciar
     };
 
     return (
