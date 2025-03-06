@@ -18,7 +18,7 @@ export default function Support({ auth }) {
         </Badge>
     );
 
-    columns[3].accessorFn = (props) => formatEuro(props.etotal);
+    columns[4].accessorFn = (props) => formatEuro(props.etotal);
 
     const page = usePage();
 
