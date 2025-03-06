@@ -58,7 +58,7 @@ const data = {
 
 export function AppSidebar({ auth, url }) {
     data.user = auth.user;
-    data.finance.isActive = url.includes('/finance');
+    //data.finance.isActive = url.includes('/finance');
 
     console.log(data);
     return (
