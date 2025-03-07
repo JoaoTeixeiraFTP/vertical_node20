@@ -15,6 +15,8 @@ export default function Invoices({ auth, invoices }) {
     );
     columns[3].accessorFn = (props) => formatEuro(props.etotal);
 
+    console.log('Dados das colunas:', columns);
+
     const page = usePage();
 
     return (

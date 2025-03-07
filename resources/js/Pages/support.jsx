@@ -4,21 +4,19 @@ import { Badge } from '@/Components/ui/badge.jsx';
 import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '@/Components/ui/pagination.jsx';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';
 import { columns } from '@/data/Support.ts';  
-import { formatEuro, getBadgeColors } from '@/utils/Utils.js';
+import { getBadgeColors } from '@/utils/Utils.js'; 
 import { Head, usePage } from '@inertiajs/react';
 
 export default function Support({ auth }) {
     const { support } = usePage().props;
 
-    console.log('Dados de suporte:', support);  
-
-    columns[2].cell = (props) => (
-        <Badge variant="simple" className={getBadgeColors(props.getValue())}>
-            {props.getValue()}
-        </Badge>
-    );
-
-    columns[3].accessorFn = (props) => formatEuro(props.etotal);
+    // if (columns[1]) {
+    //     columns[1].cell = (props) => (
+    //         <Badge variant="simple" className={getBadgeColors(props.getValue())}>
+    //             {props.getValue()}
+    //         </Badge>
+    //     );
+    // }
 
     const page = usePage();
 
@@ -32,13 +30,7 @@ export default function Support({ auth }) {
 
             <div className="mx-auto px-4 py-2">
                 <div className="overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
-                    <div className="p-2 text-gray-900 dark:text-gray-100">
-                        {support === undefined || !support.data ? (
-                            <Loading />
-                        ) : (
-                            <DataTable columns={columns} data={support.data} searchField={'pastamp'} typeDocument={'support'} />
-                        )}
-                    </div>
+                    <DataTable columns={columns} data={support.data} />
                 </div>
 
                 {/* Paginação */}
