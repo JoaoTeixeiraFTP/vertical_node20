@@ -4,7 +4,7 @@ import ApplicationLogo from '@/Components/ApplicationLogo.jsx';
 import { NavMain } from '@/Components/navigation/nav-main.jsx';
 import { NavSimple } from '@/Components/navigation/nav-simple.jsx';
 import { NavUserSidebar } from '@/Components/navigation/nav-user-sidebar.jsx';
-import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarRail, SidebarTrigger } from '@/Components/ui/sidebar.jsx';
+import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarTrigger } from '@/Components/ui/sidebar.jsx';
 
 const data = {
     finance: {
@@ -65,7 +65,6 @@ export function AppSidebar({ auth, url }) {
         <Sidebar id={'app-sidebar'} collapsible="icon">
             <SidebarHeader className={'mb-12 justify-between px-4'}>
                 <ApplicationLogo />
-                <SidebarRail id={'sidebar-toggle'} />
             </SidebarHeader>
             <SidebarContent>
                 <div className="grid gap-2 px-3">
