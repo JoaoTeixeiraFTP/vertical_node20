@@ -60,7 +60,6 @@ export function AppSidebar({ auth, url }) {
     data.user = auth.user;
     //data.finance.isActive = url.includes('/finance');
 
-    console.log(data);
     return (
         <Sidebar id={'app-sidebar'} collapsible="icon">
             <SidebarHeader className={'mb-12 justify-between px-4'}>
