@@ -3,7 +3,7 @@ import { DataTable } from '@/Components/data-display/data-table.jsx';
 import { Badge } from '@/Components/ui/badge.jsx';
 import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '@/Components/ui/pagination.jsx';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';
-import { columns } from '@/data/Support.ts';  // Supondo que você tenha um arquivo de configuração para as colunas
+import { columns } from '@/data/Support.ts';  
 import { formatEuro, getBadgeColors } from '@/utils/Utils.js';
 import { Head, usePage } from '@inertiajs/react';
 
@@ -18,7 +18,7 @@ export default function Support({ auth }) {
         </Badge>
     );
 
-    columns[4].accessorFn = (props) => formatEuro(props.etotal);
+    columns[3].accessorFn = (props) => formatEuro(props.etotal);
 
     const page = usePage();
 
