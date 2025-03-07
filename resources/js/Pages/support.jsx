@@ -11,8 +11,8 @@ export default function Support({ auth }) {
     const estadoColors = {
         'A Decorrer': 'bg-yellow-100',
         'Aguarda resposta': 'bg-red-100', 
-        'Concluído': 'bg-green-100',
-        'Cancelado': 'bg-gray-100', 
+        'Fechado': 'bg-green-100',
+        'Em Análise': 'bg-gray-100', 
     };
     
     const updatedColumns = columns.map((col) => {
@@ -50,7 +50,7 @@ export default function Support({ auth }) {
                         {support === undefined || !support.data ? (
                             <Loading />
                         ) : (
-                            <DataTable columns={updatedColumns} data={support.data} />
+                            <DataTable columns={updatedColumns} data={support.data} searchField={'pastamp'} />
                         )}
                     </div>
                 </div>
