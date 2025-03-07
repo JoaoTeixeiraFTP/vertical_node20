@@ -9,24 +9,23 @@ export default function Support({ auth }) {
     const { support } = usePage().props;
 
     const estadoColors = {
-        'A Decorrer': 'bg-yellow-200 100/20', 
-        'Aguarda resposta': 'bg-red-200 100/20', 
-        'Concluído': 'bg-green-200', 
-        'Cancelado': 'bg-gray-200', 
+        'A Decorrer': 'bg-yellow-100',
+        'Aguarda resposta': 'bg-red-100', 
+        'Concluído': 'bg-green-100',
+        'Cancelado': 'bg-gray-100', 
     };
-    console.log('Dados das colors:', estadoColors);
-
+    
     const updatedColumns = columns.map((col) => {
         if (col.accessorKey === 'status') { 
-            
             return {
                 ...col,
                 cell: (props) => {
-                    const estado = props.getValue(); 
-                    const bgColor = estadoColors[estado] || 'bg-white'; 
+                    const status = props.getValue();
+                    const bgColor = estadoColors[status] || 'bg-white'; 
                     return (
-                        <div className={`p-2 rounded ${bgColor}`}>
-                            {estado}
+                        <div className="relative p-2 rounded">
+                            <div className={`absolute inset-0 ${bgColor} bg-opacity-50 rounded-2xl`}></div> 
+                            <div className="relative z-10">{status}</div> 
                         </div>
                     );
                 },
