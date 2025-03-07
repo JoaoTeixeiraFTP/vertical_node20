@@ -25,7 +25,7 @@ export default function Support({ auth }) {
                     return (
                         <div className="relative p-2 rounded">
                             <div className={`absolute inset-0 ${bgColor} bg-opacity-50 rounded-2xl`}></div> 
-                            <div className="relative z-10">{status}</div> 
+                            <div className="relative">{status}</div> 
                         </div>
                     );
                 },
