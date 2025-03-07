@@ -8,6 +8,33 @@ import { Head, usePage } from '@inertiajs/react';
 export default function Support({ auth }) {
     const { support } = usePage().props;
 
+    const estadoColors = {
+        'A Decorrer': 'bg-yellow-200 100/20', 
+        'Aguarda resposta': 'bg-red-200 100/20', 
+        'Concluído': 'bg-green-200', 
+        'Cancelado': 'bg-gray-200', 
+    };
+    console.log('Dados das colors:', estadoColors);
+
+    const updatedColumns = columns.map((col) => {
+        if (col.accessorKey === 'status') { 
+            
+            return {
+                ...col,
+                cell: (props) => {
+                    const estado = props.getValue(); 
+                    const bgColor = estadoColors[estado] || 'bg-white'; 
+                    return (
+                        <div className={`p-2 rounded ${bgColor}`}>
+                            {estado}
+                        </div>
+                    );
+                },
+            };
+        }
+        return col;
+    });
+
     const page = usePage();
 
     return (
@@ -24,7 +51,7 @@ export default function Support({ auth }) {
                         {support === undefined || !support.data ? (
                             <Loading />
                         ) : (
-                            <DataTable columns={columns} data={support.data} />
+                            <DataTable columns={updatedColumns} data={support.data} />
                         )}
                     </div>
                 </div>
