@@ -4,7 +4,7 @@ import { usePage } from '@inertiajs/react';
 
 export function NavSimple({ item }) {
     const page = usePage();
-    const gradient = page.url === item.url_name ? 'from-violet-500/[0.12] dark:from-violet-500/[0.24] to-violet-500/[0.04]' : '';
+    const gradient = page.url === item.url_name ? 'from-violet-500/[0.40] dark:from-violet-500/[0.24] to-violet-500/[0.04]' : '';
 
     return (
         <SidebarMenu>
