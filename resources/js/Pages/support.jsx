@@ -44,6 +44,25 @@ export default function Support({ auth }) {
         >
             <Head title="Suporte" />
 
+            <div className="grid grid-cols-4 gap-4 p-4">
+                <div className="relative dark:bg-[#1F2937] bg-[#DCDCDC] text-white p-6 rounded-xl shadow-[4px_4px_8px_rgba(0,0,0,0.6)]">
+                    <h3 className="text-lg text-[#0A0A0A] dark:text-[#FFFFFF] font-semibold">Tickets Disponíveis:</h3>
+                    <p className="text-3xl font-bold mt-2"></p>
+                </div>
+                <div className="relative dark:bg-[#1F2937] bg-[#DCDCDC] text-white p-6 rounded-xl shadow-[4px_4px_8px_rgba(0,0,0,0.6)]">
+                    <h3 className="text-lg text-[#0A0A0A] dark:text-[#FFFFFF] font-semibold">Tickets Utilizados:</h3>
+                    <p className="text-3xl font-bold mt-2"></p>
+                </div>
+                <div className="relative dark:bg-[#1F2937] bg-[#DCDCDC] text-white p-6 rounded-xl shadow-[4px_4px_8px_rgba(0,0,0,0.6)]">
+                    <h3 className="text-lg text-[#0A0A0A] dark:text-[#FFFFFF] font-semibold">Tickets Pendentes:</h3>
+                    <p className="text-3xl font-bold mt-2"></p>
+                </div>
+                <div className="relative dark:bg-[#1F2937] bg-[#DCDCDC] text-white p-6 rounded-xl shadow-[4px_4px_8px_rgba(0,0,0,0.6)]">
+                    <h3 className="text-lg text-[#0A0A0A] dark:text-[#FFFFFF] font-semibold">Satisfação do Cliente:</h3>
+                    <p className="text-3xl font-bold mt-2"></p>
+                </div>
+            </div>
+
             <div className="mx-auto px-4 py-2">
                 <div className="overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
                     <div className="p-2 text-gray-900 dark:text-gray-100">
