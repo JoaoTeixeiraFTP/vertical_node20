@@ -47,19 +47,19 @@ export default function Support({ auth }) {
             <div className="grid grid-cols-4 gap-4 p-4">
                 <div className="relative dark:bg-[#1F2937] bg-[#DCDCDC] text-white p-6 rounded-xl shadow-[4px_4px_8px_rgba(0,0,0,0.6)]">
                     <h3 className="text-lg text-[#0A0A0A] dark:text-[#FFFFFF] font-semibold">Tickets Disponíveis:</h3>
-                    <p className="text-3xl font-light mt-2">39</p>
+                    <p className="text-3xl dark:text-white text-black font-light mt-2">39</p>
                 </div>
                 <div className="relative dark:bg-[#1F2937] bg-[#DCDCDC] text-white p-6 rounded-xl shadow-[4px_4px_8px_rgba(0,0,0,0.6)]">
                     <h3 className="text-lg text-[#0A0A0A] dark:text-[#FFFFFF] font-semibold">Tickets Utilizados:</h3>
-                    <p className="text-3xl font-light mt-2">20</p>
+                    <p className="text-3xl dark:text-white text-black font-light mt-2">20</p>
                 </div>
                 <div className="relative dark:bg-[#1F2937] bg-[#DCDCDC] text-white p-6 rounded-xl shadow-[4px_4px_8px_rgba(0,0,0,0.6)]">
                     <h3 className="text-lg text-[#0A0A0A] dark:text-[#FFFFFF] font-semibold">Tickets Pendentes:</h3>
-                    <p className="text-3xl font-light mt-2">2</p>
+                    <p className="text-3xl dark:text-white text-black font-light mt-2">2</p>
                 </div>
                 <div className="relative dark:bg-[#1F2937] bg-[#DCDCDC] text-white p-6 rounded-xl shadow-[4px_4px_8px_rgba(0,0,0,0.6)]">
                     <h3 className="text-lg text-[#0A0A0A] dark:text-[#FFFFFF] font-semibold">Satisfação do Cliente:</h3>
-                    <p className="text-3xl font-light mt-2">4.8/5</p>
+                    <p className="text-3xl dark:text-white text-black font-light mt-2">4.8/5</p>
                 </div>
             </div>
 
