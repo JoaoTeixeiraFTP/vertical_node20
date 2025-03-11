@@ -69,7 +69,7 @@ export default function Support({ auth }) {
                         {support === undefined || !support.data ? (
                             <Loading />
                         ) : (
-                            <DataTable columns={updatedColumns} data={support.data} searchField={'pastamp'} />
+                            <DataTable columns={updatedColumns} data={support.data} searchField={'pastamp'} typeDocument={'support'}/>
                         )}
                     </div>
                 </div>

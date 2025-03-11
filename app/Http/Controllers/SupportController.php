@@ -56,4 +56,31 @@ final class SupportController extends Controller
              ]);
          }
      }   
+
+     public function documentPage($document, $id): Response
+     {
+         if ($document !== 'support') {
+             return Inertia::render('support/document/support-document', [
+                 'document' => null,
+                 'logs' => ['Tipo de documento inválido.'],
+             ]);
+         }
+     
+         try {
+             $fetch = Support::fetch()
+                 ->pastamp($id)
+                 ->token(Auth::user()->get_subscriber->access_token)
+                 ->get()
+                 ->wait();
+     
+             return Inertia::render('support/document/support-document', [
+                 'document' => $fetch,
+             ]);
+         } catch (\Exception $e) {
+             return Inertia::render('support/document/support-document', [
+                 'document' => null,
+                 'logs' => ['Erro ao buscar documento de suporte.'],
+             ]);
+         }
+     }       
 }

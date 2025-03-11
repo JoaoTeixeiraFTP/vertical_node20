@@ -20,6 +20,9 @@ Route::get('/orders', function () {
 })->middleware(['auth'])->name('orders');
 
 Route::middleware(['auth:sanctum', 'auth'])->get('/support', [SupportController::class, 'supportPage'])->name('support');
+    Route::prefix('/support')->group(function () {
+        Route::get('/document/{document}/{id}', [SupportController::class, 'documentPage'])->name('support.documents');
+    });
 
 Route::middleware('auth')->group(function () {
     // HOME
