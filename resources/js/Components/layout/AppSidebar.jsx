@@ -58,7 +58,6 @@ const data = {
 
 export function AppSidebar({ auth, url }) {
     data.user = auth.user;
-    //data.finance.isActive = url.includes('/finance');
 
     return (
         <Sidebar id={'app-sidebar'} collapsible="icon">
