@@ -11,7 +11,7 @@ export default function SupportDocument({ auth, document }) {
             <AuthenticatedLayout
                 url={page.url}
                 auth={auth}
-                header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Detalhe Do Support</span>}
+                header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Detalhe Do Suporte</span>}
             >
                 <Head title="Suporte" />
 
