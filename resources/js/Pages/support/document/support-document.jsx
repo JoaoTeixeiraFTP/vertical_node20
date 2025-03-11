@@ -5,7 +5,6 @@ import { Head, usePage } from '@inertiajs/react';
 export default function SupportDocument({ auth, document }) {
     const page = usePage();
 
-    console.log(document);
     return (
         <>
             <AuthenticatedLayout
