@@ -13,8 +13,10 @@ export function DataTable({ columns, data, typeDocument, searchField }) {
     });
 
     const handleRowClick = (typeDocument, id) => {
-        router.get(`/finance/document/${typeDocument}/${id}`);
+        const basePath = typeDocument === 'support' ? '/support/document' : '/finance/document';
+        router.get(`${basePath}/${typeDocument}/${id}`);
     };
+    
 
     return (
         <div className="rounded-md">
