@@ -36,6 +36,8 @@ export default function Support({ auth }) {
 
     const page = usePage();
 
+    console.log(support);
+
     return (
         <AuthenticatedLayout
             url={page.url}
