@@ -1,13 +1,3 @@
-### Card 1
+### Suporte
 
-- Area
-- Faturas
-- Label nos eixos, meses do ano 3 Letras no eixo Y
-- Numero na descrição mais pequeno
-
-### Card 2
-
-- Barras
-- Faturas -> está conta corrente
-- Label nos eixos, meses do ano 3 Letras no eixo Y
-- Se é para manter numero na descrição
+- Criar pedido de Assistência: irá redirecionar para uma página nova dentro da pasta de suporte.
