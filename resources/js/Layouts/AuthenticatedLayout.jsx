@@ -17,7 +17,7 @@ export default function AuthenticatedLayout({ auth, header, url, children }) {
                         <AppHeader user={auth} />
                         {header && (
                             <header id={'page-header'} className="mb-4 sm:mb-0">
-                                <div className="mx-auto px-2 py-2 sm:px-6 lg:px-4 bg-gray-200 rounded-lg shadow-sm dark:bg-[#BBBEC3]">
+                                <div className="mx-auto px-2 p-1 sm:px-6 lg:px-4 bg-gray-200 rounded-lg shadow-sm dark:bg-[#BBBEC3]">
                                     <div className="grid h-full overflow-hidden sm:flex sm:justify-between">
                                         {/* Left: Title */}
                                         <div className="order-last mx-0 my-2 sm:order-first sm:my-0">
