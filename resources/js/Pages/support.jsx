@@ -44,7 +44,7 @@ export default function Support({ auth }) {
         >
             <Head title="Suporte" />
 
-            <div className="grid grid-cols-4 gap-4 p-4">
+            <div className="grid grid-cols-4 gap-4 p-8">
                 <div className="relative dark:bg-[#1F2937] bg-[#DCDCDC] text-white p-6 rounded-xl shadow-[4px_4px_8px_rgba(0,0,0,0.6)]">
                     <h3 className="text-lg text-[#0A0A0A] dark:text-[#FFFFFF] font-semibold">Tempo Resposta:</h3>
                     <p className="text-3xl dark:text-white text-black font-light mt-2">1.30h</p>
