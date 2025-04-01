@@ -81,8 +81,26 @@ final class SupportController extends Controller
         ]);
     }    
 
-    public function chatPage(Request $request)
+    public function chatPage($document, $id): Response
     {
-        return Inertia::render('support/chat/chat'); 
+        $page = 'support/chat/chat';
+        dd($request->all());
+    
+        return Inertia::render($page, [
+            'chat' => Inertia::defer(function () use ($id) {
+                try {
+                    return Support::fetch()
+                        ->pastamp($id)
+                        ->token(Auth::user()->get_subscriber->access_token)
+                        ->get()
+                        ->wait();
+                } catch (\Exception $e) {
+                    return [
+                        'error' => 'Erro ao buscar chat de suporte.',
+                        'logs' => [$e->getMessage()],
+                    ];
+                }
+            }),
+        ]); 
     }
 }
