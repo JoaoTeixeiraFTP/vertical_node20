@@ -29,17 +29,17 @@ export default function AuthenticatedLayout({ auth, header, url, children }) {
                         <AppHeader user={auth} />
                         {header && (
                             <header id={'page-header'} className="mb-4 sm:mb-0">
-                                <div className="mx-auto px-2 p-1 sm:px-6 lg:px-4 bg-gray-200 shadow-sm dark:bg-[#BBBEC3]">
+                                <div className="mx-auto p-1 sm:px-6 lg:px-4 bg-gray-200 shadow-sm dark:bg-[#BBBEC3]">
                                     <div className="grid h-full overflow-hidden sm:flex sm:justify-between items-center">
                                         {/* Left: Title */}
-                                        <div className="order-last mx-0 my-2 sm:order-first sm:my-0">
+                                        <div className="order-last sm:order-first sm:my-0">
                                             <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">{header}</h1>
                                         </div>
                                         
                                         {/* Right: Actions */}
                                         <div className="sm:text-md order-first flex justify-end gap-2 text-sm sm:order-last w-full sm:w-auto">
                                             {isSupportPage ? (
-                                                <div className="flex w-full justify-center items-center gap-4 p-2">
+                                                <div className="flex w-full justify-center items-center gap-4">
                                                     {/* Search bar */}
                                                     <input
                                                         type="text"
