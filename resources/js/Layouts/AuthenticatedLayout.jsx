@@ -48,10 +48,10 @@ export default function AuthenticatedLayout({ auth, header, url, children }) {
                                                     />
                                                         <div className='flex gap-2'>
                                                             {/* Criar PA button */}
-                                                            <button className="px-4 py-2 bg-[#4B535E] text-white rounded-lg hover:bg-blue-700">Criar PA</button>
+                                                            <button className="px-4 py-2 bg-[#D9D9D9] text-gray-800 rounded-lg hover:bg-blue-700">Criar PA</button>
                                                         </div>
                                                         <button 
-                                                            className="px-4 py-2 bg-[#4B535E] text-white rounded-lg hover:bg-blue-700"
+                                                            className="px-4 py-2 bg-[#D9D9D9] text-gray-800 rounded-lg hover:bg-blue-700"
                                                             onClick={() => window.location.href = route('support.chat.chat')}
                                                         >
                                                             Ir para a Conversa
