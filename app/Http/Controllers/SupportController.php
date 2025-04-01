@@ -81,10 +81,14 @@ final class SupportController extends Controller
         ]);
     }    
 
-    public function chatPage($document, $id): Response
+    public function chatPage(Request $request)
+    {
+        return Inertia::render('support/chat/chat'); 
+    }
+    /*
+    public function chatPage(Request $request, $document, $id): Response
     {
         $page = 'support/chat/chat';
-        dd($request->all());
     
         return Inertia::render($page, [
             'chat' => Inertia::defer(function () use ($id) {
@@ -102,5 +106,6 @@ final class SupportController extends Controller
                 }
             }),
         ]); 
-    }
+    }    
+        */
 }

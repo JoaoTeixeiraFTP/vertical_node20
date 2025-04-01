@@ -23,6 +23,7 @@ Route::middleware(['auth:sanctum', 'auth'])->get('/support', [SupportController:
     Route::prefix('/support')->group(function () {
         Route::get('/document/{document}/{id}', [SupportController::class, 'documentPage'])->name('support.documents');
         Route::get('/chat', [SupportController::class, 'chatPage'])->name('support.chat.chat'); 
+        //Route::get('/chat/{document}/{id}', [SupportController::class, 'chatPage'])->name('support.chat.chat');
     });
 
 Route::middleware('auth')->group(function () {

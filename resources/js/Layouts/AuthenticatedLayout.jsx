@@ -56,6 +56,14 @@ export default function AuthenticatedLayout({ auth, header, url, children }) {
                                                         >
                                                             Ir para a Conversa
                                                         </button>
+                                                        {/*
+                                                        <button 
+                                                            className="px-4 py-2 bg-[#4B535E] text-white rounded-lg hover:bg-blue-700"
+                                                            onClick={() => window.location.href = route('support.chat.chat', { id: document.id })} // Replace with the actual document ID
+                                                        >
+                                                            Ir para a Conversa
+                                                        </button>
+                                                        */}
                                                 </div>
                                             ) : (
                                                 <>
