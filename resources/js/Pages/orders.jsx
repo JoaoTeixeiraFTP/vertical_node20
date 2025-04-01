@@ -12,7 +12,7 @@ export default function Orders({ auth, orders }) {
             <Head title="Encomendas" />
 
             <div className="">
-                <div className="mx-auto px-4 py-5">
+                <div className="mx-auto px-4 py-4">
                     <div className="overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
                         <div className="p-6 text-gray-900 dark:text-gray-100">Encomendas!</div>
                     </div>

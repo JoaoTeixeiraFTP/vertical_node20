@@ -33,7 +33,7 @@ function FilterButton({ align }) {
             <PopoverTrigger asChild>
                 <button
                     ref={trigger}
-                    className="btn sm:h-15 h-10 rounded-lg border-gray-200 bg-white px-2.5 text-gray-400 hover:border-gray-300 dark:border-gray-700/60 dark:bg-gray-800 dark:text-gray-500 dark:hover:border-gray-600"
+                    className="btn sm:h-15 h-10 rounded-lg border-gray-200 bg-white px-2.5 text-gray-400 hover:border-gray-300 dark:border-gray-700/60 dark:bg-gray-200 dark:text-gray-500 dark:hover:border-gray-600"
                     aria-haspopup="true"
                     onClick={() => setDropdownOpen(!dropdownOpen)}
                     aria-expanded={dropdownOpen}

@@ -25,11 +25,11 @@ export default function AuthenticatedLayout({ auth, header, url, children }) {
                 <SidebarProvider id={'sidebar-provider'} className="w-full grow">
                     <AppSidebar auth={auth} url={url} />
                     <SidebarTrigger className={'absolute left-1 top-2 z-40 cursor-pointer md:hidden'} />
-                    <main id={'main-page'} key={headerText} className="relative mb-4 flex w-full flex-1 grow flex-col overflow-y-auto overflow-x-hidden px-4">
+                    <main id={'main-page'} key={headerText} className="relative mb-4 flex w-full flex-1 grow flex-col overflow-y-auto overflow-x-hidden">
                         <AppHeader user={auth} />
                         {header && (
-                            <header id={'page-header'} className="mb-4 sm:mb-0">
-                                <div className="mx-auto p-1 sm:px-6 lg:px-4 bg-gray-200 shadow-sm dark:bg-[#BBBEC3]">
+                            <header id={'page-header'} className="mb-4 sm:mb-0 px-4">
+                                <div className="mx-auto p-1 sm:px-6 lg:px-4 bg-gray-200 shadow-sm dark:bg-gray-600 rounded-lg">
                                     <div className="grid h-full overflow-hidden sm:flex sm:justify-between items-center">
                                         {/* Left: Title */}
                                         <div className="order-last sm:order-first sm:my-0">

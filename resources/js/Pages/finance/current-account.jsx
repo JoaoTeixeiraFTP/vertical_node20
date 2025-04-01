@@ -21,7 +21,7 @@ export default function CurrentAccount({ auth, currentAccount }) {
             <Head title="Conta Corrente" />
 
             <div className="">
-                <div className="mx-auto px-4 py-2">
+                <div className="mx-auto px-4 py-4">
                     <div className="overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
                         <div className="p-2 text-gray-900 dark:text-gray-100">
                             {currentAccount === undefined ? (

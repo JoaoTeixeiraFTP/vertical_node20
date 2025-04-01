@@ -20,7 +20,7 @@ export default function DatePickerWithRange({ className }) {
                     <button
                         id="date"
                         className={cn(
-                            'datepicker form-input flex w-[15.5rem] items-center justify-center rounded-lg border-gray-200 font-medium text-gray-600 hover:text-gray-800 dark:border-gray-700/60 dark:bg-gray-800 dark:text-gray-300 dark:hover:text-gray-100',
+                            'datepicker form-input flex w-[15.5rem] items-center justify-center rounded-lg border-gray-200 font-medium text-gray-600 hover:text-gray-800 dark:border-gray-700/60 dark:bg-gray-200 dark:text-gray-600 dark:hover:text-gray-100',
                             !date && 'text-muted-foreground',
                         )}
                     >
