@@ -39,7 +39,7 @@ export default function AuthenticatedLayout({ auth, header, url, children }) {
                                         {/* Right: Actions */}
                                         <div className="sm:text-md order-first flex justify-end gap-2 text-sm sm:order-last w-full sm:w-auto">
                                             {isSupportPage ? (
-                                                <div className="flex w-full justify-center items-center gap-4">
+                                                <div className="flex w-full justify-center items-center gap-4 p-2">
                                                     {/* Search bar */}
                                                     <input
                                                         type="text"
