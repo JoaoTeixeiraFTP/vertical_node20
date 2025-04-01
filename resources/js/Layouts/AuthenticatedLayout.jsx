@@ -9,13 +9,13 @@ import { useEffect } from 'react';
 export default function AuthenticatedLayout({ auth, header, url, children }) {
     const headerText = header?.props?.children?.toString().trim().toLowerCase() || '';
     const isSupportPage = headerText === 'suporte' || headerText === 'detalhe do suporte';
-
+/*
     useEffect(() => {
         console.log('Header recebido:', header);
         console.log('Header formatado:', `"${headerText}"`);
         console.log('isSupportPage:', isSupportPage);
     }, [headerText]);
-    
+*/   
 
     //const isSupportPage = true;
 
@@ -50,6 +50,9 @@ export default function AuthenticatedLayout({ auth, header, url, children }) {
                                                             {/* Criar PA button */}
                                                             <button className="px-4 py-2 bg-[#4B535E] text-white rounded-lg hover:bg-blue-700">Criar PA</button>
                                                         </div>
+                                                        <button className="px-4 py-2 bg-[#4B535E] text-white rounded-lg hover:bg-blue-700">
+                                                            Ir para a Conversa
+                                                        </button>
                                                 </div>
                                             ) : (
                                                 <>
