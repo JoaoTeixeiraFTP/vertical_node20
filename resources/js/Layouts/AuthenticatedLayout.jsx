@@ -33,7 +33,7 @@ export default function AuthenticatedLayout({ auth, header, url, children }) {
                                     <div className="grid h-full overflow-hidden sm:flex sm:justify-between items-center">
                                         {/* Left: Title */}
                                         <div className="order-last sm:order-first sm:my-0">
-                                            <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">{header}</h1>
+                                            <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl py-2">{header}</h1>
                                         </div>
                                         
                                         {/* Right: Actions */}

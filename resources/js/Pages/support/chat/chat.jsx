@@ -13,14 +13,14 @@ export default function Orders({ auth, document }) {
 
             <div className="relative">
                 <div className="mx-auto">
-                    <div className="overflow-hidden bg-white shadow-sm dark:bg-[#4B535E] p-16 relative">
+                    <div className="overflow-hidden bg-white shadow-sm dark:bg-gray-700 p-16 relative mx-4">
                         {/* Mensagem principal */}
                         <div className="text-gray-900 dark:text-gray-100 text-xl">
                             Boa Tarde, eu gostaria de reportar um problema que tive de não entrar as Faturas
                         </div>
 
                         {/* Informações do Suporte */}
-                        <div className="absolute top-4 right-4 flex flex-col items-center bg-gray-200 dark:bg-gray-700 p-3 rounded-lg shadow text-xs">
+                        <div className="absolute top-4 right-4 flex flex-col items-center bg-gray-200 dark:bg-gray-500 p-3 rounded-lg shadow text-xs mx-4">
                             {/* Foto */}
                             <img
                                 src={auth.user.avatar || "/images/avatar-01.jpg"}
@@ -46,7 +46,7 @@ export default function Orders({ auth, document }) {
                             </div>
                         </div>
                     </div>
-                    <div className="relative w-full h-screen">
+                    <div className="relative w-full h-screen mx-4">
                         {/* Imagem de fundo cobrindo todo o ecrã */}
                         <img src="/images/image.png" className="absolute inset-0 w-full h-full object-cover" />
 
@@ -83,7 +83,7 @@ export default function Orders({ auth, document }) {
                             placeholder="Escreva uma mensagem..." 
                             className="flex-1 p-3 rounded-full border border-gray-300 dark:text-gray-500 bg-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
                             />
-                            <button className="bg-green-500 text-white px-4 py-2 rounded-full text-lg">
+                            <button className="bg-green-500 text-white px-4 py-2 rounded-full text-lg mx-4">
                             ➤
                             </button>
                         </div>
