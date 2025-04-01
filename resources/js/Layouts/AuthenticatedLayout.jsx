@@ -8,7 +8,7 @@ import { useEffect } from 'react';
 
 export default function AuthenticatedLayout({ auth, header, url, children }) {
     const headerText = header?.props?.children?.toString().trim().toLowerCase() || '';
-    const isSupportPage = headerText === 'suporte' || headerText === 'detalhe do suporte';
+    const isSupportPage = headerText === 'suporte' || headerText === 'detalhe do suporte' || headerText === 'chat';
 /*
     useEffect(() => {
         console.log('Header recebido:', header);
@@ -50,7 +50,10 @@ export default function AuthenticatedLayout({ auth, header, url, children }) {
                                                             {/* Criar PA button */}
                                                             <button className="px-4 py-2 bg-[#4B535E] text-white rounded-lg hover:bg-blue-700">Criar PA</button>
                                                         </div>
-                                                        <button className="px-4 py-2 bg-[#4B535E] text-white rounded-lg hover:bg-blue-700">
+                                                        <button 
+                                                            className="px-4 py-2 bg-[#4B535E] text-white rounded-lg hover:bg-blue-700"
+                                                            onClick={() => window.location.href = route('support.chat.chat')}
+                                                        >
                                                             Ir para a Conversa
                                                         </button>
                                                 </div>

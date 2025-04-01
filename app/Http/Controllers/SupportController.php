@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Inertia\Inertia;
 use Inertia\Response;
+use Illuminate\Http\Request;
+
 
 final class SupportController extends Controller
 {
@@ -78,4 +80,9 @@ final class SupportController extends Controller
             }),
         ]);
     }    
+
+    public function chatPage(Request $request)
+    {
+        return Inertia::render('support/chat/chat'); 
+    }
 }
