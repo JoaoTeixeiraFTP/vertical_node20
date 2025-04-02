@@ -15,9 +15,7 @@ export default function Support({ auth }) {
     const [data, setData] = useState("Data");
     const [prioridade, setPrioridade] = useState("Prioridade");
     const [openDropdown, setOpenDropdown] = useState(null);
-    const handleApplyFilters = () => {
-        setOpenDropdown(null);
-    };
+    const handleApplyFilters = () => setOpenDropdown(null);
 
     const estadoColors = {
         'A Decorrer': 'bg-yellow-100',
@@ -51,143 +49,82 @@ export default function Support({ auth }) {
         <AuthenticatedLayout
             url={page.url}
             auth={auth}
-            header={<span className="text-2xl font-bold text-gray-800 dark:text-gray-100 md:text-3xl">Suporte</span>}
+            header={<span className="text-xl sm:text-2xl font-bold text-gray-800 dark:text-gray-100">Suporte</span>}
         >
             <Head title="Suporte" />
 
-            <div className="grid grid-cols-4 gap-4 py-6 px-4 w-full mx-auto">
-                <div className="relative dark:bg-[#1F2937] bg-[#DCDCDC] text-white p-6 rounded-xl shadow-[4px_4px_8px_rgba(0,0,0,0.6)]">
-                    <h3 className="text-lg text-[#0A0A0A] dark:text-[#FFFFFF] font-semibold">Tempo Resposta:</h3>
-                    <p className="text-3xl dark:text-white text-black font-light mt-2">1.30h</p>
-                </div>
-                <div className="relative dark:bg-[#1F2937] bg-[#DCDCDC] text-white p-6 rounded-xl shadow-[4px_4px_8px_rgba(0,0,0,0.6)]">
-                    <h3 className="text-lg text-[#0A0A0A] dark:text-[#FFFFFF] font-semibold">Pedidos Pendentes:</h3>
-                    <p className="text-3xl dark:text-white text-black font-light mt-2">13</p>
-                </div>
-                <div className="relative dark:bg-[#1F2937] bg-[#DCDCDC] text-white p-6 rounded-xl shadow-[4px_4px_8px_rgba(0,0,0,0.6)]">
-                    <h3 className="text-lg text-[#0A0A0A] dark:text-[#FFFFFF] font-semibold">Pedidos Fechados:</h3>
-                    <p className="text-3xl dark:text-white text-black font-light mt-2">9</p>
-                </div>
-                <div className="relative dark:bg-[#1F2937] bg-[#DCDCDC] text-white p-6 rounded-xl shadow-[4px_4px_8px_rgba(0,0,0,0.6)]">
-                    <h3 className="text-lg text-[#0A0A0A] dark:text-[#FFFFFF] font-semibold">Abertos no útimo mês:</h3>
-                    <p className="text-3xl dark:text-white text-black font-light mt-2">5</p>
-                </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 py-6 px-4 w-full mx-auto">
+                {["Tempo Resposta", "Pedidos Pendentes", "Pedidos Fechados", "Abertos no último mês"].map((title, i) => (
+                    <div key={i} className="relative dark:bg-[#1F2937] bg-[#DCDCDC] text-white p-4 sm:p-6 rounded-xl shadow-md text-center">
+                        <h3 className="text-sm sm:text-lg text-[#0A0A0A] dark:text-[#FFFFFF] font-semibold">{title}:</h3>
+                        <p className="text-xl sm:text-3xl dark:text-white text-black font-light mt-2">{["1.30h", 13, 9, 5][i]}</p>
+                    </div>
+                ))}
             </div>
 
             <div className='px-4 py-2'>
-                <div className="bg-[#1F2937] text-white px-4 py-2  w-20">Filtros</div>
-                <div className="flex items-center bg-[#111827] w-full relative z-50">
-                    <div className="flex flex-grow items-center ">
-                        {[{
-                        label: status, 
-                        options: ["A Decorrer", "Aguardar Resposta", "Fechado", "Em Análise"],
-                        setter: setStatus,
-                        id: "status"
-                        }, {
-                        label: tecnico, 
-                        options: ["Técnico 1", "Técnico 2", "Técnico 3"],
-                        setter: setTecnico,
-                        id: "tecnico"
-                        }, {
-                        label: data, 
-                        options: ["Últimos 7 Dias", "Últimos 30 Dias", "Últimos 60 Dias"],
-                        setter: setData,
-                        id: "data"
-                        }, {
-                        label: prioridade, 
-                        options: ["Alta", "Média", "Baixa"],
-                        setter: setPrioridade,
-                        id: "prioridade"
-                        }].map((filter, index) => (
-                        <div key={index} className="relative w-1/5">
-                            <button
-                            className="flex items-center justify-between bg-[#1F2937] text-white px-6 py-3 w-full border border-gray-600"
-                            onClick={() => setOpenDropdown(openDropdown === filter.id ? null : filter.id)}
-                            >
-                            <span>{filter.label}</span>
-                            <ChevronDown size={18} />
+                <div className="bg-[#1F2937] text-white px-4 py-2 w-full sm:w-20 text-center sm:text-left">Filtros</div>
+                <div className="flex flex-col sm:flex-row items-center bg-[#111827] w-full relative z-50 space-y-2 sm:space-y-0">
+                    {[{
+                        label: status, options: ["A Decorrer", "Aguardar Resposta", "Fechado", "Em Análise"], setter: setStatus, id: "status"
+                    }, {
+                        label: tecnico, options: ["Técnico 1", "Técnico 2", "Técnico 3"], setter: setTecnico, id: "tecnico"
+                    }, {
+                        label: data, options: ["Últimos 7 Dias", "Últimos 30 Dias", "Últimos 60 Dias"], setter: setData, id: "data"
+                    }, {
+                        label: prioridade, options: ["Alta", "Média", "Baixa"], setter: setPrioridade, id: "prioridade"
+                    }].map((filter, index) => (
+                        <div key={index} className="relative w-full sm:w-1/5">
+                            <button className="flex items-center justify-between bg-[#1F2937] text-white px-6 py-2 sm:py-3 w-full border border-gray-600"
+                                onClick={() => setOpenDropdown(openDropdown === filter.id ? null : filter.id)}>
+                                <span>{filter.label}</span>
+                                <ChevronDown size={18} />
                             </button>
                             {openDropdown === filter.id && (
-                            <div className="absolute mt-1 w-full bg-[#1F2937] text-white shadow-lg z-50">
-                                {filter.options.map((option, i) => (
-                                <div
-                                    key={i}
-                                    className="p-2 hover:bg-gray-700 cursor-pointer"
-                                    onClick={() => {
-                                    filter.setter(option);
-                                    setOpenDropdown(null);
-                                    }}
-                                >
-                                    {option}
+                                <div className="absolute mt-1 w-full bg-[#1F2937] text-white shadow-lg z-50">
+                                    {filter.options.map((option, i) => (
+                                        <div key={i} className="p-2 hover:bg-gray-700 cursor-pointer"
+                                            onClick={() => {
+                                                filter.setter(option);
+                                                setOpenDropdown(null);
+                                            }}>
+                                            {option}
+                                        </div>
+                                    ))}
                                 </div>
-                                ))}
-                            </div>
                             )}
                         </div>
-                        ))}
-
-                        <button
-                        className="bg-gray-300 text-gray-700 px-6 py-3 font-semibold w-1/5"
-                        onClick={handleApplyFilters}
-                        >
-                        Aplicar Filtros
-                        </button>
-                    </div>
+                    ))}
                 </div>
             </div>
 
             <div className="mx-auto px-4 py-2">
                 <div className="overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
                     <div className="p-2 text-gray-900 dark:text-gray-100">
-                        {support === undefined || !support.data ? (
-                            <Loading />
-                        ) : (
-                            <DataTable columns={updatedColumns} data={support.data} searchField={'pastamp'} typeDocument={'support'}/>
-                        )}
+                        {support === undefined || !support.data ? <Loading /> : <DataTable columns={updatedColumns} data={support.data} searchField={'pastamp'} typeDocument={'support'}/>}
                     </div>
                 </div>
-
-                {/* Paginação */}
                 <Pagination>
-                    {support === undefined || !support.data ? (
-                        <div></div>
-                    ) : (
-                        <PaginationContent className={'mt-4 w-full justify-between'}>
+                    {support !== undefined && support.data && (
+                        <PaginationContent className='mt-4 w-full justify-between flex flex-col sm:flex-row items-center'>
                             <div className="text-center text-sm text-gray-500 sm:text-left">
-                                Mostra de <span className="font-medium text-gray-600 dark:text-gray-300">{support.from} </span>a
+                                Mostra de <span className="font-medium text-gray-600 dark:text-gray-300">{support.from}</span> a
                                 <span className="font-medium text-gray-600 dark:text-gray-300"> {support.to} </span>
-                                de
-                                <span className="font-medium text-gray-600 dark:text-gray-300"> {support.total} </span>
+                                de <span className="font-medium text-gray-600 dark:text-gray-300"> {support.total} </span>
                                 resultados
                             </div>
-
-                            <div className={'flex gap-2'}>
-                                {support.links.map((link, index) =>
-                                    index > 0 && index < support.last_page + 1 ? (
+                            <div className='flex gap-2 flex-wrap justify-center'>
+                                {support.links.map((link, index) => (
+                                    index > 0 && index < support.last_page + 1 && (
                                         <PaginationItem key={index}>
-                                            <PaginationLink
-                                                isActive={support.current_page === index}
-                                                className={
-                                                    'dark:border-gray-700/60" border-gray-200 bg-white text-gray-800 active:bg-violet-500 active:text-white dark:bg-gray-800 dark:text-gray-300'
-                                                }
-                                                href={link.url}
-                                            >
-                                                {link.label}
-                                            </PaginationLink>
+                                            <PaginationLink isActive={support.current_page === index} href={link.url}>{link.label}</PaginationLink>
                                         </PaginationItem>
-                                    ) : (
-                                        <span key={index}></span>
-                                    ),
-                                )}
+                                    )
+                                ))}
                             </div>
-
-                            <div className={'flex gap-1'}>
-                                <PaginationItem>
-                                    <PaginationPrevious href={support.prev_page_url} />
-                                </PaginationItem>
-                                <PaginationItem>
-                                    <PaginationNext href={support.next_page_url} />
-                                </PaginationItem>
+                            <div className='flex gap-1'>
+                                <PaginationItem><PaginationPrevious href={support.prev_page_url} /></PaginationItem>
+                                <PaginationItem><PaginationNext href={support.next_page_url} /></PaginationItem>
                             </div>
                         </PaginationContent>
                     )}
