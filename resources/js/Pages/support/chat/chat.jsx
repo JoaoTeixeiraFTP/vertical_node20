@@ -52,23 +52,23 @@ export default function Orders({ auth, document }) {
 
                         {/* Chat estilo WhatsApp sobreposto */}
                         <div className="absolute inset-0 p-10 flex flex-col gap-4 overflow-y-auto pb-20">
-                            <div className="bg-green-500 text-white text-lg p-4 rounded-xl self-start max-w-[45%]">
+                            <div className="bg-blue-200 text-white text-lg p-4 rounded-xl self-start max-w-[45%]">
                             Olá! Como posso ajudar?
                             </div>
 
-                            <div className="bg-gray-200 text-black text-lg p-4 rounded-xl self-end max-w-[45%] text-right">
+                            <div className="bg-gray-500 text-white text-lg p-4 rounded-xl self-end max-w-[45%] text-right">
                             Preciso de suporte!
                             </div>
 
-                            <div className="bg-green-500 text-white text-lg p-4 rounded-xl self-start max-w-[45%]">
+                            <div className="bg-blue-200 text-white text-lg p-4 rounded-xl self-start max-w-[45%]">
                             Claro! Diga-me o problema.
                             </div>
 
-                            <div className="bg-gray-200 text-black text-lg p-4 rounded-xl self-end max-w-[45%] text-right">
+                            <div className="bg-gray-500 text-white text-lg p-4 rounded-xl self-end max-w-[45%] text-right">
                             Estou com dificuldades em aceder o sistema.
                             </div>
 
-                            <div className="bg-green-500 text-white text-lg p-4 rounded-xl self-start max-w-[45%]">
+                            <div className="bg-blue-200 text-white text-lg p-4 rounded-xl self-start max-w-[45%]">
                             Você já tentou redefinir a senha?
                             </div>
                         </div>
@@ -83,7 +83,7 @@ export default function Orders({ auth, document }) {
                             placeholder="Escreva uma mensagem..." 
                             className="flex-1 p-3 rounded-full border border-gray-300 dark:text-gray-500 bg-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
                             />
-                            <button className="bg-green-500 text-white px-4 py-2 rounded-full text-lg mx-4">
+                            <button className="bg-blue-200 text-white px-4 py-2 rounded-full text-lg mx-4">
                             ➤
                             </button>
                         </div>
