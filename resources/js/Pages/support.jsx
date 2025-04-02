@@ -80,7 +80,7 @@ export default function Support({ auth }) {
                     <div className="flex flex-grow items-center ">
                         {[{
                         label: status, 
-                        options: ["Fechado", "Aberto"],
+                        options: ["A Decorrer", "Aguardar Resposta", "Fechado", "Em Análise"],
                         setter: setStatus,
                         id: "status"
                         }, {
