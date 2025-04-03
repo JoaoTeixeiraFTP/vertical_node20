@@ -70,7 +70,7 @@ export default function Orders({ auth, orders }) {
                         </div>
                     </div>
 
-                    <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded w-full hover:bg-blue-700">
+                    <button type="submit" className="bg-gray-400 dark:bg-gray-300 text-white px-4 py-2 rounded w-full hover:bg-gray-500 dark:hover:bg-gray-400">
                         ENVIAR
                     </button>
                 </form>
