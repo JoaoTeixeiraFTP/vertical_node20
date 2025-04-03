@@ -4,7 +4,6 @@ import AppHeader from '@/Components/layout/AppHeader.jsx';
 import { AppSidebar } from '@/Components/layout/AppSidebar.jsx';
 import { SidebarProvider, SidebarTrigger } from '@/Components/ui/sidebar.jsx';
 import { ThemeProvider } from '@/utils/ThemeContext.jsx';
-import { useEffect } from 'react';
 
 export default function AuthenticatedLayout({ auth, header, url, children }) {
     const headerText = header?.props?.children?.toString().trim().toLowerCase() || '';
@@ -29,7 +28,7 @@ export default function AuthenticatedLayout({ auth, header, url, children }) {
                         <AppHeader user={auth} />
                         {header && (
                             <header id={'page-header'} className="mb-4 sm:mb-0 px-4">
-                                <div className="mx-auto p-1 sm:px-6 lg:px-4 bg-gray-200 shadow-sm dark:bg-gray-600 rounded-lg">
+                                <div className="mx-auto p-1 sm:px-6 lg:px-4 bg-gray-200 shadow-sm dark:bg-[#2F3743] rounded-lg">
                                     <div className="grid h-full overflow-hidden sm:flex sm:justify-between items-center">
                                         {/* Left: Title */}
                                         <div className="order-last sm:order-first sm:my-0">
