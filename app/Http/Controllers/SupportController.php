@@ -108,4 +108,9 @@ final class SupportController extends Controller
         ]); 
     }    
         */
+
+    public function createpaPage(Request $request)
+    {
+        return Inertia::render('support/pa/createpa'); 
+    }
 }

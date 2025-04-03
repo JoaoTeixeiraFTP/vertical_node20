@@ -47,7 +47,10 @@ export default function AuthenticatedLayout({ auth, header, url, children }) {
                                                     />
                                                         <div className='flex gap-2'>
                                                             {/* Criar PA button */}
-                                                            <button className="px-4 py-2 bg-[#D9D9D9] text-gray-800 rounded-lg dark:hover:bg-gray-400 hover:bg-gray-300">
+                                                            <button 
+                                                                className="px-4 py-2 bg-[#D9D9D9] text-gray-800 rounded-lg dark:hover:bg-gray-400 hover:bg-gray-300"
+                                                                onClick={() => window.location.href = route('support.pa.createpa')}
+                                                            >
                                                                 Criar PA
                                                             </button>
                                                             
@@ -60,12 +63,12 @@ export default function AuthenticatedLayout({ auth, header, url, children }) {
                                                             </button>
                                                         </div>
 
-                                                        <button 
-                                                            className="px-4 py-2 bg-[#D9D9D9] text-gray-800 rounded-lg dark:hover:bg-gray-400 hover:bg-gray-300"
-                                                            onClick={() => window.location.href = route('support.chat.chat')}
-                                                        >
-                                                            Ir para a Conversa
-                                                        </button>
+                                                            <button 
+                                                                className="px-4 py-2 bg-[#D9D9D9] text-gray-800 rounded-lg dark:hover:bg-gray-400 hover:bg-gray-300"
+                                                                onClick={() => window.location.href = route('support.chat.chat')}
+                                                            >
+                                                                Ir para a Conversa
+                                                            </button>
 
                                                         {/*
                                                         <button 
