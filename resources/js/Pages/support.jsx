@@ -63,40 +63,40 @@ export default function Support({ auth }) {
             </div>
 
             <div className='px-4 py-2'>
-                <div className="bg-[#1F2937] text-white px-4 py-2 w-full sm:w-20 text-center sm:text-left">Filtros</div>
-                <div className="flex flex-col sm:flex-row items-center bg-[#111827] w-full relative z-50 sm:space-y-0">
-                    {[{
-                        label: status, options: ["A Decorrer", "Aguardar Resposta", "Fechado", "Em Análise"], setter: setStatus, id: "status"
-                    }, {
-                        label: tecnico, options: ["Técnico 1", "Técnico 2", "Técnico 3"], setter: setTecnico, id: "tecnico"
-                    }, {
-                        label: data, options: ["Últimos 7 Dias", "Últimos 30 Dias", "Últimos 60 Dias"], setter: setData, id: "data"
-                    }, {
-                        label: prioridade, options: ["Alta", "Média", "Baixa"], setter: setPrioridade, id: "prioridade"
-                    }].map((filter, index) => (
-                        <div key={index} className="relative w-full sm:w-1/5">
-                            <button className="flex items-center justify-between bg-[#1F2937] text-white px-6 py-2 sm:py-3 w-full border border-gray-600"
-                                onClick={() => setOpenDropdown(openDropdown === filter.id ? null : filter.id)}>
-                                <span>{filter.label}</span>
-                                <ChevronDown size={18} />
-                            </button>
-                            {openDropdown === filter.id && (
-                                <div className="absolute mt-1 w-full bg-[#1F2937] text-white shadow-lg z-50">
-                                    {filter.options.map((option, i) => (
-                                        <div key={i} className="p-2 hover:bg-gray-700 cursor-pointer"
-                                            onClick={() => {
-                                                filter.setter(option);
-                                                setOpenDropdown(null);
-                                            }}>
-                                            {option}
-                                        </div>
-                                    ))}
-                                </div>
-                            )}
-                        </div>
-                    ))}
-                    <button className="bg-gray-300 text-gray-700 px-6 py-2 sm:py-3 font-semibold w-full sm:w-1/5" onClick={handleApplyFilters}>Aplicar Filtros</button>
-                </div>
+                <div className="bg-[#DCDCDC] dark:bg-[#1F2937] text-black dark:text-white px-4 py-2 w-full sm:w-20 text-center sm:text-left">Filtros</div>
+                    <div className="flex flex-col sm:flex-row items-center bg-[#DCDCDC] bg-w-full relative z-50 sm:space-y-0">
+                        {[{
+                            label: status, options: ["A Decorrer", "Aguardar Resposta", "Fechado", "Em Análise"], setter: setStatus, id: "status"
+                        }, {
+                            label: tecnico, options: ["Técnico 1", "Técnico 2", "Técnico 3"], setter: setTecnico, id: "tecnico"
+                        }, {
+                            label: data, options: ["Últimos 7 Dias", "Últimos 30 Dias", "Últimos 60 Dias"], setter: setData, id: "data"
+                        }, {
+                            label: prioridade, options: ["Alta", "Média", "Baixa"], setter: setPrioridade, id: "prioridade"
+                        }].map((filter, index) => (
+                            <div key={index} className="relative w-full sm:w-1/5">
+                                <button className="flex items-center justify-between bg-[#DCDCDC] dark:bg-[#1F2937] dark:text-white text-black px-6 py-2 sm:py-3 w-full border border-gray-300 dark:border-gray-700"
+                                    onClick={() => setOpenDropdown(openDropdown === filter.id ? null : filter.id)}>
+                                    <span>{filter.label}</span>
+                                    <ChevronDown size={18} />
+                                </button>
+                                {openDropdown === filter.id && (
+                                    <div className="absolute mt-1 w-full bg-[#DCDCDC] dark:bg-[#1F2937] dark:text-white text-black shadow-lg z-50">
+                                        {filter.options.map((option, i) => (
+                                            <div key={i} className="p-2 hover:bg-gray-100 dark:hover:bg-gray-400 cursor-pointer"
+                                                onClick={() => {
+                                                    filter.setter(option);
+                                                    setOpenDropdown(null);
+                                                }}>
+                                                {option}
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                        ))}
+                        <button className="bg-gray-300 dark:bg-gray-300 text-gray-700 px-6 py-2 sm:py-3 font-semibold w-full sm:w-1/5" onClick={handleApplyFilters}>Aplicar Filtros</button>
+                    </div>
             </div>
 
             <div className="mx-auto px-4 py-2">
