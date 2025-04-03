@@ -64,7 +64,7 @@ export default function Support({ auth }) {
 
             <div className='px-4 py-2'>
                 <div className="bg-[#1F2937] text-white px-4 py-2 w-full sm:w-20 text-center sm:text-left">Filtros</div>
-                <div className="flex flex-col sm:flex-row items-center bg-[#111827] w-full relative z-50 space-y-2 sm:space-y-0">
+                <div className="flex flex-col sm:flex-row items-center bg-[#111827] w-full relative z-50 sm:space-y-0">
                     {[{
                         label: status, options: ["A Decorrer", "Aguardar Resposta", "Fechado", "Em Análise"], setter: setStatus, id: "status"
                     }, {
@@ -95,6 +95,7 @@ export default function Support({ auth }) {
                             )}
                         </div>
                     ))}
+                    <button className="bg-gray-300 text-gray-700 px-6 py-2 sm:py-3 font-semibold w-full sm:w-1/5" onClick={handleApplyFilters}>Aplicar Filtros</button>
                 </div>
             </div>
 
