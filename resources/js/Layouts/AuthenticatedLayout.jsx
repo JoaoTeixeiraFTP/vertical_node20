@@ -7,7 +7,7 @@ import { ThemeProvider } from '@/utils/ThemeContext.jsx';
 
 export default function AuthenticatedLayout({ auth, header, url, children }) {
     const headerText = header?.props?.children?.toString().trim().toLowerCase() || '';
-    const isSupportPage = headerText === 'suporte' || headerText === 'detalhe do suporte' || headerText === 'chat';
+    const isSupportPage = headerText === 'suporte' || headerText === 'detalhe do suporte' || headerText === 'chat' || headerText === 'criar pa';
 /*
     useEffect(() => {
         console.log('Header recebido:', header);
@@ -27,7 +27,7 @@ export default function AuthenticatedLayout({ auth, header, url, children }) {
                     <main id={'main-page'} key={headerText} className="relative mb-4 flex w-full flex-1 grow flex-col overflow-y-auto overflow-x-hidden">
                         <AppHeader user={auth} />
                         {header && (
-                            <header id={'page-header'} className="mb-4 sm:mb-0 px-4">
+                            <header id={'page-header'} className="mb-4 sm:mb-0 px-4 mt-4">
                                 <div className="mx-auto p-1 sm:px-6 lg:px-4 bg-gray-200 shadow-sm dark:bg-[#2F3743] rounded-lg">
                                     <div className="grid h-full overflow-hidden sm:flex sm:justify-between items-center">
                                         {/* Left: Title */}
