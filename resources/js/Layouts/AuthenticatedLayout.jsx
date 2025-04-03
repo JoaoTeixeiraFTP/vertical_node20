@@ -38,7 +38,7 @@ export default function AuthenticatedLayout({ auth, header, url, children }) {
                                         {/* Right: Actions */}
                                         <div className="sm:text-md order-first flex justify-end gap-2 text-sm sm:order-last w-full sm:w-auto">
                                             {isSupportPage ? (
-                                                <div className="flex w-full justify-center items-center gap-4">
+                                                <div className="flex w-full justify-center items-center gap-2">
                                                     {/* Search bar */}
                                                     <input
                                                         type="text"
@@ -47,14 +47,26 @@ export default function AuthenticatedLayout({ auth, header, url, children }) {
                                                     />
                                                         <div className='flex gap-2'>
                                                             {/* Criar PA button */}
-                                                            <button className="px-4 py-2 bg-[#D9D9D9] text-gray-800 rounded-lg hover:bg-blue-700">Criar PA</button>
+                                                            <button className="px-4 py-2 bg-[#D9D9D9] text-gray-800 rounded-lg dark:hover:bg-gray-400 hover:bg-gray-300">
+                                                                Criar PA
+                                                            </button>
+                                                            
+                                                            {/* Botão para voltar */}
+                                                            <button 
+                                                                className="px-4 py-2 bg-[#D9D9D9] text-gray-800 rounded-lg dark:hover:bg-gray-400 hover:bg-gray-300"
+                                                                onClick={() => window.history.back()}
+                                                            >
+                                                                Voltar
+                                                            </button>
                                                         </div>
+
                                                         <button 
-                                                            className="px-4 py-2 bg-[#D9D9D9] text-gray-800 rounded-lg hover:bg-blue-700"
+                                                            className="px-4 py-2 bg-[#D9D9D9] text-gray-800 rounded-lg dark:hover:bg-gray-400 hover:bg-gray-300"
                                                             onClick={() => window.location.href = route('support.chat.chat')}
                                                         >
                                                             Ir para a Conversa
                                                         </button>
+
                                                         {/*
                                                         <button 
                                                             className="px-4 py-2 bg-[#4B535E] text-white rounded-lg hover:bg-blue-700"
