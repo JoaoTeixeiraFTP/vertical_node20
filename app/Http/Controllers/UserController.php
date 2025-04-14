@@ -73,7 +73,7 @@ final class UserController extends Controller
                     'password' => bcrypt($userData['pwautent'] ?? 'default'),
                     'subscriber' => $url,
                 ]);
-            ~// $result->subscriber()->associate($subscriber);
+            // $result->subscriber()->associate($subscriber);
 
             $code = 200;
         } catch (Throwable $e) {
