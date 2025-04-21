@@ -80,7 +80,7 @@ function CSSTransition({
         >
             <Component ref={nodeRef} {...rest} style={{ display: !removeFromDom ? 'none' : null }}>
                 {children}
-            </Component>
+            </Component> 
         </ReactCSSTransition>
     );
 }
